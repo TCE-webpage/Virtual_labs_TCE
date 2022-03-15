@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="author" content="Alejandro Mohamad">
+    <title>P N Junction Diode</title>
+
+    <link rel="icon" type="image/png" href="https://tng3.tce.edu/static/favicon.png?v=2">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="project-styles.css">
+    <script src="myscripts.js"></script>
+    <script src="fbias.js"></script>
+  </head>
+
+  <body>
+
+  <!-- Navigation menu -->
+  <div class="topnav" id="myTopnav">
+    <div class="myc">
+      <ul>
+        <li><img src="Thiagarajar_College_of_Engineering_logo.png" alt="TCE Logo"></li>  
+        <li><strong>Thiagarajar College of Engineering</strong></li>
+        
+        <a href="#contact">Help</a>
+        <a  href="https://www.tce.edu/dept/eee/home">About</a>
+        <a href="#contact">Contact</a>
+        <!--<a href="#contact">Login</a>-->
+        <a href="main.html" class="active">Home</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i> </a>
+      </ul>
+      
+    </div>
+  </div>
+    
+  <main>
+
+    <!-- Logo of VLabs -->
+    <img src="vlabstcelogo.png" alt="VlabsTCE" class="book-cover">
+
+    <!-- Navigation Bar -->
+    <h1>Forward Bias Characteristics of P-N Junction Diode</h1><br><br>
+    <nav id="mininav">
+      <a onclick="Aim()">Aim</a>
+      <a onclick="Theory()"> Theory</a>
+      <a onclick="Prequiz()"> Prequiz</a>
+      <a onclick="Procedure()"> Procedure</a>
+      <a onclick="Simulation()"> Simulation</a>
+      <a onclick="Outcome()"> Outcome</a>
+      <a onclick="Feedbaack()">Feedback</a>
+    </nav>
+    <br><br><br>
+      
+    <!-- Simulation Workplace -->
+    <div id = "simulation">
+      
+      <div class="border1" id="border2">
+        <div class="wrapper">
+          <div  class="wrapper2">
+            <div>
+              <img id="myImg" src="p-n221.gif" onload="this.onload=null;disable()" width="642px" height="388.2px">
+            </div>
+            <div>
+              <center><button class="button button1" onClick="reset()">Reset</button></center>
+            </div>
+          </div>
+          <div class="wrapper1">
+            <center><div class="theorybox1">
+              <center><strong>METER READINGS</strong></center><br>
+                Battery Voltage = <output id="bnn" name="Voltage" for="s1">0</output><br>
+                Voltage across the Diode = <output id="diode" >0 V</output> <br>
+                Current Value = <output id="current">0 A</output>
+            </div></center>
+            <center>
+              <div class="simu_buttons">
+                <br>
+                <button class="button button1" id="interval" onclick="timedText();enable2();this.disabled = true;steptwo();interval1.disabled =false">Form P-N Junction</button>
+                <button class="button button1" id="interval1" onclick="timedText1();this.disabled = true;stepthree();interval2.disabled = false">Diffusion</button>
+                <button class="button button1" id="interval2" onclick="enable();this.disabled= true;stepthree()">Apply Voltage</button><br><br>
+                <!--<button class="button button1" onClick="history.go(0)">Reset</button><br><br><br>-->
+                <strong><center>VOLTAGE SLIDER</center></strong>
+                <input id="s1" type="range" min="0" max="5" step="0.01" value = "0" class="slider" oninput="bnn.value=s1.value;bnn2.value=s1.value;currentval();diodeval();fbias(this.value);" onchange="fbias(this.value);" /><br>
+                <output id="bnn2" name="Voltage" for="s1">0</output>
+              </div>  
+            </center>
+            <div class ="theorybox">
+              <center>
+              <div id="step1" >
+                <center><strong>INSTRUCTIONS</strong></center><br>                
+              Identify the P substrate and N substrate.
+              To start, Click the 'Form P-N Junction' button given below.
+              After pressing each button, observe the changes in the circuit first and then read here.  
+              </div>
+              <div id="step2">
+              While combining both flavours during fabrication, a junction is formed between p-region and n-region.
+              Click "Diffusion" button to see further changes in an unbiased PN junction diode.        
+              </div>
+              <div id="step3">
+                Immediately after the junction is formed, due to non-uniform concentration on both sides, 
+                electrons and holes starts moving across the junction. This is Diffusion. 
+                Now, click "Apply Voltage" button to turn on the supply and vary the slider in steps of 0.05V to 
+                observe uniform concentration.           
+              </div>
+              <div id="step4">
+                Immobile charges are accumulated near the junction and acts as a barrier (depletion region) and stops the flow 
+                of charge carriers across the junction.
+                We need charge carriers flow across the junction to make the device ON. Keep on varying the slider in step of 0.1V 
+                to see what is coming up.  
+              </div>
+              <div id="step5">
+                YES ! Now the flow of electrons and holes across the junction is <strong>RESTARTED</strong>
+                which is nothing but the charge carriers has gained energy more than the barrier potential
+                and thus the force towards the depletion region will be more making the depletion region 
+                thinner.
+              </div>
+              <div id="step6">
+                As we observe while increasing voltage across the diode, 
+                more free electrons gets generated thus mobility of electrons increases and current also increases.
+              </div>
+              <div id="step7">
+                At some point more electrons in the junction lead to velocity saturation and thus speed saturates. 
+                So, after this even for a small amount of voltage there will be huge current growing exponentially.
+              </div>
+            </center>
+            </div>
+      </div>
+    </div>  
+
+  </div>
+  </div>
+  <!-- Aim Workplace -->
+      <div id = "aim" class="theoryboxaim">
+          1. To plot the I-V Characteristics of PN junction diode under forward bias condition.<br><br>
+          2. To find the cut-in voltage and static resistance during forward bias.
+      </div>
+
+  <!-- Theory Workplace -->
+  <div id="theory">
+  
+        <div class="row">
+          <div class="column" id="column1" >
+                <a href="#Atom">Atomic Structure</a>
+                <a href="#Shell">Orbits / Shells</a>
+                <a href="#Valence Shell">Valence Shell</a>
+                <a href="#Covalent Bond">Covalent Bond</a>
+                <a href="#Valence Band">Valence Band</a>
+                <a href="#Conduction Band">Conduction Band</a>
+                <a href="#FEG">Forbidden Energy Gap</a>
+                <a href="#Doping">Doping</a>
+                <a href="#N Type">N Type</a>
+                <a href="#P type">P type</a>
+                <a href="#Diffusion">Diffusion</a>
+                <a href="#Unbiased P-N Junction Diode">Unbiased P-N Junction Diode</a>
+                <a href="#Depletion Region">Depletion Region</a>
+                <a href="#Forward Biased">Forward Biased</a>                
+            </div>
+            <div class="column" id ="column2" >
+              
+              <div class="space"  id="Atom"><strong>Atomic Structure</strong>
+                <p>
+                  <li>Imagine a tiny particle called an atom (Family) contains three types (Children) of charge carriers and a nucleus (Parent).</li><br><br>
+                  <li>The three types are Protons, neutrons and electrons.</li><br><br>
+                  <li>Protons and neutrons are present inside the nucleus at the centre of an atom.</li><br><br>
+                  <li>Electrons revolve around the nucleus in shells in an energy level pattern.</li>
+                </p>
+              </div>
+              
+              <div class="space" id="Shell"><strong>Orbits / Shells</strong>
+                <p>
+                  <li>A shell can contain a maximum of 2n² electrons where n is the number of the shell.</li><br><br>
+                  <li>Each shell has an energy level that creates a force of attraction towards the nucleus.</li><br><br>
+                  <li>The shell nearer to nucleus has more force of attraction (less energy) towards nucleus.</li><br><br>
+                  <li>And the shell far away from nucleus has less force of attraction (more energy) towards nucleus.</li><br><br> 
+                </p>
+              </div>
+              
+              <div class="space" id="Valence Shell"><strong>Valence Shell</strong>
+                <p>
+                  <li>The outermost shell of an atom is called the Valence shell.</li><br><br>
+                  <li>The electrons in this shell are called valence electrons.</li><br><br>
+                  <li>They need only small amount of energy to release the electrons from the valence shell.</li><br><br>
+                  <li>The electrons which are released from the valence shell are free electrons.</li> 
+                </p>
+              </div>
+
+              <div class="space" id="Covalent Bond"><strong>Covalent Bond</strong>
+                <p>
+                  <li>Ge and Si have four electrons in their valence shell.</li><br><br>
+                  <li>So far we discussed for a single atom and WKT combination of atoms makes a molecule.</li><br><br>
+                  <li>The combination is nothing but sharing of valence electrons of one atom with the adjacent atom.</li><br><br>
+                  <li>This merging of valence electrons are called covalent bonds.</li><br><br>
+                  <li>This merging forms an energy band.</li>
+                </p>
+              </div>
+              
+              <div class="space" id="Valence Band"><strong>Valence Band</strong>
+                <p>
+                  <li>The energy band formed due to the merging of valence electrons is called Valence Band.</li>
+                </p>
+              </div>
+
+              <div class="space" id="Conduction Band"><strong>Conduction Band</strong>
+                <p>
+                  <li>The energy band formed due to the merging of free electrons is called Conduction Band.</li>
+                </p>
+              </div>
+
+              <div class="space" id="FEG"><strong>Forbidden Energy Gap</strong>
+              <p>
+                <li>When jumping from valence band to conduction band, electrons have to cross an energy gap.</li><br><br>
+                <li>This energy gap is called Forbidden Energy Gap.</li><br><br>
+                <li><strong>FEG: </strong>Insulators > Semi-Conductors</li><br><br>
+                <li>While jumping to conduction band, the current generated is called drift current.</li>  
+              </p>
+              </div>
+
+              <div class="space" id="Doping"><strong>Doping</strong>
+              <p>
+                <li>Free electrons are responsible for conduction.</li><br><br>
+                <li>Ge and Si have four electrons in their valence shell.</li><br><br>
+                <li>To generate more free electrons without rising temperature, we add Group V impurities.</li><br><br>
+                Why Group V ?<br><br><br>
+                <li>Because they have 5 electrons in their valence shell.</li><br><br>
+                <li>While forming covalent bond, they leave the 5th electron in the valence band.</li><br><br>
+                <li>In the same fashion, we can create holes by adding Group III impurities.</li><br><br>
+                <li>Because they have only three valence electrons, leaving the 4th place as a hole in the covalent bond.</li> 
+              </p>
+              </div>
+              
+              <div class="space" id= "N Type"><strong>N Type</strong>
+              <p>
+                <li>The semiconductor material in which there are more number of free electrons and few holes are called n type semiconductor.</li><br><br>
+                <li>Majority charge carriers - free electrons</li><br><br>
+                <li>Minority charge carriers - holes</li>
+              </p>  
+              </div>
+              
+              <div class="space" id="P type"><strong >P Type</strong>
+              <p>
+                <li>The semiconductor material in which there are more number of holes and few free electrons are called p type semiconductor.</li><br><br>
+                <li>Majority charge carriers - holes</li><br><br>
+                <li>Minority charge carriers - free electrons</li>
+              </p>
+              </div>
+              
+              <div class="space" id="Diffusion"><strong>Diffusion</strong>
+              <p>
+                <li>
+                  Due to non-uniform doping concentration of charged particles,
+                  there will be movement of both electrons in n type as well as<br><br><div style="margin-left: 22px;">holes in p type
+                  from high concentration towards lower concentration until uniform concentration is attained.</div>
+                </li><br><br>
+                <li>This movement of charge carriers in a semiconductor is called diffusion.</li><br><br>
+              </p>
+              </div>
+              
+              <div class="space" id="Unbiased P-N Junction Diode"><strong>Unbiased P-N Junction Diode</strong>
+              <p>
+                <li>While p and n type are flavoured together, a junction exists between them.</li><br><br>
+                <li>One side of the junction, there are high concentration of electrons.</li><br><br>
+                <li>Another side of the junction, there are high concentration of holes.</li><br><br>
+                <li>This creates concentration gradient and thus diffusion starts.</li>
+              </p>
+              </div>
+                 
+              <div class="space" id="Depletion Region" ><strong>Depletion Region</strong>
+              <p>
+                <li>While diffusion occurs, electrons from n region enter into p region and recombine with acceptor atoms which are holes.</li><br><br>
+                <li>Similarly, holes from p region enter into n region and recombine with donor atoms which are electrons.</li><br><br>
+                This recombination of electrons and holes creates <strong>:</strong><br><br>
+                <div style="margin-left: 25px;">
+                  <li>Immobile positive ions on n region and immobile negative ions on p region.</li><br><br>
+                  <li>These immobile charges acuumulated near the junction is called depletion region / barrier of a diode.</li><br><br>
+                  <li>After the barrier is formed, the movement of electrons / holes across the junction will be stopped.</li>
+                </div>
+              </p>
+              </div>              
+                
+              <div class="space" id="Forward Biased"><strong>Forward Biased</strong>
+              <p>
+                <li>When the p-region is tied up to a higher potential and the n-region to a lower potential
+                    the biasing condition is forward biased.</li><br><br>
+                <li>The barrier has a voltage level, more likely it act as an electric field.</li><br><br>
+                <li>When we give voltage above the barrier potential, the flow of charge carriers across the junction is restarted.</li><br><br>
+                <li>Thus the diode is in forward conduction mode.</li>
+              </p>
+              </div>
+                                
+            </div>
+        </div>
+  </div>
+  
+  <!-- Procedure Workplace -->
+
+       <div id = "procedure" class="theoryboxaim">            
+            <strong>Step 1:</strong>      
+              Identify the P substrate and N substrate. Click the 'Form P-N Junction' button and observe the changes.  
+              <br><br><strong>Step 2:</strong>      
+              After the junction is formed, click 'Diffusion' button and observe changes.        
+              <br><br><strong>Step 3:</strong>
+              Switch ON the power supply by clicking the 'Apply voltage' button.          
+              <br><br><strong>Step 4:</strong>
+              Gradually increase the battery (5V DC) voltage from 0 V in steps of 0.1 V and observe changes 
+              by varying the voltage slider.
+              <br><br><strong>Step 5:</strong> 
+              Observe the changes happening inside the device while performing Step 4.     
+              <br><br><strong>Step 6:</strong>      
+              Note down the ammeter and voltmeter(Diode Voltage) readings.
+              <br><br><strong>Step 7:</strong>      
+              From the experiment carried out, find the cut-in voltage and static resistance during forward bias (R= V/I).
+              <br><br><strong>Step 8:</strong>      
+              Plot the readings in a graph and infer the I-V characteristics of the diode.
+        </div>
+  
+<!-- Prequiz Workplace -->
+      <div id = "prequiz">
+        <div id="quiz"></div>
+          <div id="results"></div><br><br>
+            <button id="submit">Submit Quiz</button>
+      </div>
+<!-- Outcome Workplace -->
+      <div id = "outcome" class="theoryboxaim">
+        At the end of the experiment, a student will able to explain : <br><br>
+        <li>What is doping ?</li>
+        <li>Why an n-type semiconductor has electrons as majority carriers ?</li>
+        <li>Why a p-type semiconductor has holes as majority carriers ?</li>
+        <li>Why diffusion process occurs?</li>
+        <li>What is mobility of electrons ?</li>
+        <li>What is a depletion region ?</li>
+        <li>When the barrier potential is created ?</li>
+        <li>When and why the flow of charge carriers across the junction restarts ?</li>
+        <li>When a PN junction diode is forward biased ?</li>
+        <li>I-V relationship</li>
+    </div>
+<!-- Feedback Workplace -->
+      <div id="feedbaack">
+        <iframe id="myIframe" src="https://docs.google.com/forms/d/e/1FAIpQLSdpcXMEZmg41Cw1qmuq8c97csYlcJoYRXdPHPjdx7L16A56lQ/viewform?embedded=true" width="100%" height="1050" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+      </div>
+    </main>
+    
+    &emsp; <button class="backbutton" onclick="window.location.href = 'analog_electronics_lab_main.html'">&#8810; Back to list of Experiments</button> <br><br><br>
+
+    <footer style="background: linear-gradient(45deg,#004e92,#000428);">
+      Copyright &copy; 2021 &bull; TCE
+    </footer>
+
+  </body>
+</html>

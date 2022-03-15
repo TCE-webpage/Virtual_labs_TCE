@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="author" content="Alejandro Mohamad">
+    <title>P N Junction Diode</title>
+
+    <link rel="icon" type="image/png" href="https://tng3.tce.edu/static/favicon.png?v=2">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="project-styles.css">
+    <script src="myscripts.js"></script>
+    <script src="rbias.js"></script>
+  </head>
+
+  <body>
+
+  <!-- Navigation menu -->
+  <div class="topnav" id="myTopnav">
+    <div class="myc">
+      <ul>
+        <li><img src="Thiagarajar_College_of_Engineering_logo.png" alt="TCE Logo"></li>  
+        <li><strong>Thiagarajar College of Engineering</strong></li>
+        
+        <a href="#contact">Help</a>
+        <a  href="https://www.tce.edu/dept/eee/home">About</a>
+        <a href="#contact">Contact</a>
+        <!--<a href="#contact">Login</a>-->
+        <a href="main.html" class="active">Home</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i> </a>
+      </ul>
+      
+    </div>
+  </div>
+    
+  <main>
+
+    <!-- Logo of VLabs -->
+    <img src="vlabstcelogo.png" alt="VlabsTCE" class="book-cover">
+
+    <!-- Navigation Bar -->
+    <h1>Reverse Bias Characteristics of P-N Junction Diode</h1><br><br>
+    <nav id="mininav">
+      <a onclick="Aim()">Aim</a>
+      <a onclick="Theory()"> Theory</a>
+      <a onclick="Prequiz()"> Prequiz</a>
+      <a onclick="Procedure()"> Procedure</a>
+      <a onclick="Simulation()"> Simulation</a>
+      <a onclick="Outcome()"> Outcome</a>
+      <a onclick="Feedbaack()">Feedback</a>
+    </nav>
+    <br><br><br>
+      
+    <!-- Simulation Workplace -->
+    <div id = "simulation">
+      
+      <div class="border1" id="border2">
+        <div class="wrapper">
+          <div  class="wrapper2">
+            <div>
+              <img id="myImg" src="p-n221rb.gif" onload="this.onload=null;disable()" width="642px" height="388.2px">
+            </div>
+            <div>
+              <center><button class="button button1" onClick="reset()">Reset</button></center>
+            </div>
+          </div>
+          <div class="wrapper1">
+            <center><div class="theorybox1">
+              <center><strong>METER READINGS</strong></center><br>
+                Battery Voltage = <output id="bnn" name="Voltage" for="s1">0</output><br>
+                Voltage across the Diode = <output id="diode" >0 V</output> <br>
+                Current Value = <output id="current">0 A</output>
+            </div></center>
+            <center>
+              <div class="simu_buttons">
+                <br>
+                <button class="button button1" id="interval" onclick="timedTextrb();enable2();this.disabled = true;steptwo();interval1.disabled =false">Form P-N Junction</button>
+                <button class="button button1" id="interval1" onclick="timedText1rb();this.disabled = true;stepthree();interval2.disabled = false">Diffusion</button>
+                <button class="button button1" id="interval2" onclick="enablerb();this.disabled= true;stepfour()">Apply Voltage</button><br><br>
+                <!--<button class="button button1" onClick="history.go(0)">Reset</button><br><br><br>-->
+                <strong><center>VOLTAGE SLIDER</center></strong>
+                <input id="s1" type="range" min="0" max="56" step="8" value = "0" class="slider" oninput="bnn.value=s1.value;bnn2.value=s1.value;currentvalrb();diodevalrb();rbias(this.value);" onchange="rbias(this.value);" /><br>
+                <output id="bnn2" name="Voltage" for="s1">0</output>
+              </div>  
+            </center>
+            <div class ="theorybox">
+              <center>
+              <div id="step1" >
+                <center><strong>INSTRUCTIONS</strong></center><br>                
+              Identify the P substrate and N substrate.
+              To start, Click the 'Form P-N Junction' button given below.
+              After pressing each button, observe the changes in the circuit first and then read here.  
+              </div>
+              <div id="step2">
+              While combining both flavours during fabrication, a junction is formed between p-region and n-region.
+              Click "Diffusion" button to see further changes in an unbiased PN junction diode.        
+              </div>
+              <div id="step3">
+                Immediately after the junction is formed, due to non-uniform concentration on both sides, 
+                electrons and holes starts moving across the junction. This is Diffusion. 
+                Now, click "Apply Voltage" button to turn on the supply and vary the slider in steps of 8 V to 
+                observe depletion region extension.           
+              </div>
+              <div id="step4">
+                Immobile charges are accumulated near the junction and acts as a barrier (depletion region) and stops the flow 
+                of charge carriers across the junction.
+                Now , the negative is connected to p region and positive is connected to n region. Keep on varying the slider in step of 8 V 
+                to see what is coming up.  
+              </div>
+              <div id="step5">
+                YES ! Now the flow of electrons and holes across the junction is <strong>RESTRICTED</strong>
+                which is nothing but the negative terminal attracts holes in the p region leaving some immobile charge carriers.
+                 Similarly for n region vice versa.
+              </div>
+              <div id="step6">
+                Very small amount of current flows due to restricted movement of charge carriers. Hence diode never passes barrier potential as depletion region keeps on widens thus increasing the barrier potential.
+                 Reverse bias condition is similar to a parallel plate capacitor. 
+              </div>
+              <div id="step7">
+                At some point if reverse voltage is increased beyond particular value say 50 V for 1n4001 diode, 
+                large reverse current will flow damaging the crystal structure of the diode.
+              </div>
+            </center>
+            </div>
+      </div>
+    </div>  
+
+  </div>
+  </div>
+  <!-- Aim Workplace -->
+      <div id = "aim" class="theoryboxaim">
+          1. To plot the I-V Characteristics of PN junction diode under reverse bias condition.<br><br>
+          2. To find the reverse breakdown voltage and static resistance during reverse bias.
+      </div>
+
+  <!-- Theory Workplace -->
+  <div id="theory">
+  
+        <div class="row">
+          <div class="column" id="column1" >
+                <a href="#Depletion Region">Depletion Region</a>
+                <a href="#Reverse Biased">Reverse Biased</a> 
+                <a href="#Depletion Region widening">Depletion Region widening</a>               
+            </div>
+            <div class="column" id ="column2" >
+
+              <div class="space" id="Depletion Region" ><strong>Depletion Region</strong>
+              <p>
+                <li>While diffusion occurs, electrons from n region enter into p region and recombine with acceptor atoms which are holes.</li><br><br>
+                <li>Similarly, holes from p region enter into n region and recombine with donor atoms which are electrons.</li><br><br>
+                This recombination of electrons and holes creates <strong>:</strong><br><br>
+                <div style="margin-left: 25px;">
+                  <li>Immobile positive ions on n region and immobile negative ions on p region.</li><br><br>
+                  <li>These immobile charges acuumulated near the junction is called depletion region / barrier of a diode.</li><br><br>
+                  <li>After the barrier is formed, the movement of electrons / holes across the junction will be stopped.</li>
+                </div>
+              </p>
+              </div>              
+                
+              <div class="space" id="Reverse Biased"><strong>Reverse Biased</strong>
+              <p>
+                <li>When the p-region is tied up to a lower potential and the n-region to a higher potential
+                    the biasing condition is reverse biased.</li><br><br>
+                <li>The barrier has a voltage level, more likely it act as an electric field.</li><br><br>
+                <li>As the depletion region keeps on increasing , we cannot provide voltage above the barrier potential and hence the flow of <br><br><div style="margin-left: 25px;">charge carriers across the junction is restricted.</div></li><br><br>
+                <li>Thus the diode is in reverse biased mode.</li>
+              </p>
+              </div>
+
+              <div class="space" id="Depletion Region widening"><strong>Depletion Region widening</strong>
+                <p>
+                  <li>As we observe the connection in reverse bias, the negative terminal attracts the holes present in the p region.</li><br><br>
+                  <li>Similarly, the positive terminal attracts the electrons present in the n region.</li><br><br>
+                  <li>Thus more immobile ions accumulated on both sides increasing the barrier potential.</li><br><br>
+                  <li>Hence it is not possible to overcome the barrier and operate the diode in conduction state.</li><br><br>
+                </p>
+                </div>
+                                
+            </div>
+        </div>
+  </div>
+  
+  <!-- Procedure Workplace -->
+
+       <div id = "procedure" class="theoryboxaim">            
+            <strong>Step 1:</strong>      
+              Identify the P substrate and N substrate. Click the 'Form P-N Junction' button and observe the changes.  
+              <br><br><strong>Step 2:</strong>      
+              After the junction is formed, click 'Diffusion' button and observe changes.        
+              <br><br><strong>Step 3:</strong>
+              Switch ON the power supply by clicking the 'Apply voltage' button.          
+              <br><br><strong>Step 4:</strong>
+              Gradually increase the battery (50V DC) voltage from 0 V in steps of 8 V and observe changes 
+              by varying the voltage slider.
+              <br><br><strong>Step 5:</strong> 
+              Observe the changes happening inside the device while performing Step 4.     
+              <br><br><strong>Step 6:</strong>      
+              Note down the ammeter and voltmeter(Diode Voltage) readings.
+              <br><br><strong>Step 7:</strong>      
+              From the experiment carried out, find the reverse breakdown voltage and static resistance during reverse bias (R= V/I).
+              <br><br><strong>Step 8:</strong>      
+              Plot the readings in a graph and infer the I-V characteristics of the diode.
+        </div>
+  
+<!-- Prequiz Workplace -->
+      <div id = "prequiz">
+        <div id="quiz"></div>
+          <div id="results"></div><br><br>
+            <button id="submit">Submit Quiz</button>
+      </div>
+<!-- Outcome Workplace -->
+      <div id = "outcome" class="theoryboxaim">
+        At the end of the experiment, a student will able to explain : <br><br>
+        <li>What is PIV ?</li>
+        <li>When a PN junction diode is reverse biased ?</li>
+        <li>What is mobility of electrons ?</li>
+        <li>What is a depletion region ?</li>
+        <li>Why the depletion region keeps on increasing during reverse bias ?</li>
+        <li>When the barrier potential is created ?</li>
+        <li>Why the flow of charge carriers across the junction does not restarts during reverse bias ?</li>
+        <li>When a PN junction diode is reverse biased ?</li>
+        <li>What is breakdown voltage ?</li>
+        <li>What happens after the reverse breakdown ?</li>
+        <li>What are the applications of diode when operated in reverse bias condition ?</li>
+        <li>I-V relationship</li>
+    </div>
+<!-- Feedback Workplace -->
+      <div id="feedbaack">
+        <iframe id="myIframe" src="https://docs.google.com/forms/d/e/1FAIpQLSdpcXMEZmg41Cw1qmuq8c97csYlcJoYRXdPHPjdx7L16A56lQ/viewform?embedded=true" width="100%" height="1050" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+      </div>
+    </main>
+    
+    &emsp;&emsp; <button class="backbutton" onclick="window.location.href = 'analog_electronics_lab_main.html'"><< Back to list of Experiments</button> <br><br><br>
+
+    <footer style="background: linear-gradient(45deg,#004e92,#000428);">
+      Copyright &copy; 2021 &bull; TCE
+    </footer>
+
+  </body>
+</html>
