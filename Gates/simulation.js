@@ -235,5 +235,3 @@ title: "Input Characteristics - VBE Vs IB"
 // Display using Plotly
 Plotly.newPlot("myPlot", data, layout);
 }
-
-

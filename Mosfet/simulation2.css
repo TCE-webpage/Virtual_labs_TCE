@@ -4,48 +4,41 @@ html{
 body{
   overflow-x: hidden;
 }
-.HoriSlider{
+.HoriSlider1{
     position:absolute;
-    bottom:0%;
-    left:53%;
-    display: none;
+    bottom:8%;
+    left:33%;
+    /* display: none; */
     
   font-weight: bolder;
 }
-#VCErange{
-  display: none;
+
+input[type="range"] {
+  filter: hue-rotate(140deg); 
+  background-color: #2980B9;
 }
-input[type=range][orient=vertical]
-{
-     writing-mode: bt-lr;
-    -webkit-appearance: slider-vertical;
-    position: absolute;
-    width: 8%;
-    height: 17%;
-    padding: 0 5px;
-    left:33%;
-    bottom:11%;
-    background-color: brown;
-    /* display: none;   */
- }
- .VBEName{
-   font-weight: bolder;
- }
-#verti{
-  display: none;
+
+.HoriSlider2{
+  position:absolute;
+  top: 5%;
+  left:25%;
+  /* display: none; */
+  font-weight: bolder;
 }
+
  .Gif{
    position:relative;
  }
 .simBlock{
-    background-color:rgb(208, 236, 193);
+    background-color:#7F7F7F;
     border-radius:15px;
-    border: green double;
+    border: black double;
     width: 95%;
     margin-top:2%;
 }
 .meterBox{
-  background-color: rgb(187, 235, 163);
+  background-color:#7F7F7F;
+  /* background-color:pink; */
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   border-radius:0px 15px 15px 0px;
 }
@@ -58,12 +51,12 @@ input[type=range][orient=vertical]
     border: solid black 2px;
 } */
 .col{
-    border: green solid 3px;
+    border: black solid 3px;
 }
 
 .leftImg{
     position: relative;
-    background-color: rgb(208, 236, 193);
+    background-color:rgb(168, 164, 164);
     border-radius: 15px;
     margin: 0;
 }
@@ -73,14 +66,14 @@ input[type=range][orient=vertical]
     padding: 0.4em 1.3em;    
     border-radius: 0.2em;
 border:rgb(49, 49, 107) 2px solid;
-    color:#3f0d12 ;
+    color:#990033 ;
     font-size:x-large;
     margin-left: 2%;
 }
 .VCE{
     display:block;
     font: bold 1.7em "Fira Sans", serif;
-    color:#3f0d12;
+    color:#990033;
     margin-top: 10px;
 }
 
@@ -95,7 +88,7 @@ border:rgb(49, 49, 107) 2px solid;
   left: 35%;
   top: 120px;
   font-weight:  bold;
-  /* color:#3f0d12; */color:#3f0d12;
+  /* color:#3f0d12; */color:#990033;
   /* font-size: larger; */
   /* opacity:1%; */
 
@@ -105,7 +98,7 @@ border:rgb(49, 49, 107) 2px solid;
   left: 35%;
   top: 120px;
 font-weight: bold;
-color:#3f0d12;
+color:#990033;
 
 }
 .VBEName{
