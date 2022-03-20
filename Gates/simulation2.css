@@ -28,6 +28,7 @@ form {
 		linear-gradient(60deg,hsl(0,0%,50%) 24.5%,hsla(0,0%,50%,0) 25% 75%,hsl(0,0%,50%) 75.5%),
 
 		linear-gradient(45deg,hsl(0,0%,60%) 10%,hsl(0,0%,95%) 90%);
+    /* background: black; */
 	border-radius: 50% 50% / 0.65em 0.65em;
 	box-shadow: 0 0 0 0.08em hsl(0,0%,70%) inset;
 	margin: 0 1.25em;
@@ -42,7 +43,7 @@ form {
 	top: 50%;
 }
 .toggle:before, .toggle:after {
-	color: hsl(0,0%,100%);
+	color: black;
 	writing-mode: vertical-rl;
 	-webkit-writing-mode: vertical-rl;
 	text-align: center;
@@ -50,28 +51,28 @@ form {
 	height: 1.8em;
 }
 .toggle:before {
-	background: linear-gradient(90deg,hsl(350,100%,40%),hsl(350,100%,45%));
+	/* background: linear-gradient(90deg,hsl(350,100%,40%),hsl(350,100%,45%)); */
 	border-radius: 0.25em 0 0 0.25em / 50% 0 0 50%;
-	box-shadow:
+	/* box-shadow:
 		0.1em 0 0 hsl(0,0%,70%) inset,
 		0 0.1em 0 hsl(0,0%,70%) inset,
 		0 -0.1em 0 hsl(0,0%,70%) inset,
 		0 0 0 0.2em hsl(0,0%,60%) inset,
-		0.2em 0 0 hsl(0,0%,60%) inset;
+		0.2em 0 0 hsl(0,0%,60%) inset; */
 	content: "OFF";
 	left: 0;
 	transform: translate(-1.25em,-50%);
 	z-index: 1;
 }
 .toggle:after {
-	background: linear-gradient(90deg,hsl(210,100%,40%),hsl(210,100%,45%));
+	/* background: linear-gradient(90deg,hsl(210,100%,40%),hsl(210,100%,45%)); */
 	border-radius: 0 0.25em 0.25em 0 / 0 50% 50% 0;
-	box-shadow:
+	/* box-shadow:
 		-0.1em 0 0 hsl(0,0%,70%) inset,
 		0 0.1em 0 hsl(0,0%,70%) inset,
 		0 -0.1em 0 hsl(0,0%,70%) inset,
 		0 0 0 0.2em hsl(0,0%,60%) inset,
-		-0.2em 0 0 hsl(0,0%,60%) inset;
+		-0.2em 0 0 hsl(0,0%,60%) inset; */
 	content: "ON";
 	right: 0;
 	transform: translate(1.25em,-50%);
@@ -423,4 +424,10 @@ body{
   border: aqua;
   border-radius:3px;
   
+}
+
+.power_switch{
+  position:absolute;
+  top: 3%;
+  left: 3%;
 }

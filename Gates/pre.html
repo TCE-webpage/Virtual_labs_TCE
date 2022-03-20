@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="Thiagarajar_College_of_Engineering_logo.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://kit.fontawesome.com/9e3072cf14.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="main.css" type="text/css">
     <link rel="stylesheet" href="pre.css">
     <!-- <script src="pre.js"></script> -->
-    <title>MOSFET</title>
+    <title>LOGIC GATES</title>
 </head>
 <body>
     <container class="mainBody">
@@ -41,7 +42,7 @@
         </nav>
       </container>
       <div class="BJT">
-       <h1>MOSFET</h1> 
+       <h1>LOGIC GATES</h1> 
       </div>
       <container>
         <nav class="navbar navbar-expand-lg navbar-light d-none d-sm-none d-lg-block">
@@ -98,6 +99,7 @@
         <div class="questionArea">
           <div class="question">...</div>
           <div class="options">
+            
         
           </div>
         </div>
@@ -120,59 +122,134 @@
 
         <script>
             /* ====== Questions ====== */
+            var andAns,notAns,orAns,nandAns,norAns,exorAns,exnorAns;
+            andAns=notAns=orAns=nandAns=norAns=exorAns=exnorAns=false;
+            var andAnsIc,notAnsIc,orAnsIc,nandAnsIc,norAnsIc,exorAnsIc,exnorAnsIc;
+            andAnsIc=notAnsIc=orAnsIc=nandAnsIc=norAnsIc=exorAnsIc=exnorAnsIc=false;
+            function allowDrop(ev) {
+      ev.preventDefault();
+            }
+    function drag(ev) {
+      ev.dataTransfer.setData("dg", ev.target.id);
+    }
+    
+    function drop(ev) {
+      ev.preventDefault();
+      var data1 = ev.dataTransfer.getData("dg");
+      var data2 = ev.target.id;
+      var evtarget =ev.target;
+      if (evtarget=="[object HTMLImageElement]"){
+               evtarget = evtarget.parentNode;
+          }
+          else {
+          ev.target.appendChild(document.getElementById(data1));
+          }
+      if (data2=="div8" || data2=="andOpt"){
+          if(data1=="drag3" || data1=="andIc"){
+            console.log("Correct!!--drag3 in div8");
+            andAns=true;andAnsIc=true;
+          }
+          else{
+            console.log("Wrong??");
+            andAns=false;andAnsIc=false;
+          }
+      }
+      else if(data2=="div9" || data2=="orOpt"){
+         if(data1=="drag4" || data1=="orIc"){
+            console.log("Correct!!--drag4 in div9");
+            notAns=true;orAnsIc=true;
+         } 
+         else{
+            console.log("wrong??");
+            notAns=false;orAnsIc=false;
+         }
+      }
+      else if(data2=="div10" || data2=="notOpt"){
+          if(data1=="drag1" || data1=="notIc"){
+              console.log("Correct!!--drag1 in div10");
+              orAns=true;notAnsIc=true;
+          }
+          else{
+            console.log("wrong??");
+            orAns=false;notAnsIc=false;
+         }
+      }
+      else if(data2=="div11" || data2=="nandOpt"){
+          if(data1=="drag2" || data1=="nandIc"){
+              console.log("Correct!!--drag2 in div11");
+              nandAns=true;nandAnsIc=true;
+          }
+          else{
+            console.log("wrong??");
+            nandAns=false;nandAnsIc=false;
+         }
+      }
+      else if(data2=="div12" || data2=="norOpt"){
+          if(data1=="drag6" || data1=="norIc"){
+              console.log("Correct!!--drag6 in div12");
+              norAns=true;norAnsIc=true;
+          }
+          else{
+            console.log("wrong??");
+            norAns=false;norAnsIc=false;
+         }
+      }
+      else if(data2=="div13" || data2=="exorOpt"){
+          if(data1=="drag7" || data1=="exorIc"){
+              console.log("Correct!!--drag7 in div13");
+              exorAns=true;exorAnsIc=true;
+          }
+          else{
+            console.log("wrong??");
+            exorAns=false;exorAnsIc=false;
+         }
+      }
+      else if(data2=="div14" || data2=="exnorOpt"){
+          if(data1=="drag5" || data1=="exnorIc"){
+              console.log("Correct!!--drag5 in div114");
+              exnorAns=true;exnorAnsIc=true;
+          }
+          else{
+            console.log("wrong??");
+            exnorAns=false;exnorAnsIc=false;
+         }
+      }
+    
+    }
 let questions = [
     {
-      question: '1) The amplification of the signal is achieved by passing input current signal from a region of __________ resistance to a region of __________ resistance.',
+      question: '1) Drag and Drop',
+      options: [],
+      answer:0
+    },
+    {
+      question: "2) Exclusive-OR (XOR) logic gates can be constructed from _____ logic gates?",
       options: [
-               "High, low","High, high","Low, high","Low, low"
-              ],
+        "OR gates only",
+        "AND gates and NOT gates",
+        "AND gates, OR gates, and NOT gates",
+        "OR gates and NOT gates"
+      ],
       answer: 2
     },
     {
-      question: "2) Which region of the BJT is very thin and lightly doped?",
-      options: [
-        "Collector",
-        "Base",
-        "Emitter",
-        "Both 1 and 2"
-      ],
-      answer: 1
-    },
-    {
-      question: '3) Depletion region penetrates less in',
-      options: ["Heavily doped region",
-                "Lightly doped region",
-                "Region with more area", 
-                "Region with less area"
+      question: '3) An AND gate ____',
+      options: [" is equivalent to a series switching circuit",
+                " is equivalent to a parallel switching circuit",
+                "is a universal gate", 
+                "is a combination of series and switching circuits"
       ],
       answer: 0
     },
     {
-      question: "4) Application of Transistor at Saturation region",
-      options: ["Amplifier",
-                "Closed switch",
-                "Analog switching circuits",
-                "Open switch"
-        ],
-      answer: 3
+      question: "4) Drag and Drop",
+      options: [],
+      answer: 0
     },
     {
-      question: '5) In CE configuration input is applied between base and emitter, and output is taken from',
-      options: ["Base and Emitter",
-                "Collector",
-                "Collector and Emitter",
-                "Base and Collector"
-    ],
+      question: '5) The output will be a LOW for any case when one or more inputs are zero in a/an',
+      options: ["OR Gate","NOT Gate","AND Gate","NAND Gate"],
     answer: 2
-    },
-    {
-      question: "6) CE input characteristics resembles ",
-      options: ["Forward-biased diode curves",
-                "Zener diode curves",
-                "Reverse-biased diode curves",
-                "None of the above"
-],
-      answer: 0
     }
   ];
   /* ======== End ======== */
@@ -209,25 +286,135 @@ let questions = [
       questionArea.style.display = "block";
   
       document.querySelector(".question").innerHTML = q.question;
-  
-      let optionsHtml = "";
-  
+      let optionsHtml ="";
+  if (currentQuestion==0){
+      optionsHtml = `<div class="row">
+      <div id="div1" class="col-1 offset-2 option2" ondrop="drop(event)" ondragover="allowDrop(event)">
+  <img src="prequizImages/or.png" draggable="true" ondragstart="drag(event)" id="drag1" width="88" height="31">
+</div>
+<div id="div2" class="col-1 option2" ondrop="drop(event)" ondragover="allowDrop(event)">
+    <img src="prequizImages/nand.png" draggable="true" ondragstart="drag(event)" id="drag2" width="88" height="31">
+</div>
+<div id="div3" class="col-1 option2" ondrop="drop(event)" ondragover="allowDrop(event)">
+    <img src="prequizImages/and.png" draggable="true" ondragstart="drag(event)" id="drag3" width="88" height="31">
+</div>
+<div id="div4" class="col-1 option2" ondrop="drop(event)" ondragover="allowDrop(event)">
+    <img src="prequizImages/not.png" draggable="true" ondragstart="drag(event)" id="drag4" width="88" height="31">
+</div>
+<div id="div5" class="col-1 option2" ondrop="drop(event)" ondragover="allowDrop(event)">
+    <img src="prequizImages/xnor.png" draggable="true" ondragstart="drag(event)" id="drag5" width="88" height="31">
+</div>
+<div id="div6" class="col-1 option2" ondrop="drop(event)" ondragover="allowDrop(event)">
+    <img src="prequizImages/nor.png" draggable="true" ondragstart="drag(event)" id="drag6" width="88" height="31">
+</div>
+<div id="div7" class="col-1 option2" ondrop="drop(event)" ondragover="allowDrop(event)">
+    <img src="prequizImages/xor.png" draggable="true" ondragstart="drag(event)" id="drag7" width="88" height="31">
+</div>
+</div>
+<div class="row">
+<div id="opt1" class="col-3 option2">And</div>
+<div id="div8" class="col-3 option2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<div id="opt4" class="col-3 option2">Nand</div>
+<div id="div11" class="col-3 option2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+</div>
+<div class="row">
+<div id="opt2" class="col-3 option2">Not</div>
+<div id="div9" class="col-3 option2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<div id="opt5" class="col-3 option2">Nor</div>
+<div id="div12" class="col-3 option2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+</div>
+<div class="row">
+<div id="opt3" class="col-3 option2">Or</div>
+<div id="div10" class="col-3 option2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<div id="opt6" class="col-3 option2">Xor</div>
+<div id="div13" class="col-3 option2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+</div>
+<div class="row">
+<div id="opt7" class="col-3 option2 ">Xnor</div>
+<div id="div14" class="col-3 option2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<button  class="nextbtn col-3 offset-3 " onclick="optClick()">Next</button>
+</div>
+`;
+  }
+  else if(currentQuestion==3){
+    optionsHtml = `<div  class="row">
+      <div id="nandOptt"class="col-1 offset-2 option2" ondrop="drop(event)" ondragover="allowDrop(event)">
+  <div id="orIc" class="optClr" draggable="true" ondragstart="drag(event)">IC7432</div>
+</div>
+<div id="andOptt" class="col-1 option2" ondrop="drop(event)" ondragover="allowDrop(event)">
+    <div id="notIc" class="optClr" draggable="true" ondragstart="drag(event)">IC7404</div>
+</div>
+<div id="orOptt" class="col-1 option2" ondrop="drop(event)" ondragover="allowDrop(event)">
+  <div id="andIc" class="optClr" draggable="true" ondragstart="drag(event)">IC7408</div>
+  </div>
+<div id="notOptt" class="col-1 option2" ondrop="drop(event)" ondragover="allowDrop(event)">
+  <div id="nandIc" class="optClr" draggable="true" ondragstart="drag(event)">IC7400</div>
+  </div>
+<div id="norOptt" class="col-1 option2" ondrop="drop(event)" ondragover="allowDrop(event)">
+  <div id="xnorIc" class="optClr" draggable="true" ondragstart="drag(event)">IC74266</div>
+  </div>
+<div  id="xorOptt" class="col-1 option2" ondrop="drop(event)" ondragover="allowDrop(event)">
+  <div id="norIc" class="optClr" draggable="true" ondragstart="drag(event)">IC7402</div>
+  </div>
+<div id="xnorOptt" class="col-1 option2" ondrop="drop(event)" ondragover="allowDrop(event)">
+  <div id="xorIc" class="optClr" draggable="true" ondragstart="drag(event)">IC7486</div>
+  </div>
+</div>
+<div class="row">
+<div id="opt1" class="col-3 option2">And</div>
+<div id="andOpt" class="col-3 option2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<div id="optt4" class="col-3 option2">Nand</div>
+<div id="nandOpt" class="col-3 option2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+</div>
+<div class="row">
+<div id="optt2" class="col-3 option2">Not</div>
+<div id="notOpt" class="col-3 option2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<div id="optt5" class="col-3 option2">Nor</div>
+<div id="norOpt" class="col-3 option2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+</div>
+<div class="row">
+<div id="optt3" class="col-3 option2">Or</div>
+<div id="orOpt" class="col-3 option2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<div id="optt6" class="col-3 option2">Xor</div>
+<div id="xorOpt" class="col-3 option2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+</div>
+<div class="row">
+<div id="optt7" class="col-3 option2">Xnor</div>
+<div id="xnorOpt" class="col-3 option2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<button class="nextbtn col-3 offset-3" onclick="optClick()">Next</button>
+</div>`;
+  }
+  else{
       for (let i in q.options) {
         optionsHtml += `<div data-op="${i}" class="option"><span> ${
           parseInt(i) + 1
         }</span> ${q.options[i]}</div>`;
       }
-  
+  }
       document.querySelector(".options").innerHTML = optionsHtml;
-  
       document.querySelectorAll(".options .option").forEach((item) => {
         item.addEventListener("click", optionsClickEvent);
       });
+
     } else {
       finishQuiz();
     }
   }
-  
+  function optClick(){
+    var bool=false
+    if(currentQuestion==0){
+    bool=andAns && notAns && orAns && nandAns && norAns && exorAns && exnorAns;
+      }
+    else{
+      bool=andAnsIc && notAnsIc && orAnsIc && nandAnsIc && norAnsIc && exorAnsIc && exnorAnsIc;
+    }
+    console.log(bool);
+    if(bool){
+    correctAnswers++;
+  }
+    currentQuestion++;
+    showQuestion();
+  }
   function optionsClickEvent(e) {
     let clickedOption = parseInt(e.target.getAttribute("data-op"));
   
