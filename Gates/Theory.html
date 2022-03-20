@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="main.css" type="text/css">
   <link rel="stylesheet" href="Theory.css" type="text/css">
   <script src="main.js"></script>
+  <script src="theory.js"></script>
   <title>LOGIC GATES</title>
 </head>
 <body>
@@ -94,13 +95,55 @@
                 <li class="nav-item"><a class="nav-link fs-6 fw-bold" href="#Truth Table">Truth Table</a></li>
                 <li class="nav-item"><a class="nav-link fs-6 fw-bold" href="#Boolean Expression">Boolean Expression</a></li>
                 <li class="nav-item"><a class="nav-link fs-6 fw-bold" href="#Types of Logic Gates">Types of Logic Gates</a></li>
-                <li class="nav-item"><a class="nav-link fs-6 fw-bold" href="#NOT Gate">NOT Gate</a></li>
-                <li class="nav-item"><a class="nav-link fs-6 fw-bold" href="#AND Gate">AND Gate</a></li>
-                <li class="nav-item"><a class="nav-link fs-6 fw-bold" href="#OR Gate">OR Gate</a></li>
-                <li class="nav-item"><a class="nav-link fs-6 fw-bold" href="#NAND Gate">NAND Gate</a></li>
-                <li class="nav-item"><a class="nav-link fs-6 fw-bold" href="#NOR Gate">NOR Gate</a></li>
-                <li class="nav-item"><a class="nav-link fs-6 fw-bold" href="#X-OR Gate">X-OR Gate</a></li>
-                <li class="nav-item"><a class="nav-link fs-6 fw-bold" href="#X-NOR Gate">X-NOR Gate</a></li>
+                <li class="nav-item"><a class="nav-link fs-6 fw-bold" href="#NOT Gate" onclick="notfn()">NOT Gate <i class="fas fa-solid fa-caret-down"></i> </a></li>
+                <div id="notDrop">
+                <li  class="nav-item" style="background-color: rgb(189, 188, 188)"><a class="nav-link fs-6 fw-bold " href="#notDef" >Defenition</a></li>
+                <li class="nav-item" style="background-color: rgb(189, 188, 188)"><a class="nav-link fs-6 fw-bold" href="#notTT">Truth Table</a></li>
+                <li class="nav-item" style="background-color: rgb(189, 188, 188)"><a class="nav-link fs-6 fw-bold" href="#notTD">Timing Diagram</a></li>
+                <li class="nav-item" style="background-color: rgb(189, 188, 188)"><a class="nav-link fs-6 fw-bold" href="#notBE">Boolean Expression</a></li>
+                </div>
+                <li class="nav-item"><a class="nav-link fs-6 fw-bold" href="#AND Gate" onclick="andfn()">AND Gate <i class="fas fa-solid fa-caret-down"></i> </a></li>
+                <div id="andDrop">
+                  <li  class="nav-item" style="background-color: rgb(189, 188, 188)"><a class="nav-link fs-6 fw-bold " href="#andDef" >Defenition</a></li>
+                  <li class="nav-item" style="background-color: rgb(189, 188, 188)"><a class="nav-link fs-6 fw-bold" href="#andTT">Truth Table</a></li>
+                  <li class="nav-item" style="background-color: rgb(189, 188, 188)"><a class="nav-link fs-6 fw-bold" href="#andTD">Timing Diagram</a></li>
+                  <li class="nav-item" style="background-color: rgb(189, 188, 188)"><a class="nav-link fs-6 fw-bold" href="#andBE">Boolean Expression</a></li>
+                  </div>
+                <li class="nav-item"><a class="nav-link fs-6 fw-bold" href="#OR Gate" onclick="orfn()">OR Gate <i class="fas fa-solid fa-caret-down"></i> </a></li>
+                <div id="orDrop">
+                  <li  class="nav-item" style="background-color: rgb(189, 188, 188)"><a class="nav-link fs-6 fw-bold " href="#orDef" >Defenition</a></li>
+                  <li class="nav-item" style="background-color: rgb(189, 188, 188)"><a class="nav-link fs-6 fw-bold" href="#orTT">Truth Table</a></li>
+                  <li class="nav-item" style="background-color: rgb(189, 188, 188)"><a class="nav-link fs-6 fw-bold" href="#orTD">Timing Diagram</a></li>
+                  <li class="nav-item" style="background-color: rgb(189, 188, 188)"><a class="nav-link fs-6 fw-bold" href="#orBE">Boolean Expression</a></li>
+                  </div>
+                <li class="nav-item"><a class="nav-link fs-6 fw-bold" href="#NAND Gate" onclick="nandfn()">NAND Gate <i class="fas fa-solid fa-caret-down"></i> </a></li>
+                <div id="nandDrop">
+                  <li  class="nav-item" style="background-color: rgb(189, 188, 188)"><a class="nav-link fs-6 fw-bold " href="#nandDef" >Defenition</a></li>
+                  <li class="nav-item" style="background-color: rgb(189, 188, 188)"><a class="nav-link fs-6 fw-bold" href="#nandTT">Truth Table</a></li>
+                  <li class="nav-item" style="background-color: rgb(189, 188, 188)"><a class="nav-link fs-6 fw-bold" href="#nandTD">Timing Diagram</a></li>
+                  <li class="nav-item" style="background-color: rgb(189, 188, 188)"><a class="nav-link fs-6 fw-bold" href="#nandBE">Boolean Expression</a></li>
+                  </div>
+                <li class="nav-item"><a class="nav-link fs-6 fw-bold" href="#NOR Gate" onclick="norfn()">NOR Gate <i class="fas fa-solid fa-caret-down"></i> </a></li>
+                <div id="norDrop">
+                  <li  class="nav-item" style="background-color: rgb(189, 188, 188)"><a class="nav-link fs-6 fw-bold " href="#norDef" >Defenition</a></li>
+                  <li class="nav-item" style="background-color: rgb(189, 188, 188)"><a class="nav-link fs-6 fw-bold" href="#norTT">Truth Table</a></li>
+                  <li class="nav-item" style="background-color: rgb(189, 188, 188)"><a class="nav-link fs-6 fw-bold" href="#norTD">Timing Diagram</a></li>
+                  <li class="nav-item" style="background-color: rgb(189, 188, 188)"><a class="nav-link fs-6 fw-bold" href="#norBE">Boolean Expression</a></li>
+                  </div>
+                <li class="nav-item"><a class="nav-link fs-6 fw-bold" href="#X-OR Gate" onclick="xorfn()">X-OR Gate <i class="fas fa-solid fa-caret-down"></i> </a></li>
+                <div id="xorDrop">
+                  <li  class="nav-item" style="background-color: rgb(189, 188, 188)"><a class="nav-link fs-6 fw-bold " href="#xorDef" >Defenition</a></li>
+                  <li class="nav-item" style="background-color: rgb(189, 188, 188)"><a class="nav-link fs-6 fw-bold" href="#xorTT">Truth Table</a></li>
+                  <li class="nav-item" style="background-color: rgb(189, 188, 188)"><a class="nav-link fs-6 fw-bold" href="#xorTD">Timing Diagram</a></li>
+                  <li class="nav-item" style="background-color: rgb(189, 188, 188)"><a class="nav-link fs-6 fw-bold" href="#xorBE">Boolean Expression</a></li>
+                  </div>
+                <li class="nav-item"><a class="nav-link fs-6 fw-bold" href="#X-NOR Gate" onclick="xnorfn()">X-NOR Gate <i class="fas fa-solid fa-caret-down"></i> </a></li>
+                <div id="xnorDrop">
+                  <li  class="nav-item" style="background-color: rgb(189, 188, 188)"><a class="nav-link fs-6 fw-bold " href="#xnorDef" >Defenition</a></li>
+                  <li class="nav-item" style="background-color: rgb(189, 188, 188)"><a class="nav-link fs-6 fw-bold" href="#xnorTT">Truth Table</a></li>
+                  <li class="nav-item" style="background-color: rgb(189, 188, 188)"><a class="nav-link fs-6 fw-bold" href="#xnorTD">Timing Diagram</a></li>
+                  <li class="nav-item" style="background-color: rgb(189, 188, 188)"><a class="nav-link fs-6 fw-bold" href="#xnorBE">Boolean Expression</a></li>
+                  </div>
 
             </ul>
         </div>
@@ -141,7 +184,7 @@
           <div class="space" id="NOT Gate"><strong>Not gate</strong>
             <p class="points">
               <div>
-              <strong>Definition</strong>
+              <strong id="notDef">Definition</strong>
               <div>
               <li>The inverter (NOT circuit) performs the operation called inversion or complementation. The inverter changes one logic level to the opposite level.</li><br>
               <li>In terms of bits, it changes 1 to  0 and  0 to 1.</li>
@@ -153,18 +196,18 @@
               <li>When appearing on the input, it means that a LOW level is the active or asserted input state. </li><br>
               <li>When appearing on the output, it means that a LOW level is the active or asserted output state.</li><br></div>
               
-              <strong>Truth table</strong>
+              <strong id="notTT">Truth table</strong>
               <div>
               <li>When a HIGH level is applied to an inverter input, a LOW level will appear on its output.</li><br>
               <li>When a LOW level is applied to its input, a HIGH will appear on its output.</li><br>
               <div class="pic">              
                 <img  src="theory_images/Not_Gate_TT.png" >
               </div></div>
-              <strong>Timing Diagram</strong>
+              <strong id="notTD">Timing Diagram</strong>
               <div class="pic">              
                 <img  src="theory_images/Not_Gate_Timing.png" >
               </div>
-              <strong>Boolean Expression</strong>
+              <strong id="notBE">Boolean Expression</strong>
               <li>The complement of a variable is designated by a bar over the letter.</li><br>
               <li>A variable can take on a value of either 1 or 0. If a given variable is 1, its complement is 0 and vice versa. </li><br>
               <li>The operation of an inverter (NOT circuit) can be expressed as follows. If the input variable is called A and the output variable is called X, then <p class="text-center"><b> X = Ā </b></p> </li><br>
@@ -176,7 +219,7 @@
           <div class="space" id="AND Gate"><strong>And gate</strong>
             <p class="points">
               <div>
-              <strong>Definition</strong>
+              <strong id="andDef">Definition</strong>
               <div>
               <li>An AND gate produces a HIGH output only when all of the inputs are HIGH.</li><br>
               <li>When any of the inputs is LOW, the output is LOW.</li>
@@ -187,7 +230,7 @@
               <img  src="theory_images/AND_GATE_Symbol.png" >
               </div>
             
-              <strong>Truth table</strong>
+              <strong id="andTT">Truth table</strong>
               <div>
               <li>The logical operation of a gate can be expressed with a truth table that lists all input combinations with the corresponding outputs, for a 2-input AND gate.</li><br>
              
@@ -200,11 +243,11 @@
                 For three input variables: <b>N = 2<sup>3</sup></b>= 8 combinations
                </li><br>
             </div>
-              <strong>Timing Diagram</strong>
+              <strong id="andTD">Timing Diagram</strong>
               <div class="pic">              
                 <img  src="theory_images/AND_GATE_TIMING.png" >
               </div>
-              <strong>Boolean Expression</strong>
+              <strong id="andBE">Boolean Expression</strong>
               <li>The operation of a 2-input AND gate can be expressed in equation form as follows</li><br>
               <li>If one input variable is A, if the other input variable is B, and if the output variable is X, then the Boolean expression is
                 <p class="text-center"><b>X = A.B</b></p></li><br>
@@ -217,7 +260,7 @@
           <div class="space" id="OR Gate"><strong>Or gate</strong>
             <p class="points">
               <div>
-              <strong>Definition</strong>
+              <strong id="orDef">Definition</strong>
               <div>
               <li>An OR gate produces a HIGH on the output when any of the inputs is HIGH</li><br>
               <li>The output is LOW only when all of the inputs are LOW.</li>
@@ -228,7 +271,7 @@
               <img  src="theory_images/OR_GATE_SYMBOL.png" >
               </div>
             
-              <strong>Truth table</strong>
+              <strong id="orTT">Truth table</strong>
               <div>
               <li>This truth table can be expanded for any number of inputs; but regardless of the number of inputs, the output is HIGH when one or more of the inputs are HIGH.</li><br>
              
@@ -237,12 +280,12 @@
               </div>
             </div>
 
-              <strong>Timing Diagram</strong>
+              <strong id="orTD">Timing Diagram</strong>
               <div class="pic">              
                 <img  src="theory_images/OR_GATE_TIMING.png" >
               </div>
 
-              <strong>Boolean Expression</strong>
+              <strong id="orBE">Boolean Expression</strong>
               <li>Boolean addition is the same as the OR function.</li>
               <li>Boolean addition differs from binary addition in the case where two 1s are added. </li>
               <li>There is no carry in Boolean addition. </li>
@@ -258,7 +301,7 @@
           <div class="space" id="NAND Gate"><strong>Nand gate</strong>
             <p class="points">
               <div>
-              <strong>Definition</strong>
+              <strong id="nandDef">Definition</strong>
               <div>
               <li>The term NAND is a contraction of NOT-AND and implies an AND function with a complemented (inverted) output. </li><br>
               <li>The standard logic symbol for a 2-input NAND gate and its equivalency to an AND gate followed by an inverter are shown in figure where the symbol ≡ means equivalent to.</li>
@@ -270,7 +313,7 @@
               <img  src="theory_images/NAND_GATE_SYMBOL.png" >
               </div>
             
-              <strong>Truth table</strong>
+              <strong id="nandTT">Truth table</strong>
               <div>
               <li>Truth table summarizing the logical operation of the 2-input NAND gate is given below.</li><br>
              
@@ -279,12 +322,12 @@
               </div>
             </div>
 
-              <strong>Timing Diagram</strong>
+              <strong id="nandTD">Timing Diagram</strong>
               <div class="pic">              
                 <img  src="theory_images/NAND_GATE_TIMING.png" >
               </div>
 
-              <strong>Boolean Expression</strong>
+              <strong id="nandBE">Boolean Expression</strong>
               <li>If one input variable is A, if the other input variable is B, and if the output variable is X, then the Boolean expression is
                 <p class="text-center"><b>X = <span style="text-decoration: overline;">AB</span></b></p></li><br>
               <li>This expression says that the two input variables, A and B, are first ANDed and then complemented, as indicated by the bar over the AND expression.</li><br>    
@@ -294,7 +337,7 @@
             <div class="space" id="NOR Gate"><strong>Nor gate</strong>
               <p class="points">
                 <div>
-                <strong>Definition</strong>
+                <strong id="norDef">Definition</strong>
                 <div>
                 <li>•	The NOR gate, like the NAND gate, is a useful logic element because it can also be used as a universal gate;  that is, NOR gates can be used in combination to perform the AND, OR, and inverter operations..</li><br>
                 <li>The standard logic symbol for a 2-input NAND gate and its equivalency to an AND gate followed by an inverter are shown in figure where the symbol ≡ means equivalent to.</li>
@@ -306,7 +349,7 @@
                 <img  src="theory_images/NAND_GATE_SYMBOL.png" >
                 </div>
               
-                <strong>Truth table</strong>
+                <strong id="norTT">Truth table</strong>
                 <div>
                 <li>Truth table summarizing the logical operation of the 2-input NAND gate is given below.</li><br>
                
@@ -315,12 +358,12 @@
                 </div>
               </div>
   
-                <strong>Timing Diagram</strong>
+                <strong id="norTD">Timing Diagram</strong>
                 <div class="pic">              
                   <img  src="theory_images/NAND_GATE_TIMING.png" >
                 </div>
   
-                <strong>Boolean Expression</strong>
+                <strong id="norBE">Boolean Expression</strong>
                 <li>If one input variable is A, if the other input variable is B, and if the output variable is X, then the Boolean expression is
                   <p class="text-center"><b>X = <span style="text-decoration: overline;">AB</span></b></p></li><br>
                 <li>This expression says that the two input variables, A and B, are first ANDed and then complemented, as indicated by the bar over the AND expression.</li><br>    
@@ -331,7 +374,7 @@
             <div class="space" id="X-OR Gate"><strong>X-or gate</strong>
               <p class="points">
                 <div>
-                <strong>Definition</strong>
+                <strong id="xorDef">Definition</strong>
                 <div>
                 <li>The output of an exclusive-OR gate is HIGH only when the two inputs are at opposite logic levels.</li><br>
                 <div class="pic">              
@@ -342,7 +385,7 @@
                 <img  src="theory_images/EX-OR_GATE_SYMBOL.png" >
                 </div>
               
-                <strong>Truth table</strong>
+                <strong id="xorTT">Truth table</strong>
                 <div>
                 <li>Truth table summarizing the logical operation of the 2-input X-OR gate is given below.</li><br>
                
@@ -351,12 +394,12 @@
                 </div>
               </div>
   
-                <strong>Timing Diagram</strong>
+                <strong id="xorTD">Timing Diagram</strong>
                 <div class="pic">              
                   <img  src="theory_images/EX-OR_GATE_TIMING.png">
                 </div>
   
-                <strong>Boolean Expression</strong>
+                <strong id="xorBE">Boolean Expression</strong>
                 <li>If there are two inputs A and B then, the Boolean expression for the XOR gate is:
                   <p class="text-center"><b> X = A ⨁ B = <span style="text-decoration: overline;">A</span>B+A<span style="text-decoration: overline;">B</span></b></p></li><br>
 
@@ -365,7 +408,7 @@
               <div class="space" id="X-NOR Gate"><strong>X-nor gate</strong>
                 <p class="points">
                   <div>
-                  <strong>Definition</strong>
+                  <strong id="xnorDef">Definition</strong>
                   <div>
                   <li>The bubble on the output of the XNOR symbol indicates that its output is opposite that of the XOR gate.</li><br>
                   <li>When the two input logic levels are opposite, the output of the exclusive-NOR gate is LOW.</li>
@@ -377,7 +420,7 @@
                   <img  src="theory_images/EX-NOR_GATE_SYMBOL.png" >
                   </div>
                 
-                  <strong>Truth table</strong>
+                  <strong id="xnorTT">Truth table</strong>
                   <div>
                   <li>Truth table summarizing the logical operation of the 2-input X-NOR gate is given below.</li><br>
                  
@@ -386,12 +429,12 @@
                   </div>
                 </div>
     
-                  <strong>Timing Diagram</strong>
+                  <strong id="xnorTD">Timing Diagram</strong>
                   <div class="pic">              
                     <img  src="theory_images/EX-NOR_GATE_TIMING.png">
                   </div>
     
-                  <strong>Boolean Expression</strong>
+                  <strong id="xnorBE">Boolean Expression</strong>
                   <li>If there are two inputs A and B then, the Boolean expression for the XNOR gate is:
                     <p class="text-center"><b> X = A ⊙ B = AB + <span style="text-decoration: overline;">A</span><span style="text-decoration: overline;">B</span></b></p></li><br>
   

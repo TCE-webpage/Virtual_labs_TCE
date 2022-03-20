@@ -101,3 +101,6 @@ font-variant: normal;
 .pic{
 margin-left: 12.5% !important;
 }
+#notDrop, #andDrop, #orDrop, #nandDrop, #norDrop, #xorDrop, #xnorDrop{
+  display: none;
+}
