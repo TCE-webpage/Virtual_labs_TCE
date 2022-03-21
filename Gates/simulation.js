@@ -157,23 +157,34 @@ function displayfn3(){
  var xArray=[0];
  var yArray=[0];
  var i=1;
+ var A=false
+ function table(){
+  A=document.getElementById("toggle3").checked;
+  console.log(A);
+  tabled();
+
+ }
  function tabled(){
- var vce = document.getElementById("VCErange").value;
- document.getElementById("tbvce1").innerHTML = vce+" V";
+ var vce = document.getElementById("toggle3").value;
+//  document.getElementById("tbvce1").innerHTML =" V";
 
  var sno = ++tabrowindex;
- var vbe = document.getElementById("gaugeValue-demoGauge").value;
- var ib = gauge2val;
+ var input = 0;
+ var output=1
+ if(A){
+   input=1;
+   output=0;
+ }
  var table = document.getElementById("mytable");
  var row = table.insertRow(-1);
  var cell1 = row.insertCell(0);
  var cell2 = row.insertCell(1);
  var cell3 = row.insertCell(2);
  cell1.innerHTML = sno;
- cell2.innerHTML = vbe;
- cell3.innerHTML = ib;   
- xArray[i]=vbe;
- yArray[i]=ib;
+ cell2.innerHTML = input;
+ cell3.innerHTML = output;   
+ xArray[i]=input;
+ yArray[i]=output;
  i+=1;    
 }
 function deleted(){
@@ -235,3 +246,10 @@ title: "Input Characteristics - VBE Vs IB"
 // Display using Plotly
 Plotly.newPlot("myPlot", data, layout);
 }
+//input toggler switch
+var toggle3 = document.getElementById('toggle3');
+// if(typeof toggle3 !== null && toggle3 !== 'undefined' ) {
+//   toggle3=document.getElementById("toggle3").innerHTML;
+// }
+var toggle3 = document.getElementById('toggle3');
+toggle3.addEventListener("click", () => document.body.classList.toggle('on') , false);
