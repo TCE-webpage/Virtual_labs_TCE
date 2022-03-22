@@ -49,3 +49,7 @@ function EMosfn(){
         x.style.display = "block";
       }
 }
+
+function blackcolor(){
+  document.getElementById("colorblack").style.color="black";
+}
