@@ -105,21 +105,20 @@
       <div class="row">
       <div class="leftImg col-7" >
       <div class="Gif">
-      <img  id="img" src="simulation_gif/Presentation1 (1).png" width="90%" >
-      <div class="HoriSlider1" ><input type="range" id="VDSrange" value="0" min="0" max="40" step="0.1" onInput="updateVDSlabel()">VDS</div>
-      <div class="HoriSlider2" ><input type="range" id="VDSrange" value="0" min="0" max="40" step="0.1" onInput="updateVDSlabel()">VDS</div>
-
+      <img  id="img" src="simulation_gif/Intro _img.jpg" width="90%" >
+      <div class="HoriSlider1" ><input type="range" id="VDSrange" value="0" min="0" max="60" step="0.1" onInput="updateVDSlabel(0,60)">VDS</div>
+      <div class="HoriSlider2" ><input type="range" id="VGSrange" value="0" min="0" max="30" step="0.02" onInput="updateVGSlabel()">VGS</div>
       </div>
       <div>
-      
+              
       <a href="simulation2.html"><button type=button  class="btn btn-danger scale resetbtn p-1">
         Reset</button></a>
       </div>
       </div>
       <div class="meterBox col-5 container-fluid">
           <div class="meterBoxrow ">
-        <div class="VCE row p-3"> VCE 
-            <span  class="VCEBox" id="VCElabel">0.00V</span>
+        <div class="VGS row p-3"> VGS
+            <span  class="VGSBox" id="VGSlabel">0.00V</span>
         </div>
         <div class=" row p-3">
         <div class="gaugerow1 gauge1Inline col p-3 pt-2">
@@ -151,7 +150,7 @@
                     </div>
                 </div>
                 </div>
-                <p class="VBE">VBE(V)</p>
+                <p class="VDS">VDS(V)</p>
             </div>
         <div class="col p-3 addToTable" style="border-right: hidden; border-left: hidden;">
           <div class="" style="text-align: center;margin-top:5%">
@@ -196,16 +195,16 @@
             </div>
             </div>
             
-            <p class="IB">IB(&#956;A)</p>
+            <p class="ID">ID(A)</p>
           </div>
           </div>
         <div class="row p-3">
                 <div class="button-effect">    
                     <a class="effect effect-2" id="start"  onclick="displayfn()">START</a><div>
                     <button class="button12" id="FormNPN" onclick='displayfn1()'>Form NPN</button>
-                    <button class="button12" id="SetVCE" onclick="displayfn2()" >EMITTER</button>
-                    <button class="button12" id="VaryVBE" onclick="displayfn3()">Vary VBE</button>
-                    <button class="button12" id="end" onclick="displayfn4() ; updateGauge('demoGauge', 0.600, 0.750);">Set Another VCE</button>                    
+                    <button class="button12" id="SetVGS" onclick="displayfn2()" >EMITTER</button>
+                    <button class="button12" id="VaryVDS" onclick="displayfn3()">Vary VDS</button>
+                    <button class="button12" id="end" onclick="displayfn4()">Set Another VGS</button>                    
         </div>
         </div>
         </div>
@@ -224,7 +223,7 @@
 <div class="m-2 w-50 mx-auto">
   <button id="graph" onclick="plotgraph()">Graph</button>
   <table class="table caption-top align-middle table-bordered text-center" id="mytable">    
-    <caption>VCE: <span id="tbvce1"></span></caption>    
+    <caption>VGS: <span id="tbvgs1"></span></caption>    
     <thead>
       <tr class="table-dark">
         <th>S.No</th>

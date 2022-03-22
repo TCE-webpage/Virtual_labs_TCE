@@ -8,8 +8,7 @@ body{
     position:absolute;
     bottom:8%;
     left:33%;
-    /* display: none; */
-    
+    display: none;    
   font-weight: bolder;
 }
 
@@ -22,7 +21,7 @@ input[type="range"] {
   position:absolute;
   top: 5%;
   left:25%;
-  /* display: none; */
+  display: none;
   font-weight: bolder;
 }
 
@@ -30,14 +29,14 @@ input[type="range"] {
    position:relative;
  }
 .simBlock{
-    background-color:#7F7F7F;
+    background-color:rgb(168, 164, 164);
     border-radius:15px;
     border: black double;
     width: 95%;
     margin-top:2%;
 }
 .meterBox{
-  background-color:#7F7F7F;
+  background-color:rgb(168, 164, 164);
   /* background-color:pink; */
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   border-radius:0px 15px 15px 0px;
@@ -56,21 +55,21 @@ input[type="range"] {
 
 .leftImg{
     position: relative;
-    background-color:rgb(168, 164, 164);
+    background-color:#7F7F7F;
     border-radius: 15px;
     margin: 0;
 }
 /* VCE BOX */
 
-.VCEBox{
+.VGSBox{
     padding: 0.4em 1.3em;    
     border-radius: 0.2em;
-border:rgb(49, 49, 107) 2px solid;
+    border:rgb(49, 49, 107) 2px solid;
     color:#990033 ;
     font-size:x-large;
     margin-left: 2%;
 }
-.VCE{
+.VGS{
     display:block;
     font: bold 1.7em "Fira Sans", serif;
     color:#990033;
@@ -83,7 +82,7 @@ border:rgb(49, 49, 107) 2px solid;
 .gaugerow2{
   position: relative;
 }
-.VBE{
+.VDS{
   position: absolute;
   left: 35%;
   top: 120px;
@@ -93,7 +92,7 @@ border:rgb(49, 49, 107) 2px solid;
   /* opacity:1%; */
 
 }
-.IB{
+.ID{
   position: absolute;
   left: 35%;
   top: 120px;
@@ -257,10 +256,10 @@ color:#990033;
 #FormNPN{
   display: none;
 }
-#SetVCE{
+#SetVGS{
   display: none;
 }
-#VaryVBE{
+#VaryVDS{
   display: none;
 }
 #end{
