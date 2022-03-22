@@ -158,14 +158,34 @@ function displayfn3(){
  var yArray=[0];
  var i=1;
  var A=false
+ var Vcc=false
  function table(){
   A=document.getElementById("toggle3").checked;
-  console.log(A);
-  tabled();
+  var inpDisablity=document.getElementById("toggle3");
+  Vcc=document.getElementById("VccToggle").checked;
+  if(Vcc){
+    inpDisablity.disabled=false;
+    if(A){
+      document.getElementById("img1").src="simulation_gif/INPUTON.gif";
+      console.log(A,Vcc);
+    }
+    else{
+      document.getElementById("img1").src="simulation_gif/PowerSupplyOn.gif";
+      console.log(A,Vcc);
+    }
+    tabled();
+  }
+  else{
+    document.getElementById("img1").src="simulation_gif/Slide5.png";
+    inpDisablity.checked=false;
+    inpDisablity.disabled=true;
+  }
+  
+  
 
  }
  function tabled(){
- var vce = document.getElementById("toggle3").value;
+//  var vce = document.getElementById("toggle3").value;
 //  document.getElementById("tbvce1").innerHTML =" V";
 
  var sno = ++tabrowindex;
@@ -194,58 +214,58 @@ function deleted(){
  i--;
  }
 }
-function displayfn4(){
-   document.getElementById("end").style.display="inline";
-   document.getElementById("VCErange").style.display="inline";
-   document.getElementsByClassName("VBEName")[0].innerHTML="VBE";
-   document.getElementById("gaugeValue-demoGauge").style.display="inline";
-   document.getElementsByClassName("HoriSlider")[0].style.display="inline";
-   document.getElementById("gaugeValue-demoGauge").value=0;
-   document.getElementById("img").src="simulation_gif/pic2.png";
-   while(tabrowindex){
-   document.getElementById("mytable").deleteRow(-1);
-   tabrowindex--;
-   }
-   document.getElementById("tbvce1").innerHTML = " ";       
-    xArray=[0];
-    yArray=[0];
-    i=1; 
+// function displayfn4(){
+//    document.getElementById("end").style.display="inline";
+//    document.getElementById("VCErange").style.display="inline";
+//    document.getElementsByClassName("VBEName")[0].innerHTML="VBE";
+//    document.getElementById("gaugeValue-demoGauge").style.display="inline";
+//    document.getElementsByClassName("HoriSlider")[0].style.display="inline";
+//    document.getElementById("gaugeValue-demoGauge").value=0;
+//    document.getElementById("img").src="simulation_gif/pic2.png";
+//    while(tabrowindex){
+//    document.getElementById("mytable").deleteRow(-1);
+//    tabrowindex--;
+//    }
+//    document.getElementById("tbvce1").innerHTML = " ";       
+//     xArray=[0];
+//     yArray=[0];
+//     i=1; 
     
-    // Define Data
-   var data = [{
-    x: xArray,
-    y: yArray,
-    mode:"lines"
-    }];
+//     // Define Data
+//    var data = [{
+//     x: xArray,
+//     y: yArray,
+//     mode:"lines"
+//     }];
 
-    // Define Layout
-    var layout = {
-    xaxis: {range: [0, 0.9], title: "Base-Emitter Voltage (V)"},
-    yaxis: {range: [0, 150], title: "Base Current (&#956;A)"},  
-    title: "Input Characteristics - VBE Vs IB"
-   };
+//     // Define Layout
+//     var layout = {
+//     xaxis: {range: [0, 0.9], title: "Base-Emitter Voltage (V)"},
+//     yaxis: {range: [0, 150], title: "Base Current (&#956;A)"},  
+//     title: "Input Characteristics - VBE Vs IB"
+//    };
 
-    // Display using Plotly
-      Plotly.newPlot("myPlot", data, layout);
- }
-function plotgraph(){
-// Define Data
-  var data = [{
-    x: xArray,
-    y: yArray,
-    mode:"lines"
-    }];
+//     // Display using Plotly
+//       Plotly.newPlot("myPlot", data, layout);
+//  }
+// function plotgraph(){
+// // Define Data
+//   var data = [{
+//     x: xArray,
+//     y: yArray,
+//     mode:"lines"
+//     }];
 
-// Define Layout
-var layout = {
-xaxis: {range: [0, 0.9], title: "Base-Emitter Voltage (V)"},
-yaxis: {range: [0, 150], title: "Base Current (&#956;A)"},  
-title: "Input Characteristics - VBE Vs IB"
-};
+// // Define Layout
+// var layout = {
+// xaxis: {range: [0, 0.9], title: "Base-Emitter Voltage (V)"},
+// yaxis: {range: [0, 150], title: "Base Current (&#956;A)"},  
+// title: "Input Characteristics - VBE Vs IB"
+// };
 
-// Display using Plotly
-Plotly.newPlot("myPlot", data, layout);
-}
+// // Display using Plotly
+// Plotly.newPlot("myPlot", data, layout);
+// }
 //input toggler switch
 var toggle3 = document.getElementById('toggle3');
 // if(typeof toggle3 !== null && toggle3 !== 'undefined' ) {
