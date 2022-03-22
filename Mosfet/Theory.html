@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="main.css" type="text/css">
   <link rel="stylesheet" href="Theory.css" type="text/css">
   <script src="main.js"></script>
+  <script src="Theory.js"></script>
   <title>MOSFET</title>
 </head>
 <body>
@@ -90,206 +91,157 @@
     <div class="d-flex mt-5 m-3 p-2 theory">
         <div class="theoryNav d-none d-md-block d-sm-none d-lg-block">
             <ul class="nav flex-column">
-                <li class="nav-item"><a class="nav-link fs-6 fw-bold" href="#Transistor">Transistor</a></li>
-                <li class="nav-item"><a class="nav-link fs-6 fw-bold" href="#Advantages">Advantages</a></li>
-                <li class="nav-item"><a class="nav-link fs-6 fw-bold" href="#Unipolar">Unipolar Junction Transistor</a></li>
-                <li class="nav-item"><a class="nav-link fs-6 fw-bold" href="#Bipolar">Bipolar Junction Transistor</a></li>
-                <li class="nav-item"><a class="nav-link fs-6 fw-bold" href="#Construction">Construction</a></li>
-                <li class="nav-item"><a class="nav-link fs-6 fw-bold" href="#Emitter">Emitter</a></li>
-                <li class="nav-item"><a class="nav-link fs-6 fw-bold" href="#Base">Base</a></li>
-                <li class="nav-item"><a class="nav-link fs-6 fw-bold" href="#Collector">Collector</a></li>
-                <li class="nav-item"><a class="nav-link fs-6 fw-bold" href="#Principle">Principle of operation</a></li>
-                <li class="nav-item"><a class="nav-link fs-6 fw-bold" href="#Unbiased">Unbiased Transistor</a></li>
-                <li class="nav-item"><a class="nav-link fs-6 fw-bold" href="#Biased">Biased Transistor</a></li>
-                <li class="nav-item"><a class="nav-link fs-6 fw-bold" href="#Operation">Operation of NPN Transistor</a></li>
-                <li class="nav-item"><a class="nav-link fs-6 fw-bold" href="#CEconfig">CE Configuration</a></li>
-                <li class="nav-item"><a class="nav-link fs-6 fw-bold" href="#InputCharacter">Input characteristics</a></li>
-                <li class="nav-item"><a class="nav-link fs-6 fw-bold" href="#OutputCharacter">Output characteristics</a></li>
+                <li class="nav-item"><a class="nav-link fs-6 fw-bold" href="#Fet" onclick="fetfn()">FET <i id="caret" class="fas fa-solid fa-caret-right"></i> </a></li>
+                <div id="fetDrop">
+                  <li  class="nav-item" style="background-color: rgb(189, 188, 188)"><a class="nav-link fs-6 fw-bold " href="#FetTypes" >Types of FET</a></li>
+                </div>
+                <li class="nav-item"><a class="nav-link fs-6 fw-bold" href="#Mosfet" onclick="Mosfn()">MOSFET <i id="caret1" class="fas fa-solid fa-caret-right"></i> </a></li>
+                <div id="MosfetDrop">
+                  <li  class="nav-item" style="background-color: rgb(189, 188, 188)"><a class="nav-link fs-6 fw-bold " href="#MosfetTypes" >Types of MOSFET</a></li>
+                </div>
+                <li class="nav-item"><a class="nav-link fs-6 fw-bold" href="#D-Mosfet">D-MOSFET</a></li>
+                <li class="nav-item"><a class="nav-link fs-6 fw-bold" href="#E-Mosfet" onclick="EMosfn()">E-MOSFET <i id="caret2" class="fas fa-solid fa-caret-right"></i></a></li>
+                <div id="EMosDrop">
+                  <li  class="nav-item" style="background-color: rgb(189, 188, 188)"><a class="nav-link fs-6 fw-bold " href="#BasicIdea" >Basic Idea</a></li>
+                  <li  class="nav-item" style="background-color: rgb(189, 188, 188)"><a class="nav-link fs-6 fw-bold " href="#KeyPoint" >Key Points</a></li>
+                  <li  class="nav-item" style="background-color: rgb(189, 188, 188)"><a class="nav-link fs-6 fw-bold " href="#DrainCurves" >Drain Curves</a></li>
+                </div>
             </ul>
         </div>
       </nav>
         <div class="p-2 w-50 flex-grow-1 ms-3 content">
-          <div class="space"  id="Transistor"><strong>Transistor</strong>
+          <div class="space"  id="Fet"><strong>Field Effect Transistor</strong>
             <p class="points">
-              <li>In simple words Transistor, semiconductor device for amplifying electrical signals.</li><br>
-              <li>According to the configuration It can be used for voltage amplification as well as current amplification.</li><br>
-              <li>It is a three-terminal device: Base, Emitter and Collector and it can be operated in three configurations: common base, common emitter and common collector.</li><br>
-              <li>The input signal of a small amplitude is applied at the base to get the magnified output of the signal at the collector. Thus provides amplification.</li><br>
-              <li>This amplification of the signal is achieved by passing input current signal from a region of low resistance to a region of high resistance.</li><br>
-              <li>This concept of transfer of resistance has given the name <strong>TRANSfer-reISTOR.</strong></li><br>
+              <li>The Field Effect Transistor abbreviated as FET is an another semiconductor device like a BJT which can be used as an amplifier and switch.</li><br>
+              <li>Like BJT, FET is also a three terminal device; however, the principle of operation of FET is completely different from that of BJT.</li><br>
+              <li>The three terminals of FET are named as Drain (D), Source (S) and Gate (G). Out of these three terminals gate terminal acts as controlling terminal.</li><br>
+              <li>In BJT the output current, Ic is controlled by the base current Ib, Hence BJT is a current controlled device.</li><br>
+              <li>On the other hand, in FET, the voltage applied between gate and source (VGS) controls the drain current ID, therefore, FET is a voltage controlled device.</li><br>
+              <li>The name "field effect" is derived from the fact that output current flow is controlled by an electric field setup in the device by an externally applied voltage between gate and source terminals.</li><br>
             </p>
           </div>
           
-          <div class="space" id="Advantages"><strong>Advantages of Transistor</strong>
+          <div class="space" id="FetTypes"><strong>Types of FET</strong>
             <p class="points">
-              Before transistor, the amplification was achieved by using vacuum tubes as an amplifier. Now-a-days vacuum tubes are replaced by transistors because of the following advantages
-              <li class="ml-4">Low operating voltage.</li><br>
-              <li>Higher efficiency.</li><br>
-              <li>Small size and ruggedness.</li><br>
-              <li>Does not require any filament power.</li><br> 
+              <li>Junction Field Effect Transistors (JFETs)</li><br>
+              <li>Metal semiconductor Field Effect Transistors (MESFETs)</li><br>
+              <li>Metlal Oxide Semiconductor Field Effect Transistors (MOSFETs)</li><br>
             </p>
           </div>
           
-          <div class="space" id="Unipolar"><strong>Unipolar Junction Transistor</strong>
+          <div class="space" id="Mosfet"><strong>MOSFETs</strong>
             <p class="points">
-              <li>In Unipolar junction transistor the current conduction is only due to one type of carriers, majority carriers.</li><br>
+              The metal-oxide semiconductor FET, or MOSFET. has a source, gate, and drain. The MOSFET differs from the JFET, however, in that the gate is insulated from the channel. Because of this, the gate current is even smaller than it is in a JFET. The MOSFET is sometimes called an IGFET, which stands for insulated-gate FET.<br>
             </p>
           </div>
 
-          <div class="space" id="Bipolar"><strong>Bipolar Junction Transistor</strong>
+          <div class="space" id="MosfetTypes"><strong>Types of MOSFETs</strong>
             <p class="points">
-              <li>In Bipolar junction transistor the current conduction is due to both the types of charge carriers, holes and electrons.</li><br> 
-              <li>The BJTs are of two basic types: n-p-n type, p-n-p type.</li><br>
+              <li><strong>Enhancement-mode MOSFETs -</strong> widely used in both discrete and integrated circuits. In discrete circuits, the main use is in power switching, which means turning large currents on and off. In integrated circuits, the main use n in digital switching, the bane process behind modern computer.</li><br> 
+              <li><strong>Depletion-mode MOSFETs -</strong> Although their use has declined, they are still found in high-frequency front-end communications circuits as RF amplifier.</li><br>
             </p>
           </div>
           
-          <div class="space" id="Construction"><strong>Construction of NPN and PNP transistor</strong>
+          <div class="space" id="D-Mosfet"><strong>Depletion-Mode MOSFET:</strong>
             <p class="points">
+              <div class="pic mt-3  mb-3">
+                <figure>
+                   <img  src="theory_images/D-Mosfet.png" width="30%" >
+                   <figcaption style="margin-left:10%;">D-MOSFET</figcaption>
+                </figure>
+              
+              </div>
+              <li>The figure above shows a depletion-mode MOSFET, a piece of n material with an insulated gate on the left and a p region on the right. The p region is called the substrate.</li><br>
+              <li>Electrons flowing from source to drain must pass through the narrow channel between the gate and the p substrate.</li><br>
+              <li>A thin layer of silicon dioxide (SiO2) is deposited on the left side of the channel. Silicon dioxide is the same as glass, which is an insulator. </li><br>
+              <li>In a MOSFET, the gate is metallic. Because the metallic gate is insulated from the channel, negligible gate current flows even when the gate voltage is positive.  </li><br>
+              <li>The figure(a) given below shows a depletion-mode MOSFET with a negative gate voltage. The VDD supply forces free electrons to flow from source to drain.</li><br>
+              <li>These electrons flow through the narrow channel on the left of the p substrate. As with a JFET, the gate voltage controls the width of the channel.</li><br>
+              <li>The more negative the gate voltage, the smaller the drain current. When the gate voltage is negative enough, the drain current is cut off. </li><br>
+              <li>Therefore, the operation of a depletion-mode MOSFET is similar to that of a JFET when VGS is negative.</li><br>
+              <li>Since the gate is insulated, we can also use a positive input voltage, as shown in the figure.</li><br>
+              <li>The positive gate voltage increases the number of free electrons flowing through the channel.</li><br>
+              <li>The more positive the gate voltage, the greater the conduction from source to drain.</li><br>
+              <div class="mt-3 mb-3" style="display: flex; align-content: center;">
               <div class="pic">
-              <img  src="theory_images/symbol1.png" width="75%" >
+                <figure>
+                  <img  src="theory_images/D-Mosfet Negative Gate.png" width="60%" >
+                  <figcaption style="margin-left: 2%;">D-MOSFET with negative gate</figcaption>
+                </figure>     
               </div>
-              <li>When a transistor is formed by sandwitching a single p-region between two n-regions, it is n-p-n type transistor(a).</li><br>
-              <li>When a transistor is formed by sandwitching a single n-region between two p-regions, it is p-n-p type transistor(b).</li><br>
-              <li>The middle region of each transistor type is called the base of the transistor.</li><br>
-              <li>The remaining two regions are the emitter and the collector.</li><br>
-              <li>A transistor has two p-n junctions.</li><br>
-              <li>One junction is between the emitter and the base and is called Emitter Base junction or simply Emitter junction JE.</li><br>
-              <li>The other is between base and collector which is called collector junction JC.</li><br>
-              <li>Thus, transistor is like two p-n junction diodes connected back-to-back.</li><br>
-            </p>
-          </div>
-
-          <div class="space" id="Emitter"><strong>Emitter</strong>
-            <p class="points">
-              <li>It is the region to the left end which supply free charge carriers, electrons in n-p-n or holes in p-n-p transistors.</li><br>
-              <li>These majority carriers are injected to the middle region i.e. electrons in the p region of n-p-n or holes in the n region of p-n-p transistor.</li><br>
-              <li>Emitter is a heavily doped region to supply a large number of majority carriers into the base.</li><br>
-            </p>
-          </div>
-
-          <div class="space" id="Base"><strong>Base</strong>
-          <p class="points">
-              <li>The majority carriers from the emitter region are injected into this region.</li><br>
-              <li>This region is very thin and lightly doped.</li><br>
-
-          </p>
-          </div>
-
-          <div class="space" id="Collector"><strong>Collector</strong>
-          <p class="points">
-            <li>It is the region to right end where charge carriers are collected.</li><br>
-            <li>It is also heavily doped but slightly lesser than that of the emitter.</li><br>
-            <li>The region-area of the collector is slightly more than that of the emitter.</li><br>
-
-          </p>
-          </div>
-          
-          <div class="space" id= "Principle"><strong>Principle of operation of Transistors</strong>
-          <div class="space" id="Unbiased"><strong >Unbiased Transistor</strong>
-          <p class="points">
-            <div class="pic">
-              <img  src="theory_images/unbiased.jpg" width="75%" >
+              <div class="pic">
+                <figure>
+                <img  src="theory_images/D-Mosfet Negative Gate.png" width="60%" >
+                <figcaption style="margin-left: 7%;">D-MOSFET with positive gate</figcaption>
+              </figure>
               </div>
-            <li>An unbiased transistor means a transistor with no external voltage (biasing) is applied.</li><br>
-            <li>Obviously, there will be no current flowing from any of the transistor leads.</li><br>
-            <li>Since transistor is like two p-n junction and connected back to back, there are depletion regions at both the junctions, emitter junction and collector junction.</li><br>
-            <li>During diffusion process, depletion region penetrates more deeply into the lightly doped side in order to include an equal number of impurity atoms in each side of the junction.</li><br>
-            <li>Depletion region at emitter junction penetrates less in heavily doped emitter and extends more in the base region.</li><br>
-            <li>Similarly, depletion region at collector junction penetrates less in the heavily doped collector and extends more in the base region.</li><br>
-            <li>As collector is slightly less doped than the emitter, the depletion layer width at the collector junction is more than the depletion layer width at the emitter junction.</li><br> 
-          </p>
-          </div>
-          
-          <div class="space" id="Biased"><strong>Biased Transistor</strong>
-          <p class="points">
-            In order to operate transistor properly as an amplifier, it is necessary to correctly bias the two PN junctions with external voltages. Depending upon external bias voltage polarities used, the transistor works in one of the three regions,
-            <li>Active region</li><br>
-            <li>Saturation region</li><br>
-            <li>Cutoff region</li><br>
-            <div class="tb">
-            <table class="table table-bordered">
-              <tr>
-                <th>Region</th>
-                <th>Emitter base junction</th>
-                <th>Collector base junction</th>
-                <th>Application</th>
-              </tr>
-              <tr>
-                <td>Active</td>
-                <td>Forward biased</td>
-                <td>Reverse biased</td>
-                <td>Amplifier</td>
-              </tr>
-              <tr>
-                <td>Cut-off</td>
-                <td>Revers biased</td>
-                <td>Forward biased</td>
-                <td>Open switch</td>
-              </tr>
-              <tr>
-                <td>Saturation</td>
-                <td>Forward biased</td>
-                <td>Forward biased</td>
-                <td>Closed switch</td>
-              </tr>
-            </table>
-          </div>
-          </p>
-          </div>
-          
-          <div class="space" id="Operation"><strong>Operation of NPN Transistor</strong>
-          <p class="points">
-            <li>The base to emitter junction is forward biased by the DC source VEE.Thus, the depletion region at this junction is reduced.</li><br>
-            <li>The collector to base junction is reverse biased,increasing depletion region at collector to base junction.</li><br>
-            <li>The forward biased EB junction causes the electrons in the n-type emitter to flow towards the base.</li><br>
-            <li>This constitutes the emitter current IE.</li><br>
-            <li>As these electrons flow through the p-type base,they tend to combine with holes in p-region(base).</li><br>
-            <li>The base region is very thin and lightly doped.The light doping means that the free electrons have a long lifetime in the base region.</li><br> 
-            <li>The very thin base region means that the free electrons have only a short distance to go to reach the collector.</li><br>
-            <li>For these two reasons,very few of the electrons injected into the base from the emitter recombine with holes to constitute base current,IB.</li><br>
-            <li>The remaining large number of electrons cross the base region and move through the collector region to the positive terminal of the external dc source.
-          </p>
-          </div>
-             
-          <div class="space" id="CEconfig"><strong>BJT in Common-Emitter Configuration</strong>
-          <p class="points">
-            <div class="pic">
-              <img  src="theory_images/CeConfig.png" width="50%" height="1%">
-              </div>
-            <li>In this configuration input is applied between base and emitter, and output is taken from collector and emitter.</li><br>
-            <li>Here, Emitter of the transistor is common to both, input and output circuits, and hence the name common emitter configuration.</li><br>
-          </p>
-          </div>              
-            
-          <div class="space" id="InputCharacter"><strong>Input characteristics of CE Configuration</strong>
-          <p class="points">
-            <div class="pic">
-              <img  src="theory_images/character.jpg" width="70%">
-              </div>
-            <li>It is the curve between input current IB and input voltage Vbe.</li><br> 
-            <li>The base current is taken along Y-axis and Base-Emitter voltage along X-axis.</li><br> 
-            <li>As the input to a transistor in CE configuration is between the Base-to-Emitter junction, the CE input characteristics resembles a family of forward-biased diode curves.</li><br>                <li>After the cut-in Voltage the base current(IB) increase rapidly with small increase in Base emitter voltage(VBE).</li><br>  
-            <li>After the cut-in voltage the base current IB increases rapidly with small increase in emitter voltage.</li><br>
-            <li>It means that dynamic input resistance is small in CE configuration.</li><br> 
-            <li>It is the ratio of change in base-emitter voltage to the resulting change in base current at constant collector emitter voltage.</li><br> 
-            <li>For a fixed value of VBE, IB decreases as VCE is increased. A larger value of VCE results in a large reverse bias at collector-base p-n junction.</li><br> 
-          </p>
-          </div>
-          <div class="space" id="OutputCharacter"><strong>Output characteristics of CE Configuration</strong>
-          <p class="points">
-            <div class="pic">
-              <img  src="theory_images/Outputcharacter.png" width="75%" >
             </div>
-            <li>This characteristics show the relation between the collector current Ic and the collector voltage VCE, for various fixed values of IB.</li><br>
-            <li>This characteristics is often called collector characteristics.</li><br>
-            <li>From the output characteristics we can see that change in collector-emitter voltage causes the little change in the collector current for constant base current. Thus the output dynamic resistance is high in CE configuration.</li><br>
-            <li>The output characteristics of common emitter configuration consists of three regions: Active, Saturation, and Cut-off.</li><br>
-            <li>In the active region, the collector base junction is reverse-biased. For every transistor there is limit on the maximum value for this reverse bias voltage.</li><br>
-            <li>If this limit is exceeded the breakdown occurs in the transistor. This effect is commonly known as <strong>punch through effect.</strong></li><br>
-            <li>This large current may damage transistor. Hence in practice, maximum collector emitter voltage rating should never be exceeded for the safe operation of the transistor.</li>
-           </p>
+            </p>
           </div>
 
+          <div class="space" id="E-Mosfet"><strong>Enhancement-Mode MOSFET:</strong>
+            <p class="points">
+              The depletion-mod MOSFET was part of the evolution toward the enhancement-mode MOSFET, abbreviated E-Mosfet. Without the E-MOSFET, the personal computers that are now so widespread would not exist.<br>
+            </p>
+          </div>
+
+          <div class="space" id="BasicIdea"><strong>Basic Idea</strong>
+          <p class="points">
+            <div class="mt-3 mb-3" style="display: flex; align-content: center;">
+              <div class="pic">
+                <figure>
+                <img  src="theory_images/E-Mosfet.png" width="60%" >
+                <figcaption style="margin-left: 10%;">Unbiased E-MOSFET </figcaption>
+              </figure>
+              </div>
+              <div class="pic">
+                <figure>
+                <img  src="theory_images/E-Mosfet biased.png" width="60%" >
+                <figcaption style="margin-left: 17%;">Biased E-MOSFET</figcaption>
+              </figure>
+              </div>
+            </div>
+              <li>The figure1 above shows an E-MOSFET. The P substrate now extends all the way to the silicon dioxide. As you can see, there no longer is an n channel between the source and the drain.</li><br>
+              <li>The figure 2 shows normal biasing polarities. When the gate voltage is zero, the current between source and drain is zero. For this reason, an E-MOSFET is normally off when the gate voltage is zero.</li><br>
+              <li>The only way to get current is with a positive gate voltage.</li><br>
+              <li>When the gate is positive, it attracts the free electrons into the p region. These free electrons recombine with the holes next to silicon dioxide.</li><br>
+              <li>When the gate voltage is positive enough, all the holes touching the silicon dioxide are filled and the free electrons begin to flow from the source to drain.</li><br>
+              <li>This effect is same as creating a thin layer of n-type material next to the silicon dioxide.</li><br>
+              <li>This thin conducting layer is called the n-type inversion layer. When it exists, free electrons can flow easily from the source to drain.</li><br>
+              <li>The minimum VGS that creates the n-type inversion layer is called the threshold voltage, symbolised VGS(th).</li><br>
+              <li>When VGS is less than VGS(th), the drain current is zero.</li><br>
+              <li>When VGS is greater than VGS(th), an n-type inversion layer connects the source to the drain and the drain current can flow.</li><br>
+              <li>Typical values of VGS(th) for small signal devices are from 1 to 3 V.</li><br>
+          </p>
+          </div>
+
+          <div class="space" id="KeyPoint"><strong>Key point:</strong>
+          <p class="points">
+            <li>The JFET is referred as a depletion-mode device because its conductivity depends on the action of the depletion layers.</li><br>
+            <li>The E-MOSFET is classified as an enhancement-mode device because a gate voltage greater than the threshold voltage enhances its conductivity.</li><br>
+            <li>With zero gate voltage, a JFET is on, whereas an E-MOSFET is off. Therefore, the E-MOSFET is considered to be a normally off device.</li><br>
+          </p>
+          </div>
+          
+          <div class="space" id="DrainCurves"><strong>Drain curves:</strong>
+          <p class="points">
+            <div class="pic mt-2 mb-3">
+              <figure>
+              <img  src="theory_images/drain.png" width="50%" >
+              <figcaption style="margin-left:3%;">Drain curves of N-channel Enhancement type MOSFET</figcaption>
+            </figure>
+            </div>
+            <li>A small-signal E-MOSFET has a power rating of 1W or less. The figure(b) above shows a set of drain curves for a typical E-MOSFET. The lowest curve is the VGS(th) curve.</li><br>
+            <li>When VGS is less than VGS(th), the drain current is approximately zero. When VGS is greater than VGS(th) the device turns on and the drain current is controlled by the gate voltage.</li><br>
+            <li>The almost-vertical part of the graph is the ohmic region, and the almost-horizotal parts are the active region.</li><br>
+            <li>When biased in the ohmic region, The E-MOSFET is equivalent to a resistor.</li><br>
+            <li>When biased in the active region, it is equivalent to a current source.</li><br>
+            <li>Although, the E-MOSFET can operate in the active region, the main use is the ohmic region.</li><br> 
+            <li>The figure(a) above shows a typical transconductance curve. There is no current until VGS = VGS(th). </li><br>
+            <li>The drain current then increases rapidly until it reaches the saturation current ID(sat). Beyond this point, the device is biased in the ohmic region.</li><br>
+            <li>Therefore, ID cannot increase, even though VGS increases.</li><br>
+          </p>
+          </div>
         </div>
    </container>         
 

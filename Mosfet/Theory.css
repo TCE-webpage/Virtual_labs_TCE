@@ -7,14 +7,15 @@
   overflow-x: hidden;
   overflow-y:hidden;
   height:80vh;
+  background-color: #f3f3f3;
   
 }
-.theoryNav:hover{
+/* .theoryNav:hover{
 overflow-x: hidden;
 overflow-y: scroll;
 scroll-behavior: smooth;
 height:80vh;
-}
+} */
 .theoryNav li
 {
 background-color: #f3f3f3;
@@ -100,4 +101,7 @@ font-variant: normal;
 }
 .pic{
 margin-left: 12.5% !important;
+}
+#fetDrop, #EMosDrop, #MosfetDrop{
+  display: none;
 }
