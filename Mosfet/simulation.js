@@ -119,14 +119,14 @@ function updateVDSlabel(min, max){
         flag=1;
         flag1=1;
       }
-      else if(vgsconstval>=0.8 && vgsconstval<=2 && vdsconstval==0){
+      else if(vgsconstval>=0.8 && vgsconstval<=3 && vdsconstval==0){
         if(flag==1){
           document.getElementById("img").src="simulation_gif/VGSLessthanhalfVt.gif";
           flag=0;
         }
         flag1=1;
       }
-      else if(vgsconstval>=2.1 && vgsconstval<=3.5 && vdsconstval==0){
+      else if(vgsconstval>=3.1 && vgsconstval<=3.5 && vdsconstval==0){
         if(flag1==1){
           document.getElementById("img").src="simulation_gif/VGSGreaterThanhalfVTH.gif";
           flag1=0;}
@@ -151,21 +151,21 @@ function displayfn1(){
   setTimeout( function() {
     document.getElementById("SetVGS").innerHTML="SET VGS";
     document.getElementById("SetVGS").style.boxShadow=' ';
-    document.getElementById("instruct").innerHTML="It is the center region. The majority carriers from the emitter region are injected into this region. This region is very thin and lightly doped.";
+    document.getElementById("instruct").innerHTML="Set VGS as a constant by varying the slider. Once it's set. Click vary VDS.";
    },200);   
-  setTimeout( function() {
-    document.getElementById("SetVGS").innerHTML="COLLECTOR";
-  document.getElementById("instruct").innerHTML="It is the region to right end where charge carriers are collected. It is also heavily doped but slightly lesser than that of the emitter. The region-area of the collector is slightly more than that of the emitter.";
-   },13400); 
-   setTimeout( function() {
-    document.getElementById("SetVGS").innerHTML="DIFFUSION";
-  document.getElementById("instruct").innerHTML="During diffusion process, Depletion region at emitter and collector junction penetrate less in heavily doped emitter and collector and extends more in the base region. As collector is slightly less doped than the emitter, the depletion layer width at the collector junction is more than the depletion layer width at the emitter junction.";
-   },24400); 
-  setTimeout( function() {
-    document.getElementById("SetVGS").innerHTML="SET VGS";
-    document.getElementById("SetVGS").disabled=false;
-  document.getElementById("instruct").innerHTML="Set VCE as a constant by varying the slider. Once it's set. Click vary VBE";
-},36000);           
+//   setTimeout( function() {
+//     document.getElementById("SetVGS").innerHTML="COLLECTOR";
+//   document.getElementById("instruct").innerHTML="It is the region to right end where charge carriers are collected. It is also heavily doped but slightly lesser than that of the emitter. The region-area of the collector is slightly more than that of the emitter.";
+//    },13400); 
+//    setTimeout( function() {
+//     document.getElementById("SetVGS").innerHTML="DIFFUSION";
+//   document.getElementById("instruct").innerHTML="During diffusion process, Depletion region at emitter and collector junction penetrate less in heavily doped emitter and collector and extends more in the base region. As collector is slightly less doped than the emitter, the depletion layer width at the collector junction is more than the depletion layer width at the emitter junction.";
+//    },24400); 
+//   setTimeout( function() {
+//     document.getElementById("SetVGS").innerHTML="SET VGS";
+//     document.getElementById("SetVGS").disabled=false;
+//   document.getElementById("instruct").innerHTML="Set VCE as a constant by varying the slider. Once it's set. Click vary VBE";
+// },36000);           
   document.getElementById("SetVGS").style.display="inline";       
 }
 function displayfn2(){  
@@ -181,7 +181,7 @@ function displayfn3(){
   document.getElementsByClassName("HoriSlider2")[0].style.display="none";
   document.getElementById("VDSrange").style.display="inline";
   document.getElementsByClassName("HoriSlider1")[0].style.display="inline"; 
-  document.getElementById("instruct").innerHTML="Vary VBE  using the slider given, add the corresponding Base current value to the Table.Once a set of readings are taken Set another VCE And repeat the same procedure"
+  document.getElementById("instruct").innerHTML="Vary VDS  using the slider given, add the corresponding Drain current value to the Table.Once a set of readings are taken Set another VGS And repeat the same procedure"
 }
 
  // Table Creation Code JS
@@ -308,7 +308,7 @@ function plotgraph(){
 // Define Layout
 var layout = {
 xaxis: {range: [0, 60], title: "Drain-Source Voltage (V)"},
-yaxis: {range: [0, 220], title: "Drain Current (&#956;A)"},  
+yaxis: {range: [0, 300], title: "Drain Current (&#956;A)"},  
 title: "Input Characteristics - VDS Vs ID"
 };
 
