@@ -215,7 +215,7 @@ function displayfn4(){
    };
 
     // Display using Plotly
-      Plotly.newPlot("myPlot", data, layout);
+      // Plotly.newPlot("myPlot", data, layout);
  }
 function plotgraph(){
 // Define Data

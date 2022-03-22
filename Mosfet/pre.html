@@ -50,7 +50,7 @@
                 <a class="nav-link" aria-current="page" href="main.html">Aim</a>
                 <a class="nav-link" href="Theory.html">Theory</a>
                 <a class="nav-link mininavActive" href="pre.html">Prequiz</a>
-                <li class="dropdown ">
+                <!-- <li class="dropdown ">
                   <a class="nav-link dropdown-toggle " href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Procedure
                   </a>
@@ -67,7 +67,9 @@
                     <li><a class="dropdown-item" href="simulation2.html" style="text-decoration: none!important; border: none; margin-bottom:6px;">Input Characteristics</a></li>
                     <li><a class="dropdown-item" href="simulationop.html" style="text-decoration: none!important; border: none; margin-bottom:6px;">Output Characteristics</a></li>
                   </ul>
-                  </li>
+                  </li> -->
+                <a class="nav-link " href="procedureip.html">Procedure</a>
+                <a class="nav-link " href="simulation2.html">Simulation</a>
                 <a class="nav-link " href="outcome.html">Outcome</a>
                 <a class="nav-link " href="#">Feedback</a>
             </div>
@@ -80,7 +82,7 @@
             <li><a class="minactive" href="main.html"><span class="" title="Aim"><img src="images/target.png" alt=""></span></a></li>
             <li><a href="Theory.html"><span class="fas fa-book fa-2x " title="Theory" style="color: black;"></span></a></li>
             <li><a href="pre.html"><span class="fas fa-question-circle fa-2x" title="Prequiz" style="color: black;"></span></a></li>
-            <li><a href="#about"><span class="" title="Procedure" ><img src="images/process.png" alt=""></span></a></li>
+            <li><a href="procedureip.html"><span class="" title="Procedure" ><img src="images/process.png" alt=""></span></a></li>
             <li><a href="simulation2.html"><span class="" title="Simulation"><img src="images/settings.png" alt=""></span></a></li>
             <li><a href="#about"><span class="fas fa-clipboard-list fa-2x" title="Outcome" style="color: black;"></span></a></li>
             <li><a href="#about"><span class="fas fa-comments fa-2x" title="Feedback" style="color: black;"></span></a></li>
@@ -122,55 +124,55 @@
             /* ====== Questions ====== */
 let questions = [
     {
-      question: '1) The amplification of the signal is achieved by passing input current signal from a region of __________ resistance to a region of __________ resistance.',
+      question: '1) MOSFET can be used as a',
       options: [
-               "High, low","High, high","Low, high","Low, low"
+               "Current controlled capacitor","Voltage controlled capacitor","Current controlled inductor", "Voltage controlled inductor"
               ],
-      answer: 2
+      answer: 1
     },
     {
-      question: "2) Which region of the BJT is very thin and lightly doped?",
+      question: "2) The effective channel length of a MOSFET in saturation decreases with",
       options: [
-        "Collector",
-        "Base",
-        "Emitter",
-        "Both 1 and 2"
+      "Gate voltage",
+      "Drain voltage",
+      "Source voltage",
+      "Body voltage"
       ],
       answer: 1
     },
     {
-      question: '3) Depletion region penetrates less in',
-      options: ["Heavily doped region",
-                "Lightly doped region",
-                "Region with more area", 
-                "Region with less area"
+      question: '3) Input impedance of MOSSFET is',
+      options: ["less than of FET but more than BJT",
+                "more than that of FET and BJT",
+                "more than that of FET but less than BJT", 
+                "less than that of FET and BJT"
       ],
-      answer: 0
+      answer: 1
     },
     {
-      question: "4) Application of Transistor at Saturation region",
-      options: ["Amplifier",
-                "Closed switch",
-                "Analog switching circuits",
-                "Open switch"
+      question: "4) Which of the following effects can be caused by a rise in temperature",
+      options: ["Increase in MOSFET current",
+                "Increase in MOSFET voltage",
+                "Decrease in MOSFET current",
+                "Decrease in MOSFET voltage"
         ],
-      answer: 3
+      answer: 2
     },
     {
-      question: '5) In CE configuration input is applied between base and emitter, and output is taken from',
-      options: ["Base and Emitter",
-                "Collector",
-                "Collector and Emitter",
-                "Base and Collector"
+      question: '5) The MOSFET is in the cut-off state,when the gate source voltage is',
+      options: ["less than gate to source voltage",
+                "greater than gate to source voltage",
+                "less than threshold voltage",
+                "greater than threshold voltage"
     ],
     answer: 2
     },
     {
-      question: "6) CE input characteristics resembles ",
-      options: ["Forward-biased diode curves",
-                "Zener diode curves",
-                "Reverse-biased diode curves",
-                "None of the above"
+      question: "6) What does MOSFET stands for",
+      options: ["Metal Oxide Semiconductor Field Effect Transistor",
+                "Modern Oxidized Silicon based Field Effect Transistor",
+                "Modern Oxidized Silicon based Force Effect Transistor",
+                "Metal Oxide silicon Field Equivalent Transistor"
 ],
       answer: 0
     }
