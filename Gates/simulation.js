@@ -13,12 +13,12 @@
     inpDisablity.disabled=false;
     if(A){
       document.getElementById("img1").src="simulation_gif/INPUTON.gif";
-      document.getElementById("light").src="images/off.png";
+      document.getElementById("light").src="simulation_gif/lightoff.png";
       console.log(A,Vcc);
     }
     else{
       document.getElementById("img1").src="simulation_gif/PowerSupplyOn.gif";
-      document.getElementById("light").src="images/on.jpg";
+      document.getElementById("light").src="simulation_gif/lighton.png";
       console.log(A,Vcc);
 
     }
@@ -26,7 +26,7 @@
   }
   else{
     document.getElementById("img1").src="simulation_gif/Slide5.png";
-    document.getElementById("light").src="images/off.png";
+    document.getElementById("light").src="simulation_gif/lightoff.png";
     inpDisablity.checked=false;
     inpDisablity.disabled=true;
   }
