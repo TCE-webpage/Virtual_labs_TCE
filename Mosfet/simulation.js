@@ -290,8 +290,8 @@ function displayfn4(){
     // Define Layout
     var layout = {
       xaxis: {range: [0, 60], title: "Drain-Source Voltage (V)"},
-      yaxis: {range: [0, 220], title: "Drain Current (&#956;A)"},  
-      title: "Input Characteristics - VDS Vs ID"
+      yaxis: {range: [0, 300], title: "Drain Current (A)"},  
+      title: "Drain Characteristics - VDS Vs ID"
       };
 
     // Display using Plotly
@@ -308,8 +308,8 @@ function plotgraph(){
 // Define Layout
 var layout = {
 xaxis: {range: [0, 60], title: "Drain-Source Voltage (V)"},
-yaxis: {range: [0, 300], title: "Drain Current (&#956;A)"},  
-title: "Input Characteristics - VDS Vs ID"
+yaxis: {range: [0, 300], title: "Drain Current (A)"},  
+title: "Drain Characteristics - VDS Vs ID"
 };
 
 // Display using Plotly
