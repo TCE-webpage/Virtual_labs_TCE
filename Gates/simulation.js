@@ -167,16 +167,20 @@ function displayfn3(){
     inpDisablity.disabled=false;
     if(A){
       document.getElementById("img1").src="simulation_gif/INPUTON.gif";
+      document.getElementById("light").src="images/off.png";
       console.log(A,Vcc);
     }
     else{
       document.getElementById("img1").src="simulation_gif/PowerSupplyOn.gif";
+      document.getElementById("light").src="images/on.jpg";
       console.log(A,Vcc);
+
     }
     tabled();
   }
   else{
     document.getElementById("img1").src="simulation_gif/Slide5.png";
+    document.getElementById("light").src="images/off.png";
     inpDisablity.checked=false;
     inpDisablity.disabled=true;
   }
