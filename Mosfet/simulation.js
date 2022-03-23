@@ -146,26 +146,31 @@ function displayfn(){
 }
 function displayfn1(){
   document.getElementById("FormNPN").style.display="none";  
-  document.getElementById("instruct").innerHTML="Emitter is the region to the left end which supply free charge carriers i.e electrons. It is a heavily doped region."    
+  document.getElementById("instruct").innerHTML=" In Mosfet, P-Substrate is lightly doped in which holes are the majority carriers."    
   document.getElementById("img").src="simulation_gif/FormationOfNPN.gif";
   setTimeout( function() {
-    document.getElementById("SetVGS").innerHTML="SET VGS";
+    document.getElementById("SetVGS").innerHTML="N Substrate";
     document.getElementById("SetVGS").style.boxShadow=' ';
-    document.getElementById("instruct").innerHTML="Set VGS as a constant by varying the slider. Once it's set. Click vary VDS.";
-   },200);   
-//   setTimeout( function() {
-//     document.getElementById("SetVGS").innerHTML="COLLECTOR";
-//   document.getElementById("instruct").innerHTML="It is the region to right end where charge carriers are collected. It is also heavily doped but slightly lesser than that of the emitter. The region-area of the collector is slightly more than that of the emitter.";
-//    },13400); 
-//    setTimeout( function() {
-//     document.getElementById("SetVGS").innerHTML="DIFFUSION";
-//   document.getElementById("instruct").innerHTML="During diffusion process, Depletion region at emitter and collector junction penetrate less in heavily doped emitter and collector and extends more in the base region. As collector is slightly less doped than the emitter, the depletion layer width at the collector junction is more than the depletion layer width at the emitter junction.";
-//    },24400); 
-//   setTimeout( function() {
-//     document.getElementById("SetVGS").innerHTML="SET VGS";
-//     document.getElementById("SetVGS").disabled=false;
-//   document.getElementById("instruct").innerHTML="Set VCE as a constant by varying the slider. Once it's set. Click vary VBE";
-// },36000);           
+    document.getElementById("instruct").innerHTML="In Mosfet, both source and drain region is made up of N-Substrate in which the electrons are the majority carriers.";
+   },2000);   
+  setTimeout( function() {
+    document.getElementById("SetVGS").innerHTML="Depletion Layer";
+  document.getElementById("instruct").innerHTML="There is a formation of depletion layer between the P-Substrate and N-Substrates.";
+   },5000); 
+   setTimeout( function() {
+    document.getElementById("SetVGS").innerHTML="SiO<sub>2</sub>";
+  document.getElementById("instruct").innerHTML="SiO<sub>2</sub> above the P-Substrate acts as an insulator.";
+   },6000); 
+  setTimeout( function() {
+    document.getElementById("SetVGS").innerHTML="Circuit Connection";
+    document.getElementById("SetVGS").disabled=false;
+  document.getElementById("instruct").innerHTML="Once the NPN is formed, circuit connection is given and you can that gate terminal is insulated from P-Substrate to avoid gate current.";
+},8000);
+setTimeout( function() {
+  document.getElementById("SetVGS").innerHTML="SET VGS";
+  document.getElementById("SetVGS").disabled=false;
+document.getElementById("instruct").innerHTML="Click the SET VGS button.";
+},10000);           
   document.getElementById("SetVGS").style.display="inline";       
 }
 function displayfn2(){  
@@ -173,6 +178,8 @@ function displayfn2(){
   document.getElementById("VaryVDS").style.display="inline";          
   document.getElementById("VGSrange").style.display="inline"
   document.getElementsByClassName("HoriSlider2")[0].style.display="inline";
+  document.getElementById("instruct").innerHTML="Vary VGS using upper horizontal slider,You can observe that there is a formation of n-channel between source and drain only after VGS greater than 3V(Threshold Voltage).<br>Now Set VGS as a constant voltage.";
+
 }
 function displayfn3(){
   document.getElementById("VaryVDS").style.display="none";

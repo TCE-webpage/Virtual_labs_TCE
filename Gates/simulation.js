@@ -11,24 +11,35 @@
   Vcc=document.getElementById("VccToggle").checked;
   if(Vcc){
     inpDisablity.disabled=false;
-    if(A){
-      document.getElementById("img1").src="simulation_gif/INPUTON.gif";
+    document.getElementById("instruct").innerHTML='You can see that input is OFF(logic 0) in Pin 1. So, PMOS acts as a closed switch which turns the LED ON(logic 1) in Pin 2 and NMOS acts as an open switch.Observe the Truth Table<br><b>Toggle Input switch(Pin 1)</b>'
+    if(A){      
+      
+      document.getElementById("img1").src="simulation_gif/INPUTON.gif";               
       document.getElementById("light").src="simulation_gif/lightoff.png";
       console.log(A,Vcc);
+      document.getElementById("instruct").innerHTML='You can see that input is ON(logic 1) in Pin 1. So, PMOS acts as an open switch hence the LED turns OFF(logic 0) in Pin 2.Observe the Truth Table.<br><b>Repeat the same procedure for better understanding</b>'
     }
     else{
+      
       document.getElementById("img1").src="simulation_gif/PowerSupplyOn.gif";
+      setTimeout( function(){       
+        document.getElementById("img1").src="simulation_gif/loop.gif";
+        },2700);
       document.getElementById("light").src="simulation_gif/lighton.png";
       console.log(A,Vcc);
-
     }
     tabled();
   }
   else{
+    document.getElementById("instruct").innerHTML=" Observe the IC-7404 on the left side and the internal circuit diagram of the NOT gate on the right side which is made up of NMOS and PMOS and then,<br><b>Turn on VCC</b><br>using the switch given on the pin 14."
     document.getElementById("img1").src="simulation_gif/Slide5.png";
     document.getElementById("light").src="simulation_gif/lightoff.png";
     inpDisablity.checked=false;
     inpDisablity.disabled=true;
+    while(tabrowindex){
+      document.getElementById("mytable").deleteRow(-1);
+      tabrowindex--;
+      }
   }
   
   
@@ -47,7 +58,6 @@
  }
  var table = document.getElementById("mytable");
  var row = table.insertRow(-1);
- if (i <= 2){
  var cell1 = row.insertCell(0);
  var cell2 = row.insertCell(1);
  cell1.innerHTML = input;
@@ -56,7 +66,7 @@
  yArray[i]=output;
  i+=1;    
 }
- }
+ 
 function deleted(){
  if(tabrowindex!=0){
  document.getElementById("mytable").deleteRow(-1);

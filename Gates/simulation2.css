@@ -161,14 +161,17 @@ body{
 /* VCE BOX */
 .instruction{
   border-radius: 100px 100px 100px 100px;
-  min-height:22% !important;
+  /* min-height:10% !important; */
   /* background-color:#e46a6a; */
   background-color:seashell;
   border-top:solid darkmagenta 5px; 
-  width: 75%;
-  margin-left:15%;
-  
+  width: 85%;
+  margin-left:10%;  
   /* border-top:solid rgb(247, 167, 49) 5px; */
+}
+#instruct{
+  padding-left: 3%;
+  padding-right: 3%;
 }
 .resetbtn {
     box-sizing: border-box;
