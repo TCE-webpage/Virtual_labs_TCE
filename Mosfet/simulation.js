@@ -151,26 +151,26 @@ function displayfn1(){
   setTimeout( function() {
     document.getElementById("SetVGS").innerHTML="N Substrate";
     document.getElementById("SetVGS").style.boxShadow=' ';
-    document.getElementById("instruct").innerHTML="In Mosfet, both source and drain region is made up of N-Substrate in which the electrons are the majority carriers.";
-   },2000);   
+    document.getElementById("instruct").innerHTML="In Mosfet, both source and drain regions are made up of N-Substrate in which the electrons are the majority carriers.";
+   },7000);   
   setTimeout( function() {
     document.getElementById("SetVGS").innerHTML="Depletion Layer";
   document.getElementById("instruct").innerHTML="There is a formation of depletion layer between the P-Substrate and N-Substrates.";
-   },5000); 
+   },20200); 
    setTimeout( function() {
     document.getElementById("SetVGS").innerHTML="SiO<sub>2</sub>";
   document.getElementById("instruct").innerHTML="SiO<sub>2</sub> above the P-Substrate acts as an insulator.";
-   },6000); 
+   },29100); 
   setTimeout( function() {
     document.getElementById("SetVGS").innerHTML="Circuit Connection";
-    document.getElementById("SetVGS").disabled=false;
-  document.getElementById("instruct").innerHTML="Once the NPN is formed, circuit connection is given and you can that gate terminal is insulated from P-Substrate to avoid gate current.";
-},8000);
+    // document.getElementById("SetVGS").disabled=false;
+  document.getElementById("instruct").innerHTML="Once the NPN is formed, circuit connection is given and you can see that gate terminal is insulated from P-Substrate by SiO<sub>2</sub> to avoid gate current.";
+},36000);
 setTimeout( function() {
   document.getElementById("SetVGS").innerHTML="SET VGS";
   document.getElementById("SetVGS").disabled=false;
 document.getElementById("instruct").innerHTML="Click the SET VGS button.";
-},10000);           
+},51000);           
   document.getElementById("SetVGS").style.display="inline";       
 }
 function displayfn2(){  
