@@ -13,6 +13,52 @@
     <link rel="stylesheet" href="main.css">
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <title>LOGIC GATES</title>
+    <style>
+      .board{
+        width: 12%;
+        margin: 1%;
+      }
+      .vccPin1{
+        margin-left: -5%;
+        padding-top:1.5%;
+      }
+      .vccPin2{
+        margin-left:8%;
+        padding-top: 2.5%;
+      }
+      .inputPin1,.outputPin1{
+        padding-top:2%;
+      }
+      .inputPin2{
+        margin-left: -4%;
+        padding-top:2.5%;
+
+      }
+      .outputPin2{
+        padding-top:2.5%;
+        margin-left: -7%;
+      }
+      .earthPin1{
+        padding-top: 1%;
+      }
+      .earthPin2{
+        padding-top:2.5%;
+        margin-left: -3%;
+      }
+      #vccPin,#earthPin,#outputPin{
+        text-align: center;
+        width: 30px;
+        height: 25px;
+        background-color: brown;
+        color: black;
+      }
+      .switchBoard{
+        padding-left:5%;
+        padding-right: -2%;
+        width: 85%;
+        margin-left: 3%;
+      }
+    </style>
 </head>
 <body>
   <container class="mainBody">
@@ -98,18 +144,52 @@
       
     <div class="Gif pt-2 pl-4" style="margin-left: 11%;">
     <img  id="img" src="simulation_gif/Ic7404.jpg" width="90%" >
-    <div class="power_switch">
+    <!-- <div class="power_switch">
       <form>
         <label class="toggle">
           <input id="VccToggle" class="toggle__lever" type="checkbox" name="toggle" role="switch" value="On" onclick="table()">
         </label>
-      </form></div>
-      <div class="toggle3">
+      </form></div> -->
+      <!-- <div class="toggle3">
         <input type="checkbox" id="toggle3" onclick="table()" disabled/>
         <label for="toggle3"></label>
       </div>
       <div class="light">
         <img id="light" src="simulation_gif/lightoff.png" alt="" width="25%" height="25%">
+      </div> -->
+      <div class="row switchBoard" style="border: solid 5px black;border-radius: 2px;">
+        <span class="board vccPin1">
+          <label class="toggle">
+            <input id="VccToggle" class="toggle__lever" type="checkbox" name="toggle" role="switch" value="On" onclick="table()">
+          </label>
+        </span>
+        <span class="board vccPin2">
+          <input type="text" name="vccPin" id="vccPin" value="14" disabled>
+        </span>
+        <span class="board toggle3 inputPin1">
+          <input type="checkbox" id="toggle3" onclick="table()" disabled/>
+          <label for="toggle3"></label>
+        </span>
+        <span class="board inputPin2">
+          <select name="inputPin" id="inputPin">
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="3">3</option>
+            <option value="5">5</option>
+            <option value="9">9</option>
+          </select>
+        </span>
+        <span class="board light outputPin1">
+          <img id="light" src="simulation_gif/lightoff.png" alt="" width="80%" height="75%">
+        </span>
+        <span class="board outputPin2">
+          <input type="text" name="outputPin" id="outputPin" value="2" disabled>
+        </span>
+        <span class="board earthPin1">
+          <img id="light" src="simulation_gif/ground.png" alt="" width="175%" height="100%"></span>
+        <span class="board earthPin2">
+          <input type="text" name="earthPin" id="earthPin" value="7" disabled>
+        </span>
       </div>
   </div>
   
@@ -162,22 +242,11 @@
           </thead>
            <tbody></tbody>      
         </table>  
+        <button onclick="exportData()" class="btn btn-success">
+          <i class="fas fa-download"></i> 
+          Download</button>
       </div>
-      <button id="graph" onclick="plotgraph()">Graph</button>
-      <!-- <div class="toggle">
-        <input type="checkbox" id="toggle"> </input>
-        <label for="toggle"></label>
-      </div> -->
-
-
-
-
-
-
-
-<!-- GRAPH -->
-<div id="myPlot" style="width:100%;max-width:700px" class="mx-auto"></div>
- 
+      </div> 
 <a class="toTop" href="#simBlock"><i class="fas fa-arrow-circle-up fa-2x"></i></a>
 <div class="end">
   <h1>✌️</h1>
