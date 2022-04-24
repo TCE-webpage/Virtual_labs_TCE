@@ -51,13 +51,13 @@
             <a class="nav-link" aria-current="page" href="main.html">Aim</a>
             <a class="nav-link" href="Theory.html">Theory</a>
             <a class="nav-link" href="pre.html">Prequiz</a>
-            <li class="dropdown ">
+            <!-- <li class="dropdown ">
               <a class="nav-link dropdown-toggle " href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Procedure
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="cursor:pointer;">
                 <li><a class="dropdown-item" href="procedureip.html" style="text-decoration: none!important; border: none; margin-bottom:6px;">Input Characteristics</a></li>
-                <li><a class="dropdown-item" href="procedureop.html" style="text-decoration: none!important; border: none; margin-bottom:6px;">Output Characteristics</a></li>
+                <li><a class="dropdown-item" href="#" style="text-decoration: none!important; border: none; margin-bottom:6px;">Output Characteristics</a></li>
               </ul>
               </li>
               <li class="dropdown">
@@ -66,9 +66,11 @@
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="cursor:pointer;">
                 <li><a class="dropdown-item" href="simulation2.html" style="text-decoration: none!important; border: none; margin-bottom:6px;">Input Characteristics</a></li>
-                <li><a class="dropdown-item" href="#" style="text-decoration: none!important; border: none; margin-bottom:6px;">Output Characteristics</a></li>
+                <li><a class="dropdown-item" href="simulationop.html" style="text-decoration: none!important; border: none; margin-bottom:6px;">Output Characteristics</a></li>
               </ul>
-              </li>
+              </li> -->
+            <a class="nav-link " href="procedureip.html">Procedure</a>
+            <a class="nav-link " href="simulation2.html">Simulation</a>
             <a class="nav-link " href="outcome.html">Outcome</a>
             <a class="nav-link " href="#">Feedback</a>
         </div>
@@ -81,21 +83,22 @@
         <li><a class="minactive" href="main.html"><span class="" title="Aim"><img src="images/target.png" alt=""></span></a></li>
         <li><a href="Theory.html"><span class="fas fa-book fa-2x " title="Theory" style="color: black;"></span></a></li>
         <li><a href="pre.html"><span class="fas fa-question-circle fa-2x" title="Prequiz" style="color: black;"></span></a></li>
-        <li><a href="procedure.html"><span class="" title="Procedure" ><img src="images/process.png" alt=""></span></a></li>
+        <li><a href="procedureip.html"><span class="" title="Procedure" ><img src="images/process.png" alt=""></span></a></li>
         <!-- <li><a href="simulation2.html"><span class="" title="Simulation"><img src="images/settings.png" alt=""></span></a></li> -->
-        <li class="dropdown" >
+        <!-- <li class="dropdown" >
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" 
           data-bs-toggle="dropdown" aria-expanded="false">hi
           <!-- <span class="" title="Simulation"><img src="images/settings.png" alt=""></span> -->
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="position:absolute;">
+          <!-- </a> -->
+          <!-- <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="position:absolute;">
             <li><a class="dropdown-item" href="simulation2.html">Input Characteristics</a></li>
 
             
             <li><a class="dropdown-item" href="Theory.html">Output Characteristics
             </a></li>
-          </ul>
-          </li>
+          </ul> -->
+          <!-- </li> -->
+          <li><a href="simulation2.html"><span class="" title="Simulation"><img src="images/settings.png" alt=""></span></a></li>
         <li><a href="outcome.html"><span class="fas fa-clipboard-list fa-2x" title="Outcome" style="color: black;"></span></a></li>
         <li><a href="#about"><span class="fas fa-comments fa-2x" title="Feedback" style="color: black;"></span></a></li>
       <div>
@@ -105,22 +108,20 @@
       <div class="row">
       <div class="leftImg col-7" >
       <div class="Gif">
-      <img  id="img" src="simulation_gif/pic.png" width="90%" >
-      <div class="HoriSlider" ><input type="range" id="VCErange" value="0.00" min="0.00" max="40.0" step="0.1" onInput="updateVCElabel()">VCE</div>
-      <div id="verti">          
-        <input type="range" orient="vertical" value="0" id="gaugeValue-demoGauge" name="gaugeValue"  min="0.600" max="0.750" step="0.001" value="0"
-        onInput="updateGauge('demoGauge', 0.600, 0.750);"><p class="VBEName">VBE</p>
-      </div></div>
+      <img  id="img" src="simulation_gif/Intro _img.jpg" width="90%" >
+      <div class="HoriSlider1" ><input type="range" id="VDSrange" value="0" min="0" max="60" step="0.1" onInput="updateVGSlabel(0,60)">VDS</div>
+      <div class="HoriSlider2" ><input type="range" id="VGSrange" value="0" min="0" max="30" step="0.02" onInput="updateVDSlabel(0,30)">VGS</div>
+      </div>
       <div>
-      
-      <a href="simulationop.html"><button type=button  class="btn btn-danger scale resetbtn p-1">
+              
+      <a href="simulation2.html"><button type=button  class="btn btn-danger scale resetbtn p-1">
         Reset</button></a>
       </div>
       </div>
       <div class="meterBox col-5 container-fluid">
           <div class="meterBoxrow ">
-        <div class="VCE row p-3">IB
-            <span  class="VCEBox" id="VCElabel">0.00 &#956;A </span>
+        <div class="VGS row p-3"> VDS
+            <span  class="VGSBox" id="VGSlabel">0.00V</span>
         </div>
         <div class=" row p-3">
         <div class="gaugerow1 gauge1Inline col p-3 pt-2">
@@ -152,7 +153,7 @@
                     </div>
                 </div>
                 </div>
-                <p class="VBE">VCE(V)</p>
+                <p class="VDS">VGS(V)</p>
             </div>
         <div class="col p-3 addToTable" style="border-right: hidden; border-left: hidden;">
           <div class="" style="text-align: center;margin-top:5%">
@@ -197,39 +198,39 @@
             </div>
             </div>
             
-            <p class="IB">IC(mA)</p>
+            <p class="ID">IG(A)</p>
           </div>
           </div>
         <div class="row p-3">
                 <div class="button-effect">    
                     <a class="effect effect-2" id="start"  onclick="displayfn()">START</a><div>
                     <button class="button12" id="FormNPN" onclick='displayfn1()'>Form NPN</button>
-                    <button class="button12" id="SetVBE" onclick="displayfn2()" >EMITTER</button>
-                    <button class="button12" id="VaryVCE" onclick="displayfn3()">Vary VCE</button>
-                    <button class="button12" id="end" onclick="displayfn4()">Set Another IB</button>                    
+                    <button class="button12" id="SetVGS" onclick="displayfn2()" disabled >P Substrate</button> 
+                    <button class="button12" id="VaryVDS" onclick="displayfn3()">Vary VGS</button>
+                    <button class="button12" id="end" onclick="displayfn4()">Set Another VDS</button>                    
         </div>
         </div>
         </div>
         <div class="instruction p-2 mb-3 text-center">
           <p id="instruct">
-            Click on start to proceed with the experiment
+           observe the MOSFET on the left side.<br><b>Click on start to proceed with the experiment</b>
           </p>
-          
         </div>
           </div>
       </div>
       </div>
 </div>
 <!-- Table -->
+
 <div class="m-2 w-50 mx-auto">
-  <button id="graph" onclick="plotgraph1()">Graph</button>
+  <button id="graph" onclick="plotgraph()">Graph</button>
   <table class="table caption-top align-middle table-bordered text-center" id="mytable">    
-    <caption>IB: <span id="tbvce1"></span></caption>
+    <caption>VDS: <span id="tbvgs1"></span></caption>    
     <thead>
       <tr class="table-dark">
         <th>S.No</th>
-        <th>Collector-Emitter Voltage <br>VCE (V)</th>
-        <th>Collector Current <br>IC (mA)</th>
+        <th>Gate-Source Voltage <br>VGS (V)</th>
+        <th>Gate Current <br>IG (A)</th>
       </tr>
     </thead>
      <tbody></tbody>      

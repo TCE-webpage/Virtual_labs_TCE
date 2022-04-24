@@ -1,0 +1,130 @@
+  .overlay {
+    position: fixed;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0; 
+    background: rgba(0, 0, 0, 0.9);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+  }
+  .overlay:target {
+    visibility: visible;
+    opacity: 1
+  }
+  
+  .popup {
+    margin: 70px auto;
+    padding: 20px;
+    background-color:rgb(2, 20, 36,0.9);
+    width: 70%;
+    height: 70%;
+    top:60px;
+    position: relative;
+    transition: all 5s ease-in-out;
+  }
+
+  .popup_close{
+    position: absolute;
+    top: 1px;
+    right: 40px;
+    transition: all 200ms;
+    font-size: 40px !important;
+    font-weight: bolder;
+    text-decoration: none;
+    background-color:rgb(2, 20, 36,0.9);
+    color: red !important;
+  }
+ .popup_close:hover {
+    color:wheat !important;
+    background-color:rgb(2, 20, 36,0.9) !important;
+
+  }
+  
+  .popup_gate{
+      text-decoration: none;
+      border: rosybrown 2px solid;
+      background-color:saddlebrown;
+      border-radius: 50%;
+      padding: 8%;
+      margin: 15%;
+      cursor: pointer;
+      
+  }
+  .popup_gate_right{
+    text-decoration: none;
+    border: rosybrown 2px solid;
+    background-color:saddlebrown;
+    border-radius: 50%;
+    padding: 7%;
+    margin: 15%;
+    cursor: pointer;
+    
+}
+  .popup_gate_last{
+    text-decoration: none;
+    background-color:saddlebrown;
+    border: rosybrown 2px solid;
+    border-radius: 50%;
+    padding: 3%;
+    margin: 15%;
+    cursor: pointer;
+    
+}
+#popup1 table td{
+  padding: 5%;
+}
+#popup1 a{
+font-size: larger;
+color: black;
+font-family: sans-serif;
+font-weight:bolder;
+}
+#popup1 a:hover{
+font-size: larger;
+color: white;
+font-family: sans-serif;
+font-weight:bolder;
+background-color:rgb(38, 18, 4);
+
+}  
+
+
+.popup_gate2{
+  text-decoration: none;
+  border: rosybrown 2px solid;
+  background-color:saddlebrown;
+  border-radius: 50%;
+  padding: 3%;
+  cursor: pointer;
+  color: black;
+  font-size:medium;
+  font-family: sans-serif;
+  font-weight:bolder;
+  
+}
+.popup2 a:hover{
+  font-size: medium;
+  color: white;
+  font-family: sans-serif;
+  font-weight:bolder;
+  background-color:rgb(38, 18, 4);
+}
+.popup2 {
+  margin: 70px auto;
+  padding: 20px;
+  /* background:rgba(0, 0,0, 0.75) ; */
+  background-color:rgb(2, 20, 36,0.9);
+  border-radius: 5px;
+  width: 60%;
+  height: 80%;
+  top:60px;
+  position: relative;
+  text-align-last: center;
+  transition: all 5s ease-in-out;
+}
+
+
+  
+ 
