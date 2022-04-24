@@ -5,7 +5,7 @@ form {
 }
 .toggle, .toggle:before, .toggle:after, .toggle__lever, .toggle__lever:before {
 	cursor: pointer;
-	display: block;
+	display: inline-block;
 }
 .toggle {
 	background:
@@ -296,14 +296,4 @@ body{
 }
 .on .toggle3:after {
   color: black;
-}
-.toggle3{
-  position: absolute;
-  bottom:4%;
-  left: 7%;
-}
-.light{
-  position: absolute;
-  bottom:5%;
-  left: 19.5%;
 }
