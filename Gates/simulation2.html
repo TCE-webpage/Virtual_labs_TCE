@@ -9,6 +9,7 @@
  
   
   <link rel="stylesheet" href="simulation2.css">
+  <link rel="stylesheet" href="popup.css" type="text/css">
   <link rel="stylesheet" href="gauge.min.css?v=GAUGE_VERSION">
     <link rel="stylesheet" href="main.css">
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
@@ -99,7 +100,7 @@
             <a class="nav-link" href="Theory.html">Theory</a>
             <a class="nav-link" href="pre.html">Prequiz</a>
             <a class="nav-link " href="procedureip.html">Procedure</a>
-            <a class="nav-link " href="simulation2.html">Simulation</a>
+            <a class="nav-link popup_button" href="#popup1">Simulation</a>
             <a class="nav-link " href="outcome.html">Outcome</a>
             <a class="nav-link " href="#">Feedback</a>
         </div>
@@ -113,7 +114,7 @@
         <li><a href="Theory.html"><span class="fas fa-book fa-2x " title="Theory" style="color: black;"></span></a></li>
         <li><a href="pre.html"><span class="fas fa-question-circle fa-2x" title="Prequiz" style="color: black;"></span></a></li>
         <li><a href="procedureip.html"><span class="" title="Procedure" ><img src="images/process.png" alt=""></span></a></li>
-        <li><a href="simulation2.html"><span class="" title="Simulation"><img src="images/settings.png" alt=""></span></a></li>
+        <li><a class="popup_button" href="#popup2"><span class="" title="Simulation"><img src="images/settings.png" alt=""></span></a></li>
         <li><a href="outcome.html"><span class="fas fa-clipboard-list fa-2x" title="Outcome" style="color: black;"></span></a></li>
         <li><a href="#about"><span class="fas fa-comments fa-2x" title="Feedback" style="color: black;"></span></a></li>
       <div>
@@ -228,7 +229,60 @@
           <i class="fas fa-download"></i> 
           Download</button>
       </div>
-      </div> 
+      </div>
+      <div id="popup1" class="overlay">
+        <div class="popup">
+          <a class="popup_close" href="simulation2.html">&times;</a>
+          <table style="width:100%">
+            <tr>
+              <td ><a class="popup_gate" href="simulation2.html">NOT GATE</a></td>
+              <td style="text-align:right"><a class="popup_gate_right">NOR GATE</a></td>
+              
+            </tr>
+            <tr>
+              <td ><a class="popup_gate">AND GATE</a></td>
+              <td  style="text-align:right"><a class="popup_gate_right">NAND GATE</a></td>
+            </tr>
+            <tr>
+            <td> <a class="popup_gate">OR&nbsp;&nbsp;&nbsp;GATE</a></td>
+            <td style="text-align:right"><a class="popup_gate_right">X-NOR GATE</a></td></tr>
+          </table>
+          <p style="text-align:center"> <a class="popup_gate_last">X-OR GATE</a> </p> 
+            
+          </div>
+        </div>
+    
+        <div id="popup2" class="overlay">
+          <div class="popup2">
+            <a class="popup_close" href="simulation2.html">&times;</a>
+            <div >
+              <a class="popup_gate2">OR&nbsp;&nbsp;GATE</a>
+            </div>
+            <hr><br>
+            <div>
+              <a class="popup_gate2">AND GATE</a>
+            </div>
+            <hr><br>
+            <div>
+              <a class="popup_gate2" href="simulation2.html">NOT GATE</a>
+            </div>
+            <hr><br>
+            <div>
+              <a class="popup_gate2">NOR GATE</a>
+            </div>
+            <hr><br>
+            <div>
+              <a class="popup_gate2">NAND GATE</a>
+            </div>
+            <hr><br>
+            <div>
+              <a class="popup_gate2">X-OR GATE</a>
+            </div>
+            <hr><br>
+            <div>
+              <a class="popup_gate2">X-NOR GATE</a>
+            </div>
+           </div></div> 
 <a class="toTop" href="#simBlock"><i class="fas fa-arrow-circle-up fa-2x"></i></a>
 <div class="end">
   <h1>✌️</h1>
