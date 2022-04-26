@@ -248,8 +248,8 @@ body{
   font-weight: bold;
   content: "OFF";
   position: absolute;
-  left: 1px;
-  top: 30px;
+  left: 34%;
+  top: 90%;
   font-size: 15px;
   color: darkviolet;
 }
