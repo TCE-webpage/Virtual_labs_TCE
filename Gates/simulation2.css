@@ -248,8 +248,8 @@ body{
   font-weight: bold;
   content: "OFF";
   position: absolute;
-  left: 38%;
-  top: 90%;
+  left: 46.5%;
+  top:95%;
   font-size: 15px;
   color: darkviolet;
 }
@@ -288,13 +288,14 @@ body{
   width: 4px;
   background-color: #fff;
 }
-.onn .toggle3B:before {
+.ON .toggle3B:before {
   font-weight: bold;
   content: "ON";
-  left: 30px;
+  left: 46.5%;
+  top:95%;
   color: darkviolet;
 }
-.onn .toggle3B:after {
+.ON .toggle3B:after {
   color: black;
 }
 
@@ -302,7 +303,7 @@ body{
   font-weight: bold;
   content: "OFF";
   position: absolute;
-  left: 35.4%;
+  left: 32.5%;
   top:95%;
   font-size: 15px;
   color: darkviolet;
@@ -345,7 +346,7 @@ body{
 .on .toggle3:before {
   font-weight: bold;
   content: "ON";
-  left: 35.4%;
+  left: 32.5%;
   top:95%;
   color: darkviolet;
 }

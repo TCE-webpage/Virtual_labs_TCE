@@ -23,41 +23,55 @@
         padding-top:1.5%;
       }
       .vccPin2{
-        margin-left:8%;
-        padding-top: 2.5%;
+        margin-left: 0%;
       }
-      .inputPin1,.outputPin1{
+      .inputPin1{
         padding-top:2%;
+        margin-right: -5%;
+      }
+      .outputPin1{
+        padding-top:2%;
+        margin-right: -5%;
       }
       .inputPin2{
-        margin-left: -4%;
-        padding-top:2.5%;
-
+        margin-left:12%;
       }
       .outputPin2{
-        padding-top:2.5%;
-        margin-left: -4%;
+        margin-left:13%;
       }
       .earthPin1{
-        padding-top: 1.3%;
+        padding-top: 0.9%;
+        margin-right:11%;
       }
       .earthPin2{
-        padding-top:2.5%;
-        margin-left: -3%;
+        margin-right:9%;
       }
       #vccPin,#earthPin,#outputPin{
         text-align: center;
         width: 30px;
         height: 25px;
-        background-color: brown;
+        background-color:darkmagenta;
         color: black;
       }
       .switchBoard{
         padding-left:5%;
-        padding-right: -2%;
-        width: 85%;
-        margin-left: 9%;
+        margin-left: 12%;
       }
+      .toggle3:before {
+          font-weight: bold;
+          content: "OFF";
+          position: absolute;
+          left: 35%;
+          top:89%;
+        }
+      .on .toggle3:before {
+        position: absolute;
+          font-weight: bold;
+          content: "ON";
+          left:35%;
+          top:89%;
+          color: darkviolet;
+        }
     </style>
 </head>
 <body>
@@ -139,18 +153,30 @@
       <div class="light">
         <img id="light" src="simulation_gif/lightoff.png" alt="" width="25%" height="25%">
       </div> -->
-      <div class="row switchBoard" style="border: solid 2px darkmagenta;border-radius: 7px;width: 80%;">
+      <div class="switchBoard" style="border: solid 2px darkmagenta;border-radius: 7px;width:70%;">
+        <div class="row">
         <span class="board vccPin1">
           <label class="toggle">
             <input id="VccToggle" class="toggle__lever" type="checkbox" name="toggle" role="switch" value="On" onclick="table()">
           </label>
         </span>
-        <span class="board vccPin2">
-          <input type="text" name="vccPin" id="vccPin" value="14" disabled>
-        </span>
-        <span class="board toggle3 inputPin1">
+        
+        <span class="board toggle3 inputPin1 ms-auto">
           <input type="checkbox" id="toggle3" onclick="table()" disabled/>
           <label for="toggle3"></label>
+        </span>
+        
+        <span class="board light outputPin1 ms-auto">
+          <img id="light" src="simulation_gif/lightoff.png" alt="" width="32px" height="36px">
+        </span>
+        
+        <span class="board earthPin1 ms-auto">
+          <img id="light" src="simulation_gif/ground.png" alt="" width="50px" height="53px"></span>
+       
+      </div>
+      <div class="row">
+        <span class="board vccPin2">
+          <input type="text" name="vccPin" id="vccPin" value="14" disabled>
         </span>
         <span class="board inputPin2">
           <select name="inputPin" id="inputPin">
@@ -161,18 +187,16 @@
             <option value="9">9</option>
           </select>
         </span>
-        <span class="board light outputPin1">
-          <img id="light" src="simulation_gif/lightoff.png" alt="" width="30px" height="30px">
-        </span>
+        
         <span class="board outputPin2">
           <input type="text" name="outputPin" id="outputPin" value="2" disabled>
         </span>
-        <span class="board earthPin1">
-          <img id="light" src="simulation_gif/ground.png" alt="" width="42px" height="42px"></span>
-        <span class="board earthPin2">
+
+        <span class="board earthPin2 ms-auto">
           <input type="text" name="earthPin" id="earthPin" value="7" disabled>
         </span>
       </div>
+    </div>
   </div>
   
     <!-- <div class="inputswitch"> -->

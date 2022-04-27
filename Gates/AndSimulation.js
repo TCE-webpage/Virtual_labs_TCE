@@ -106,7 +106,7 @@ function deleted(){
 
 //input toggler switch
 var toggle3B = document.getElementById('toggle3B');
-toggle3B.addEventListener("click", () => document.body.classList.toggle('on') , false);
+toggle3B.addEventListener("click", () => document.body.classList.toggle('ON') , false);
 // if(typeof toggle3 !== null && toggle3 !== 'undefined' ) {
 //   toggle3=document.getElementById("toggle3").innerHTML;
 // }
