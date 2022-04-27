@@ -4,29 +4,37 @@
  var yArray=[0];
  var i=1;
  var A=false
+ var B=false
  var Vcc=false
  function table(){
   A=document.getElementById("toggle3").checked;
-  var inpDisablity=document.getElementById("toggle3");
+  B=document.getElementById("toggle3B").checked;
+  var inpADisablity=document.getElementById("toggle3");
+  var inpBDisablity=document.getElementById("toggle3B");
   Vcc=document.getElementById("VccToggle").checked;
   if(Vcc){
-    inpDisablity.disabled=false;
+    inpADisablity.disabled=false;
+    inpBDisablity.disabled=false;
     document.getElementById("instruct").innerHTML='You can see that input is OFF(logic 0) in Pin 1. So, PMOS acts as a closed switch which turns the LED ON(logic 1) in Pin 2 and NMOS acts as an open switch.Observe the Truth Table<br><b>Toggle Input switch(Pin 1)</b>'
-    if(A){      
-      
-      document.getElementById("img1").src="simulation_gif/INPUTON.gif";               
-      document.getElementById("light").src="simulation_gif/lightoff.png";
-      console.log(A,Vcc);
-      document.getElementById("instruct").innerHTML='You can see that input is ON(logic 1) in Pin 1. So, PMOS acts as an open switch hence the LED turns OFF(logic 0) in Pin 2.Observe the Truth Table.<br><b>Repeat the same procedure for better understanding</b>'
-    }
-    else{
-      
-      document.getElementById("img1").src="simulation_gif/PowerSupplyOn.gif";
+    if(A && B){     
+      document.getElementById("img1").src="simulation_gif/PowerSupplyOn.gif"; 
       setTimeout( function(){       
         document.getElementById("img1").src="simulation_gif/loop.gif";
-        },2700);
+        },2700);    
       document.getElementById("light").src="simulation_gif/lighton.png";
-      console.log(A,Vcc);
+      document.getElementById("instruct").innerHTML='You can see that input A and B is ON(logic 1) in Pin 1 and 2. So, PMOS acts as an open switch hence the LED turns OFF(logic 0) in Pin 2.Observe the Truth Table.<br><b>Repeat the same procedure for better understanding</b>'
+    }
+    else if(A && !B){
+      document.getElementById("img1").src="simulation_gif/INPUTON.gif"; 
+      document.getElementById("light").src="simulation_gif/lightoff.png";
+    }
+    else if(!A && B){
+      document.getElementById("img1").src="simulation_gif/INPUTON.gif"; 
+      document.getElementById("light").src="simulation_gif/lightoff.png";
+    }
+    else{
+      document.getElementById("img1").src="simulation_gif/INPUTON.gif"; 
+      document.getElementById("light").src="simulation_gif/lightoff.png";
     }
     tabled();
   }
@@ -34,8 +42,10 @@
     document.getElementById("instruct").innerHTML=" Observe the IC-7404 on the left side and the internal circuit diagram of the NOT gate on the right side which is made up of NMOS and PMOS and then,<br><b>Turn on VCC</b><br>using the switch given on the pin 14."
     document.getElementById("img1").src="simulation_gif/Slide5.png";
     document.getElementById("light").src="simulation_gif/lightoff.png";
-    inpDisablity.checked=false;
-    inpDisablity.disabled=true;
+    inpADisablity.checked=false;
+    inpBDisablity.checked=false;
+    inpADisablity.disabled=true;
+    inpBDisablity.disabled=true;
     while(tabrowindex){
       document.getElementById("mytable").deleteRow(-1);
       tabrowindex--;
@@ -50,18 +60,37 @@
 //  document.getElementById("tbvce1").innerHTML =" V";
 
  var sno = ++tabrowindex;
- var input = 0;
+ var inputA = 0;
+ var inputB = 0;
  var output=1
- if(A){
-   input=1;
+ if(A && B){
+   inputA=1;
+   inputB=1;
+   output=1;
+ }
+ else if(A && !B){
+   inputA=1;
+   inputB=0;
+   output=0; 
+ }
+ else if(!A && B){
+  inputA=0;
+  inputB=1;
+  output=0; 
+ }
+ else{
+   inputA=0;
+   inputB=0;
    output=0;
  }
  var table = document.getElementById("mytable");
  var row = table.insertRow(-1);
  var cell1 = row.insertCell(0);
  var cell2 = row.insertCell(1);
- cell1.innerHTML = input;
- cell2.innerHTML = output; 
+ var cell3 = row.insertCell(2);
+ cell1.innerHTML = inputA;
+ cell2.innerHTML = inputB; 
+ cell3.innerHTML = output;
  xArray[i]=input;
  yArray[i]=output;
  i+=1;    
