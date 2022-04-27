@@ -248,8 +248,8 @@ body{
   font-weight: bold;
   content: "OFF";
   position: absolute;
-  left: 34%;
-  top: 90%;
+  left: 35.4%;
+  top:95%;
   font-size: 15px;
   color: darkviolet;
 }
@@ -291,7 +291,8 @@ body{
 .on .toggle3:before {
   font-weight: bold;
   content: "ON";
-  left: 3px;
+  left: 35.4%;
+  top:95%;
   color: darkviolet;
 }
 .on .toggle3:after {
