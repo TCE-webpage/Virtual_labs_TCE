@@ -6,15 +6,46 @@
  var A=false
  var B=false
  var Vcc=false
+ function pin(){
+  var inputPin=document.getElementById("inputPin").value;
+  var inputpinB=document.getElementById("inputPinB");
+  var outPin=document.getElementById("outputPin");
+  var icImg= document.getElementById("img");
+  console.log(inputPin);
+  if(inputPin=="1"){
+    inputpinB.value="2";
+    outPin.value="3";
+    console.log("input1");
+    icImg.src="simulation_gif/AND_IN_1.png";
+  }
+  else if(inputPin=="4"){
+    inputpinB.value="5";
+    outPin.value="6";
+    icImg.src="simulation_gif/AND_IN_4.png";
+  }
+  else if(inputPin=="10"){
+    inputpinB.value="9";
+    outPin.value="8";
+    icImg.src="simulation_gif/AND_IN_9.png";
+  }
+  else if(inputPin=="13"){
+    inputpinB.value="12";
+    outPin.value="11"
+    icImg.src="simulation_gif/AND_IN_12.png";
+  }
+}
  function table(){
   A=document.getElementById("toggle3").checked;
   B=document.getElementById("toggle3B").checked;
   var inpADisablity=document.getElementById("toggle3");
   var inpBDisablity=document.getElementById("toggle3B");
+  var inpVccPinDisablity=document.getElementById("inputPin");
   Vcc=document.getElementById("VccToggle").checked;
   if(Vcc){
     inpADisablity.disabled=false;
     inpBDisablity.disabled=false;
+    inpVccPinDisablity.disabled=true;
+
     document.getElementById("instruct").innerHTML='You can see that input is OFF(logic 0) in Pin 1. So, PMOS acts as a closed switch which turns the LED ON(logic 1) in Pin 2 and NMOS acts as an open switch.Observe the Truth Table<br><b>Toggle Input switch(Pin 1)</b>'
     if(A && B){     
       document.getElementById("img1").src="simulation_gif/And_A_B_On.gif"; 
@@ -55,6 +86,7 @@
     inpBDisablity.checked=false;
     inpADisablity.disabled=true;
     inpBDisablity.disabled=true;
+    inpVccPinDisablity.disabled=false;
     while(tabrowindex){
       document.getElementById("mytable").deleteRow(-1);
       tabrowindex--;
