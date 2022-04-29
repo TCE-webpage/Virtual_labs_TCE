@@ -19,34 +19,41 @@
         margin: 1%;
       }
       .vccPin1{
-        margin-left: -7%;
+        margin-left: -5%;
         padding-top:1.5%;
       }
       .vccPin2{
-        margin-left:6%;
-        padding-top: 2.5%;
+        margin-left:0%;
       }
-      .inputPin1,.outputPin1{
+      .inputPinA{
+        padding-top:2%;
+        margin-left:15%;
+      }
+      .inputPinB{
         padding-top:2%;
       }
-      .inputPin2{
-        margin-left: -4%;
-        padding-top:2.5%;
+      .outputPin1{
+        padding-top:1.5%;
+        margin-right:0%;
+      }
+      .inputPin2A{
+        margin-left: 10%;
 
       }
+      .inputPin2B{
+        margin-left: 9%;
+      }
       .outputPin2{
-        padding-top:2.5%;
-        margin-left: -4.5%;
+        margin-right:0.8%;
       }
       .earthPin1{
-        padding-top: 1%;
-        margin-left: -2%;
+        padding-top: 0.5%;
+        margin-right:10%;
       }
       .earthPin2{
-        padding-top:2.5%;
-        margin-left: -2%;
+        margin-right:8%;
       }
-      #vccPin,#earthPin,#outputPin{
+      #vccPin,#earthPin,#outputPin,#inputPinB{
         text-align: center;
         width: 30px;
         height: 25px;
@@ -55,9 +62,7 @@
       }
       .switchBoard{
         padding-left:5%;
-        padding-right: -2%;
-        width: 90%;
-        margin-left: 9%;
+        margin-left:10%;
       }
     </style>
 </head>
@@ -127,95 +132,74 @@
       
     <div class="Gif">
     <img  id="img" src="simulation_gif/AND_IC.png" width="97%" >
-    <!-- <div class="power_switch">
-      <form>
-        <label class="toggle">
-          <input id="VccToggle" class="toggle__lever" type="checkbox" name="toggle" role="switch" value="On" onclick="table()">
-        </label>
-      </form></div> -->
-      <!-- <div class="toggle3">
-        <input type="checkbox" id="toggle3" onclick="table()" disabled/>
-        <label for="toggle3"></label>
-      </div>
-      <div class="light">
-        <img id="light" src="simulation_gif/lightoff.png" alt="" width="25%" height="25%">
-      </div> -->
-      <div class="row switchBoard" style="border: solid 2px darkmagenta;border-radius: 7px;width: 80%;">
+      <div class="switchBoard" style="border: solid 2px darkmagenta;border-radius: 7px;width:78%;">
+        <div class="row">
         <span class="board vccPin1">
           <label class="toggle">
             <input id="VccToggle" class="toggle__lever" type="checkbox" name="toggle" role="switch" value="On" onclick="table()">
           </label>
         </span>
-        <span class="board vccPin2">
-          <input type="text" name="vccPin" id="vccPin" value="14" disabled>
-        </span>
-        <span class="board toggle3 inputPin1">
+        
+        <span class="board toggle3 inputPinA">
           <input type="checkbox" id="toggle3" onclick="table()" disabled/>
           <label for="toggle3"></label>
         </span>
-        <span class="board inputPin2">
-          <select name="inputPin" id="inputPin">
-            <option value="0">0</option>
-            <option value="1">1</option>
-            <option value="3">3</option>
-            <option value="5">5</option>
-            <option value="9">9</option>
-          </select>
-        </span>
-        <span class="board toggle3B inputPin1">
+       
+        <span class="board toggle3B inputPinB ms-auto">
           <input type="checkbox" id="toggle3B" onclick="table()" disabled/>
           <label for="toggle3B"></label>
         </span>
-        <span class="board inputPin2">
-          <select name="inputPin" id="inputPinB">
+        
+        <span class="board light outputPin1 ms-auto">
+          <img id="light" src="simulation_gif/lightoff.png" alt="" width="32px" height="36px">
+        </span>
+        
+        <span class="board earthPin1 ms-auto">
+          <img id="light" src="simulation_gif/ground.png" alt="" width="50px" height="53px"></span>
+        </div>
+      
+      <div class = "row">
+        <span class="board vccPin2">
+          <input type="text" name="vccPin" id="vccPin" value="14" disabled>
+        </span>
+        <span class="board inputPin2A">
+          <select name="inputPin" id="inputPin">
             <option value="0">0</option>
             <option value="1">1</option>
-            <option value="3">3</option>
-            <option value="5">5</option>
-            <option value="9">9</option>
+            <option value="3">4</option>
+            <option value="5">9</option>
+            <option value="9">12</option>
           </select>
         </span>
-        <span class="board light outputPin1">
-          <img id="light" src="simulation_gif/lightoff.png" alt="" width="80%" height="75%">
+        <span class="board inputPin2B">
+            <input type="text"  name="inputPin" id="inputPinB" value="4" disabled>
         </span>
-        <span class="board outputPin2">
+        <span class="board outputPin2  ms-auto">
           <input type="text" name="outputPin" id="outputPin" value="2" disabled>
         </span>
-        <span class="board earthPin1">
-          <img id="light" src="simulation_gif/ground.png" alt="" width="175%" height="100%"></span>
-        <span class="board earthPin2">
+        <span class="board earthPin2 ms-auto">
           <input type="text" name="earthPin" id="earthPin" value="7" disabled>
         </span>
       </div>
   </div>
-  
-    <!-- <div class="inputswitch"> -->
-    
-    <!-- </div> -->
-
-    
-    <!-- <i class="fa fa-lightbulb-o fa-4x"></i> -->
-    <!-- Table -->
-
-
 <div>  
   <a href="simulation2.html"><button type=button  class="btn btn-danger scale resetbtn p-1">
     Reset</button></a>
   </div>
-    </div>
+</div></div>
     <div class="meterBox col-6 container-fluid">
         <div class="meterBoxrow ">
           <div class="leftImg " >
             
             <div class="Gif">
-            <img  id="img1" src="simulation_gif/Slide5.PNG" width="100%" >
+            <img  id="img1" src="simulation_gif/AndIntro.JPG" width="100%" >
             </div>
             
             </div> 
       </div> 
       <div class="instruction p-2 mb-3 text-center">
         <p id="instruct">
-          Observe the IC-7404 on the left side and the internal circuit diagram of the NOT gate on the right side which is made up of NMOS and PMOS and then,<br>
+          Observe the IC-7408 on the left side and the internal circuit diagram of the AND gate on the right side which is made up of NMOS and PMOS and then,<br>
           <b>Turn on VCC</b><br>
           using the switch given on the pin 14.
 
