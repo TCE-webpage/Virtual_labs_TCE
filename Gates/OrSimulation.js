@@ -17,39 +17,30 @@
     inpBDisablity.disabled=false;
     document.getElementById("instruct").innerHTML='You can see that input is OFF(logic 0) in Pin 1. So, PMOS acts as a closed switch which turns the LED ON(logic 1) in Pin 2 and NMOS acts as an open switch.Observe the Truth Table<br><b>Toggle Input switch(Pin 1)</b>'
     if(A && B){     
-      document.getElementById("img1").src="simulation_gif/And_A_B_On.gif"; 
+      document.getElementById("img1").src="simulation_gif/PowerSupplyOn.gif"; 
       setTimeout( function(){       
-        document.getElementById("img1").src="simulation_gif/And_A_B_On_Loop.gif";
-        },3000);          
+        document.getElementById("img1").src="simulation_gif/loop.gif";
+        },2700);    
       document.getElementById("light").src="simulation_gif/lighton.png";
       document.getElementById("instruct").innerHTML='You can see that input A and B is ON(logic 1) in Pin 1 and 2. So, PMOS acts as an open switch hence the LED turns OFF(logic 0) in Pin 2.Observe the Truth Table.<br><b>Repeat the same procedure for better understanding</b>'
     }
     else if(A && !B){
-      document.getElementById("img1").src="simulation_gif/And_A_On_B_Off.gif"; 
-      setTimeout( function(){       
-        document.getElementById("img1").src="simulation_gif/And_A_On_B_Off_Loop.gif";
-        },3500);
+      document.getElementById("img1").src="simulation_gif/INPUTON.gif"; 
       document.getElementById("light").src="simulation_gif/lightoff.png";
     }
     else if(!A && B){
-      document.getElementById("img1").src="simulation_gif/And_A_Off_B_ON.gif"; 
-      setTimeout( function(){       
-        document.getElementById("img1").src="simulation_gif/And_A_Off_B_ON_Loop.gif";
-        },4400);
+      document.getElementById("img1").src="simulation_gif/INPUTON.gif"; 
       document.getElementById("light").src="simulation_gif/lightoff.png";
     }
     else{
-      document.getElementById("img1").src="simulation_gif/And_A_B_Off.gif"; 
-      setTimeout( function(){       
-        document.getElementById("img1").src="simulation_gif/And_A_B_Off_Loop.gif";
-        },3800);
+      document.getElementById("img1").src="simulation_gif/INPUTON.gif"; 
       document.getElementById("light").src="simulation_gif/lightoff.png";
     }
     tabled();
   }
   else{
-    document.getElementById("instruct").innerHTML=" Observe the IC-7408 on the left side and the internal circuit diagram of the AND gate on the right side which is made up of NMOS and PMOS and then,<br><b>Turn on VCC</b><br>using the switch given on the pin 14."
-    document.getElementById("img1").src="simulation_gif/AndIntro.JPG";
+    document.getElementById("instruct").innerHTML=" Observe the IC-7404 on the left side and the internal circuit diagram of the NOT gate on the right side which is made up of NMOS and PMOS and then,<br><b>Turn on VCC</b><br>using the switch given on the pin 14."
+    document.getElementById("img1").src="simulation_gif/Slide5.png";
     document.getElementById("light").src="simulation_gif/lightoff.png";
     inpADisablity.checked=false;
     inpBDisablity.checked=false;

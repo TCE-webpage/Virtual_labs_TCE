@@ -15,7 +15,7 @@
     <title>LOGIC GATES</title>
     <style>
       .board{
-        width: 12%;
+        width: 10%;
         margin: 1%;
       }
       .vccPin1{
@@ -23,27 +23,35 @@
         padding-top:1.5%;
       }
       .vccPin2{
-        margin-left:8%;
-        padding-top: 2.5%;
+        margin-left:0%;
       }
-      .inputPin1,.outputPin1{
+      .inputPinA{
+        padding-top:2%;
+        margin-left:15%;
+      }
+      .inputPinB{
         padding-top:2%;
       }
-      .inputPin2{
-        margin-left: -4%;
-        padding-top:2.5%;
+      .outputPin1{
+        padding-top:1.5%;
+        margin-right:0%;
+      }
+      .inputPin2A{
+        margin-left: 10%;
 
       }
+      .inputPin2B{
+        margin-left: 9%;
+      }
       .outputPin2{
-        padding-top:2.5%;
-        margin-left: -7%;
+        margin-right:0.8%;
       }
       .earthPin1{
-        padding-top: 1%;
+        padding-top: 0.5%;
+        margin-right:10%;
       }
       .earthPin2{
-        padding-top:2.5%;
-        margin-left: -3%;
+        margin-right:8%;
       }
       #vccPin,#earthPin,#outputPin{
         text-align: center;
@@ -54,9 +62,7 @@
       }
       .switchBoard{
         padding-left:5%;
-        padding-right: -2%;
-        width: 85%;
-        margin-left: 3%;
+        margin-left:10%;
       }
     </style>
 </head>
@@ -124,71 +130,69 @@
     <div class="row">
     <div class="leftImg col-6" >
       
-    <div class="Gif pt-2 pl-4" style="margin-left: 11%;">
-    <img  id="img" src="simulation_gif/OR_IC.png" width="90%" >
-    <!-- <div class="power_switch">
-      <form>
+    <div class="Gif">
+    <img  id="img" src="simulation_gif/OR_IC.png" width="97%" >
+    <div class="switchBoard" style="border: solid 2px darkmagenta;border-radius: 7px;width:78%;">
+      <div class="row">
+      <span class="board vccPin1">
         <label class="toggle">
           <input id="VccToggle" class="toggle__lever" type="checkbox" name="toggle" role="switch" value="On" onclick="table()">
         </label>
-      </form></div> -->
-      <!-- <div class="toggle3">
+      </span>
+      
+      <span class="board toggle3 inputPinA">
         <input type="checkbox" id="toggle3" onclick="table()" disabled/>
         <label for="toggle3"></label>
+      </span>
+     
+      <span class="board toggle3B inputPinB ms-auto">
+        <input type="checkbox" id="toggle3B" onclick="table()" disabled/>
+        <label for="toggle3B"></label>
+      </span>
+      
+      <span class="board light outputPin1 ms-auto">
+        <img id="light" src="simulation_gif/lightoff.png" alt="" width="32px" height="36px">
+      </span>
+      
+      <span class="board earthPin1 ms-auto">
+        <img id="light" src="simulation_gif/ground.png" alt="" width="50px" height="53px"></span>
       </div>
-      <div class="light">
-        <img id="light" src="simulation_gif/lightoff.png" alt="" width="25%" height="25%">
-      </div> -->
-      <div class="row switchBoard" style="border: solid 5px black;border-radius: 2px;">
-        <span class="board vccPin1">
-          <label class="toggle">
-            <input id="VccToggle" class="toggle__lever" type="checkbox" name="toggle" role="switch" value="On" onclick="table()">
-          </label>
-        </span>
-        <span class="board vccPin2">
-          <input type="text" name="vccPin" id="vccPin" value="14" disabled>
-        </span>
-        <span class="board toggle3 inputPin1">
-          <input type="checkbox" id="toggle3" onclick="table()" disabled/>
-          <label for="toggle3"></label>
-        </span>
-        <span class="board inputPin2">
-          <select name="inputPin" id="inputPin">
-            <option value="0">0</option>
-            <option value="1">1</option>
-            <option value="3">3</option>
-            <option value="5">5</option>
-            <option value="9">9</option>
-          </select>
-        </span>
-        <span class="board light outputPin1">
-          <img id="light" src="simulation_gif/lightoff.png" alt="" width="80%" height="75%">
-        </span>
-        <span class="board outputPin2">
-          <input type="text" name="outputPin" id="outputPin" value="2" disabled>
-        </span>
-        <span class="board earthPin1">
-          <img id="light" src="simulation_gif/ground.png" alt="" width="175%" height="100%"></span>
-        <span class="board earthPin2">
-          <input type="text" name="earthPin" id="earthPin" value="7" disabled>
-        </span>
-      </div>
-  </div>
-  
-    <!-- <div class="inputswitch"> -->
     
-    <!-- </div> -->
-
-    
-    <!-- <i class="fa fa-lightbulb-o fa-4x"></i> -->
-    <!-- Table -->
-
-
+    <div class = "row">
+      <span class="board vccPin2">
+        <input type="text" name="vccPin" id="vccPin" value="14" disabled>
+      </span>
+      <span class="board inputPin2A">
+        <select name="inputPin" id="inputPin">
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="3">3</option>
+          <option value="5">5</option>
+          <option value="9">9</option>
+        </select>
+      </span>
+      <span class="board inputPin2B">
+        <select name="inputPin" id="inputPinB">
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="3">3</option>
+          <option value="5">5</option>
+          <option value="9">9</option>
+        </select>
+      </span>
+      <span class="board outputPin2  ms-auto">
+        <input type="text" name="outputPin" id="outputPin" value="2" disabled>
+      </span>
+      <span class="board earthPin2 ms-auto">
+        <input type="text" name="earthPin" id="earthPin" value="7" disabled>
+      </span>
+    </div>
+  </div>    
 <div>  
   <a href="simulation2.html"><button type=button  class="btn btn-danger scale resetbtn p-1">
     Reset</button></a>
   </div>
-    </div>
+    </div></div>
     <div class="meterBox col-6 container-fluid">
         <div class="meterBoxrow ">
           <div class="leftImg " >
@@ -201,7 +205,7 @@
       </div> 
       <div class="instruction p-2 mb-3 text-center">
         <p id="instruct">
-          Observe the IC-7404 on the left side and the internal circuit diagram of the NOT gate on the right side which is made up of NMOS and PMOS and then,<br>
+          Observe the IC-7432 on the left side and the internal circuit diagram of the OR gate on the right side which is made up of NMOS and PMOS and then,<br>
           <b>Turn on VCC</b><br>
           using the switch given on the pin 14.
 
@@ -218,7 +222,8 @@
         <table class="table caption-top align-middle table-bordered text-center" id="mytable">       
           <thead>
             <tr class="table-dark">
-              <th>Input </th>
+              <th>Input A</th>
+              <th>Input B</th>
               <th>Output</th>
             </tr>
           </thead>
@@ -343,6 +348,6 @@
 </div>
  
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-      <script src="simulation.js" ></script>
+      <script src="OrSimulation.js" ></script>
     </body>
 </html>
