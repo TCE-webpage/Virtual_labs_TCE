@@ -7,15 +7,20 @@
  var B=false
  var Vcc=false
  function pin(){
+  var VccPin=document.getElementById("VccToggle");
   var inputPin=document.getElementById("inputPin").value;
   var inputpinB=document.getElementById("inputPinB");
   var outPin=document.getElementById("outputPin");
   var icImg= document.getElementById("img");
-  console.log(inputPin);
+  if(VccPin.value=="0"){
+    VccPin.disabled=true;
+  }
+  else{
+    VccPin.disabled=false;
+  }
   if(inputPin=="1"){
     inputpinB.value="2";
     outPin.value="3";
-    console.log("input1");
     icImg.src="simulation_gif/AND_IN_1.png";
   }
   else if(inputPin=="4"){
@@ -82,8 +87,19 @@
     document.getElementById("instruct").innerHTML=" Observe the IC-7408 on the left side and the internal circuit diagram of the AND gate on the right side which is made up of NMOS and PMOS and then,<br><b>Turn on VCC</b><br>using the switch given on the pin 14."
     document.getElementById("img1").src="simulation_gif/AndIntro.JPG";
     document.getElementById("light").src="simulation_gif/lightoff.png";
-    inpADisablity.checked=false;
-    inpBDisablity.checked=false;
+    document.getElementById("VccToggle").disabled=true;
+    if(inpADisablity.checked){
+      inpADisablity.click();
+    }
+    else{
+      inpADisablity.checked=false;
+    }
+    if(inpBDisablity.checked){
+      inpBDisablity.click();
+    }
+    else{
+      inpBDisablity.checked=false;
+    }
     inpADisablity.disabled=true;
     inpBDisablity.disabled=true;
     inpVccPinDisablity.disabled=false;
