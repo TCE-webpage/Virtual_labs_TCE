@@ -47,22 +47,25 @@
   B=document.getElementById("toggle3B").checked;
   var inpADisablity=document.getElementById("toggle3");
   var inpBDisablity=document.getElementById("toggle3B");
-  var inpVccPinDisablity=document.getElementById("inputPin");
+  var inpPinDisablity=document.getElementById("inputPin");
+  var VccSwitch=document.getElementById("VccToggle");
   Vcc=document.getElementById("VccToggle").checked;
   if(Vcc){
     inpADisablity.disabled=false;
     inpBDisablity.disabled=false;
-    inpVccPinDisablity.disabled=true;
+    inpPinDisablity.disabled=true;
 
     document.getElementById("instruct").innerHTML='You can see that both the input is OFF(logic 0).Observe the internal working corresponding to the switch.Observe the Truth Table<br><b>Toggle Input switches and study the gate for different combinations</b>'
     if(A && B){           
       inpADisablity.disabled=true;
       inpBDisablity.disabled=true;
+      VccSwitch.disabled=true;
       document.getElementById("img1").src="simulation_gif/And_A_B_On.gif"; 
       setTimeout( function(){  
         document.getElementById("img1").src="simulation_gif/And_A_B_On_Loop.gif";
         inpADisablity.disabled=false;
         inpBDisablity.disabled=false;
+        VccSwitch.disabled=false;
         },3000); 
               
       document.getElementById("light").src="simulation_gif/lighton.png";
@@ -71,33 +74,39 @@
     else if(A && !B){
       inpADisablity.disabled=true;
       inpBDisablity.disabled=true;
+      VccSwitch.disabled=true;
       document.getElementById("img1").src="simulation_gif/And_A_On_B_Off.gif"; 
       setTimeout( function(){       
         document.getElementById("img1").src="simulation_gif/And_A_On_B_Off_Loop.gif";
         inpADisablity.disabled=false;
         inpBDisablity.disabled=false;
+        VccSwitch.disabled=false;
         },3500);
       document.getElementById("light").src="simulation_gif/lightoff.png";
     }
     else if(!A && B){
       inpADisablity.disabled=true;
       inpBDisablity.disabled=true;
+      VccSwitch.disabled=true;
       document.getElementById("img1").src="simulation_gif/And_A_Off_B_ON.gif"; 
       setTimeout( function(){       
         document.getElementById("img1").src="simulation_gif/And_A_Off_B_ON_Loop.gif";
         inpADisablity.disabled=false;
         inpBDisablity.disabled=false;
+        VccSwitch.disabled=false;
         },4400);
       document.getElementById("light").src="simulation_gif/lightoff.png";
     }
     else{
       inpADisablity.disabled=true;
       inpBDisablity.disabled=true;
+      VccSwitch.disabled=true;
       document.getElementById("img1").src="simulation_gif/And_A_B_Off.gif"; 
       setTimeout( function(){       
         document.getElementById("img1").src="simulation_gif/And_A_B_Off_Loop.gif";
         inpADisablity.disabled=false;
         inpBDisablity.disabled=false;
+        VccSwitch.disabled=false;
         },3800);
       document.getElementById("light").src="simulation_gif/lightoff.png";
     }
@@ -121,7 +130,7 @@
     }
     inpADisablity.disabled=true;
     inpBDisablity.disabled=true;
-    inpVccPinDisablity.disabled=false;
+    inpPinDisablity.disabled=false;
     document.getElementById("img1").src="simulation_gif/AndIntro.JPG";
 
     while(tabrowindex){
