@@ -1,7 +1,5 @@
  // Table Creation Code JS
  var tabrowindex = 0;
- var xArray=[0];
- var yArray=[0];
  var i=1;
  var A=false
  var B=false
@@ -192,26 +190,6 @@ var toggle3 = document.getElementById('toggle3');
 toggle3.addEventListener("click", () => document.body.classList.toggle('on') , false);
 
 
-
-
-function plotgraph(){
-// Define Data
-var data = [{
-  x: xArray,
-  y: yArray,
-  mode:"lines"
-  }];
-
-// Define Layout
-var layout = {
-xaxis: {range: [0, 5], title: "Drain-Source Voltage (V)"},
-yaxis: {range: [0, 5], title: "Drain Current (A)"},  
-title: "Drain Characteristics - VDS Vs ID"
-};
-
-// Display using Plotly
-Plotly.newPlot("myPlot", data, layout);
-}
 
 function exportData(){
   /* Get the HTML data using Element by Id */

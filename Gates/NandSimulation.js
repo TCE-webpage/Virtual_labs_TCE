@@ -1,8 +1,6 @@
  // Table Creation Code JS
  var tabrowindex = 0;
- var xArray=[0];
- var yArray=[0];
- var i=1;
+  var i=1;
  var A=false
  var B=false
  var Vcc=false
@@ -15,33 +13,33 @@
   var icImg= document.getElementById("img");
   if(inputPin=="0"){
     VccPin.disabled=true;
-    icImg.src="simulation_gif/AND_IC.png";
+    icImg.src="simulation_gif/NAND_IC.png";
   }
   else{
     VccPin.disabled=false;
   }
-  document.getElementById("instruct").innerHTML='Observe the IC-7408 diagram with the particular gate highlighted <b>Turn On Vcc</b>'
+  document.getElementById("instruct").innerHTML='Observe the IC-7400 diagram with the particular gate highlighted <b>Turn On Vcc</b>'
 
   if(inputPin=="1"){
     inputpinB.value="2";
     outPin.value="3";
-    icImg.src="simulation_gif/AND_IN_1.png";
+    icImg.src="simulation_gif/NAND_IN_1.png";
     
   }
   else if(inputPin=="4"){
     inputpinB.value="5";
     outPin.value="6";
-    icImg.src="simulation_gif/AND_IN_4.png";
+    icImg.src="simulation_gif/NAND_IN_4.png";
   }
   else if(inputPin=="10"){
     inputpinB.value="9";
     outPin.value="8";
-    icImg.src="simulation_gif/AND_IN_9.png";
+    icImg.src="simulation_gif/NAND_IN_9.png";
   }
   else if(inputPin=="13"){
     inputpinB.value="12";
     outPin.value="11"
-    icImg.src="simulation_gif/AND_IN_12.png";
+    icImg.src="simulation_gif/NAND_IN_12.png";
   }
 }
  function table(){
@@ -67,7 +65,7 @@
         inpBDisablity.disabled=false;
         },3000); 
               
-      document.getElementById("light").src="simulation_gif/lighton.png";
+      document.getElementById("light").src="simulation_gif/lightoff.png";
       document.getElementById("instruct").innerHTML='You can see that both the input is OFF(logic 0).Observe the internal working corresponding to the switch.Observe the Truth Table<br><b>Toggle Input switches and study the gate for different combinations</b>'
     }
     else if(A && !B){
@@ -79,7 +77,7 @@
         inpADisablity.disabled=false;
         inpBDisablity.disabled=false;
         },3500);
-      document.getElementById("light").src="simulation_gif/lightoff.png";
+      document.getElementById("light").src="simulation_gif/lighton.png";
     }
     else if(!A && B){
       inpADisablity.disabled=true;
@@ -90,7 +88,7 @@
         inpADisablity.disabled=false;
         inpBDisablity.disabled=false;
         },4400);
-      document.getElementById("light").src="simulation_gif/lightoff.png";
+      document.getElementById("light").src="simulation_gif/lighton.png";
     }
     else{
       inpADisablity.disabled=true;
@@ -101,7 +99,7 @@
         inpADisablity.disabled=false;
         inpBDisablity.disabled=false;
         },3800);
-      document.getElementById("light").src="simulation_gif/lightoff.png";
+      document.getElementById("light").src="simulation_gif/lighton.png";
     }
     tabled();
   }
@@ -124,7 +122,7 @@
     inpADisablity.disabled=true;
     inpBDisablity.disabled=true;
     inpVccPinDisablity.disabled=false;
-    document.getElementById("img1").src="simulation_gif/AndIntro.JPG";
+    document.getElementById("img1").src="simulation_gif/NAndIntro.JPG";
 
     while(tabrowindex){
       document.getElementById("mytable").deleteRow(-1);
@@ -146,22 +144,22 @@
  if(A && B){
    inputA=1;
    inputB=1;
-   output=1;
+   output=0;
  }
  else if(A && !B){
    inputA=1;
    inputB=0;
-   output=0; 
+   output=1; 
  }
  else if(!A && B){
   inputA=0;
   inputB=1;
-  output=0; 
+  output=1; 
  }
  else{
    inputA=0;
    inputB=0;
-   output=0;
+   output=1;
  }
  var table = document.getElementById("mytable");
  var row = table.insertRow(-1);
@@ -190,28 +188,6 @@ toggle3B.addEventListener("click", () => document.body.classList.toggle('ON') , 
 // }
 var toggle3 = document.getElementById('toggle3');
 toggle3.addEventListener("click", () => document.body.classList.toggle('on') , false);
-
-
-
-
-function plotgraph(){
-// Define Data
-var data = [{
-  x: xArray,
-  y: yArray,
-  mode:"lines"
-  }];
-
-// Define Layout
-var layout = {
-xaxis: {range: [0, 5], title: "Drain-Source Voltage (V)"},
-yaxis: {range: [0, 5], title: "Drain Current (A)"},  
-title: "Drain Characteristics - VDS Vs ID"
-};
-
-// Display using Plotly
-Plotly.newPlot("myPlot", data, layout);
-}
 
 function exportData(){
   /* Get the HTML data using Element by Id */
@@ -248,7 +224,7 @@ function exportData(){
       var encodedUri = encodeURI(csvContent);
       var link = document.createElement("a");
       link.setAttribute("href", encodedUri);
-      link.setAttribute("download", "AND_Gate_Truth_Table.csv");
+      link.setAttribute("download", "NAND_Gate_Truth_Table.csv");
       document.body.appendChild(link);
        /* download the data file named "Stock_Price_Report.csv" */
       link.click();
