@@ -364,3 +364,10 @@ function exportData(){
        /* download the data file named "Stock_Price_Report.csv" */
       link.click();
 }
+
+function info(){
+  document.getElementById("info").style.display="block";
+}
+function info_close(){
+  document.getElementById('info').style.display="none";
+}
