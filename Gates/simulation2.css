@@ -247,10 +247,10 @@ body{
 .toggle3B:before {
   font-weight: bold;
   content: "OFF";
-  position: absolute;
-  left: 46.5%;
-  top:95%;
-  font-size: 15px;
+  position:relative;
+  left: 2rem;
+  top:40%;
+  font-size: 14px;
   color: darkviolet;
 }
 .toggle3B label {
@@ -291,21 +291,19 @@ body{
 .ON .toggle3B:before {
   font-weight: bold;
   content: "ON";
-  left: 46.5%;
-  top:95%;
+  left: 2rem;
+  top:40%;
   color: darkviolet;
 }
-.ON .toggle3B:after {
-  color: black;
-}
+
 
 .toggle3:before {
   font-weight: bold;
   content: "OFF";
-  position: absolute;
-  left: 32.5%;
-  top:95%;
-  font-size: 15px;
+  position:relative;
+  left: 2rem;
+  top:40%;
+  font-size: 14px;
   color: darkviolet;
 }
 .toggle3 label {
@@ -346,11 +344,8 @@ body{
 .on .toggle3:before {
   font-weight: bold;
   content: "ON";
-  left: 32.5%;
-  top:95%;
+  left: 2rem;
+  top:40%;
   color: darkviolet;
-}
-.on .toggle3:after {
-  color: black;
 }
 

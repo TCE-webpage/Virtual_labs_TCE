@@ -12,8 +12,9 @@
   var inputpinB=document.getElementById("inputPinB");
   var outPin=document.getElementById("outputPin");
   var icImg= document.getElementById("img");
-  if(VccPin.value=="0"){
+  if(inputPin=="0"){
     VccPin.disabled=true;
+    icImg.src="simulation_gif/AND_IC.png";
   }
   else{
     VccPin.disabled=false;
