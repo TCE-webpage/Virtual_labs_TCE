@@ -6,6 +6,7 @@
  var A=false
  var B=false
  var Vcc=false
+
  function pin(){
   var VccPin=document.getElementById("VccToggle");
   var inputPin=document.getElementById("inputPin").value;
@@ -19,10 +20,13 @@
   else{
     VccPin.disabled=false;
   }
+  document.getElementById("instruct").innerHTML='Observe the IC-7408 diagram with the particular gate highlighted <b>Turn On Vcc</b>'
+
   if(inputPin=="1"){
     inputpinB.value="2";
     outPin.value="3";
     icImg.src="simulation_gif/AND_IN_1.png";
+    
   }
   else if(inputPin=="4"){
     inputpinB.value="5";
@@ -52,14 +56,14 @@
     inpBDisablity.disabled=false;
     inpVccPinDisablity.disabled=true;
 
-    document.getElementById("instruct").innerHTML='You can see that input is OFF(logic 0) in Pin 1. So, PMOS acts as a closed switch which turns the LED ON(logic 1) in Pin 2 and NMOS acts as an open switch.Observe the Truth Table<br><b>Toggle Input switch(Pin 1)</b>'
+    document.getElementById("instruct").innerHTML='You can see that both the input is OFF(logic 0).Observe the internal working corresponding to the switch.Observe the Truth Table<br><b>Toggle Input switches and study the gate for different combinations</b>'
     if(A && B){     
       document.getElementById("img1").src="simulation_gif/And_A_B_On.gif"; 
       setTimeout( function(){       
         document.getElementById("img1").src="simulation_gif/And_A_B_On_Loop.gif";
         },3000);          
       document.getElementById("light").src="simulation_gif/lighton.png";
-      document.getElementById("instruct").innerHTML='You can see that input A and B is ON(logic 1) in Pin 1 and 2. So, PMOS acts as an open switch hence the LED turns OFF(logic 0) in Pin 2.Observe the Truth Table.<br><b>Repeat the same procedure for better understanding</b>'
+      document.getElementById("instruct").innerHTML='You can see that both the input is OFF(logic 0).Observe the internal working corresponding to the switch.Observe the Truth Table<br><b>Toggle Input switches and study the gate for different combinations</b>'
     }
     else if(A && !B){
       document.getElementById("img1").src="simulation_gif/And_A_On_B_Off.gif"; 
@@ -85,8 +89,7 @@
     tabled();
   }
   else{
-    document.getElementById("instruct").innerHTML=" Observe the IC-7408 on the left side and the internal circuit diagram of the AND gate on the right side which is made up of NMOS and PMOS and then,<br><b>Turn on VCC</b><br>using the switch given on the pin 14."
-    document.getElementById("img1").src="simulation_gif/AndIntro.JPG";
+    document.getElementById("instruct").innerHTML="Observe the IC-7408 diagram with the particular gate highlighted <b>Turn On Vcc</b>"
     document.getElementById("light").src="simulation_gif/lightoff.png";
     document.getElementById("VccToggle").disabled=true;
     if(inpADisablity.checked){
@@ -104,6 +107,8 @@
     inpADisablity.disabled=true;
     inpBDisablity.disabled=true;
     inpVccPinDisablity.disabled=false;
+    document.getElementById("img1").src="simulation_gif/AndIntro.JPG";
+
     while(tabrowindex){
       document.getElementById("mytable").deleteRow(-1);
       tabrowindex--;
@@ -234,4 +239,7 @@ function exportData(){
 
 function info(){
   document.getElementById("info").style.display="block";
+}
+function info_close(){
+  document.getElementById('info').style.display="none";
 }
