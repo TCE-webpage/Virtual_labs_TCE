@@ -232,4 +232,6 @@ function exportData(){
       link.click();
 }
 
-
+function info(){
+  document.getElementById("info").style.display="block";
+}

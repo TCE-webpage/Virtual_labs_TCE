@@ -348,4 +348,24 @@ body{
   top:40%;
   color: darkviolet;
 }
-
+#info{
+  display: none;
+  position: absolute;
+  top: 60%;
+  left:15%;
+  width:70%;
+  height:70%;
+  background-color: black;
+}
+#info img {
+  display:block;
+  margin-top: 7%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+}
+#info span{
+  position: absolute;
+  top:2%;
+  right: 2%;
+}
