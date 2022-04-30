@@ -29,32 +29,34 @@ function updateVDSlabel(min, max){
   document.getElementById("demoGauge1").style.setProperty('--gauge-value', newGauge2Value)
 
   document.getElementById("Label1").innerHTML=gauge2val;
+  if(vgsconstval>=0 && vgsconstval<=0.7 && vdsconstval>=0)
+  {
+    document.getElementById("img").src="simulation_gif/VGS_0_to_0.7.jpg";
+    flag=1;
+    flag1=1;
+  }
+  else if(vgsconstval>=0.8 && vgsconstval<=3 && vdsconstval>=0){
+    if(flag==1){
+      document.getElementById("img").src="simulation_gif/VGSLessthanhalfVt.gif";
+      flag=0;
+    }
+    flag1=1;
+  }
+  else if(vgsconstval>=3.1 && vgsconstval<=3.5 && vdsconstval>=0){
+    if(flag1==1){
+      document.getElementById("img").src="simulation_gif/VGSGreaterThanhalfVTH.gif";
+      flag1=0;}
+  }
+  if(vgsconstval>=3.6 && vdsconstval>=0)
+  {
+    document.getElementById("img").src="simulation_gif/VGS3.5_to_10.jpg";
+    flag=1;
+    flag1=1;
+  }
 
-
-
-  if(vdsconstval>=0 && vdsconstval<=15 && vgsconstval==0)
+  else if(vdsconstval>=0 && vgsconstval==3.5)
   {
-    document.getElementById("img").src="simulation_gif/VGS0VDS15.jpg";
-  
-  }
-  else if(vdsconstval>=15.1 && vdsconstval<=30 && vgsconstval==0)
-  {
-    document.getElementById("img").src="simulation_gif/VGS0VDS30.jpg";
-  
-  }
-  else if(vdsconstval>=30.1 && vdsconstval<=45 && vgsconstval==0)
-  {
-    document.getElementById("img").src="simulation_gif/VGS0VDS45.jpg";
-  
-  }
-  else if(vdsconstval>=45.1 && vdsconstval<=60 && vgsconstval==0)
-  {
-    document.getElementById("img").src="simulation_gif/VGS0VDS60.jpg";
-  
-  }
-  else if(vdsconstval>=0 && vdsconstval<=1 && vgsconstval==3.5)
-  {
-    document.getElementById("img").src="simulation_gif/VGS3.5VDS1";
+    document.getElementById("img").src="simulation_gif/VGS3.5VDS1.gif";
   }
   else if(vdsconstval>=0 && vdsconstval<=15 && vgsconstval>=3.6 && vgsconstval<=15)
   {
@@ -110,35 +112,31 @@ function updateVDSlabel(min, max){
 var flag=1;
 var flag1=1;
 function updateVGSlabel(){
-  var vdsconstval=document.getElementById("VDSrange").value;
+  const vdsconstval=document.getElementById("VDSrange").value;
   var vgsconstval = document.getElementById("VGSrange").value;
   document.getElementById("VGSlabel").innerHTML=vdsconstval+"V";
-  if(vgsconstval>=0 && vgsconstval<=0.7 && vdsconstval==0)
+  if(vdsconstval>=0 && vdsconstval<=15 && vgsconstval==0)
   {
-    document.getElementById("img").src="simulation_gif/VGS_0_to_0.7.jpg";
-    flag=1;
-    flag1=1;
+    document.getElementById("img").src="simulation_gif/VGS0VDS15.jpg";
+  
   }
-  else if(vgsconstval>=0.8 && vgsconstval<=3 && vdsconstval==0){
-    if(flag==1){
-      document.getElementById("img").src="simulation_gif/VGSLessthanhalfVt.gif";
-      flag=0;
-    }
-    flag1=1;
-  }
-  else if(vgsconstval>=3.1 && vgsconstval<=3.5 && vdsconstval==0){
-    if(flag1==1){
-      document.getElementById("img").src="simulation_gif/VGSGreaterThanhalfVTH.gif";
-      flag1=0;}
-  }
-  if(vgsconstval>=3.6 && vdsconstval==0)
+  else if(vdsconstval>=15.1 && vdsconstval<=30 && vgsconstval==0)
   {
-    document.getElementById("img").src="simulation_gif/VGS3.5_to_10.jpg";
-    flag=1;
-    flag1=1;
+    document.getElementById("img").src="simulation_gif/VGS0VDS30.jpg";
+  
   }
- 
+  else if(vdsconstval>=30.1 && vdsconstval<=45 && vgsconstval==0)
+  {
+    document.getElementById("img").src="simulation_gif/VGS0VDS45.jpg";
+  
+  }
+  else if(vdsconstval>=45.1 && vdsconstval<=60 && vgsconstval==0)
+  {
+    document.getElementById("img").src="simulation_gif/VGS0VDS60.jpg";
+  
+  }
 }
+  
 function displayfn(){
 document.getElementById("start").style.display="none";  
 document.getElementById("FormNPN").style.display="inline";
@@ -169,7 +167,7 @@ document.getElementById("instruct").innerHTML="Once the NPN is formed, circuit c
 setTimeout( function() {
 document.getElementById("SetVGS").innerHTML="SET VDS";
 document.getElementById("SetVGS").disabled=false;
-document.getElementById("instruct").innerHTML="Click the SET VGS button.";
+document.getElementById("instruct").innerHTML="Click the SET VDS button.";
 },51000);           
 document.getElementById("SetVGS").style.display="inline";       
 }
@@ -178,7 +176,7 @@ document.getElementById("SetVGS").style.display="none";
 document.getElementById("VaryVDS").style.display="inline";          
 document.getElementById("VDSrange").style.display="inline"
 document.getElementsByClassName("HoriSlider1")[0].style.display="inline";
-document.getElementById("instruct").innerHTML="Vary VGS using upper horizontal slider,You can observe that there is a formation of n-channel between source and drain only after VGS greater than 3V(Threshold Voltage).<br>Now Set VGS as a constant voltage.";
+document.getElementById("instruct").innerHTML="Vary VDS using lower horizontal slider,You can observe that there is an increase in the thickness of depletion layer around the drain(N) by increasing the VDS range.Now Set VDS as a constant voltage.";
 
 }
 function displayfn3(){
@@ -188,7 +186,7 @@ document.getElementById("VDSrange").style.display="none";
 document.getElementsByClassName("HoriSlider1")[0].style.display="none";
 document.getElementById("VGSrange").style.display="inline";
 document.getElementsByClassName("HoriSlider2")[0].style.display="inline"; 
-document.getElementById("instruct").innerHTML="Vary VDS  using the slider given, add the corresponding Drain current value to the Table.Once a set of readings are taken Set another VGS And repeat the same procedure"
+document.getElementById("instruct").innerHTML="Vary VGS  using the slider given, add the corresponding Drain current value to the Table.Once a set of readings are taken Set another VDS And repeat the same procedure"
 }
 
 // Table Creation Code JS
@@ -233,7 +231,7 @@ document.getElementById("VGSrange").style.display="inline"
 document.getElementsByClassName("HoriSlider2")[0].style.display="inline";
 document.getElementById("VDSrange").style.display="inline";
 document.getElementsByClassName("HoriSlider1")[0].style.display="inline";
-document.getElementById("VDSrange").value=0;
+document.getElementById("VGSrange").value=0;
 const newGaugeValue =0;
 document.getElementById("demoGauge").style.setProperty('--gauge-value', newGaugeValue);
 document.getElementById("Label").innerHTML= 0.00;
@@ -298,8 +296,8 @@ mode:"lines"
 // Define Layout
 var layout = {
   xaxis: {range: [0, 30], title: "Gate-Source Voltage (V)"},
-  yaxis: {range: [0, 300], title: "Gate Current (A)"},  
-  title: "Transfer Characteristics - VGS Vs IG"
+  yaxis: {range: [0, 300], title: "Drain Current (A)"},  
+  title: "Transfer Characteristics - VGS Vs ID"
   };
 
 // Display using Plotly
@@ -316,8 +314,8 @@ mode:"lines"
 // Define Layout
 var layout = {
 xaxis: {range: [0, 30], title: "Gate-Source Voltage (V)"},
-yaxis: {range: [0, 300], title: "Gate Current (A)"},  
-title: "Transfer Characteristics - VGS Vs IG"
+yaxis: {range: [0, 300], title: "Drain Current (A)"},  
+title: "Transfer Characteristics - VGS Vs ID"
 };
 
 // Display using Plotly
@@ -328,7 +326,7 @@ function exportData(){
   var table = document.getElementById("mytable");
 
   /* Declaring array variable */
-  var rows =[["S.no","GateSource Voltage","Gate Current"]];
+  var rows =[["S.no","GateSource Voltage","Drain Current"]];
 
     //iterate through rows of table
   for(var i=1,row; row = table.rows[i];i++){
