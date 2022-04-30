@@ -49,6 +49,7 @@
   var inpBDisablity=document.getElementById("toggle3B");
   var inpVccPinDisablity=document.getElementById("inputPin");
   Vcc=document.getElementById("VccToggle").checked;
+  var vccSwitch=document.getElementById("VccToggle");
   if(Vcc){
     inpADisablity.disabled=false;
     inpBDisablity.disabled=false;
@@ -63,33 +64,39 @@
     else if(A && !B){
       inpADisablity.disabled=true;
       inpBDisablity.disabled=true;
+      vccSwitch.disabled=true;
       document.getElementById("img1").src="simulation_gif/Nand_A_On_B_Off.gif"; 
       setTimeout( function(){       
         document.getElementById("img1").src="simulation_gif/Nand_A_On_B_Off_Loop.gif";
         inpADisablity.disabled=false;
         inpBDisablity.disabled=false;
+        vccSwitch.disabled=false;
         },3500);
       document.getElementById("light").src="simulation_gif/lighton.png";
     }
     else if(!A && B){
       inpADisablity.disabled=true;
       inpBDisablity.disabled=true;
+      vccSwitch.disabled=true;
       document.getElementById("img1").src="simulation_gif/Nand_A_Off_B_ON.gif"; 
       setTimeout( function(){       
         document.getElementById("img1").src="simulation_gif/Nand_A_Off_B_ON_Loop.gif";
         inpADisablity.disabled=false;
         inpBDisablity.disabled=false;
+        vccSwitch.disabled=false;
         },4400);
       document.getElementById("light").src="simulation_gif/lighton.png";
     }
     else{
       inpADisablity.disabled=true;
       inpBDisablity.disabled=true;
+      vccSwitch.disabled=true;
       document.getElementById("img1").src="simulation_gif/NAnd_A_B_Off.gif"; 
       setTimeout( function(){       
         document.getElementById("img1").src="simulation_gif/Nand_A_B_Off_Loop.gif";
         inpADisablity.disabled=false;
         inpBDisablity.disabled=false;
+        vccSwitch.disabled=false;
         },3800);
       document.getElementById("light").src="simulation_gif/lighton.png";
     }
