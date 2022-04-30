@@ -56,8 +56,6 @@
 
     document.getElementById("instruct").innerHTML='You can see that both the input is OFF(logic 0).Observe the internal working corresponding to the switch.Observe the Truth Table<br><b>Toggle Input switches and study the gate for different combinations</b>'
     if(A && B){           
-      inpADisablity.disabled=true;
-      inpBDisablity.disabled=true;
       document.getElementById("img1").src="simulation_gif/Nand_A_B_On.gif";               
       document.getElementById("light").src="simulation_gif/lightoff.png";
       document.getElementById("instruct").innerHTML='You can see that both the input is OFF(logic 0).Observe the internal working corresponding to the switch.Observe the Truth Table<br><b>Toggle Input switches and study the gate for different combinations</b>'

@@ -56,38 +56,16 @@
 
     document.getElementById("instruct").innerHTML='You can see that both the input is OFF(logic 0).Observe the internal working corresponding to the switch.Observe the Truth Table<br><b>Toggle Input switches and study the gate for different combinations</b>'
     if(A && B){           
-      inpADisablity.disabled=true;
-      inpBDisablity.disabled=true;
       document.getElementById("img1").src="simulation_gif/Nor_A_B_On.gif"; 
-      setTimeout( function(){  
-        document.getElementById("img1").src="simulation_gif/Nor_A_B_On_Loop.gif";
-        inpADisablity.disabled=false;
-        inpBDisablity.disabled=false;
-        },3000); 
-              
       document.getElementById("light").src="simulation_gif/lightoff.png";
       document.getElementById("instruct").innerHTML='You can see that both the input is OFF(logic 0).Observe the internal working corresponding to the switch.Observe the Truth Table<br><b>Toggle Input switches and study the gate for different combinations</b>'
     }
     else if(A && !B){
-      inpADisablity.disabled=true;
-      inpBDisablity.disabled=true;
       document.getElementById("img1").src="simulation_gif/Nor_A_On_B_Off.gif"; 
-      setTimeout( function(){       
-        document.getElementById("img1").src="simulation_gif/Nor_A_On_B_Off_Loop.gif";
-        inpADisablity.disabled=false;
-        inpBDisablity.disabled=false;
-        },3500);
       document.getElementById("light").src="simulation_gif/lightoff.png";
     }
     else if(!A && B){
-      inpADisablity.disabled=true;
-      inpBDisablity.disabled=true;
       document.getElementById("img1").src="simulation_gif/Nor_A_Off_B_ON.gif"; 
-      setTimeout( function(){       
-        document.getElementById("img1").src="simulation_gif/Nor_A_Off_B_ON_Loop.gif";
-        inpADisablity.disabled=false;
-        inpBDisablity.disabled=false;
-        },4400);
       document.getElementById("light").src="simulation_gif/lightoff.png";
     }
     else{
