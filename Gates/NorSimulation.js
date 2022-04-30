@@ -18,7 +18,8 @@
   else{
     VccPin.disabled=false;
   }
-  document.getElementById("instruct").innerHTML='Observe the IC-7408 diagram with the particular gate highlighted <b>Turn On Vcc</b>'
+  document.getElementById("instruct").innerHTML='Observe the IC-7402 diagram,you can see that the gate for the selected input pin is highlighted.<br> <b>Turn On Vcc</b>'
+
 
   if(inputPin=="3"){
     inputpinB.value="2";
@@ -54,12 +55,12 @@
     inpADisablity.disabled=false;
     inpBDisablity.disabled=false;
     inpVccPinDisablity.disabled=true;
-
-    document.getElementById("instruct").innerHTML='You can see that both the input is OFF(logic 0).Observe the internal working corresponding to the switch.Observe the Truth Table<br><b>Toggle Input switches and study the gate for different combinations</b>'
+    document.getElementById("instruct").innerHTML='<b>Toggle Input switches</b><br> Observe the working of gate and truth table for different input combinations'
     if(A && B){           
       document.getElementById("img1").src="simulation_gif/Nor_A_B_On.gif"; 
       document.getElementById("light").src="simulation_gif/lightoff.png";
-      document.getElementById("instruct").innerHTML='You can see that both the input is OFF(logic 0).Observe the internal working corresponding to the switch.Observe the Truth Table<br><b>Toggle Input switches and study the gate for different combinations</b>'
+      document.getElementById("instruct").innerHTML='<b>Toggle Input switches</b><br> Observe the working of gate and truth table for different input combinations'
+
     }
     else if(A && !B){
       document.getElementById("img1").src="simulation_gif/Nor_A_On_B_Off.gif"; 
@@ -85,7 +86,7 @@
     tabled();
   }
   else{
-    document.getElementById("instruct").innerHTML="Observe the IC-7408 diagram with the particular gate highlighted <b>Turn On Vcc</b>"
+    document.getElementById("instruct").innerHTML="Observe the IC-7402 diagram,you can see that the gate for the selected input pin is highlighted. <b>Turn On Vcc</b>"
     document.getElementById("light").src="simulation_gif/lightoff.png";
     document.getElementById("VccToggle").disabled=true;
     if(inpADisablity.checked){
