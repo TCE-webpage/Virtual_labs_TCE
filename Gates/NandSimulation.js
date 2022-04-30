@@ -58,9 +58,9 @@
     if(A && B){           
       inpADisablity.disabled=true;
       inpBDisablity.disabled=true;
-      document.getElementById("img1").src="simulation_gif/And_A_B_On.gif"; 
+      document.getElementById("img1").src="simulation_gif/Nand_A_B_On.gif"; 
       setTimeout( function(){  
-        document.getElementById("img1").src="simulation_gif/And_A_B_On_Loop.gif";
+        document.getElementById("img1").src="simulation_gif/Nand_A_B_On_Loop.gif";
         inpADisablity.disabled=false;
         inpBDisablity.disabled=false;
         },3000); 
@@ -71,9 +71,9 @@
     else if(A && !B){
       inpADisablity.disabled=true;
       inpBDisablity.disabled=true;
-      document.getElementById("img1").src="simulation_gif/And_A_On_B_Off.gif"; 
+      document.getElementById("img1").src="simulation_gif/Nand_A_On_B_Off.gif"; 
       setTimeout( function(){       
-        document.getElementById("img1").src="simulation_gif/And_A_On_B_Off_Loop.gif";
+        document.getElementById("img1").src="simulation_gif/Nand_A_On_B_Off_Loop.gif";
         inpADisablity.disabled=false;
         inpBDisablity.disabled=false;
         },3500);
@@ -82,9 +82,9 @@
     else if(!A && B){
       inpADisablity.disabled=true;
       inpBDisablity.disabled=true;
-      document.getElementById("img1").src="simulation_gif/And_A_Off_B_ON.gif"; 
+      document.getElementById("img1").src="simulation_gif/Nand_A_Off_B_ON.gif"; 
       setTimeout( function(){       
-        document.getElementById("img1").src="simulation_gif/And_A_Off_B_ON_Loop.gif";
+        document.getElementById("img1").src="simulation_gif/Nand_A_Off_B_ON_Loop.gif";
         inpADisablity.disabled=false;
         inpBDisablity.disabled=false;
         },4400);
@@ -93,9 +93,9 @@
     else{
       inpADisablity.disabled=true;
       inpBDisablity.disabled=true;
-      document.getElementById("img1").src="simulation_gif/And_A_B_Off.gif"; 
+      document.getElementById("img1").src="simulation_gif/NAnd_A_B_Off.gif"; 
       setTimeout( function(){       
-        document.getElementById("img1").src="simulation_gif/And_A_B_Off_Loop.gif";
+        document.getElementById("img1").src="simulation_gif/Nand_A_B_Off_Loop.gif";
         inpADisablity.disabled=false;
         inpBDisablity.disabled=false;
         },3800);
@@ -122,7 +122,7 @@
     inpADisablity.disabled=true;
     inpBDisablity.disabled=true;
     inpVccPinDisablity.disabled=false;
-    document.getElementById("img1").src="simulation_gif/NAndIntro.JPG";
+    document.getElementById("img1").src="simulation_gif/NandIntro.JPG";
 
     while(tabrowindex){
       document.getElementById("mytable").deleteRow(-1);
