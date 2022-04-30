@@ -34,22 +34,22 @@ function updateVDSlabel(min, max){
  
       if(vdsconstval>=0 && vdsconstval<=15 && vgsconstval==0)
       {
-        document.getElementById("img").src="simulation_gif/VGS0VDS15.png";
+        document.getElementById("img").src="simulation_gif/VGS0VDS15.jpg";
       
       }
       else if(vdsconstval>=15.1 && vdsconstval<=30 && vgsconstval==0)
       {
-        document.getElementById("img").src="simulation_gif/VGS0VDS30.png";
+        document.getElementById("img").src="simulation_gif/VGS0VDS30.jpg";
       
       }
       else if(vdsconstval>=30.1 && vdsconstval<=45 && vgsconstval==0)
       {
-        document.getElementById("img").src="simulation_gif/VGS0VDS45.png";
+        document.getElementById("img").src="simulation_gif/VGS0VDS45.jpg";
       
       }
       else if(vdsconstval>=45.1 && vdsconstval<=60 && vgsconstval==0)
       {
-        document.getElementById("img").src="simulation_gif/VGS0VDS60.png";
+        document.getElementById("img").src="simulation_gif/VGS0VDS60.jpg";
       
       }
       else if(vdsconstval>=0 && vdsconstval<=1 && vgsconstval==3.5)
