@@ -199,7 +199,7 @@ function exportData(){
   var table = document.getElementById("mytable");
 
   /* Declaring array variable */
-  var rows =[["Input","Output"]];
+  var rows =[["Input A","Input B","Output"]];
 
     //iterate through rows of table
   for(var i=1,row; row = table.rows[i];i++){
@@ -207,11 +207,13 @@ function exportData(){
       //Get each cell value/column from the row
       column1 = row.cells[0].innerText;
       column2 = row.cells[1].innerText;
+      column3 = row.cells[2].innerText;
   /* add a new records in the array */
       rows.push(
           [
               column1,
-              column2
+              column2,
+              column3
           ]
       );
 
