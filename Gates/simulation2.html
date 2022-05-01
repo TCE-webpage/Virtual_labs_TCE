@@ -26,7 +26,7 @@
         margin-left: 0%;
       }
       .inputPin1{
-        padding-top:2%;
+        margin-top:-2%;
         margin-right: -5%;
       }
       .outputPin1{
@@ -57,7 +57,7 @@
         padding-left:5%;
         margin-left: 12%;
       }
-      .toggle3:before {
+      /* .toggle3:before {
           font-weight: bold;
           content: "OFF";
           position: absolute;
@@ -71,7 +71,7 @@
           left:35%;
           top:89%;
           color: darkviolet;
-        }
+        } */
     </style>
 </head>
 <body>
@@ -157,7 +157,7 @@
         <div class="row">
         <span class="board vccPin1">
           <label class="toggle">
-            <input id="VccToggle" class="toggle__lever" type="checkbox" name="toggle" role="switch" value="On" onclick="table()">
+            <input id="VccToggle" class="toggle__lever" type="checkbox" name="toggle" role="switch" value="On" onclick="table()" disabled>
           </label>
         </span>
         
@@ -178,18 +178,20 @@
         <span class="board vccPin2">
           <input type="text" name="vccPin" id="vccPin" value="14" disabled>
         </span>
-        <span class="board inputPin2">
+        <span class="board inputPin2" oninput="pin()">
           <select name="inputPin" id="inputPin">
-            <option value="0">0</option>
+            <option value="0">A</option>
             <option value="1">1</option>
             <option value="3">3</option>
             <option value="5">5</option>
             <option value="9">9</option>
+            <option value="11">11</option>
+            <option value="13">13</option>
           </select>
         </span>
         
         <span class="board outputPin2">
-          <input type="text" name="outputPin" id="outputPin" value="2" disabled>
+          <input type="text" name="outputPin" id="outputPin" value="Y" disabled>
         </span>
 
         <span class="board earthPin2 ms-auto">
@@ -211,6 +213,8 @@
 <div>  
   <a href="simulation2.html"><button type=button  class="btn btn-danger scale resetbtn p-1">
     Reset</button></a>
+    <a class="info_icon" onclick="info()" title="switchboard info" href="#info" style="background-color: aliceblue; display: inline-block; width: 5%;margin-left: 80%;border-radius: 50%; cursor: pointer;">
+      <span class="fas fa-info" style="margin-left: 39%; color: black;"></span></a>
   </div>
     </div>
     <div class="meterBox col-6 container-fluid">
@@ -228,7 +232,9 @@
           Observe the IC-7404 on the left side and the internal circuit diagram of the NOT gate on the right side which is made up of NMOS and PMOS and then,<br>
           <b>Turn on VCC</b><br>
           using the switch given on the pin 14.
-
+          <mark style="background-color:wheat;"> HINT : Click "<a class="info_icon" style="background-color: aliceblue; display: inline-block; width: 5%;border-radius: 50%;">
+            <span class="fas fa-info" style="margin-left: 0%; color: black;"></span></a>" switchboard info icon
+        </mark>
         </p>
         
       </div>
@@ -242,8 +248,8 @@
         <table class="table caption-top align-middle table-bordered text-center" id="mytable">       
           <thead>
             <tr class="table-dark">
-              <th>Input </th>
-              <th>Output</th>
+              <th>Input (A)</th>
+              <th>Output (Y)</th>
             </tr>
           </thead>
            <tbody></tbody>      
@@ -346,6 +352,10 @@
 <a class="toTop" href="#simBlock"><i class="fas fa-arrow-circle-up fa-2x"></i></a>
 <div class="end">
   <h1>✌️</h1>
+</div>
+<div id="info">
+  <img src="simulation_gif/Info.png">
+  <span onclick="info_close()">&times;</span>
 </div>
  
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

@@ -5,10 +5,53 @@
  var i=1;
  var A=false
  var Vcc=false
+ function pin(){
+  var VccPin=document.getElementById("VccToggle");
+  var inputPin=document.getElementById("inputPin").value;
+  var outPin=document.getElementById("outputPin");
+  var icImg= document.getElementById("img");
+  console.log(inputPin);
+  if(inputPin=="0"){
+    console.log("yes")
+    VccPin.disabled=true;
+    icImg.src="simulation_gif/OR_IC.png";
+  }
+  else{
+    VccPin.disabled=false;
+  }
+  document.getElementById("instruct").innerHTML='Observe the IC-7404 diagram,you can see that the gate for the selected input pin is highlighted. <b>Turn On Vcc</b>'
+
+  if(inputPin=="1"){
+    outPin.value="2";
+    icImg.src="simulation_gif/NOT_IN_1.jpg";
+    
+  }
+  else if(inputPin=="3"){
+    outPin.value="4";
+    icImg.src="simulation_gif/NOT_IN_3.jpg";
+  }
+  else if(inputPin=="5"){
+    outPin.value="6";
+    icImg.src="simulation_gif/NOT_IN_5.jpg";
+  }
+  else if(inputPin=="9"){
+    outPin.value="8";
+    icImg.src="simulation_gif/NOT_IN_9.jpg";
+  }
+  else if(inputPin=="11"){
+    outPin.value="10";
+    icImg.src="simulation_gif/NOT_IN_11.jpg";
+  }
+  else if(inputPin=="13"){
+    outPin.value="12";
+    icImg.src="simulation_gif/NOT_IN_13.jpg";
+  }
+}
  function table(){
   A=document.getElementById("toggle3").checked;
   var inpDisablity=document.getElementById("toggle3");
   Vcc=document.getElementById("VccToggle").checked;
+  var vccSwitch=document.getElementById("VccToggle");
   if(Vcc){
     inpDisablity.disabled=false;
     document.getElementById("instruct").innerHTML='You can see that input is OFF(logic 0) in Pin 1. So, PMOS acts as a closed switch which turns the LED ON(logic 1) in Pin 2 and NMOS acts as an open switch.Observe the Truth Table<br><b>Toggle Input switch(Pin 1)</b>'
@@ -20,10 +63,13 @@
       document.getElementById("instruct").innerHTML='You can see that input is ON(logic 1) in Pin 1. So, PMOS acts as an open switch hence the LED turns OFF(logic 0) in Pin 2.Observe the Truth Table.<br><b>Repeat the same procedure for better understanding</b>'
     }
     else{
-      
+      vccSwitch.disabled=true;
+      inpDisablity.disabled=true;
       document.getElementById("img1").src="simulation_gif/PowerSupplyOn.gif";
       setTimeout( function(){       
         document.getElementById("img1").src="simulation_gif/loop.gif";
+        vccSwitch.disabled=false;
+        inpDisablity.disabled=false;
         },2700);
       document.getElementById("light").src="simulation_gif/lighton.png";
       console.log(A,Vcc);
@@ -121,4 +167,11 @@ function exportData(){
       document.body.appendChild(link);
        /* download the data file named "Stock_Price_Report.csv" */
       link.click();
+}
+
+function info(){
+  document.getElementById("info").style.display="block";
+}
+function info_close(){
+  document.getElementById('info').style.display="none";
 }
