@@ -47,12 +47,12 @@ function updateVDSlabel(min, max){
       document.getElementById("img").src="simulation_gif/VGSGreaterThanhalfVTH.gif";
       flag1=0;}
   }
-  if(vgsconstval>=3.6 && vdsconstval>=0)
-  {
-    document.getElementById("img").src="simulation_gif/VGS3.5_to_10.jpg";
-    flag=1;
-    flag1=1;
-  }
+  // if(vgsconstval>=3.6 && vdsconstval>=0)
+  // {
+  //   document.getElementById("img").src="simulation_gif/VGS3.5_to_10.jpg";
+  //   flag=1;
+  //   flag1=1;
+  // }
 
   else if(vdsconstval>=0 && vgsconstval==3.5)
   {
@@ -240,37 +240,37 @@ const newGauge2Value =0;
 document.getElementById("demoGauge1").style.setProperty('--gauge-value', newGauge2Value);
 
 document.getElementById("Label1").innerHTML= 0.00;
-if(vgsconstval>=0 && vgsconstval<=0.7 && vdsconstval==0)
+if(vgsconstval>=0 && vgsconstval<=0.7 && vdsconstval>=0)
   {
     document.getElementById("img").src="simulation_gif/VGS_0_to_0.7.jpg";
     flag=1;
     flag1=1;
   }
-  else if(vgsconstval>=0.8 && vgsconstval<=2 && vdsconstval==0){
+  else if(vgsconstval>=0.8 && vgsconstval<=2 && vdsconstval>=0){
     if(flag==1){
       document.getElementById("img").src="simulation_gif/VGSLessthanhalfVt.gif";
       flag=0;
     }
     flag1=1;
   }
-  else if(vgsconstval>=2.1 && vgsconstval<=3.5 && vdsconstval==0){
+  else if(vgsconstval>=2.1 && vgsconstval<=3.5 && vdsconstval>=0){
     if(flag1==1){
       document.getElementById("img").src="simulation_gif/VGSGreaterThanhalfVTH.gif";
       flag1=0;}
   }
-  if(vgsconstval>=3.6 && vgsconstval<=10 && vdsconstval==0)
+  if(vgsconstval>=3.6 && vgsconstval<=10 && vdsconstval>=0)
   {
     document.getElementById("img").src="simulation_gif/VGS3.5_to_10.jpg";
     flag=1;
     flag1=1;
   }
-  if(vgsconstval>=10.1 && vgsconstval<=20 && vdsconstval==0)
+  if(vgsconstval>=10.1 && vgsconstval<=20 && vdsconstval>=0)
   {
     document.getElementById("img").src="simulation_gif/VGS10.1_to_20.jpg";
     flag=1;
     flag1=1;
   }
-  else if(vgsconstval>=20.1 && vgsconstval<=30 && vdsconstval==0)
+  else if(vgsconstval>=20.1 && vgsconstval<=30 && vdsconstval>=0)
   {
     document.getElementById("img").src="simulation_gif/VGS20.1_to_30.jpg";
     flag=1;
