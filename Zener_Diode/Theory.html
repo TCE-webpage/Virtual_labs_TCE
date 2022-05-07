@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://kit.fontawesome.com/9e3072cf14.js" crossorigin="anonymous"></script> 
+  <link rel="stylesheet" href="main.css" type="text/css">
+  <link rel="stylesheet" href="Theory.css" type="text/css">
+  <script src="main.js"></script>
+  <script src="Theory.js"></script>
+  <title>ZENER DIODE</title>
+</head>
+<body>
+  <container class="mainBody">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-light" >
+      <div class="container-fluid navHead" id="headingNav">
+        <a class="navbar-brand tceHead fs-3"><img src="Thiagarajar_College_of_Engineering_logo.png" alt="" width="40" height="40" class="d-inline-block align-text-top">  
+            <span class="d-inline d-sm-none textCenter">TCE</span><span class="d-none d-sm-inline d-md-inline">THIAGARAJAR COLLEGE OF ENGINEERING</span></a>
+        <button class="navbar-toggler ml-auto custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto headNav" onmouseover="activeOff()" onmouseout="activeOn()">
+            <li class="nav-item ">
+              <a class="nav-link active"  aria-current="page" href="#"><i class="fa fa-home"></i> <span class="d-lg-none d-xl-inline" alt="Home">Home</span></a>
+            </li>
+            <li class="nav-item" >
+              <a class="nav-link" href="#"><i class="fa fa-phone"></i> <span class="d-lg-none d-xl-inline">Contact</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><i class="fa fa-user-circle-o"></i> <span class="d-lg-none d-xl-inline">About</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" tabindex="-1" aria-disabled="true"><span class="d-lg-none d-xl-inline">Login</span> <i class="fa fa-sign-in fa-lg"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </container>
+  <div class="Zener">
+    <h1>ZENER DIODE</h1> 
+   </div>
+  <container>
+    <nav class="navbar navbar-expand-lg navbar-light d-none d-sm-none d-lg-block">
+      <div class="container-fluid">
+          <div class="navbar-nav fs-3 mx-auto miniNav">
+            <a class="nav-link" aria-current="page" href="main.html">Aim</a>
+            <a class="nav-link mininavActive" href="Theory.html">Theory</a>
+            <a class="nav-link" href="pre.html">Prequiz</a>
+            <a class="nav-link" href="procedure.html">Procedure</a>
+            <a class="nav-link" href="simulation.html">Simulation</a>            
+            <a class="nav-link " href="outcome.html">Outcome</a>
+            <a class="nav-link " href="#">Feedback</a>
+        </div>
+      </div>
+    </nav>
+  </container>
+  <container>
+    <ul class="mini d-block d-sm-block d-md-block d-lg-none">
+      <div class="center">
+        <li><a href="main.html"><span class="" title="Aim"><img src="images/target.png" alt=""></span></a></li>
+        <li><a class="minactive" href="Theory.html"><span class="fas fa-book fa-2x " title="Theory" style="color: black;"></span></a></li>
+        <li><a href="pre.html"><span class="fas fa-question-circle fa-2x" title="Prequiz" style="color: black;"></span></a></li>
+        <li><a href="procedure.html"><span class="" title="Procedure" ><img src="images/process.png" alt=""></span></a></li>
+        <li><a href="simulation.html"><span class="" title="Simulation"><img src="images/settings.png" alt=""></span></a></li>
+        <li><a href="outcome.html"><span class="fas fa-clipboard-list fa-2x" title="Outcome" style="color: black;"></span></a></li>
+        <li><a href="#about"><span class="fas fa-comments fa-2x" title="Feedback" style="color: black;"></span></a></li>
+      <div>
+    </ul>
+  </container>
+  <container>
+    <div class="d-flex mt-5 m-3 p-2 theory">
+        <div class="theoryNav d-none d-md-block d-sm-none d-lg-block">
+            <ul class="nav flex-column">
+                <li class="nav-item"><a class="nav-link fs-6 fw-bold" href="#Fet" onclick="fetfn()">FET <i id="caret" class="fas fa-solid fa-caret-right"></i> </a></li>
+                <div id="fetDrop">
+                  <li  class="nav-item" style="background-color: rgb(189, 188, 188)"><a class="nav-link fs-6 fw-bold " href="#FetTypes" >Types of FET</a></li>
+                </div>
+                <li class="nav-item"><a class="nav-link fs-6 fw-bold" href="#Mosfet" onclick="Mosfn()">MOSFET <i id="caret1" class="fas fa-solid fa-caret-right"></i> </a></li>
+                <div id="MosfetDrop">
+                  <li  class="nav-item" style="background-color: rgb(189, 188, 188)"><a class="nav-link fs-6 fw-bold " href="#MosfetTypes" >Types of MOSFET</a></li>
+                </div>
+                <li class="nav-item"><a class="nav-link fs-6 fw-bold" href="#D-Mosfet">D-MOSFET</a></li>
+                <li class="nav-item"><a class="nav-link fs-6 fw-bold" href="#E-Mosfet" onclick="EMosfn()">E-MOSFET <i id="caret2" class="fas fa-solid fa-caret-right"></i></a></li>
+                <div id="EMosDrop">
+                  <li  class="nav-item" style="background-color: rgb(189, 188, 188)"><a class="nav-link fs-6 fw-bold " href="#BasicIdea" >Basic Idea</a></li>
+                  <li  class="nav-item" style="background-color: rgb(189, 188, 188)"><a class="nav-link fs-6 fw-bold " href="#KeyPoint" >Key Points</a></li>
+                  <li  class="nav-item" style="background-color: rgb(189, 188, 188)"><a class="nav-link fs-6 fw-bold " href="#DrainCurves" >Drain Curves</a></li>
+                </div>
+                <li class="nav-item"><a class="nav-link fs-6 fw-bold" target="_blank" href="theory_images/Datasheet.PDF" id="colorblack" onclick="blackcolor()">DATASHEET</a></li>
+            </ul>
+        </div>
+      </nav>
+        <div class="p-2 w-50 flex-grow-1 ms-3 content">
+          <div class="space"  id="Fet"><strong>Field Effect Transistor</strong>
+            <p class="points">
+              <li>The Field Effect Transistor abbreviated as FET is an another semiconductor device like a BJT which can be used as an amplifier and switch.</li><br>
+              <li>Like BJT, FET is also a three terminal device; however, the principle of operation of FET is completely different from that of BJT.</li><br>
+              <li>The three terminals of FET are named as Drain (D), Source (S) and Gate (G). Out of these three terminals gate terminal acts as controlling terminal.</li><br>
+              <li>In BJT the output current, Ic is controlled by the base current Ib, Hence BJT is a current controlled device.</li><br>
+              <li>On the other hand, in FET, the voltage applied between gate and source (VGS) controls the drain current ID, therefore, FET is a voltage controlled device.</li><br>
+              <li>The name "field effect" is derived from the fact that output current flow is controlled by an electric field setup in the device by an externally applied voltage between gate and source terminals.</li><br>
+            </p>
+          </div>
+          
+          <div class="space" id="FetTypes"><strong>Types of FET</strong>
+            <p class="points">
+              <li>Junction Field Effect Transistors (JFETs)</li><br>
+              <li>Metal semiconductor Field Effect Transistors (MESFETs)</li><br>
+              <li>Metlal Oxide Semiconductor Field Effect Transistors (MOSFETs)</li><br>
+            </p>
+          </div>
+          
+          <div class="space" id="Mosfet"><strong>MOSFETs</strong>
+            <p class="points">
+              The metal-oxide semiconductor FET, or MOSFET. has a source, gate, and drain. The MOSFET differs from the JFET, however, in that the gate is insulated from the channel. Because of this, the gate current is even smaller than it is in a JFET. The MOSFET is sometimes called an IGFET, which stands for insulated-gate FET.<br>
+            </p>
+          </div>
+
+          <div class="space" id="MosfetTypes"><strong>Types of MOSFETs</strong>
+            <p class="points">
+              <li><strong>Enhancement-mode MOSFETs -</strong> widely used in both discrete and integrated circuits. In discrete circuits, the main use is in power switching, which means turning large currents on and off. In integrated circuits, the main use n in digital switching, the bane process behind modern computer.</li><br> 
+              <li><strong>Depletion-mode MOSFETs -</strong> Although their use has declined, they are still found in high-frequency front-end communications circuits as RF amplifier.</li><br>
+            </p>
+          </div>
+          
+          <div class="space" id="D-Mosfet"><strong>Depletion-Mode MOSFET:</strong>
+            <p class="points">
+              <div class="pic mt-3  mb-3">
+                <figure>
+                   <img  src="theory_images/D-Mosfet.png" width="30%" >
+                   <figcaption style="margin-left:10%;">D-MOSFET</figcaption>
+                </figure>
+              
+              </div>
+              <li>The figure above shows a depletion-mode MOSFET, a piece of n material with an insulated gate on the left and a p region on the right. The p region is called the substrate.</li><br>
+              <li>Electrons flowing from source to drain must pass through the narrow channel between the gate and the p substrate.</li><br>
+              <li>A thin layer of silicon dioxide (SiO2) is deposited on the left side of the channel. Silicon dioxide is the same as glass, which is an insulator. </li><br>
+              <li>In a MOSFET, the gate is metallic. Because the metallic gate is insulated from the channel, negligible gate current flows even when the gate voltage is positive.  </li><br>
+              <li>The figure(a) given below shows a depletion-mode MOSFET with a negative gate voltage. The VDD supply forces free electrons to flow from source to drain.</li><br>
+              <li>These electrons flow through the narrow channel on the left of the p substrate. As with a JFET, the gate voltage controls the width of the channel.</li><br>
+              <li>The more negative the gate voltage, the smaller the drain current. When the gate voltage is negative enough, the drain current is cut off. </li><br>
+              <li>Therefore, the operation of a depletion-mode MOSFET is similar to that of a JFET when VGS is negative.</li><br>
+              <li>Since the gate is insulated, we can also use a positive input voltage, as shown in the figure.</li><br>
+              <li>The positive gate voltage increases the number of free electrons flowing through the channel.</li><br>
+              <li>The more positive the gate voltage, the greater the conduction from source to drain.</li><br>
+              <div class="mt-3 mb-3" style="display: flex; align-content: center;">
+              <div class="pic">
+                <figure>
+                  <img  src="theory_images/D-Mosfet Negative Gate.png" width="60%" >
+                  <figcaption style="margin-left: 2%;">D-MOSFET with negative gate</figcaption>
+                </figure>     
+              </div>
+              <div class="pic">
+                <figure>
+                <img  src="theory_images/D-Mosfet Negative Gate.png" width="60%" >
+                <figcaption style="margin-left: 7%;">D-MOSFET with positive gate</figcaption>
+              </figure>
+              </div>
+            </div>
+            </p>
+          </div>
+
+          <div class="space" id="E-Mosfet"><strong>Enhancement-Mode MOSFET:</strong>
+            <p class="points">
+              The depletion-mod MOSFET was part of the evolution toward the enhancement-mode MOSFET, abbreviated E-Mosfet. Without the E-MOSFET, the personal computers that are now so widespread would not exist.<br>
+            </p>
+          </div>
+
+          <div class="space" id="BasicIdea"><strong>Basic Idea</strong>
+          <p class="points">
+            <div class="mt-3 mb-3" style="display: flex; align-content: center;">
+              <div class="pic">
+                <figure>
+                <img  src="theory_images/E-Mosfet.png" width="60%" >
+                <figcaption style="margin-left: 10%;">Unbiased E-MOSFET </figcaption>
+              </figure>
+              </div>
+              <div class="pic">
+                <figure>
+                <img  src="theory_images/E-Mosfet biased.png" width="60%" >
+                <figcaption style="margin-left: 17%;">Biased E-MOSFET</figcaption>
+              </figure>
+              </div>
+            </div>
+              <li>The figure1 above shows an E-MOSFET. The P substrate now extends all the way to the silicon dioxide. As you can see, there no longer is an n channel between the source and the drain.</li><br>
+              <li>The figure 2 shows normal biasing polarities. When the gate voltage is zero, the current between source and drain is zero. For this reason, an E-MOSFET is normally off when the gate voltage is zero.</li><br>
+              <li>The only way to get current is with a positive gate voltage.</li><br>
+              <li>When the gate is positive, it attracts the free electrons into the p region. These free electrons recombine with the holes next to silicon dioxide.</li><br>
+              <li>When the gate voltage is positive enough, all the holes touching the silicon dioxide are filled and the free electrons begin to flow from the source to drain.</li><br>
+              <li>This effect is same as creating a thin layer of n-type material next to the silicon dioxide.</li><br>
+              <li>This thin conducting layer is called the n-type inversion layer. When it exists, free electrons can flow easily from the source to drain.</li><br>
+              <li>The minimum VGS that creates the n-type inversion layer is called the threshold voltage, symbolised VGS(th).</li><br>
+              <li>When VGS is less than VGS(th), the drain current is zero.</li><br>
+              <li>When VGS is greater than VGS(th), an n-type inversion layer connects the source to the drain and the drain current can flow.</li><br>
+              <li>Typical values of VGS(th) for small signal devices are from 1 to 3 V.</li><br>
+          </p>
+          </div>
+
+          <div class="space" id="KeyPoint"><strong>Key point:</strong>
+          <p class="points">
+            <li>The JFET is referred as a depletion-mode device because its conductivity depends on the action of the depletion layers.</li><br>
+            <li>The E-MOSFET is classified as an enhancement-mode device because a gate voltage greater than the threshold voltage enhances its conductivity.</li><br>
+            <li>With zero gate voltage, a JFET is on, whereas an E-MOSFET is off. Therefore, the E-MOSFET is considered to be a normally off device.</li><br>
+          </p>
+          </div>
+          
+          <div class="space" id="DrainCurves"><strong>Drain curves:</strong>
+          <p class="points">
+            <div class="pic mt-2 mb-3">
+              <figure>
+              <img  src="theory_images/drain.png" width="50%" >
+              <figcaption style="margin-left:3%;">Drain curves of N-channel Enhancement type MOSFET</figcaption>
+            </figure>
+            </div>
+            <li>A small-signal E-MOSFET has a power rating of 1W or less. The figure(b) above shows a set of drain curves for a typical E-MOSFET. The lowest curve is the VGS(th) curve.</li><br>
+            <li>When VGS is less than VGS(th), the drain current is approximately zero. When VGS is greater than VGS(th) the device turns on and the drain current is controlled by the gate voltage.</li><br>
+            <li>The almost-vertical part of the graph is the ohmic region, and the almost-horizotal parts are the active region.</li><br>
+            <li>When biased in the ohmic region, The E-MOSFET is equivalent to a resistor.</li><br>
+            <li>When biased in the active region, it is equivalent to a current source.</li><br>
+            <li>Although, the E-MOSFET can operate in the active region, the main use is the ohmic region.</li><br> 
+            <li>The figure(a) above shows a typical transconductance curve. There is no current until VGS = VGS(th). </li><br>
+            <li>The drain current then increases rapidly until it reaches the saturation current ID(sat). Beyond this point, the device is biased in the ohmic region.</li><br>
+            <li>Therefore, ID cannot increase, even though VGS increases.</li><br>
+          </p>
+          </div>
+        </div>
+   </container>         
+  
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+</body>
+</html>
