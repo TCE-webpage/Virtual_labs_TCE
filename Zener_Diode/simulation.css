@@ -28,9 +28,7 @@ input[type=range][orient=vertical]
     background-color: brown;
     /* display: none;   */
  }
- .VBEName{
-   font-weight: bolder;
- }
+ 
 
  .Gif{
    position:relative;
@@ -68,7 +66,7 @@ input[type=range][orient=vertical]
 }
 /* VCE BOX */
 
-.VCEBox{
+/* .VCEBox{
     padding: 0.4em 1.3em;    
     border-radius: 0.2em;
 border:rgb(49, 49, 107) 2px solid;
@@ -81,7 +79,7 @@ border:rgb(49, 49, 107) 2px solid;
     font: bold 1.7em "Fira Sans", serif;
     color:#3f0d12;
     margin-top: 10px;
-}
+} */
 
 .gaugerow1{
   position: relative;
@@ -107,11 +105,7 @@ font-weight: bold;
 color:#3f0d12;
 
 }
-.VBEName{
-  position: absolute;
-  left:32%;
-    bottom:11%;
-}
+
 .instruction{
   border-radius: 11px 11px 0px 0px;
   min-height:12% !important;
