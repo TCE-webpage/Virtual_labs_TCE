@@ -1,110 +1,45 @@
 // Formula 
+
+var gauge2val;
 function updateGauge(id, min, max){
-    const newGaugeDisplayValue = document.getElementById("gaugeValue-" + id).value;
+    const newGaugeDisplayValue = document.getElementById("VZrange").value;
     const newGaugeValue =Math.floor(((newGaugeDisplayValue - min) / (max - min)) * 100);
-    const vce=document.getElementById("VCErange").value;
+    const vzconstval=document.getElementById("VZrange").value;
     document.getElementById(id).style.setProperty('--gauge-value', newGaugeValue);
     document.getElementById("Label").innerHTML=newGaugeDisplayValue;
-    var vceconstval = document.getElementById("VCErange").value;
-
-//Formula for IB
-    //VT=26mv
-    //Is=2*10^-15
-    const Is=2*(Math.pow(10,-15));
-    const c=Math.exp((40.5-vce)*0.01);
-    const exponent=Math.exp(newGaugeDisplayValue/0.026);
-    const beta=99;
-    const IB= c*(parseFloat((Is*exponent)/beta) * Math.pow(10,7));
-    gauge2val=IB.toFixed(3);
-    if(gauge2val>80){
-      gauge2val=80;
-    }
-    const newGauge2Value =Math.floor(((gauge2val - 2.126) / (678.732)) * 100);
+//Formula for IZ
+    
+    gauge2val=2*vzconstval;
+    const newGauge2Value =Math.floor(gauge2val * 100);
     document.getElementById("demoGauge1").style.setProperty('--gauge-value', newGauge2Value);
     document.getElementById("Label1").innerHTML=gauge2val;
 
   // GIF For VBE from 0.6 to 0.7
 
-  var vbeconstval= document.getElementById("gaugeValue-demoGauge").value;
-   if(vbeconstval>=0.600 && vbeconstval<=0.610 && vceconstval==0)
-  {
-    document.getElementById("img").src="simulation_gif/Initial-Flow-of-electron.gif";
+  //  if(vbeconstval>=0.600 && vbeconstval<=0.610 && vceconstval==0)
+  // {
+  //   document.getElementById("img").src="simulation_gif/Initial-Flow-of-electron.gif";
   
-  }
-  else if(vbeconstval>0.610 && vbeconstval<=0.630)
-  {
-    document.getElementById("img").src="simulation_gif/Slow.gif";
-  }
-  else if(vbeconstval>0.630 && vbeconstval<=0.650)
-  {
-    document.getElementById("img").src="simulation_gif/medium2.5.gif";
-  }
-  else if(vbeconstval>0.650 && vbeconstval<=0.670)
-  {
-    document.getElementById("img").src="simulation_gif/Medium1.5.gif";
-  }
-  else if(vbeconstval>0.670 && vbeconstval<=0.700)
-  {
-    document.getElementById("img").src="simulation_gif/Fast0.gif";
-  }
+  // }
+  // else if(vbeconstval>0.610 && vbeconstval<=0.630)
+  // {
+  //   document.getElementById("img").src="simulation_gif/Slow.gif";
+  // }
+  // else if(vbeconstval>0.630 && vbeconstval<=0.650)
+  // {
+  //   document.getElementById("img").src="simulation_gif/medium2.5.gif";
+  // }
+  // else if(vbeconstval>0.650 && vbeconstval<=0.670)
+  // {
+  //   document.getElementById("img").src="simulation_gif/Medium1.5.gif";
+  // }
+  // else if(vbeconstval>0.670 && vbeconstval<=0.700)
+  // {
+  //   document.getElementById("img").src="simulation_gif/Fast0.gif";
+  // }
 }
 
 // GIF for VCE when VBE=0
-var flag=1;
-var flag1=1;
-var flag2=1;
-function updateVCElabel(){
-  var vceconstval = document.getElementById("VCErange").value;
-  document.getElementById("VCElabel").innerHTML=vceconstval+"V";
-  if(vceconstval>=0 && vceconstval<=0.5){
-     document.getElementById("img").src="simulation_gif/NewVCE-0-to-0.6.gif";
-     flag=1;
-     flag1=1;
-     flag2=1;
-  }
-  else if(vceconstval==0.6 ){
-    document.getElementById("img").src="simulation_gif/At-0.6.gif";
-    flag=1;
-    flag1=1;
-     flag2=1;
-  }
-  else if(vceconstval==0.7 )
-  {
-      document.getElementById("img").src="simulation_gif/EBBreaking.gif";
-      flag=1;
-      flag1=1;
-     flag2=1;
-  }
-  else if(vceconstval>0.7 && vceconstval<=20 )
-  {
-      if(flag==1){
-         document.getElementById("img").src="simulation_gif/Above 0.7 Extra1Layer.gif";
-         flag=0;
-        }
-        flag1=1;
-     flag2=1;
-  }
-  else if(vceconstval>20 && vceconstval<=30)
-  {
-      if(flag1==1){
-         document.getElementById("img").src="simulation_gif/Above 0.7 Extra2Layers.gif";
-         flag1=0;
-        }
-        flag=1;
-        flag2=1;
-
-  }
-  else if(vceconstval>30 && vceconstval<40)
-  {
-      if(flag2==1){
-         document.getElementById("img").src="simulation_gif/Above 0.7 Extra3Layers.gif";
-         flag2=0;
-        }
-        flag1=1;
-        flag=1;
-  }
-  
-}
 function displayfn(){
   document.getElementById("start").style.display="none";  
   document.getElementById("FormNPN").style.display="inline";
@@ -158,22 +93,22 @@ function displayfn3(){
  var yArray=[0];
  var i=1;
  function tabled(){
- var vce = document.getElementById("VCErange").value;
- document.getElementById("tbvce1").innerHTML = vce+" V";
+//  var vce = document.getElementById("VCErange").value;
+//  document.getElementById("tbvce1").innerHTML = vce+" V";
 
  var sno = ++tabrowindex;
- var vbe = document.getElementById("gaugeValue-demoGauge").value;
- var ib = gauge2val;
+ var vz = document.getElementById("VZrange").value;
+ var iz = gauge2val;
  var table = document.getElementById("mytable");
  var row = table.insertRow(-1);
  var cell1 = row.insertCell(0);
  var cell2 = row.insertCell(1);
  var cell3 = row.insertCell(2);
  cell1.innerHTML = sno;
- cell2.innerHTML = vbe;
- cell3.innerHTML = ib;   
- xArray[i]=vbe;
- yArray[i]=ib;
+ cell2.innerHTML = vz;
+ cell3.innerHTML = iz;   
+ xArray[i]=vz;
+ yArray[i]=iz;
  i+=1;    
 }
 function deleted(){
@@ -209,9 +144,9 @@ function displayfn4(){
 
     // Define Layout
     var layout = {
-    xaxis: {range: [0, 0.9], title: "Base-Emitter Voltage (V)"},
-    yaxis: {range: [0, 150], title: "Base Current (&#956;A)"},  
-    title: "Input Characteristics - VBE Vs IB"
+    xaxis: {range: [0, 0.9], title: "Zener Voltage (V)"},
+    yaxis: {range: [0, 150], title: "Zener Current (&#956;A)"},  
+    title: "Reverse Characteristics - VZ Vs IZ"
    };
 
     // Display using Plotly
@@ -227,9 +162,9 @@ function plotgraph(){
 
 // Define Layout
 var layout = {
-xaxis: {range: [0, 0.9], title: "Base-Emitter Voltage (V)"},
-yaxis: {range: [0, 150], title: "Base Current (&#956;A)"},  
-title: "Input Characteristics - VBE Vs IB"
+xaxis: {range: [0, 40], title: "Zener Voltage (V)"},
+yaxis: {range: [0,80], title: "Zener Current (&#956;A)"},  
+title: "Reverse Characteristics - VZ Vs IZ"
 };
 
 // Display using Plotly

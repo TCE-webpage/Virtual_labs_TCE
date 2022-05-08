@@ -78,22 +78,18 @@
       <div class="leftImg col-7" >
       <div class="Gif">
       <img  id="img" src="simulation_gif/intro_zener.png" width="101%" >
-      <div class="HoriSlider" ><input type="range" id="VCErange" value="0" min="0" max="40" step="0.1" onInput="updateVCElabel()">VCE</div>
-      <div id="verti">          
-        <input type="range" orient="vertical" value="0" id="gaugeValue-demoGauge" name="gaugeValue"  min="0.600" max="0.750" step="0.001" value="0"
-        onInput="updateGauge('demoGauge', 0.600, 0.750);"><p class="VBEName">VBE</p>
-      </div></div>
-      <div>
-      
-      <a href="simulation2.html"><button type=button  class="btn btn-danger scale resetbtn p-1">
+      <div class="HoriSlider" ><input type="range" id="VZrange" value="0" min="0" max="40" step="0.1" onInput="updateGauge('demoGauge', 0, 40);">VZ</div>
+      </div>
+      <div>      
+      <a href="simulation.html"><button type=button  class="btn btn-danger scale resetbtn p-1">
         Reset</button></a>
       </div>
       </div>
       <div class="meterBox col-5 container-fluid">
           <div class="meterBoxrow ">
-        <div class="VCE row p-3"> VCE 
+        <!-- <div class="VCE row p-3"> VCE 
             <span  class="VCEBox" id="VCElabel">0.00V</span>
-        </div>
+        </div> -->
         <div class=" row p-3">
         <div class="gaugerow1 gauge1Inline col p-3 pt-2">
                 <div id="demoGauge" class="gauge" style="
@@ -124,7 +120,7 @@
                     </div>
                 </div>
                 </div>
-                <p class="VBE">VBE(V)</p>
+                <p class="VZ">VZ(V)</p>
             </div>
         <div class="col p-3 addToTable" style="border-right: hidden; border-left: hidden;">
           <div class="" style="text-align: center;margin-top:5%">
@@ -169,7 +165,7 @@
             </div>
             </div>
             
-            <p class="IB">IB(&#956;A)</p>
+            <p class="IZ">IZ(&#956;A)</p>
           </div>
           </div>
         <div class="row p-3">
@@ -195,14 +191,14 @@
 <!-- Table -->
 
 <div class="m-2 w-50 mx-auto">
-  <button id="graph" onclick="plotgraph()">Graph</button>
+  <button id="graph" onclick="plotgraph()">Graph</button><br><br>
   <table class="table caption-top align-middle table-bordered text-center" id="mytable">    
-    <caption>VCE: <span id="tbvce1"></span></caption>    
+    <!-- <caption>VCE: <span id="tbvce1"></span></caption>     -->
     <thead>
       <tr class="table-dark">
         <th>S.No</th>
-        <th>Base-Emitter Voltage <br>VBE (V)</th>
-        <th>Base Current <br>IB (&#956;A)</th>
+        <th>Zener Voltage <br>VZ (V)</th>
+        <th>Zener Current <br>IZ (&#956;A)</th>
       </tr>
     </thead>
      <tbody></tbody>      

@@ -6,14 +6,14 @@ body{
 }
 .HoriSlider{
     position:absolute;
-    bottom:0%;
-    left:53%;
-    display: none;
+    bottom:10%;
+    left:38%;
+    /* display: none; */
     
   font-weight: bolder;
 }
-#VCErange{
-  display: none;
+#VZrange{
+  /* display: none; */
 }
 input[type=range][orient=vertical]
 {
@@ -31,9 +31,7 @@ input[type=range][orient=vertical]
  .VBEName{
    font-weight: bolder;
  }
-#verti{
-  display: none;
-}
+
  .Gif{
    position:relative;
  }
@@ -91,7 +89,7 @@ border:rgb(49, 49, 107) 2px solid;
 .gaugerow2{
   position: relative;
 }
-.VBE{
+.VZ{
   position: absolute;
   left: 35%;
   top: 120px;
@@ -101,7 +99,7 @@ border:rgb(49, 49, 107) 2px solid;
   /* opacity:1%; */
 
 }
-.IB{
+.IZ{
   position: absolute;
   left: 35%;
   top: 120px;
