@@ -330,7 +330,7 @@ transition: all 5s ease-in-out;
 /* Size of the block with respect to the screen size */
 @media screen and (min-width:850px) {
   .aimBlock,.proBlock,.outcomeBlock{
-      margin-left: 20% !important;
+      margin-left: 24% !important;
       margin-right: 20% !important;
   }
 
