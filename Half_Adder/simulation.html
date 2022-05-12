@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="simulation2.css">
     <link rel="stylesheet" href="main.css">
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    <title>LOGIC GATES</title>
+    <title>HALF ADDER</title>
     <style>
       .board{
         width: 10%;
@@ -23,12 +23,12 @@
       }
 
       .inputPinA{
-        margin-top:-2%;
-        margin-left:23%;
+        margin-top:-5%;
+        margin-left:24.5%;
       }
       .inputPinB{
-        margin-top:-2%;
-        margin-left: 13%;
+        margin-top:-5%;
+        margin-left:21%;
       }
      
       /* #vccPin,#inputPinB{
@@ -72,8 +72,8 @@
       </div>
     </nav>
   </container>
-  <div class="BJT">
-   <h1>AND GATE</h1> 
+  <div class="adder">
+   <h1>HALF ADDER</h1> 
   </div>
   <container>
     <nav class="navbar navbar-expand-lg navbar-light d-none d-sm-none d-lg-block">
@@ -82,8 +82,8 @@
             <a class="nav-link" aria-current="page" href="main.html">Aim</a>
             <a class="nav-link" href="Theory.html">Theory</a>
             <a class="nav-link" href="pre.html">Prequiz</a>
-            <a class="nav-link popup_button" href="#popup3">Procedure</a>
-            <a class="nav-link popup_button mininavActive" href="#popup1">Simulation</a>
+            <a class="nav-link">Procedure</a>
+            <a class="nav-link mininavActive">Simulation</a>
             <a class="nav-link " href="outcome.html">Outcome</a>
             <a class="nav-link " href="#">Feedback</a>
         </div>
@@ -93,11 +93,11 @@
   <container>
     <ul class="mini d-block d-sm-block d-md-block d-lg-none">
       <div class="center">
-        <li><a class="minactive" href="main.html"><span class="" title="Aim"><img src="images/target.png" alt=""></span></a></li>
+        <li><a href="main.html"><span class="" title="Aim"><img src="images/target.png" alt=""></span></a></li>
         <li><a href="Theory.html"><span class="fas fa-book fa-2x " title="Theory" style="color: black;"></span></a></li>
         <li><a href="pre.html"><span class="fas fa-question-circle fa-2x" title="Prequiz" style="color: black;"></span></a></li>
-        <li><a class="popup_button" href="#popup4"><span class="" title="Procedure" ><img src="images/process.png" alt=""></span></a></li>
-        <li><a class="popup_button" href="#popup2"><span class="" title="Simulation"><img src="images/settings.png" alt=""></span></a></li>
+        <li><a href="procedure.html"><span class="" title="Procedure" ><img src="images/process.png" alt=""></span></a></li>
+        <li><a href="simulation.html" class="minactive"><span class="" title="Simulation"><img src="images/settings.png" alt=""></span></a></li>
         <li><a href="outcome.html"><span class="fas fa-clipboard-list fa-2x" title="Outcome" style="color: black;"></span></a></li>
         <li><a href="#about"><span class="fas fa-comments fa-2x" title="Feedback" style="color: black;"></span></a></li>
       <div>
@@ -115,24 +115,24 @@
         <div class="row">
         <span class="board vccPin1">
           <label class="toggle">
-            <input id="VccToggle" class="toggle__lever" type="checkbox" name="toggle" role="switch" value="On" onclick="table()" disabled>
+            <input id="VccToggle" class="toggle__lever" type="checkbox" name="toggle" role="switch" value="On" onclick="table()">
           </label>
         </span>
         
         <span class="board toggle3 inputPinA">
-                    <input type="checkbox" id="toggle3" onclick="table()" disabled/>
+                    <input type="checkbox" id="toggle3" onclick="table()" >
           <label for="toggle3"></label>
         </span>
        
         <span class="board toggle3B inputPinB">
-          <input type="checkbox" id="toggle3B" onclick="table()" disabled/>
+          <input type="checkbox" id="toggle3B" onclick="table()" >
           <label for="toggle3B"></label>
         </span>
         </div>
         
   </div>
 <div>  
-  <a href="AndSimulation.html"><button type=button  class="btn btn-danger scale resetbtn p-1">
+  <a href="simulation.html"><button type=button  class="btn btn-danger scale resetbtn p-1">
     Reset</button></a>
     <a class="info_icon" onclick="info()" title="switchboard info" href="#info" style="background-color: aliceblue; display: inline-block; width: 5%;margin-left: 80%;border-radius: 50%; cursor: pointer;">
     <span class="fas fa-info" style="margin-left: 39%; color: black;"></span></a>
@@ -182,95 +182,6 @@
       </div>
       
       </div>
-      <div id="popup1" class="overlay">
-        <div class="popup">
-          <a class="popup_close" href="AndSimulation.html">&times;</a>
-          <table style="width:100%">
-            <tr>
-              <td ><a class="popup_gate" href="simulation2.html">NOT GATE</a></td>
-              <td style="text-align:right"><a class="popup_gate_right" href="NorSimulation.html">NOR GATE</a></td>
-              
-            </tr>
-            <tr>
-              <td ><a class="popup_gate" href="AndSimulation.html">AND GATE</a></td>
-              <td  style="text-align:right"><a class="popup_gate_right" href="NandSimulation.html">NAND GATE</a></td>
-            </tr>
-          </table>
-          <p style="text-align:center"> <a class="popup_gate_last" href="OrSimulation.html">OR&nbsp;&nbsp;&nbsp;GATE</a> </p> 
-            
-          </div>
-        </div>
-    
-        <div id="popup2" class="overlay">
-          <div class="popup2">
-            <a class="popup_close" href="AndSimulation.html">&times;</a>
-            <br>
-            <div >
-              <a class="popup_gate2" href="OrSimulation.html">OR&nbsp;&nbsp;GATE</a>
-            </div>
-            <hr><br>
-            <div>
-              <a class="popup_gate2" href="AndSimulation.html">AND GATE</a>
-            </div>
-            <hr><br>
-            <div>
-              <a class="popup_gate2" href="simulation2.html">NOT GATE</a>
-            </div>
-            <hr><br>
-            <div>
-              <a class="popup_gate2" href="NorSimulation.html">NOR GATE</a>
-            </div>
-            <hr><br>
-            <div>
-              <a class="popup_gate2" href="NandSimulation.html">NAND GATE</a>
-            </div>
-            <hr><br>
-           </div></div>
-    
-           <div id="popup3" class="overlay">
-            <div class="popup">
-              <a class="popup_close" href="AndSimulation.html">&times;</a>
-              <table style="width:100%">
-                <tr>
-                  <td ><a class="popup_gate" href="procedureip.html">NOT GATE</a></td>
-                  <td style="text-align:right"><a class="popup_gate_right" href="NorProcedure.html">NOR GATE</a></td>
-                  
-                </tr>
-                <tr>
-                  <td ><a class="popup_gate" href="AndProcedure.html">AND GATE</a></td>
-                  <td  style="text-align:right"><a class="popup_gate_right" href="NandProcedure.html">NAND GATE</a></td>
-                </tr>
-              </table>
-              <p style="text-align:center"> <a class="popup_gate_last" href="OrProcedure.html">OR&nbsp;&nbsp;&nbsp;GATE</a> </p> 
-                
-              </div>
-            </div>
-            
-            <div id="popup4" class="overlay">
-              <div class="popup2">
-                <a class="popup_close" href="AndSimulation.html">&times;</a>
-                <br>
-                <div >
-                  <a class="popup_gate2" href="OrProcedure.html">OR&nbsp;&nbsp;GATE</a>
-                </div>
-                <hr><br>
-                <div>
-                  <a class="popup_gate2" href="AndProcedure.html">AND GATE</a>
-                </div>
-                <hr><br>
-                <div>
-                  <a class="popup_gate2" href="procedureip.html">NOT GATE</a>
-                </div>
-                <hr><br>
-                <div>
-                  <a class="popup_gate2" href="NorProcedure.html">NOR GATE</a>
-                </div>
-                <hr><br>
-                <div>
-                  <a class="popup_gate2" href="NandProcedure.html">NAND GATE</a>
-                </div>
-                <hr><br>
-               </div></div>
 
 <a class="toTop" href="#simBlock"><i class="fas fa-arrow-circle-up fa-2x"></i></a>
 <div class="end">

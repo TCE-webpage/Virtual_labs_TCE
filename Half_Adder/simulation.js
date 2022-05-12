@@ -8,11 +8,9 @@
  function pin(){
   var VccPin=document.getElementById("VccToggle");
   var inputPin=document.getElementById("inputPin").value;
-  var inputpinB=document.getElementById("inputPinB");
-  var outPin=document.getElementById("outputPin");
   var icImg= document.getElementById("img");
   if(inputPin=="0"){
-    VccPin.disabled=true;
+    VccPin.disabled=false;
     icImg.src="simulation_gif/AND_IC.png";
   }
   else{
