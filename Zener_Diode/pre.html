@@ -40,9 +40,9 @@
           </div>
         </nav>
       </container>
-      <div class="Zener">
-        <h1>ZENER DIODE</h1> 
-       </div>
+      <div class="BJT">
+       <h1>ZENER DIODE</h1> 
+      </div>
       <container>
         <nav class="navbar navbar-expand-lg navbar-light d-none d-sm-none d-lg-block">
           <div class="container-fluid">
@@ -50,8 +50,8 @@
                 <a class="nav-link" aria-current="page" href="main.html">Aim</a>
                 <a class="nav-link" href="Theory.html">Theory</a>
                 <a class="nav-link mininavActive" href="pre.html">Prequiz</a>
-                <a class="nav-link" href="procedure.html">Procedure</a>
-                <a class="nav-link" href="simulation.html">Simulation</a>   
+                <a class="nav-link " href="procedure.html">Procedure</a>
+                <a class="nav-link " href="simulation.html">Simulation</a>
                 <a class="nav-link " href="outcome.html">Outcome</a>
                 <a class="nav-link " href="#">Feedback</a>
             </div>
@@ -100,63 +100,66 @@
 
             <h1>✌️</h1>
           </div>
-          
-
           <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
         <script>
             /* ====== Questions ====== */
 let questions = [
     {
-      question: '1)The operation of a D-MOSFET is similar to that of a _______ when VGS is negative.',
+      question: 'The operation of a D-MOSFET is similar to that of a _______ when VGS is negative.',
       options: [
-               "E-MOSFET","JFET","MESFET", "None of the above"
+               "E-MOSFET","JFET","MESFET", "None of the above","D-MOSFET"
               ],
       answer: 1
     },
     {
-      question: "2) When biased in the active region, E-MOSFET is equivalent to a _______",
+      question: "When biased in the active region, E-MOSFET is equivalent to a _______",
       options: [
       "Voltage source",
       "Variable Resistor",
       "Amplifier",
-      "Current source"
+      "Current source",
+      "None of the above"
       ],
       answer: 3
     },
     {
-      question: '3) Typical values of VGS(th) for small signal devices are from _____',
+      question: 'Typical values of VGS(th) for small signal devices are from _____',
       options: ["0.6 to 0.7 V",
                 "1V to 3V",
                 "100mV to 1V", 
-                "5V to 7V"
+                "5V to 7V",
+                "None of the above"
       ],
       answer: 1
     },
     {
-      question: "4) With zero gate voltage, a JFET is ____, whereas an E-MOSFET is ____",
+      question: "With zero gate voltage, a JFET is ____, whereas an E-MOSFET is ____",
       options: ["OFF, OFF",
                 "OFF, ON",
                 "ON, OFF",
-                "ON, ON"
+                "ON, ON",
+                "None of the above"
         ],
       answer: 2
     },
     {
-      question: '5) The MOSFET is in the cut-off state,when the gate source voltage is',
+      question: 'The MOSFET is in the cut-off state,when the gate source voltage is',
       options: ["less than gate to source voltage",
                 "greater than gate to source voltage",
                 "less than threshold voltage",
-                "greater than threshold voltage"
+                "greater than threshold voltage",
+                "None of the above"
     ],
     answer: 2
     },
     {
-      question: "6) What does MOSFET stands for",
+      question: "What does MOSFET stands for",
       options: ["Metal Oxide Semiconductor Field Effect Transistor",
                 "Modern Oxidized Silicon based Field Effect Transistor",
                 "Modern Oxidized Silicon based Force Effect Transistor",
-                "Metal Oxide silicon Field Equivalent Transistor"
+                "Metal Oxide silicon Field Equivalent Transistor",
+                "Metal Oxide Dilicon Filed effect Transistor"
 ],
       answer: 0
     }
@@ -171,6 +174,18 @@ let questions = [
   const scorePct = document.querySelector(".scorePct");
   
   //initial data
+  const totalQuestion=6;
+  const displayCount=3;
+  const randomUnique = (range, count) => {
+    let nums = new Set();
+    while (nums.size < count) {
+        nums.add(Math.floor(Math.random() * (range - 1 + 1) + 1));
+    }
+    return [...nums];
+}
+
+let random=randomUnique(totalQuestion,displayCount);
+console.log(random);
   let currentQuestion = 0;
   let correctAnswers = 0;
   
@@ -180,29 +195,42 @@ let questions = [
   document.querySelector(".scoreArea button").addEventListener("click", () => {
     currentQuestion = 0;
     correctAnswers = 0;
+    random=randomUnique(totalQuestion,displayCount);
+    console.log(random);
     showQuestion();
   });
-  
   //Functions
   function showQuestion() {
-    if (questions[currentQuestion]) {
-      let q = questions[currentQuestion];
+    if (currentQuestion<3) {
+      let q = questions[random[currentQuestion]-1];
   
-      let progress = Math.floor((currentQuestion / questions.length) * 100);
+      let progress = Math.floor((currentQuestion / displayCount) * 100);
       progressBar.style.width = `${progress}%`;
   
       scoreArea.style.display = "none";
       questionArea.style.display = "block";
   
-      document.querySelector(".question").innerHTML = q.question;
+      document.querySelector(".question").innerHTML = (currentQuestion+1)+") "+q.question;
   
       let optionsHtml = "";
-  
-      for (let i in q.options) {
-        optionsHtml += `<div data-op="${i}" class="option"><span> ${
-          parseInt(i) + 1
-        }</span> ${q.options[i]}</div>`;
+      let optNumber=0;
+      let totalOption=5;
+      let displayOption=4;
+      let randomOption=randomUnique(totalOption,displayOption);
+      console.log("option "+randomOption);
+      const correctOption=questions[random[currentQuestion]-1].answer +1;
+      console.log(correctOption);
+      if(!randomOption.includes(correctOption)){
+        randomOption[randomUnique(4,1)-1]=correctOption;
+        console.log("new option "+randomOption);
       }
+      while (optNumber<displayOption) {
+        optionsHtml += `<div data-op="${randomOption[optNumber]-1}" class="option"><span> ${
+          parseInt(optNumber)+1
+        }</span> ${q.options[randomOption[optNumber]-1]}</div>`;
+        optNumber++;
+      }
+      optNumber=1;
   
       document.querySelector(".options").innerHTML = optionsHtml;
   
@@ -217,7 +245,7 @@ let questions = [
   function optionsClickEvent(e) {
     let clickedOption = parseInt(e.target.getAttribute("data-op"));
   
-    if (questions[currentQuestion].answer === clickedOption) {
+    if (questions[random[currentQuestion]-1].answer === clickedOption) {
       correctAnswers++;
     }
   
@@ -226,7 +254,7 @@ let questions = [
   }
   
   function finishQuiz() {
-    let points = Math.floor((correctAnswers / questions.length) * 100);
+    let points = Math.floor((correctAnswers / displayCount) * 100);
   
     if (points <= 30) {
       scoreText1.innerHTML = "oops, needs to improve";
@@ -242,7 +270,7 @@ let questions = [
     scorePct.innerHTML = `${points}% Correct`;
     document.querySelector(
       ".scoreText2"
-    ).innerHTML = `Out of ${questions.length} you got ${correctAnswers}`;
+    ).innerHTML = `Out of ${displayCount} you got ${correctAnswers}`;
   
     scoreArea.style.display = "block";
     questionArea.style.display = "none";
