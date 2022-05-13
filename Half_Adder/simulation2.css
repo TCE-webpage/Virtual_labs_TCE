@@ -122,14 +122,20 @@ body{
    position:relative;
  }
 .simBlock{
-  background-color:#6dd8af;
+		/* background:linear-gradient(hsl(0,0%,60%) 12.5%,hsla(0,0%,60%,0) 13% 87%,hsl(0,0%,60%) 87.5%); */
+  background-color:#96dddb;
+    
     border-radius:15px;
     border:rgb(56, 10, 56) solid 3px;
     width: 95%;
     margin-top:2%;
 }
 .meterBox{
-  background-color:#6dd8af;
+  /* background-color:#6dd8af; */
+  background-color:#96dddb;
+  /* background:linear-gradient(white,#b7f5f5,#96dddb,#C7D5ED); */
+
+
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   border-radius:20px 15px 15px 20px;
 }
