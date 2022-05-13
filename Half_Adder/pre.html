@@ -201,7 +201,7 @@ console.log(random);
   });
   //Functions
   function showQuestion() {
-    if (currentQuestion<3) {
+    if (currentQuestion<displayCount) {
       let q = questions[random[currentQuestion]-1];
   
       let progress = Math.floor((currentQuestion / displayCount) * 100);

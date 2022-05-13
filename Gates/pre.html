@@ -292,12 +292,12 @@
     }
 let questions = [
     {
-      question: '1) Drag and Drop',
+      question: 'Drag and Drop',
       options: [],
       answer:0
     },
     {
-      question: "2) Exclusive-OR (XOR) logic gates can be constructed from _____ logic gates?",
+      question: "Exclusive-OR (XOR) logic gates can be constructed from _____ logic gates?",
       options: [
         "OR gates only",
         "AND gates and NOT gates",
@@ -307,7 +307,7 @@ let questions = [
       answer: 2
     },
     {
-      question: '3) An AND gate ____',
+      question: 'An AND gate ____',
       options: [" is equivalent to a series switching circuit",
                 " is equivalent to a parallel switching circuit",
                 "is a universal gate", 
@@ -316,12 +316,12 @@ let questions = [
       answer: 0
     },
     {
-      question: "4) Drag and Drop",
+      question: "Drag and Drop",
       options: [],
       answer: 0
     },
     {
-      question: '5) The output will be a LOW for any case when one or more inputs are zero in a/an',
+      question: 'The output will be a LOW for any case when one or more inputs are zero in a/an',
       options: ["OR Gate","NOT Gate","AND Gate","NAND Gate"],
     answer: 2
     }
@@ -335,6 +335,17 @@ let questions = [
   const scoreText1 = document.querySelector(".scoreText1");
   const scorePct = document.querySelector(".scorePct");
   
+  const totalQuestion=5;
+  const displayCount=3;
+  const randomUnique = (range, count) => {
+    let nums = new Set();
+    while (nums.size < count) {
+        nums.add(Math.floor(Math.random() * (range - 1 + 1) + 1));
+    }
+    return [...nums];
+}
+let random=randomUnique(totalQuestion,displayCount);
+
   //initial data
   let currentQuestion = 0;
   let correctAnswers = 0;
@@ -345,23 +356,24 @@ let questions = [
   document.querySelector(".scoreArea button").addEventListener("click", () => {
     currentQuestion = 0;
     correctAnswers = 0;
+    random=randomUnique(totalQuestion,displayCount);
     showQuestion();
   });
   
   //Functions
   function showQuestion() {
-    if (questions[currentQuestion]) {
-      let q = questions[currentQuestion];
+    if (currentQuestion<displayCount) {
+      let q = questions[random[currentQuestion]-1];
   
-      let progress = Math.floor((currentQuestion / questions.length) * 100);
+      let progress = Math.floor((currentQuestion / displayCount) * 100);
       progressBar.style.width = `${progress}%`;
   
       scoreArea.style.display = "none";
       questionArea.style.display = "block";
   
-      document.querySelector(".question").innerHTML = q.question;
+      document.querySelector(".question").innerHTML =(currentQuestion+1)+") " +q.question;
       let optionsHtml ="";
-  if (currentQuestion==0){
+  if (random[currentQuestion]-1==0){
       optionsHtml = `<div class="row">
       <div id="div1" class="col-1 offset-2 option2" ondrop="drop(event)" ondragover="allowDrop(event)">
   <img src="prequizImages/or.png" draggable="true" ondragstart="drag(event)" id="drag1" width="88" height="31">
@@ -410,7 +422,7 @@ let questions = [
 </div>
 `;
   }
-  else if(currentQuestion==3){
+  else if(random[currentQuestion]-1==3){
     optionsHtml = `<div  class="row">
       <div id="nandOptt"class="col-1 offset-2 option2" ondrop="drop(event)" ondragover="allowDrop(event)">
   <div id="orIc" class="optClr" draggable="true" ondragstart="drag(event)">IC7432</div>
@@ -459,11 +471,22 @@ let questions = [
 </div>`;
   }
   else{
-      for (let i in q.options) {
-        optionsHtml += `<div data-op="${i}" class="option"><span> ${
-          parseInt(i) + 1
-        }</span> ${q.options[i]}</div>`;
+    let optNumber=0;
+    let totalOption=4;
+    let displayOption=4;
+    let randomOption=randomUnique(totalOption,displayOption);
+    const correctOption=questions[random[currentQuestion]-1].answer +1;
+    if(!randomOption.includes(correctOption)){
+        randomOption[randomUnique(displayOption,1)-1]=correctOption;
+        console.log("new option "+randomOption);
       }
+      while (optNumber<displayOption) {
+        optionsHtml += `<div data-op="${randomOption[optNumber]-1}" class="option"><span> ${
+          parseInt(optNumber) + 1
+        }</span> ${q.options[randomOption[optNumber]-1]}</div>`;
+      optNumber++;
+      }
+      optNumber=1;
   }
       document.querySelector(".options").innerHTML = optionsHtml;
       document.querySelectorAll(".options .option").forEach((item) => {
@@ -476,7 +499,7 @@ let questions = [
   }
   function optClick(){
     var bool=false
-    if(currentQuestion==0){
+    if(random[currentQuestion]-1==0){
     bool=andAns && notAns && orAns && nandAns && norAns && exorAns && exnorAns;
       }
     else{
@@ -492,7 +515,7 @@ let questions = [
   function optionsClickEvent(e) {
     let clickedOption = parseInt(e.target.getAttribute("data-op"));
   
-    if (questions[currentQuestion].answer === clickedOption) {
+    if (questions[random[currentQuestion]-1].answer === clickedOption) {
       correctAnswers++;
     }
   
@@ -501,7 +524,7 @@ let questions = [
   }
   
   function finishQuiz() {
-    let points = Math.floor((correctAnswers / questions.length) * 100);
+    let points = Math.floor((correctAnswers / displayCount) * 100);
   
     if (points <= 30) {
       scoreText1.innerHTML = "oops, needs to improve";
@@ -517,7 +540,7 @@ let questions = [
     scorePct.innerHTML = `${points}% Correct`;
     document.querySelector(
       ".scoreText2"
-    ).innerHTML = `Out of ${questions.length} you got ${correctAnswers}`;
+    ).innerHTML = `Out of ${displayCount} you got ${correctAnswers}`;
   
     scoreArea.style.display = "block";
     questionArea.style.display = "none";

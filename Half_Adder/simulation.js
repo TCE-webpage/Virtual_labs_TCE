@@ -5,115 +5,75 @@
  var B=false
  var Vcc=false
 
- function pin(){
-  var VccPin=document.getElementById("VccToggle");
-  var inputPin=document.getElementById("inputPin").value;
-  var icImg= document.getElementById("img");
-  if(inputPin=="0"){
-    VccPin.disabled=false;
-    icImg.src="simulation_gif/AND_IC.png";
-  }
-  else{
-    VccPin.disabled=false;
-  }
-  document.getElementById("instruct").innerHTML='Observe the IC-7408 diagram,you can see that the gate for the selected input pin is highlighted.<br> <b>Turn On Vcc</b>'
+//  function pin(){
+//   var VccPin=document.getElementById("VccToggle");
+//   var inputPin=document.getElementById("inputPin").value;
+//   var icImg= document.getElementById("img");
+//   if(inputPin=="0"){
+//     VccPin.disabled=false;
+//     icImg.src="simulation_gif/AND_IC.png";
+//   }
+//   else{
+//     VccPin.disabled=false;
+//   }
+//   document.getElementById("instruct").innerHTML='Observe the IC-7408 diagram,you can see that the gate for the selected input pin is highlighted.<br> <b>Turn On Vcc</b>'
 
-  if(inputPin=="1"){
-    inputpinB.value="2";
-    outPin.value="3";
-    icImg.src="simulation_gif/AND_IN_1.png";
+//   if(inputPin=="1"){
+//     inputpinB.value="2";
+//     outPin.value="3";
+//     icImg.src="simulation_gif/AND_IN_1.png";
     
-  }
-  else if(inputPin=="4"){
-    inputpinB.value="5";
-    outPin.value="6";
-    icImg.src="simulation_gif/AND_IN_4.png";
-  }
-  else if(inputPin=="10"){
-    inputpinB.value="9";
-    outPin.value="8";
-    icImg.src="simulation_gif/AND_IN_9.png";
-  }
-  else if(inputPin=="13"){
-    inputpinB.value="12";
-    outPin.value="11"
-    icImg.src="simulation_gif/AND_IN_12.png";
-  }
-}
+//   }
+//   else if(inputPin=="4"){
+//     inputpinB.value="5";
+//     outPin.value="6";
+//     icImg.src="simulation_gif/AND_IN_4.png";
+//   }
+//   else if(inputPin=="10"){
+//     inputpinB.value="9";
+//     outPin.value="8";
+//     icImg.src="simulation_gif/AND_IN_9.png";
+//   }
+//   else if(inputPin=="13"){
+//     inputpinB.value="12";
+//     outPin.value="11"
+//     icImg.src="simulation_gif/AND_IN_12.png";
+//   }
+// }
  function table(){
   A=document.getElementById("toggle3").checked;
   B=document.getElementById("toggle3B").checked;
   var inpADisablity=document.getElementById("toggle3");
   var inpBDisablity=document.getElementById("toggle3B");
-  var inpPinDisablity=document.getElementById("inputPin");
   var VccSwitch=document.getElementById("VccToggle");
   Vcc=document.getElementById("VccToggle").checked;
   if(Vcc){
     inpADisablity.disabled=false;
     inpBDisablity.disabled=false;
-    inpPinDisablity.disabled=true;
 
     document.getElementById("instruct").innerHTML='<b>Toggle Input switches</b><br> Observe the working of gate and truth table for different input combinations'
     if(A && B){           
-      inpADisablity.disabled=true;
-      inpBDisablity.disabled=true;
-      VccSwitch.disabled=true;
-      document.getElementById("img1").src="simulation_gif/And_A_B_On.gif"; 
-      setTimeout( function(){  
-        document.getElementById("img1").src="simulation_gif/And_A_B_On_Loop.gif";
-        inpADisablity.disabled=false;
-        inpBDisablity.disabled=false;
-        VccSwitch.disabled=false;
-        },3000); 
-              
-      document.getElementById("light").src="simulation_gif/lighton.png";
+      // document.getElementById("img1").src="simulation_gif/And_A_B_On.gif";               
+      // document.getElementById("light").src="simulation_gif/lighton.png";
       document.getElementById("instruct").innerHTML='<b>Toggle Input switches</b><br> Observe the working of gate and truth table for different input combinations'
     }
     else if(A && !B){
-      inpADisablity.disabled=true;
-      inpBDisablity.disabled=true;
-      VccSwitch.disabled=true;
-      document.getElementById("img1").src="simulation_gif/And_A_On_B_Off.gif"; 
-      setTimeout( function(){       
-        document.getElementById("img1").src="simulation_gif/And_A_On_B_Off_Loop.gif";
-        inpADisablity.disabled=false;
-        inpBDisablity.disabled=false;
-        VccSwitch.disabled=false;
-        },3500);
-      document.getElementById("light").src="simulation_gif/lightoff.png";
+      // document.getElementById("img1").src="simulation_gif/And_A_On_B_Off.gif"; 
+      // document.getElementById("light").src="simulation_gif/lightoff.png";
     }
     else if(!A && B){
-      inpADisablity.disabled=true;
-      inpBDisablity.disabled=true;
-      VccSwitch.disabled=true;
-      document.getElementById("img1").src="simulation_gif/And_A_Off_B_ON.gif"; 
-      setTimeout( function(){       
-        document.getElementById("img1").src="simulation_gif/And_A_Off_B_ON_Loop.gif";
-        inpADisablity.disabled=false;
-        inpBDisablity.disabled=false;
-        VccSwitch.disabled=false;
-        },4400);
-      document.getElementById("light").src="simulation_gif/lightoff.png";
+      // document.getElementById("img1").src="simulation_gif/And_A_Off_B_ON.gif"; 
+      // document.getElementById("light").src="simulation_gif/lightoff.png";
     }
     else{
-      inpADisablity.disabled=true;
-      inpBDisablity.disabled=true;
-      VccSwitch.disabled=true;
-      document.getElementById("img1").src="simulation_gif/And_A_B_Off.gif"; 
-      setTimeout( function(){       
-        document.getElementById("img1").src="simulation_gif/And_A_B_Off_Loop.gif";
-        inpADisablity.disabled=false;
-        inpBDisablity.disabled=false;
-        VccSwitch.disabled=false;
-        },3800);
-      document.getElementById("light").src="simulation_gif/lightoff.png";
+      // document.getElementById("img1").src="simulation_gif/And_A_B_Off.gif"; 
+      // document.getElementById("light").src="simulation_gif/lightoff.png";
     }
     tabled();
   }
   else{
     document.getElementById("instruct").innerHTML="Observe the IC-7408 diagram,you can see that the gate for the selected input pin is highlighted. <b>Turn On Vcc</b>"
-    document.getElementById("light").src="simulation_gif/lightoff.png";
-    document.getElementById("VccToggle").disabled=true;
+    // document.getElementById("light").src="simulation_gif/lightoff.png";
     if(inpADisablity.checked){
       inpADisablity.click();
     }
@@ -128,8 +88,7 @@
     }
     inpADisablity.disabled=true;
     inpBDisablity.disabled=true;
-    inpPinDisablity.disabled=false;
-    document.getElementById("img1").src="simulation_gif/AndIntro.JPG";
+    // document.getElementById("img1").src="simulation_gif/AndIntro.JPG";
 
     while(tabrowindex){
       document.getElementById("mytable").deleteRow(-1);
@@ -147,35 +106,43 @@
  var sno = ++tabrowindex;
  var inputA = 0;
  var inputB = 0;
- var output=1
+ var sum=0;
+ var carry=0;
  if(A && B){
    inputA=1;
    inputB=1;
-   output=1;
+   sum=0;
+   carry=1;
  }
  else if(A && !B){
    inputA=1;
    inputB=0;
-   output=0; 
+   sum=1;
+   carry=0;
  }
  else if(!A && B){
   inputA=0;
   inputB=1;
-  output=0; 
+  sum=1;
+  carry=0;
  }
  else{
    inputA=0;
    inputB=0;
-   output=0;
+   sum=0;
+   carry=0;
  }
  var table = document.getElementById("mytable");
  var row = table.insertRow(-1);
  var cell1 = row.insertCell(0);
  var cell2 = row.insertCell(1);
  var cell3 = row.insertCell(2);
+ var cell4 = row.insertCell(3);
  cell1.innerHTML = inputA;
  cell2.innerHTML = inputB; 
- cell3.innerHTML = output;
+ cell3.innerHTML = sum;
+ cell4.innerHTML = carry;
+
  i+=1;    
 }
  
@@ -203,7 +170,7 @@ function exportData(){
   var table = document.getElementById("mytable");
 
   /* Declaring array variable */
-  var rows =[["Input A","Input B","Output"]];
+  var rows =[["Input A","Input B","Sum","Carry"]];
 
     //iterate through rows of table
   for(var i=1,row; row = table.rows[i];i++){
@@ -212,12 +179,14 @@ function exportData(){
       column1 = row.cells[0].innerText;
       column2 = row.cells[1].innerText;
       column3 = row.cells[2].innerText;
+      column4 = row.cells[3].innerText;
   /* add a new records in the array */
       rows.push(
           [
               column1,
               column2,
-              column3
+              column3,
+              column4
           ]
       );
 
@@ -233,7 +202,7 @@ function exportData(){
       var encodedUri = encodeURI(csvContent);
       var link = document.createElement("a");
       link.setAttribute("href", encodedUri);
-      link.setAttribute("download", "AND_Gate_Truth_Table.csv");
+      link.setAttribute("download", "HalfAdder.csv");
       document.body.appendChild(link);
        /* download the data file named "Stock_Price_Report.csv" */
       link.click();
