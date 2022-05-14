@@ -82,7 +82,7 @@
             <a class="nav-link" aria-current="page" href="main.html">Aim</a>
             <a class="nav-link" href="Theory.html">Theory</a>
             <a class="nav-link" href="pre.html">Prequiz</a>
-            <a class="nav-link">Procedure</a>
+            <a class="nav-link" href="procedure.html">Procedure</a>
             <a class="nav-link mininavActive">Simulation</a>
             <a class="nav-link " href="outcome.html">Outcome</a>
             <a class="nav-link " href="#">Feedback</a>
@@ -129,13 +129,13 @@
           <label for="toggle3B"></label>
         </span>
         </div>
-  </div>
-  <button class="circuitBtn btn btn-info">Circuit <i class="fas fa-external-link-alt"></i></button>
+  </div><br>
+  <!-- <button class="circuitBtn btn btn-info">Circuit <i class="fas fa-external-link-alt"></i></button> -->
 <div>  
   <a href="simulation.html"><button type=button  class="btn btn-danger scale resetbtn p-1">
     Reset</button></a>
     <a class="info_icon" onclick="info()" title="switchboard info" href="#info" style="background-color: aliceblue; display: inline-block; width: 5%;margin-left: 80%;border-radius: 50%; cursor: pointer;">
-    <span class="fas fa-info" style="margin-left: 39%; color: black;"></span></a>
+    <span class="fas fa-info" style="margin-left: 42%; color: black;"></span></a>
   </div> </div> </div>
 
 
@@ -152,9 +152,8 @@
       </div> 
       <div class="instruction p-2 mb-3 text-center">
         <p id="instruct">
-          Observe the IC-7408 and its switchboard on the left side and the internal circuit diagram of the AND gate on the right side which is made up of NMOS and PMOS and then,<br>
-          <b>Select the desired input pin </b><br>
-          from the dropdown provided.<br>
+          Observe the Ic chip diagram of half adder and its switchboard on the left side and the half adder logic diagram on the right side and then.<br>
+          <b>Turn On VCC </b><br>
           <mark style="background-color:wheat;"> HINT : Click "<a class="info_icon" style="background-color: aliceblue; display: inline-block; width: 5%;border-radius: 50%;">
               <span class="fas fa-info" style="margin-left: 0%; color: black;"></span></a>" switchboard info icon
           </mark>
@@ -171,8 +170,13 @@
         <table class="table caption-top align-middle table-bordered text-center" id="mytable">       
           <thead>
             <tr class="table-dark">
-              <th>Input <br> (A)</th>
-              <th>Input <br>(B)</th>
+              <th colspan="2">Input</th>
+              <th colspan="2">output </th>
+              
+            </tr>
+            <tr class="table-dark">
+              <th>A</th>
+              <th>B</th>
               <th>Sum</th>
               <th>Carry</th>
             </tr>
@@ -188,7 +192,7 @@
   <h1>✌️</h1>
 </div>
 <div id="info">
-  <img src="simulation_gif/Info.png">
+  <img src="simulation_gif/info.png">
   <span onclick="info_close()">&times;</span>
 </div>
 

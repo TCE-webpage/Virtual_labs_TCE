@@ -51,11 +51,11 @@
     inpADisablity.disabled=false;
     inpBDisablity.disabled=false;
 
-    document.getElementById("instruct").innerHTML='<b>Toggle Input switches</b><br> Observe the working of gate and truth table for different input combinations'
+    document.getElementById("instruct").innerHTML='<b>Toggle Input switches</b><br> Observe the working of half-adder and truth table for different input combinations'
     if(A && B){           
       // document.getElementById("img1").src="simulation_gif/And_A_B_On.gif";               
       // document.getElementById("light").src="simulation_gif/lighton.png";
-      document.getElementById("instruct").innerHTML='<b>Toggle Input switches</b><br> Observe the working of gate and truth table for different input combinations'
+      document.getElementById("instruct").innerHTML='<b>Toggle Input switches</b><br> Observe the working of half-adder and truth table for different input combinations'
     }
     else if(A && !B){
       // document.getElementById("img1").src="simulation_gif/And_A_On_B_Off.gif"; 
@@ -72,7 +72,7 @@
     tabled();
   }
   else{
-    document.getElementById("instruct").innerHTML="Observe the IC-7408 diagram,you can see that the gate for the selected input pin is highlighted. <b>Turn On Vcc</b>"
+    document.getElementById("instruct").innerHTML=" Observe the Ic chip diagram of half adder and its switchboard on the left side and the half adder logic diagram on the right side and then.<br><b>Turn On VCC </b>"
     // document.getElementById("light").src="simulation_gif/lightoff.png";
     if(inpADisablity.checked){
       inpADisablity.click();

@@ -152,14 +152,14 @@ body{
 }
 /* VCE BOX */
 .instruction{
-  margin-top: 20%;
-  border-radius: 100px 100px 100px 100px;
+  margin-top:15%;
+  border-radius: 20px;
   /* min-height:10% !important; */
   /* background-color:#e46a6a; */
   background-color:seashell;
-  border-top:solid darkmagenta 5px; 
-  width: 85%;
-  margin-left:10%;  
+  border-top:solid #4b9d9a  5px; 
+  width: 95%;
+  margin-left:3%;  
   /* border-top:solid rgb(247, 167, 49) 5px; */
 }
 #instruct{
