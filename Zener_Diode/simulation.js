@@ -16,27 +16,27 @@ function updateGauge(id, min, max){
 
   // GIF For VBE from 0.6 to 0.7
 
-  //  if(vbeconstval>=0.600 && vbeconstval<=0.610 && vceconstval==0)
-  // {
-  //   document.getElementById("img").src="simulation_gif/Initial-Flow-of-electron.gif";
+   if(newGaugeDisplayValue>=0 && newGaugeDisplayValue<0.6)
+  {
+    document.getElementById("img").src="simulation_gif/Below_0.7.gif";
   
-  // }
-  // else if(vbeconstval>0.610 && vbeconstval<=0.630)
-  // {
-  //   document.getElementById("img").src="simulation_gif/Slow.gif";
-  // }
-  // else if(vbeconstval>0.630 && vbeconstval<=0.650)
-  // {
-  //   document.getElementById("img").src="simulation_gif/medium2.5.gif";
-  // }
-  // else if(vbeconstval>0.650 && vbeconstval<=0.670)
-  // {
-  //   document.getElementById("img").src="simulation_gif/Medium1.5.gif";
-  // }
-  // else if(vbeconstval>0.670 && vbeconstval<=0.700)
-  // {
-  //   document.getElementById("img").src="simulation_gif/Fast0.gif";
-  // }
+  }
+  else if(newGaugeDisplayValue==0.7)
+  {
+    document.getElementById("img").src="simulation_gif/At_0.7.gif";
+  }
+  else if(newGaugeDisplayValue>0.7 && newGaugeDisplayValue<3)
+  {
+    document.getElementById("img").src="simulation_gif/slow.gif";
+  }
+  else if(newGaugeDisplayValue>=3.1 && newGaugeDisplayValue<7)
+  {
+    document.getElementById("img").src="simulation_gif/Medium.gif";
+  }
+  else if(newGaugeDisplayValue>=7.1 && newGaugeDisplayValue<10)
+  {
+    document.getElementById("img").src="simulation_gif/fast.gif";
+  }
 }
 
 // GIF for VCE when VBE=0
@@ -48,7 +48,7 @@ function displayfn(){
 function displayfn1(){
   document.getElementById("FormNPN").style.display="none";  
   document.getElementById("instruct").innerHTML="Emitter is the region to the left end which supply free charge carriers i.e electrons. It is a heavily doped region."    
-  document.getElementById("img").src="simulation_gif/1)FormNPN.gif";
+  document.getElementById("img").src="simulation_gif/Intro.gif";
   setTimeout( function() {
     document.getElementById("SetVCE").innerHTML="BASE";
     document.getElementById("SetVCE").style.boxShadow=' ';
