@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://kit.fontawesome.com/9e3072cf14.js" crossorigin="anonymous"></script> 
+  <link rel="stylesheet" href="main.css" type="text/css">
+  <link rel="stylesheet" href="Theory.css" type="text/css">
+  <script src="main.js"></script>
+  <title>HALF ADDER</title>
+</head>
+<body>
+  <container class="mainBody">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-light" >
+      <div class="container-fluid navHead" id="headingNav">
+        <a class="navbar-brand tceHead fs-3"><img src="Thiagarajar_College_of_Engineering_logo.png" alt="" width="40" height="40" class="d-inline-block align-text-top">  
+            <span class="d-inline d-sm-none textCenter">TCE</span><span class="d-none d-sm-inline d-md-inline">THIAGARAJAR COLLEGE OF ENGINEERING</span></a>
+        <button class="navbar-toggler ml-auto custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto headNav" onmouseover="activeOff()" onmouseout="activeOn()">
+            <li class="nav-item ">
+              <a class="nav-link active"  aria-current="page" href="#"><i class="fa fa-home"></i> <span class="d-lg-none d-xl-inline" alt="Home">Home</span></a>
+            </li>
+            <li class="nav-item" >
+              <a class="nav-link" href="#"><i class="fa fa-phone"></i> <span class="d-lg-none d-xl-inline">Contact</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><i class="fa fa-user-circle-o"></i> <span class="d-lg-none d-xl-inline">About</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" tabindex="-1" aria-disabled="true"><span class="d-lg-none d-xl-inline">Login</span> <i class="fa fa-sign-in fa-lg"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </container>
+  <div class="adder">
+    <h1>HALF ADDER</h1> 
+   </div>
+  <container>
+    <nav class="navbar navbar-expand-lg navbar-light d-none d-sm-none d-lg-block">
+      <div class="container-fluid">
+          <div class="navbar-nav fs-3 mx-auto miniNav">
+            <a class="nav-link" aria-current="page" href="main.html">Aim</a>
+            <a class="nav-link mininavActive" href="Theory.html">Theory</a>
+            <a class="nav-link" href="pre.html">Prequiz</a>
+            <a class="nav-link" href="procedure.html">Procedure</a>
+            <a class="nav-link" href="simulation.html">Simulation</a>            
+            <a class="nav-link " href="outcome.html">Outcome</a>
+            <a class="nav-link " href="#">Feedback</a>
+        </div>
+      </div>
+    </nav>
+  </container>
+  <container>
+    <ul class="mini d-block d-sm-block d-md-block d-lg-none">
+      <div class="center">
+        <li><a href="main.html"><span class="" title="Aim"><img src="images/target.png" alt=""></span></a></li>
+        <li><a class="minactive" href="Theory.html"><span class="fas fa-book fa-2x " title="Theory" style="color: black;"></span></a></li>
+        <li><a href="pre.html"><span class="fas fa-question-circle fa-2x" title="Prequiz" style="color: black;"></span></a></li>
+        <li><a href="procedure.html"><span class="" title="Procedure" ><img src="images/process.png" alt=""></span></a></li>
+        <li><a href="simulation.html"><span class="" title="Simulation"><img src="images/settings.png" alt=""></span></a></li>
+        <li><a href="outcome.html"><span class="fas fa-clipboard-list fa-2x" title="Outcome" style="color: black;"></span></a></li>
+        <li><a href="#about"><span class="fas fa-comments fa-2x" title="Feedback" style="color: black;"></span></a></li>
+      <div>
+    </ul>
+  </container>
+  <container>
+    <div class="d-flex mt-5 m-3 p-2 theory">
+      <div class="theoryNav d-none d-md-block d-sm-none d-lg-block">
+        <ul class="nav flex-column">
+            <li class="nav-item"><a class="nav-link fs-6 fw-bold" href="#Adders">Adders</a></li>
+            <li class="nav-item"><a class="nav-link fs-6 fw-bold" href="#Types Of Adders">Types Of Adders</a></li>
+            <li class="nav-item"><a class="nav-link fs-6 fw-bold" href="#Half Adder">Half Adder</a></li>
+            <li class="nav-item"><a class="nav-link fs-6 fw-bold" href="#Definition">Definition</a></li>
+            <li class="nav-item"><a class="nav-link fs-6 fw-bold" href="#Half Adder Logic">Half Adder Logic</a></li>
+            <li class="nav-item"><a class="nav-link fs-6 fw-bold" href="#Truth Table">Truth Table</a></li>
+            <li class="nav-item"><a class="nav-link fs-6 fw-bold" href="#Half Adder Using NAND Gates">Half Adder Using NAND Gates</a></li>
+            <li class="nav-item"><a class="nav-link fs-6 fw-bold" href="#Half Adder Using NOR Gates">Half Adder using NOR Gates</a></li>
+            <li class="nav-item"><a class="nav-link fs-6 fw-bold" href="#Application Of Half Adder">Application Of Half Adder</a></li>
+        </ul>
+    </div>
+      </nav>
+        <div class="p-2 w-50 flex-grow-1 ms-3 content">
+          <div class="space"  id="Adders"><strong>Adders</strong>
+            <p class="points">
+             <li>Adders are important in computers and also in other types of digital systems in which
+              numerical data are processed.
+              </li><br>
+              <li>An adder is a device that will add together two bits and give the result as the output.</li><br>
+              <li>The bits being added together are called the "addends".</li><br>
+              <li>Adders can be constructed for most of the numerical representations like Binary Coded Decimal (BCD), Excess – 3, Gray code, Binary etc.</li><br>
+              <li>Binary addition is the most frequently performed task by most common adders.</li><br>
+            </p>
+          </div>
+          
+          <div class="space" id="Types Of Adders"><strong>Types Of Adders</strong>
+            <p class="points">
+              <li>Half-Adder</li><br>
+              <li>Full-Adder</li><br>
+            </p>
+          </div>
+          
+          <div class="space" id="Half Adder"><strong>Half Adder</strong>
+            <div class="space" id="Definition"><strong>Definition</strong>
+            <p class="points">
+              <li>Half adder is a combinational circuit that performs simple addition of two binary numbers.</li><br>
+              <li>The half-adder accepts two binary digits on its inputs and produces two binary digits on its outputs—a sum bit and a carry bit.</li><br>
+              <img src="theory_images/half_Adder_logic.jpg">
+            </p>
+          </div>
+
+          <div class="space" id="Half Adder Logic"><strong>Half Adder Logic</strong>
+            <p class="points">
+              <li>Expressions can be derived for the sum and the output carry as functions of the inputs.</li><br>
+              <li>The output carry (C<sub>out</sub>) is 1 only when both A and B are 1s.</li><br>
+              <li>C<sub>out</sub> can be expressed as the AND of the input variables.</li><br>
+              <p class="text-center"><b>C<sub>out</sub>= A.B</b></p>
+              <li>The sum output (∑) is a 1 only if the input variables, A and B, are not equal.</li><br>
+              <li>The sum can therefore be expressed as the exclusive-OR of the input variables.</li><br>
+              <p class="text-center"><b>∑  = A ⨁ B</p></b><br>
+              <li>The output carry is produced with an AND gate with A and B on the inputs, and the sum output is generated with an exclusive-OR gate, as shown in figure</li><br>
+              <img src="theory_images/logic diagram.jpg">
+            </p>
+          </div>
+          
+          <div class="space" id="Truth Table"><strong>Truth Table</strong>
+            <p class="points">
+              <div class="pic mt-3  mb-3">
+                <figure>
+                   <img  src="theory_images/truthtable.jpg">
+                </figure>
+              
+              </div>
+            </p>
+          </div>
+
+          <div class="space" id="Half Adder Using NAND Gates"><strong>Half Adder Using NAND Gates</strong>
+            <p class="points">
+              <li>The half adder can also be designed with the help of NAND gates.</li><br>
+              <li>NAND gate is considered as a universal gate.</li><br>
+              <li>A universal gate can be used for designing of any digital circuit.</li><br>
+              <li>The minimum number of NAND gates required to design half adder is 5.</li><br>
+              <img src="theory_images/using_nand.jpg">
+            </p>
+          </div>
+
+          <div class="space" id="Half Adder Using NOR Gates"><strong>Half Adder Using NOR Gates</strong>
+          <p class="points">
+            <li>The NOR gate is also a universal gate. </li><br>
+            <li>Thus, it can also be used for designing of any digital circuit.</li><br>
+            <li>The Half adder can be designed using 5 NOR gates.</li><br>
+            <li>This is the minimum number of NOR gates to design half adder.</li><br>
+            <img src="theory_images/using_nor.jpg">
+          </p>
+          </div>
+
+          <div class="space" id="Application Of Half Adder"><strong>Application Of Half Adder</strong>
+          <p class="points">
+            <li>Half Adder is used in the arithmetic logic unit of the processor of the computer system for performing arithmetic operations of input.</li><br>
+            <li> Besides, it is also used in calculators for the addition of number, in address decoding in processors, calculation of table indices etc.</li><br>
+            </p>
+          </div>
+          
+         
+   </container>         
+  
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+</body>
+</html>

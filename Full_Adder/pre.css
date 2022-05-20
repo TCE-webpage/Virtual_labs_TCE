@@ -1,0 +1,173 @@
+
+.cont {
+    padding: 0;
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #313645;
+    font-family: verdana, sans-serif;
+    border-radius: 10px;
+  }
+  
+  .quiz {
+    color: #fff;
+    margin: 20px 0;
+  }
+  
+  .progress {
+    margin: 0;
+    padding: 0;
+    height: 10px;
+    width: 96%;
+  
+  }
+  
+  .progress--bar {
+    background-color: black;
+    height: 100%;
+    transition: all ease 0.5s;
+    width: 0%;
+  }
+  
+  .questionArea,
+  .scoreArea {
+    display: none;
+  }
+  
+  .questionArea {
+    max-width: 900px;
+    width: 100%;
+    padding: 0 15px;
+  }
+  
+  .question {
+    color: #fff;
+    font-size: 18px;
+    margin: 20px 0;
+  }
+  
+  .option {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+    margin-bottom: 10px;
+    color: #a7b6e4;
+    font-size: 16px;
+    cursor: pointer;
+  }
+    .option span {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 30px;
+      height: 30px;
+      border-radius: 15px;
+      margin-left: 5px;
+      margin-right: 10px;
+      background-color: rgba(0, 0, 0, 0.8);
+      color: #4b5677;
+    } 
+  
+    .option:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+  
+  .scoreArea {
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 20px;
+    border-radius: 20px;
+    margin: 10px;
+    text-align: center;
+  }
+  
+  .prizeImage {
+    width: auto;
+    height: 100px;
+    margin-bottom: 10px;
+  }
+  
+  .scoreText1 {
+    color: #000;
+    font-size: 23px;
+    font-weight: bold;
+    margin: 20px auto 10px;
+  }
+  
+  .scorePct {
+    color: #0d630d;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .scoreText2 {
+    font-size: 16px;
+    color: #000;
+    margin-bottom: 10px;
+  }
+  
+  .scoreArea button {
+    border: 0;
+    border-radius: 6px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #ccc;
+    padding: 10px 80px;
+    margin-top: 20px;
+    cursor: pointer;
+  }
+    .scoreArea button:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+.nextbtn{
+      border: 0;
+      border-radius: 6px;
+      background-color: rgba(0, 0, 0, 0.8);
+      color: #ccc;
+      padding: 10px 80px;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+.nextbtn:hover{
+      background-color: rgba(0, 0, 0, 0.5);
+}
+#div1, #div2, #div3, #div4, #div5, #div6, #div7, #div8, #div9, #div10, #div11, #div12,#div13,#div14,#div15,#div16{
+  width: 100px;
+  height: 50px;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid black;
+}
+#andOpt,#orOpt,#notOpt,#nandOpt,#norOpt,#xorOpt,#xnorOpt,#andOptt,#orOptt,#notOptt,#nandOptt,#norOptt,#xorOptt,#xnorOptt{
+  width: 100px;
+  height: 50px;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid black;
+}
+#opt1, #opt2, #opt3,#opt4, #opt5, #opt6, #opt7{
+  text-align: center;
+  align-self: center;
+}
+#optt1, #optt2, #optt3,#optt4, #optt5, #optt6, #optt7{
+  text-align: center;
+  align-self: center;
+}
+.option2 {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  margin-bottom: 10px;
+  color: #a7b6e4;
+  font-size: 16px;
+  cursor: pointer;
+}
+.optClr{
+  color: white;
+}
+  
