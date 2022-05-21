@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="main.css" type="text/css">
     <link rel="stylesheet" href="pre.css">
     <!-- <script src="pre.js"></script> -->
-    <title>HALF ADDER</title>
+    <title>FULL ADDER</title>
 </head>
 <body>
     <container class="mainBody">
@@ -41,7 +41,7 @@
         </nav>
       </container>
       <div class="adder">
-       <h1>HALF ADDER</h1> 
+       <h1>FULL ADDER</h1> 
       </div>
       <container>
         <nav class="navbar navbar-expand-lg navbar-light d-none d-sm-none d-lg-block">
@@ -106,62 +106,132 @@
             /* ====== Questions ====== */
 let questions = [
     {
-      question: 'The operation of a D-MOSFET is similar to that of a _______ when VGS is negative.',
+      question: 'Which accepts two input bits and an input carry and generates a sum output and an output carry ?',
       options: [
-               "E-MOSFET","JFET","MESFET", "None of the above","D-MOSFET"
+      "full adder",
+      "half adder",
+      "full subractor",
+      "half subractor",
+      "demux"
               ],
+      answer: 0
+    },
+    {
+      question: "The basic difference between a full-adder and a half-adder is that the full-adder accepts an",
+      options: [
+      "input carry",
+      "output carry",
+      "none of the above",
+      "all mentioned above",
+      "carry-out"
+      ],
+      answer: 0
+    },
+    {
+      question: 'The full-adder must add the ',
+      options: ["two input bits and one input carry",
+                "one input bits and one input carry",
+                "two input bits and two input carry",
+                "three input bits and one input carry",
+                "one input bits and two input carry"
+      ],
+      answer: 0
+    },
+    {
+      question: "How many inputs lines are there in Full Adder?",
+      options: ["2",
+                "3",
+                "4",
+                "1",
+                "5"
+        ],
       answer: 1
     },
     {
-      question: "When biased in the active region, E-MOSFET is equivalent to a _______",
-      options: [
-      "Voltage source",
-      "Variable Resistor",
-      "Amplifier",
-      "Current source",
-      "None of the above"
+      question: 'The combination of two half adders is a',
+      options: ["demux",
+                "full adder",
+                "schmitt trigger",
+                "comparator",
+                "half adder"
+     ],
+    answer: 1
+    },
+    {
+      question: "How many inputs and ouputs does a full adder have?",
+      options: ["3,2",
+                "2,3",
+                "3,3",
+                "2,2",
+                "3,1"
+              ],
+      answer: 0
+    },
+    {
+      question:"If A, B and C are the inputs of a full adder then the carry is given by __________",
+      options:[
+              "A AND B OR (A OR B) AND C",
+              "A OR B OR (A AND B) C",
+              "(A AND B) OR (A AND B)C",
+              "A XOR B XOR (A XOR B) AND C",
+              "A AND B OR (A OR B) OR C"
+      ],
+      answer: 0
+    },
+    {
+      question:"How many AND, OR and EXOR gates are required for the configuration of full adder?",
+      options:[
+      "1, 2, 2",
+      "2, 1, 2",
+      "3, 1, 2",
+      "4, 0, 1",
+      "2, 2, 1"
+      ],
+      answer: 1
+    },
+    {
+      question:"Given two half adders, what extra 2-input gate is required to build a full adder?",
+      options:[
+      "NOR gate",
+      "XOR gate",
+      "OR gate",
+      "AND gate",
+      "NAND gate"
+      ],
+      answer: 2
+    },
+    {
+      question:"If the inputs are P, Q and R then in full adder,find the output expression of the sum.",
+      options:[
+      "P or Q or R",
+      "P XOR Q XOR R",
+      "P OR Q AND R",
+      "P AND Q AND R",
+      "P AND Q OR R"
+      ],
+      answer: 1
+    },
+    {
+      question:"In parts of the processor, adders are used to calculate ____________",
+      options:[
+        "Addresses",
+        "Table indices",
+        "Increment and decrement operators",
+        "All of the Mentioned",
+        "None of the above"
       ],
       answer: 3
     },
     {
-      question: 'Typical values of VGS(th) for small signal devices are from _____',
-      options: ["0.6 to 0.7 V",
-                "1V to 3V",
-                "100mV to 1V", 
-                "5V to 7V",
-                "None of the above"
+      question:"The full adder CKT adds how many digit at a time",
+      options:[
+      "1",
+      "2",
+      "3",
+      "4",
+      "5"
       ],
-      answer: 1
-    },
-    {
-      question: "With zero gate voltage, a JFET is ____, whereas an E-MOSFET is ____",
-      options: ["OFF, OFF",
-                "OFF, ON",
-                "ON, OFF",
-                "ON, ON",
-                "None of the above"
-        ],
       answer: 2
-    },
-    {
-      question: 'The MOSFET is in the cut-off state,when the gate source voltage is',
-      options: ["less than gate to source voltage",
-                "greater than gate to source voltage",
-                "less than threshold voltage",
-                "greater than threshold voltage",
-                "None of the above"
-    ],
-    answer: 2
-    },
-    {
-      question: "What does MOSFET stands for",
-      options: ["Metal Oxide Semiconductor Field Effect Transistor",
-                "Modern Oxidized Silicon based Field Effect Transistor",
-                "Modern Oxidized Silicon based Force Effect Transistor",
-                "Metal Oxide silicon Field Equivalent Transistor",
-                "Metal Oxide Dilicon Filed effect Transistor"
-],
-      answer: 0
     }
   ];
   /* ======== End ======== */
@@ -174,8 +244,8 @@ let questions = [
   const scorePct = document.querySelector(".scorePct");
   
   //initial data
-  const totalQuestion=6;
-  const displayCount=3;
+  const totalQuestion=12;
+  const displayCount=4;
   const randomUnique = (range, count) => {
     let nums = new Set();
     while (nums.size < count) {
