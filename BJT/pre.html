@@ -122,55 +122,160 @@
             /* ====== Questions ====== */
 let questions = [
     {
-      question: '1) The amplification of the signal is achieved by passing input current signal from a region of __________ resistance to a region of __________ resistance.',
+      question: 'The amplification of the signal is achieved by passing input current signal from a region of __________ resistance to a region of __________ resistance.',
       options: [
-               "High, low","High, high","Low, high","Low, low"
+               "High, low","High, high","Low, high","Low, low","None of the above"
               ],
       answer: 2
     },
     {
-      question: "2) Which region of the BJT is very thin and lightly doped?",
+      question: "Which region of the BJT is very thin and lightly doped?",
       options: [
         "Collector",
         "Base",
         "Emitter",
-        "Both 1 and 2"
+        "Both Collector and Base",
+        "Both Base and emitter"
       ],
       answer: 1
     },
     {
-      question: '3) Depletion region penetrates less in',
+      question: 'Depletion region penetrates less in',
       options: ["Heavily doped region",
                 "Lightly doped region",
                 "Region with more area", 
-                "Region with less area"
+                "Region with less area",
+                "Region with low density area"
       ],
       answer: 0
     },
     {
-      question: "4) Application of Transistor at Saturation region",
+      question: "Application of Transistor at Saturation region",
       options: ["Amplifier",
                 "Closed switch",
                 "Analog switching circuits",
-                "Open switch"
+                "Open switch",
+                "Regulator"
         ],
       answer: 3
     },
     {
-      question: '5) In CE configuration input is applied between base and emitter, and output is taken from',
+      question: 'In CE configuration input is applied between base and emitter, and output is taken from',
       options: ["Base and Emitter",
                 "Collector",
                 "Collector and Emitter",
-                "Base and Collector"
+                "Base and Collector",
+                "Emitter"
     ],
     answer: 2
     },
     {
-      question: "6) CE input characteristics resembles ",
+      question: "CE input characteristics resembles ",
       options: ["Forward-biased diode curves",
                 "Zener diode curves",
                 "Reverse-biased diode curves",
+                "Schottky diode curves",
                 "None of the above"
+],
+      answer: 0
+    },
+    {
+      question: "The break down voltage of a transistor with its base open is BVCEO and that with emitter open is BVCBO, then",
+      options: ["BVCEO = BVCBO",
+                "BVCEO > BVCBO",
+                " BVCEO < BVCBO",
+                "BVCEO is not related to BVCBO",
+                "BVCEO >= BVCBO"
+
+],
+      answer: 2
+    },
+    {
+      question: "A BJT is said to be operating in the saturation region if",
+      options: [
+            "Both junctions are reverse biased",
+            "Base – emitter junction is reverse biased and base collector junction is forward biased",
+            "Base – emitter junction is forward biased and base – collector junction reverse biased",
+            "Both the junctions are forward biased",
+            "None of the above"
+],
+      answer: 3
+    },
+    {
+      question: "The Ebers – Moll model is applicable to",
+      options: [
+      "Bipolar junction transistors",
+      "NMOS transistors",
+      "Unipolar junction transistors",
+      "Junction field – effect transistors",
+      "MOSFET"
+],
+      answer: 0
+    },
+    {
+      question: "The Early – Effect in a bipolar junction transistor is caused by",
+      options: [
+      "Fast – turn – on.",
+      "Fast – turn – off.",
+      "Large collector – base reverse bias.",
+      "Large emitter – base forward bias.",
+      "Large collector - base forward bias"
+],
+      answer: 2
+    },
+    {
+      question: "An increase in the base recombination of a BJT will increase",
+      options: [
+        "The common emitter dc current gain β",
+        "The breakdown voltage",
+        "The unity – gain cut – off frequency fT",
+        "The transconductance gm",
+        "None of the above"
+
+],
+      answer: 1
+    },
+    {
+      question: "The Ebers-Moll model of a BJT is valid",
+      options: [
+        "only in active mode",
+        "only in active and saturation modes",
+        "only in active and cut off modes",
+        "in active, saturation and cut off modes",
+        "only in saturation modes"
+],
+      answer: 3
+    },
+    {
+      question: "If the base width in a bipolar junction transistor is doubled, which one of the following statements will be TRUE ?",
+      options: [
+        "Current gain will increase",
+        "Unity gain frequency will increase",
+        "Emitter base junction capacitance will increase",
+        "Early voltage will increase",
+        "Current gain will decrease"
+],
+      answer: 3
+    },
+    {
+      question: "Three different Q points are shown on a dc load line. The upper Q point represents the",
+      options: [
+        "minimum current gain",
+        "intermediate current gain",
+        "maximum current gain",
+        "cutoff point",
+        "saturation point"
+],
+      answer: 2
+    },
+    {
+      question: "Why transistor is called current controlled device ?",
+      options: [
+      "The output voltage, current or power is controlled by the input current in a transistor",
+      "The output voltage, current or power is controlled by the output current in a transistor.",
+      "The input voltage, current or power is controlled by the input current in a transistor.",
+      "The input voltage, current or power is controlled by the ouput current in a transistor.",
+      "The output voltage, current or power is controlled by the input voltage in a transistor."
 ],
       answer: 0
     }
@@ -185,6 +290,18 @@ let questions = [
   const scorePct = document.querySelector(".scorePct");
   
   //initial data
+  const totalQuestion=15;
+  const displayCount=5;
+  const randomUnique = (range, count) => {
+    let nums = new Set();
+    while (nums.size < count) {
+        nums.add(Math.floor(Math.random() * (range - 1 + 1) + 1));
+    }
+    return [...nums];
+}
+
+let random=randomUnique(totalQuestion,displayCount);
+console.log(random);
   let currentQuestion = 0;
   let correctAnswers = 0;
   
@@ -194,29 +311,42 @@ let questions = [
   document.querySelector(".scoreArea button").addEventListener("click", () => {
     currentQuestion = 0;
     correctAnswers = 0;
+    random=randomUnique(totalQuestion,displayCount);
+    console.log(random);
     showQuestion();
   });
-  
   //Functions
   function showQuestion() {
-    if (questions[currentQuestion]) {
-      let q = questions[currentQuestion];
+    if (currentQuestion<displayCount) {
+      let q = questions[random[currentQuestion]-1];
   
-      let progress = Math.floor((currentQuestion / questions.length) * 100);
+      let progress = Math.floor((currentQuestion / displayCount) * 100);
       progressBar.style.width = `${progress}%`;
   
       scoreArea.style.display = "none";
       questionArea.style.display = "block";
   
-      document.querySelector(".question").innerHTML = q.question;
+      document.querySelector(".question").innerHTML = (currentQuestion+1)+") "+q.question;
   
       let optionsHtml = "";
-  
-      for (let i in q.options) {
-        optionsHtml += `<div data-op="${i}" class="option"><span> ${
-          parseInt(i) + 1
-        }</span> ${q.options[i]}</div>`;
+      let optNumber=0;
+      let totalOption=5;
+      let displayOption=4;
+      let randomOption=randomUnique(totalOption,displayOption);
+      console.log("option "+randomOption);
+      const correctOption=questions[random[currentQuestion]-1].answer +1;
+      console.log(correctOption);
+      if(!randomOption.includes(correctOption)){
+        randomOption[randomUnique(4,1)-1]=correctOption;
+        console.log("new option "+randomOption);
       }
+      while (optNumber<displayOption) {
+        optionsHtml += `<div data-op="${randomOption[optNumber]-1}" class="option"><span> ${
+          parseInt(optNumber)+1
+        }</span> ${q.options[randomOption[optNumber]-1]}</div>`;
+        optNumber++;
+      }
+      optNumber=1;
   
       document.querySelector(".options").innerHTML = optionsHtml;
   
@@ -231,7 +361,7 @@ let questions = [
   function optionsClickEvent(e) {
     let clickedOption = parseInt(e.target.getAttribute("data-op"));
   
-    if (questions[currentQuestion].answer === clickedOption) {
+    if (questions[random[currentQuestion]-1].answer === clickedOption) {
       correctAnswers++;
     }
   
@@ -240,7 +370,7 @@ let questions = [
   }
   
   function finishQuiz() {
-    let points = Math.floor((correctAnswers / questions.length) * 100);
+    let points = Math.floor((correctAnswers / displayCount) * 100);
   
     if (points <= 30) {
       scoreText1.innerHTML = "oops, needs to improve";
@@ -256,7 +386,7 @@ let questions = [
     scorePct.innerHTML = `${points}% Correct`;
     document.querySelector(
       ".scoreText2"
-    ).innerHTML = `Out of ${questions.length} you got ${correctAnswers}`;
+    ).innerHTML = `Out of ${displayCount} you got ${correctAnswers}`;
   
     scoreArea.style.display = "block";
     questionArea.style.display = "none";

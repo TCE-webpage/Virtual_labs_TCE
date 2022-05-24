@@ -302,7 +302,8 @@ let questions = [
         "OR gates only",
         "AND gates and NOT gates",
         "AND gates, OR gates, and NOT gates",
-        "OR gates and NOT gates"
+        "OR gates and NOT gates",
+        "AND gates and OR gates"
       ],
       answer: 2
     },
@@ -311,7 +312,8 @@ let questions = [
       options: [" is equivalent to a series switching circuit",
                 " is equivalent to a parallel switching circuit",
                 "is a universal gate", 
-                "is a combination of series and switching circuits"
+                "is a combination of series and switching circuits",
+                "is a combination of series and parallel circuits"
       ],
       answer: 0
     },
@@ -322,9 +324,91 @@ let questions = [
     },
     {
       question: 'The output will be a LOW for any case when one or more inputs are zero in a/an',
-      options: ["OR Gate","NOT Gate","AND Gate","NAND Gate"],
+      options: ["OR Gate","NOT Gate","AND Gate","NAND Gate","XOR Gate"],
     answer: 2
-    }
+    },
+    {
+      question: "A bulb in staircase has two switches, one switch being at the ground floor and the other one at the first floor. The bulb can be turned on and also can be turned off by any one of the switches irrespective of the state of the other switch. The logic of switching of the bulb resembles",
+      options: ["And","Nand","Or","Xor","Xnor"],
+      answer: 3
+    },
+    {
+      question: "The complete set of only those Logic Gates designated as Universal gates is",
+      options: ["Nor and Nand","Or and Nand","And and Xor","Nor and And","Or and Not"],
+      answer: 0
+    },
+    {
+      question: "The output of a logic gate is ″1″ when all its inputs are at logic ″0″. The gate is either ________.",
+      options: ["A NAND or an Ex-OR gate",
+                "A NOR or an EX-OR gate",
+                "An AND or an EX-NOR gate",
+                "A NOR or an EX-NOR gate",
+                "A OR or an EX-NOR gate"],
+      answer: 3
+    },
+    {
+      question: "The output Y of a 2-bit comparator is logic 1 whenever the 2-bit input A is greater than the 2-bit input B. The number of combinations for which the output is logic 1, is",
+      options: ["4","5","6","8","9"],
+      answer: 2
+    },
+    {
+      question: "The output of an AND gate with three inputs, A, B, and C, is HIGH when",
+      options: ["A = 1, B = 1, C = 0",
+              	"A = 0, B = 0, C = 0",
+              	"A = 1, B = 1, C = 1",
+              	"A = 1, B = 0, C = 1",
+                "A = 0, B = 1, C = 1"
+              ],
+      answer: 2
+    },
+    {
+      question: "If a signal passing through a gate is inhibited by sending a LOW into one of the inputs, and the output is HIGH, the gate is a(n):",
+      options: [
+                "AND",
+                "NAND",
+                "NOR",
+                "OR",
+                "XOR"
+      ],
+      answer: 1
+    },
+    {
+      question: "When used with an IC, what does the term 'QUAD' indicate?",
+      options: [
+              "2 circuits",
+            	"4 circuits",
+            	"6 circuits",
+            	"8 circuits",
+              "10 circuits"
+],
+      answer: 1
+    },
+    {
+      question: "Which of the following logical operations is represented by the + sign in Boolean algebra?",
+      options: [
+              "inversion",
+            	"AND",
+            	"OR",
+            	"complementation",
+              "NOT"
+      ],
+      answer: 2
+    },
+    {
+      question: "How many pins does the 4049 IC have?",
+      options: ["14","16","18","20","12"],
+      answer: 1
+    },
+    {
+      question: "The boolean expression AB + AC' + BC simplifies to",
+      options: ["BC + AC'",
+                "AB + AC' + B",
+                "AB + AC'",
+                "AB + BC",
+                "AB + C"
+              ],
+      answer: 0
+    },
   ];
   /* ======== End ======== */
   
@@ -335,8 +419,8 @@ let questions = [
   const scoreText1 = document.querySelector(".scoreText1");
   const scorePct = document.querySelector(".scorePct");
   
-  const totalQuestion=5;
-  const displayCount=3;
+  const totalQuestion=15;
+  const displayCount=5;
   const randomUnique = (range, count) => {
     let nums = new Set();
     while (nums.size < count) {
@@ -472,7 +556,7 @@ let random=randomUnique(totalQuestion,displayCount);
   }
   else{
     let optNumber=0;
-    let totalOption=4;
+    let totalOption=5;
     let displayOption=4;
     let randomOption=randomUnique(totalOption,displayOption);
     const correctOption=questions[random[currentQuestion]-1].answer +1;

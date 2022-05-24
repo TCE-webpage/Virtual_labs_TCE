@@ -183,7 +183,7 @@ let questions = [
                 "1V to 3V",
                 "100mV to 1V", 
                 "5V to 7V",
-                "None of the above"
+                "10 V to 15 V"
       ],
       answer: 1
     },
@@ -216,6 +216,106 @@ let questions = [
                 "Metal Oxide Dilicon Filed effect Transistor"
 ],
       answer: 0
+    },
+    {
+      question: "THe Miller effect in the context of common emitter amplifier explains",
+      options: ["an increase in the low frequency cutoff frequency",
+      "an decrease in the low frequency cutoff frequency",
+      "an increase in the high frequency cutoff frequency",
+      "an decrease in the high frequency cutoff frequency",
+      "an increase in the low frequency  sampling frequency"
+],
+      answer: 3
+    },
+    {
+      question: "MOSFET can be used as a ",
+      options: ["Current controlled capacitor",
+      "Voltage controlled capacitor",
+      "Current controlled inductor",
+      "Voltage controlled inductor",
+      "Voltage controlled amplifier"
+],
+      answer: 1
+    },
+    {
+      question: "The effective channel length of a MOSFET in saturation decreases with increase in",
+      options: ["Gate voltage",
+      "Drain voltage",
+      "Source voltage",
+      "Body voltage",
+      "Outpu voltage"
+],
+      answer: 1
+    },
+    {
+      question: "For an n – channel enhancement type MOSFET, if the source is connected at a higher potential than that of the bulk (i.e. VSB > 0), the threshold voltage VT of the MOSFET will",
+      options: ["Remain unchanged",
+      "Decrease",
+      "Change polarity",
+      "Increase",
+      "First increase then starts decreasing"
+],
+      answer: 3
+    },
+    {
+      question: "A MOS Capacitor made using p – type substrate is in accumulation mode. The dominant charge in the channel is due to the presence of",
+      options: ["Holes",
+      "Electrons",
+      "Positively charged ions",
+      "Negatively charged ions",
+      "Minority carriers"
+],
+      answer: 0
+    },
+    {
+      question: "At room temperature, a possible value for the mobility of electrons in the inversion layer of a silicon n – channel MOSFET is",
+      options: ["450 cm2 / V – s",
+      "1350 cm2 / V – s",
+      "1800 cm2 / V – s",
+      "2000 cm2 / V – s",
+      "3600 cm2 / V – s"
+],
+      answer: 1
+    },
+    {
+      question: "In a MOSFET operating in the saturation region, the channel length modulation effect causes",
+      options: ["An increase in the gate – source capacitance",
+      "A decrease in the transconductance",
+      "A decrease in the unity – gain cut – off frequency",
+      "A decrease in the output resistance",
+      "A increase in the output resistance"
+],
+      answer: 3
+    },
+    {
+      question: "If fixed positive charges are present in the gate oxide of an n – channel enhancement type MOSFET, it will lead to",
+      options: ["A decrease in the threshold voltage",
+      "Channel length modulation",
+      "An increase in substrate leakage current",
+      "An increase in accumulation capacitance",
+      "A increase in the threshold voltage"
+],
+      answer: 0
+    },
+    {
+      question: "In MOSFET fabrication, the channel length is defined during the process of",
+      options: ["Isolation oxide growth",
+      "Channel stop implantation",
+      "Poly – silicon gate patterning",
+      "Lithography step leading to the contact pads",
+      "Saturation"
+],
+      answer: 2
+    },
+    {
+      question: ". Which one of the following processes is preferred to from the gate dielectric (SiO2) of MOSFETs?",
+      options: ["Sputtering",
+      "Molecular beam epitaxy",
+      "Wet oxidation",
+      "Dry oxidation",
+      "Wet deoxidation"
+],
+      answer: 3
     }
   ];
   /* ======== End ======== */
@@ -228,8 +328,8 @@ let questions = [
   const scorePct = document.querySelector(".scorePct");
   
   //initial data
-  const totalQuestion=6;
-  const displayCount=3;
+  const totalQuestion=16;
+  const displayCount=5;
   const randomUnique = (range, count) => {
     let nums = new Set();
     while (nums.size < count) {
@@ -255,7 +355,7 @@ console.log(random);
   });
   //Functions
   function showQuestion() {
-    if (currentQuestion<3) {
+    if (currentQuestion<displayCount) {
       let q = questions[random[currentQuestion]-1];
   
       let progress = Math.floor((currentQuestion / displayCount) * 100);
