@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <script src="https://kit.fontawesome.com/9e3072cf14.js" crossorigin="anonymous"></script> 
-  <script src="simulation.js" ></script>
+  <script src="simulation_rev.js" ></script>
   <link rel="stylesheet" href="simulation.css">
   <link rel="stylesheet" href="gauge.min.css?v=GAUGE_VERSION">
     <link rel="stylesheet" href="main.css">
@@ -97,7 +97,7 @@
       <div class="HoriSlider" ><input type="range" id="VZrange" value="0" min="0" max="10" step="0.1" onInput="updateGauge('demoGauge', 0, 40);">VZ</div>
       </div>
       <div>      
-      <a href="simulation.html"><button type=button  class="btn btn-danger scale resetbtn p-1">
+      <a href="simulation_rev.html"><button type=button  class="btn btn-danger scale resetbtn p-1">
         Reset</button></a>
       </div>
       </div>
@@ -187,10 +187,10 @@
         <div class="row p-3">
                 <div class="button-effect">    
                     <a class="effect effect-2" id="start"  onclick="displayfn()">START</a><div>
-                    <button class="button12" id="FormNPN" onclick='displayfn1()'>Form NPN</button>
-                    <button class="button12" id="SetVCE" onclick="displayfn2()" disabled="true" >EMITTER</button>
-                    <button class="button12" id="VaryVBE" onclick="displayfn3()">Vary VBE</button>
-                    <button class="button12" id="end" onclick="displayfn4() ; updateGauge('demoGauge', 0.600, 0.750);">Set Another VCE</button>                    
+                    <button class="button12" id="FormNPN" onclick='displayfn1()'>Form PN JUNCTION</button>
+                    <button class="button12" id="SetVCE" onclick="displayfn2()" disabled="true" >N TYPE</button>
+                    <!-- <button class="button12" id="VaryVBE" onclick="displayfn3()" disabled="'true">END</button> -->
+                    <button class="button12" id="VaryVBE" onclick="displayfn4() ; updateGauge('demoGauge', 0.600, 0.750);">END</button>                    
         </div>
         </div>
         </div>

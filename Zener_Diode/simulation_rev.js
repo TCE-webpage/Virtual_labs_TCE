@@ -2,47 +2,49 @@
 
 var gauge2val;
 function updateGauge(id, min, max){
-    const newGaugeDisplayValue = document.getElementById("VZrange").value;
-    const newGaugeValue =Math.floor(((newGaugeDisplayValue - min) / (max - min)) * 100);
-    const vzconstval=document.getElementById("VZrange").value;
-    document.getElementById(id).style.setProperty('--gauge-value', newGaugeValue);
-    document.getElementById("Label").innerHTML=newGaugeDisplayValue;
-//Formula for IZ
-    var vd=0.69; 
-    if (newGaugeDisplayValue >= 0.7)
-    {  
-    var V = newGaugeDisplayValue-vd;
-    var Cur = (V*V);
-    gauge2val = Cur.toFixed(3); 
+    var vzconstval=document.getElementById("VZrange").value;
+    var newGaugeDisplayValue = document.getElementById("VZrange").value;
+    if (newGaugeDisplayValue > 5.1)
+    {
+      var vd=5;
+      newGaugeDisplayValue = 5.1;
+      var V = vzconstval-vd;
+    var Cur = -(V*V);
+    gauge2val = Cur.toFixed(3);
     }
-    else{
+    else
+    {
       gauge2val=0;
     }
+    
+    const newGaugeValue =Math.floor(((newGaugeDisplayValue - min) / (max - min)) * 100);
+    
+    document.getElementById(id).style.setProperty('--gauge-value', newGaugeValue);
+    document.getElementById("Label").innerHTML="-"+newGaugeDisplayValue;
+//Formula for IZ   
     
     const newGauge2Value =Math.floor(gauge2val * 100);
     document.getElementById("demoGauge1").style.setProperty('--gauge-value', newGauge2Value);
     document.getElementById("Label1").innerHTML=gauge2val;
 
   // GIF For VBE from 0.6 to 0.7
-
-   if(newGaugeDisplayValue>=0 && newGaugeDisplayValue<0.6)
+  if(vzconstval>0 && vzconstval<2.5)
   {
-    document.getElementById("img").src="simulation_gif/Below_0.7.gif";
-  
+    document.getElementById("img").src="simulation_gif/Rb1.gif";
   }
-  else if(newGaugeDisplayValue==0.7)
+  else if(vzconstval>=2.5 && vzconstval<=5)
+  {
+    document.getElementById("img").src="simulation_gif/Rb2.gif";
+  }
+  else if(vzconstval==5.1)
   {
     document.getElementById("img").src="simulation_gif/At_0.7.gif";
   }
-  else if(newGaugeDisplayValue>0.7 && newGaugeDisplayValue<3)
+  else if(vzconstval>5.1 && vzconstval<=7.5 )
   {
-    document.getElementById("img").src="simulation_gif/slow.gif";
+    document.getElementById("img").src="simulation_gif/medium.gif";
   }
-  else if(newGaugeDisplayValue>=3.1 && newGaugeDisplayValue<7)
-  {
-    document.getElementById("img").src="simulation_gif/Medium.gif";
-  }
-  else if(newGaugeDisplayValue>=7.1 && newGaugeDisplayValue<10)
+  else if(vzconstval>7.5 && vzconstval<=10 )
   {
     document.getElementById("img").src="simulation_gif/fast.gif";
   }
@@ -59,23 +61,19 @@ function displayfn1(){
   document.getElementById("instruct").innerHTML="Emitter is the region to the left end which supply free charge carriers i.e electrons. It is a heavily doped region."    
   document.getElementById("img").src="simulation_gif/Intro.gif";
   setTimeout( function() {
-    document.getElementById("SetVCE").innerHTML="BASE";
+    document.getElementById("SetVCE").innerHTML="P TYPE";
     document.getElementById("SetVCE").style.boxShadow=' ';
     document.getElementById("instruct").innerHTML="It is the center region. The majority carriers from the emitter region are injected into this region. This region is very thin and lightly doped.";
-   },6200);   
-  setTimeout( function() {
-    document.getElementById("SetVCE").innerHTML="COLLECTOR";
-  document.getElementById("instruct").innerHTML="It is the region to right end where charge carriers are collected. It is also heavily doped but slightly lesser than that of the emitter. The region-area of the collector is slightly more than that of the emitter.";
-   },13400); 
+   },620);  
    setTimeout( function() {
     document.getElementById("SetVCE").innerHTML="DIFFUSION";
   document.getElementById("instruct").innerHTML="During diffusion process, Depletion region at emitter and collector junction penetrate less in heavily doped emitter and collector and extends more in the base region. As collector is slightly less doped than the emitter, the depletion layer width at the collector junction is more than the depletion layer width at the emitter junction.";
-   },24400); 
+   },2440); 
   setTimeout( function() {
-    document.getElementById("SetVCE").innerHTML="SET VCE";
+    document.getElementById("SetVCE").innerHTML="VARY V<sub>in</sub>";
     document.getElementById("SetVCE").disabled=false;
   document.getElementById("instruct").innerHTML="Set VCE as a constant by varying the slider. Once it's set. Click vary VBE";
-},36000);           
+},3600);           
   document.getElementById("SetVCE").style.display="inline";       
 }
 function displayfn2(){  
@@ -106,7 +104,10 @@ function displayfn3(){
 //  document.getElementById("tbvce1").innerHTML = vce+" V";
 
  var sno = ++tabrowindex;
- var vz = document.getElementById("VZrange").value;
+ var vz = -(document.getElementById("VZrange").value);
+ if (vz <= -5.1){
+   vz = -5.1;
+ }
  var iz = gauge2val;
  var table = document.getElementById("mytable");
  var row = table.insertRow(-1);
@@ -128,7 +129,7 @@ function deleted(){
  }
 }
 function displayfn4(){
-   document.getElementById("end").style.display="inline";
+   document.getElementById("VaryVBE").style.display="inline";
    document.getElementById("VCErange").style.display="inline";
    document.getElementsByClassName("VBEName")[0].innerHTML="VBE";
    document.getElementById("gaugeValue-demoGauge").style.display="inline";
@@ -153,8 +154,8 @@ function displayfn4(){
 
     // Define Layout
     var layout = {
-    xaxis: {range: [0, 20], title: "Zener Voltage (V)"},
-    yaxis: {range: [0, 90], title: "Zener Current (&#956;A)"},  
+    xaxis: {range: [0, -10], title: "Zener Voltage (V)"},
+    yaxis: {range: [0, -30], title: "Zener Current (&#956;A)"},  
     title: "Reverse Characteristics - VZ Vs IZ"
    };
 
@@ -171,8 +172,8 @@ function plotgraph(){
 
 // Define Layout
 var layout = {
-xaxis: {range: [0,20], title: "Zener Voltage (V)"},
-yaxis: {range: [0,90], title: "Zener Current (&#956;A)"},  
+xaxis: {range: [0,-10], title: "Zener Voltage (V)"},
+yaxis: {range: [0,-30], title: "Zener Current (&#956;A)"},  
 title: "Reverse Characteristics - VZ Vs IZ"
 };
 
