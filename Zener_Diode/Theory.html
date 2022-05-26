@@ -50,8 +50,24 @@
             <a class="nav-link" aria-current="page" href="main.html">Aim</a>
             <a class="nav-link mininavActive" href="Theory.html">Theory</a>
             <a class="nav-link" href="pre.html">Prequiz</a>
-            <a class="nav-link" href="procedure.html">Procedure</a>
-            <a class="nav-link" href="simulation.html">Simulation</a>            
+            <li class="dropdown ">
+              <a class="nav-link dropdown-toggle " href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Procedure
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="cursor:pointer;">
+                <li><a class="dropdown-item" href="procedure.html" style="text-decoration: none!important; border: none; margin-bottom:6px;">Forward Characteristics</a></li>
+                <li><a class="dropdown-item" href="procedure_rev.html" style="text-decoration: none!important; border: none; margin-bottom:6px;">Reverse Characteristics</a></li>
+              </ul>
+              </li>
+              <li class="dropdown">
+              <a class="nav-link dropdown-toggle"  id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                simulation
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="cursor:pointer;">
+                <li><a class="dropdown-item" href="simulation.html" style="text-decoration: none!important; border: none; margin-bottom:6px;">Forward Characteristics</a></li>
+                <li><a class="dropdown-item" href="simulation_rev.html" style="text-decoration: none!important; border: none; margin-bottom:6px;">Reverse Characteristics</a></li>
+              </ul>
+              </li>               
             <a class="nav-link " href="outcome.html">Outcome</a>
             <a class="nav-link " href="#">Feedback</a>
         </div>
@@ -64,8 +80,8 @@
         <li><a href="main.html"><span class="" title="Aim"><img src="images/target.png" alt=""></span></a></li>
         <li><a class="minactive" href="Theory.html"><span class="fas fa-book fa-2x " title="Theory" style="color: black;"></span></a></li>
         <li><a href="pre.html"><span class="fas fa-question-circle fa-2x" title="Prequiz" style="color: black;"></span></a></li>
-        <li><a href="procedure.html"><span class="" title="Procedure" ><img src="images/process.png" alt=""></span></a></li>
-        <li><a href="simulation.html"><span class="" title="Simulation"><img src="images/settings.png" alt=""></span></a></li>
+        <li><a class="popup_button" href="#popup1"><span class="" title="Procedure" ><img src="images/process.png" alt=""></span></a></li>
+        <li><a class="popup_button" href="#popup2"><span class="" title="Simulation"><img src="images/settings.png" alt=""></span></a></li>
         <li><a href="outcome.html"><span class="fas fa-clipboard-list fa-2x" title="Outcome" style="color: black;"></span></a></li>
         <li><a href="#about"><span class="fas fa-comments fa-2x" title="Feedback" style="color: black;"></span></a></li>
       <div>
@@ -75,162 +91,202 @@
     <div class="d-flex mt-5 m-3 p-2 theory">
         <div class="theoryNav d-none d-md-block d-sm-none d-lg-block">
             <ul class="nav flex-column">
-                <li class="nav-item"><a class="nav-link fs-6 fw-bold" href="#Fet" onclick="fetfn()">FET <i id="caret" class="fas fa-solid fa-caret-right"></i> </a></li>
-                <div id="fetDrop">
-                  <li  class="nav-item" style="background-color: rgb(189, 188, 188)"><a class="nav-link fs-6 fw-bold " href="#FetTypes" >Types of FET</a></li>
-                </div>
-                <li class="nav-item"><a class="nav-link fs-6 fw-bold" href="#Mosfet" onclick="Mosfn()">MOSFET <i id="caret1" class="fas fa-solid fa-caret-right"></i> </a></li>
+                <li class="nav-item"><a class="nav-link fs-6 fw-bold" href="#Zener">ZENER DIODE</a></li>
+                <li class="nav-item"><a class="nav-link fs-6 fw-bold" href="#Definition">DEFINITION</a></li>
+                <li class="nav-item"><a class="nav-link fs-6 fw-bold" href="#Symbols">SYMBOLS</a></li>
+                <li class="nav-item"><a class="nav-link fs-6 fw-bold" href="#Reason" >REASON</a></li>
+                <li class="nav-item"><a class="nav-link fs-6 fw-bold" href="#Breakdown" onclick="Mosfn()">BREAKDOWN MECHANISM <i id="caret1" class="fas fa-solid fa-caret-right"></i> </a></li>
                 <div id="MosfetDrop">
-                  <li  class="nav-item" style="background-color: rgb(189, 188, 188)"><a class="nav-link fs-6 fw-bold " href="#MosfetTypes" >Types of MOSFET</a></li>
+                  <li  class="nav-item" style="background-color: rgb(189, 188, 188)"><a class="nav-link fs-6 fw-bold " href="#Zener_Breakdown">Zener Breakdown</a></li>
+                  <li  class="nav-item" style="background-color: rgb(189, 188, 188)"><a class="nav-link fs-6 fw-bold " href="#Avalanche_Breakdown">Avalanche Breakdown</a></li>
+                </div>            
+                <li class="nav-item"><a class="nav-link fs-6 fw-bold" href="#charac_types" onclick="fetfn()">CHARACTERISTICS <i id="caret" class="fas fa-solid fa-caret-right"></i></a></li>
+                <div id="fetDrop">
+                  <li  class="nav-item" style="background-color: rgb(189, 188, 188)"><a class="nav-link fs-6 fw-bold " href="#forward_charac">Forward Characteristics</a></li>
+                  <li  class="nav-item" style="background-color: rgb(189, 188, 188)"><a class="nav-link fs-6 fw-bold " href="#reverse_charac">Reverse Characteristics</a></li>
                 </div>
-                <li class="nav-item"><a class="nav-link fs-6 fw-bold" href="#D-Mosfet">D-MOSFET</a></li>
-                <li class="nav-item"><a class="nav-link fs-6 fw-bold" href="#E-Mosfet" onclick="EMosfn()">E-MOSFET <i id="caret2" class="fas fa-solid fa-caret-right"></i></a></li>
-                <div id="EMosDrop">
-                  <li  class="nav-item" style="background-color: rgb(189, 188, 188)"><a class="nav-link fs-6 fw-bold " href="#BasicIdea" >Basic Idea</a></li>
-                  <li  class="nav-item" style="background-color: rgb(189, 188, 188)"><a class="nav-link fs-6 fw-bold " href="#KeyPoint" >Key Points</a></li>
-                  <li  class="nav-item" style="background-color: rgb(189, 188, 188)"><a class="nav-link fs-6 fw-bold " href="#DrainCurves" >Drain Curves</a></li>
-                </div>
-                <li class="nav-item"><a class="nav-link fs-6 fw-bold" target="_blank" href="theory_images/Datasheet.PDF" id="colorblack" onclick="blackcolor()">DATASHEET</a></li>
+                <li class="nav-item"><a class="nav-link fs-6 fw-bold" href="#application">APPLICATIONS</a></li>
             </ul>
         </div>
       </nav>
         <div class="p-2 w-50 flex-grow-1 ms-3 content">
-          <div class="space"  id="Fet"><strong>Field Effect Transistor</strong>
+          <div class="space"  id="Zener"><strong>Zener Diode</strong>
             <p class="points">
-              <li>The Field Effect Transistor abbreviated as FET is an another semiconductor device like a BJT which can be used as an amplifier and switch.</li><br>
-              <li>Like BJT, FET is also a three terminal device; however, the principle of operation of FET is completely different from that of BJT.</li><br>
-              <li>The three terminals of FET are named as Drain (D), Source (S) and Gate (G). Out of these three terminals gate terminal acts as controlling terminal.</li><br>
-              <li>In BJT the output current, Ic is controlled by the base current Ib, Hence BJT is a current controlled device.</li><br>
-              <li>On the other hand, in FET, the voltage applied between gate and source (VGS) controls the drain current ID, therefore, FET is a voltage controlled device.</li><br>
-              <li>The name "field effect" is derived from the fact that output current flow is controlled by an electric field setup in the device by an externally applied voltage between gate and source terminals.</li><br>
+              <li>The Zener diode is a heavily doped silicon p-n junction semiconductor device , which is generally operated in its reverse breakdown region.</li><br>
+              <li>The Zener diodes are fabricated with precise breakdown voltages, by controlling the doping level during manufacturing. The Zener diodes have breakdown voltage range from 3 V to 200 V. </li><br>
+              <li>In, 1934, a physicist Carl Zener investigated the breakdown phenomenon in the p-n junction diode. </li><br>
+              <li>Clarence Melvin Zener was the first person to describe the electrical properties of Zener Diode. Clarence Zener was a theoretical physicist who worked at Bell Labs. As a result of his work, the Zener diode was named after him.</li><br>
             </p>
           </div>
           
-          <div class="space" id="FetTypes"><strong>Types of FET</strong>
+          <div class="space" id="Definition"><strong>Definition</strong>
             <p class="points">
-              <li>Junction Field Effect Transistors (JFETs)</li><br>
-              <li>Metal semiconductor Field Effect Transistors (MESFETs)</li><br>
-              <li>Metlal Oxide Semiconductor Field Effect Transistors (MOSFETs)</li><br>
+              <li>The Zener diode is a heavily doped silicon p-n junction semiconductor device , which is generally operated in its reverse breakdown region.</li><br>
             </p>
           </div>
           
-          <div class="space" id="Mosfet"><strong>MOSFETs</strong>
-            <p class="points">
-              The metal-oxide semiconductor FET, or MOSFET. has a source, gate, and drain. The MOSFET differs from the JFET, however, in that the gate is insulated from the channel. Because of this, the gate current is even smaller than it is in a JFET. The MOSFET is sometimes called an IGFET, which stands for insulated-gate FET.<br>
-            </p>
-          </div>
-
-          <div class="space" id="MosfetTypes"><strong>Types of MOSFETs</strong>
-            <p class="points">
-              <li><strong>Enhancement-mode MOSFETs -</strong> widely used in both discrete and integrated circuits. In discrete circuits, the main use is in power switching, which means turning large currents on and off. In integrated circuits, the main use n in digital switching, the bane process behind modern computer.</li><br> 
-              <li><strong>Depletion-mode MOSFETs -</strong> Although their use has declined, they are still found in high-frequency front-end communications circuits as RF amplifier.</li><br>
-            </p>
-          </div>
-          
-          <div class="space" id="D-Mosfet"><strong>Depletion-Mode MOSFET:</strong>
+          <div class="space" id="Symbols"><strong>Symbols</strong>
             <p class="points">
               <div class="pic mt-3  mb-3">
-                <figure>
-                   <img  src="theory_images/D-Mosfet.png" width="30%" >
-                   <figcaption style="margin-left:10%;">D-MOSFET</figcaption>
-                </figure>
-              
-              </div>
-              <li>The figure above shows a depletion-mode MOSFET, a piece of n material with an insulated gate on the left and a p region on the right. The p region is called the substrate.</li><br>
-              <li>Electrons flowing from source to drain must pass through the narrow channel between the gate and the p substrate.</li><br>
-              <li>A thin layer of silicon dioxide (SiO2) is deposited on the left side of the channel. Silicon dioxide is the same as glass, which is an insulator. </li><br>
-              <li>In a MOSFET, the gate is metallic. Because the metallic gate is insulated from the channel, negligible gate current flows even when the gate voltage is positive.  </li><br>
-              <li>The figure(a) given below shows a depletion-mode MOSFET with a negative gate voltage. The VDD supply forces free electrons to flow from source to drain.</li><br>
-              <li>These electrons flow through the narrow channel on the left of the p substrate. As with a JFET, the gate voltage controls the width of the channel.</li><br>
-              <li>The more negative the gate voltage, the smaller the drain current. When the gate voltage is negative enough, the drain current is cut off. </li><br>
-              <li>Therefore, the operation of a depletion-mode MOSFET is similar to that of a JFET when VGS is negative.</li><br>
-              <li>Since the gate is insulated, we can also use a positive input voltage, as shown in the figure.</li><br>
-              <li>The positive gate voltage increases the number of free electrons flowing through the channel.</li><br>
-              <li>The more positive the gate voltage, the greater the conduction from source to drain.</li><br>
-              <div class="mt-3 mb-3" style="display: flex; align-content: center;">
-              <div class="pic">
-                <figure>
-                  <img  src="theory_images/D-Mosfet Negative Gate.png" width="60%" >
-                  <figcaption style="margin-left: 2%;">D-MOSFET with negative gate</figcaption>
-                </figure>     
-              </div>
-              <div class="pic">
-                <figure>
-                <img  src="theory_images/D-Mosfet Negative Gate.png" width="60%" >
-                <figcaption style="margin-left: 7%;">D-MOSFET with positive gate</figcaption>
-              </figure>
-              </div>
-            </div>
-            </p>
-          </div>
-
-          <div class="space" id="E-Mosfet"><strong>Enhancement-Mode MOSFET:</strong>
-            <p class="points">
-              The depletion-mod MOSFET was part of the evolution toward the enhancement-mode MOSFET, abbreviated E-Mosfet. Without the E-MOSFET, the personal computers that are now so widespread would not exist.<br>
-            </p>
-          </div>
-
-          <div class="space" id="BasicIdea"><strong>Basic Idea</strong>
-          <p class="points">
-            <div class="mt-3 mb-3" style="display: flex; align-content: center;">
-              <div class="pic">
-                <figure>
-                <img  src="theory_images/E-Mosfet.png" width="60%" >
-                <figcaption style="margin-left: 10%;">Unbiased E-MOSFET </figcaption>
-              </figure>
-              </div>
-              <div class="pic">
-                <figure>
-                <img  src="theory_images/E-Mosfet biased.png" width="60%" >
-                <figcaption style="margin-left: 17%;">Biased E-MOSFET</figcaption>
-              </figure>
-              </div>
-            </div>
-              <li>The figure1 above shows an E-MOSFET. The P substrate now extends all the way to the silicon dioxide. As you can see, there no longer is an n channel between the source and the drain.</li><br>
-              <li>The figure 2 shows normal biasing polarities. When the gate voltage is zero, the current between source and drain is zero. For this reason, an E-MOSFET is normally off when the gate voltage is zero.</li><br>
-              <li>The only way to get current is with a positive gate voltage.</li><br>
-              <li>When the gate is positive, it attracts the free electrons into the p region. These free electrons recombine with the holes next to silicon dioxide.</li><br>
-              <li>When the gate voltage is positive enough, all the holes touching the silicon dioxide are filled and the free electrons begin to flow from the source to drain.</li><br>
-              <li>This effect is same as creating a thin layer of n-type material next to the silicon dioxide.</li><br>
-              <li>This thin conducting layer is called the n-type inversion layer. When it exists, free electrons can flow easily from the source to drain.</li><br>
-              <li>The minimum VGS that creates the n-type inversion layer is called the threshold voltage, symbolised VGS(th).</li><br>
-              <li>When VGS is less than VGS(th), the drain current is zero.</li><br>
-              <li>When VGS is greater than VGS(th), an n-type inversion layer connects the source to the drain and the drain current can flow.</li><br>
-              <li>Typical values of VGS(th) for small signal devices are from 1 to 3 V.</li><br>
-          </p>
-          </div>
-
-          <div class="space" id="KeyPoint"><strong>Key point:</strong>
-          <p class="points">
-            <li>The JFET is referred as a depletion-mode device because its conductivity depends on the action of the depletion layers.</li><br>
-            <li>The E-MOSFET is classified as an enhancement-mode device because a gate voltage greater than the threshold voltage enhances its conductivity.</li><br>
-            <li>With zero gate voltage, a JFET is on, whereas an E-MOSFET is off. Therefore, the E-MOSFET is considered to be a normally off device.</li><br>
-          </p>
-          </div>
-          
-          <div class="space" id="DrainCurves"><strong>Drain curves:</strong>
-          <p class="points">
-            <div class="pic mt-2 mb-3">
               <figure>
-              <img  src="theory_images/drain.png" width="50%" >
-              <figcaption style="margin-left:3%;">Drain curves of N-channel Enhancement type MOSFET</figcaption>
-            </figure>
-            </div>
-            <li>A small-signal E-MOSFET has a power rating of 1W or less. The figure(b) above shows a set of drain curves for a typical E-MOSFET. The lowest curve is the VGS(th) curve.</li><br>
-            <li>When VGS is less than VGS(th), the drain current is approximately zero. When VGS is greater than VGS(th) the device turns on and the drain current is controlled by the gate voltage.</li><br>
-            <li>The almost-vertical part of the graph is the ohmic region, and the almost-horizotal parts are the active region.</li><br>
-            <li>When biased in the ohmic region, The E-MOSFET is equivalent to a resistor.</li><br>
-            <li>When biased in the active region, it is equivalent to a current source.</li><br>
-            <li>Although, the E-MOSFET can operate in the active region, the main use is the ohmic region.</li><br> 
-            <li>The figure(a) above shows a typical transconductance curve. There is no current until VGS = VGS(th). </li><br>
-            <li>The drain current then increases rapidly until it reaches the saturation current ID(sat). Beyond this point, the device is biased in the ohmic region.</li><br>
-            <li>Therefore, ID cannot increase, even though VGS increases.</li><br>
-          </p>
+                <img  src="theory_images/symbol.png" width="30%" style="margin-left: 30%;" >
+                <figcaption style="margin-left:40%;">Circuit Symbol</figcaption>
+                </figure>
+                <figure>
+                  <img  src="theory_images/physical_symbol.png" width="30%" style="margin-left: 30%;" >
+                  <figcaption style="margin-left:40%;">Physical Symbol</figcaption>
+                </figure> 
+                </div>       
+            </p>
           </div>
-        </div>
+
+          <div class="space" id="Reason"><strong>HOW DOES A ZENER DIODE WORKS IN REVERSE BIAS?</strong>
+            <p class="points">
+              <li>A Zener diode operates just like a normal diode when it is forward-biased.</li><br>
+              <li>However, a small leakage current flows through the diode when connected in reverse biased mode.</li><br>
+              <li>As the reverse voltage increases to the predetermined breakdown voltage (Vz), current starts flowing through the diode.</li><br>
+              <li>The current increases to a maximum, which is determined by the series resistor, after which it stabilizes and remains constant over a wide range of applied voltage.</li>
+            </p>
+          </div>
+
+          <div class="space" id="Breakdown"><strong>Breakdown Mechanism</strong>
+            <p class="points">
+              There are two distinct mechanisms due to which breakdown may occur in the Zener diode:
+              <li>Avalanche Breakdown</li>
+              <li>Zener Breakdown</li>
+            </p>
+            </div>
+
+            <div class="space" id="Zener_Breakdown"><strong>Zener Breakdown</strong>
+              <p class="points">
+                 <li>The application of reverse bias, voltage ( 6 V or less ) causes a field across the depletion region, at the p-n junction at the order of 3 X 105 V/cm.</li><br>
+                 <li>An electric field of such high magnitude exerts a large force on the valence electrons of the atoms, tending to separate them from their respective nuclei.</li><br>
+                <li>Actual breaking of covalent bonds occurs when the electric field intensity becomes more than 3 X 105 V/cm. Hence, electron-hole pairs are generated in large numbers, and a sudden increase of current is observed.</li><br>
+                <li>If a limiting resistance in the circuit does not prevent the current from increasing to high value, the diode may be destroyed because of excessive heating at the junction.</li><br>
+                <li>In Zener breakdown , the value of breakdown voltage decreases as p-n junction temperature increases, thus such diodes have negative temperature coefficient.</li><br>
+                
+              </p>
+            </div>
+
+
+            <div class="space" id="Avalanche_Breakdown"><strong>Avalanche Breakdown</strong>
+              <p class="points">
+                <li>The applied reverse bias causes a small reverse current to flow in the device. This is due to movement of minority charge particles.</li><br>
+                <li>As the applied reverse bias voltage becomes larger, the minority charge carriers increasingly accelerate. There are collisions between the particles and electrons involved in the covalent bonds of the crystal structure.</li><br>
+                <li>If the applied voltage is such that the travelling electrons do not have high velocity, then the collisions take some energy from them, altering their velocity. If the applied voltage is increased, the velocity and hence the kinetic energy of electron increases.</li><br>
+                <li>If such an electron dashes against an eletron involved in covalent bond,then the collision gives bond-valence electron enough energy to enable it to break its covalent bond. Thus, one electron by collision creates  an electron-hole pair.</li><br> 
+                <li>These secondary particles are also accelerated and participate in collision that generates new electron-hole pairs. This phenomenon is known as carrier multiplication. </li><br>
+                <li>Electron-hole pairs are generated so quickly and in such large number that there is an apparent avalanche or self-sustained multiplication process.</li><br>
+                <li>At this stage junction is said to be in breakdown and current starts increasing rapidly. To limit such current below Imax , current limiting resistor is necessary.</li><br>
+                <li>Zener diodes having Zener voltage above 6 V exhibit avalanche breakdown. The value of breakdown voltage increases as p-n junction temperature increases, thus such diodes have positive temperature coefficient.</li><br>  
+
+                
+              </p>
+            </div>
+
+            <div class="space" id="charac_types"><strong>Characteristics of Zener Diode</strong>
+              <p class="points">
+                The Characteristics of Zener diode is divided into two parts as:
+                <li>Forward Characteristics</li>
+                <li>Reverse Characteristics</li>
+              </p>
+              </div>
+
+              <div class="space" id="forward_charac"><strong>Forward Characteristics</strong>
+                <p class="points">
+                  <li>In the forward biased condition, the normal rectifier diode and the Zener diode operate in similar fashion</li>
+                </p>
+                </div>
+
+            
+          
+          <div class="space" id="reverse_charac"><strong>Reverse Characteristics</strong>
+            <p class="points">
+              <li>But the Zener diode is designed to be operated in the reverse biased condition.</li><br>
+              <li>In reverse biased condition, the diode carries reverse saturation current till the reverse voltage applied is less than the reverse breakdown voltage.</li><br>
+              <li>When the reverse voltage exceeds reverse breakdown voltage, the current through it changes drastically but the voltage across it remains almost constant.</li><br>
+              <li>Such a breakdown region is a normal operating region for a Zener Diode.</li><br> 
+
+              <div class="pic mt-3  mb-3">
+                <figure>
+                   <img  src="theory_images/op_region_ndiode.png" width="50%" style="margin-left: 20%;">
+                </figure>              
+              </div>
+              <div class="pic mt-3  mb-3">
+                <figure>
+                   <img  src="theory_images/op_region_zdiode.png" width="50%" style="margin-left: 25%;">
+                </figure>              
+              </div>
+
+              <li>The breakdown characteristic for a Zener diode is significantly important , as it is an operating region for the diode.</li><br>
+              <li>When the reverse voltage applied to a Zener diode is increased, initially the current through it is very small, of the order of few (µA) or less. This is the reverse leakage current of the diode, denoted by I<sub>o</sub>.</li><br>
+              <li>At a certain reverse voltage, current through Zener diode increases rapidly. The change from a low value to large value of current is very sharp and well defined.</li><br>
+              <li>Such  a sharp change in the reverse characteristics is called knee or Zener Knee of the curve.</li><br>
+              <li>At this knee, a breakdown is said to occur in the device. The reverse bias voltage at which the breakdown occurs is called Zener Breakdown Voltage, denoted as V<sub>Z</sub>.</li><br>
+              <li>The current corresponding to a knee point is called Zener Knee Current and it is a minimum current Zener must carry to operate in reverse breakdown region. It is denoted as I<sub>ZK</sub> or I<sub>Zmin</sub>.</li><br>
+              <li>From the bottom of the knee, the Zener breakdown voltage remains almost constant, though it increases slightly as the Zener Current I<sub>Z</sub> increases.</li><br>
+              <li>The maximum current a Zener diode can carry safely is called Zener maximum current and is denoted as I<sub>ZM</sub> or I<sub>Zmax</sub>.</li><br>
+              <li>In practical circuits to limit the Zener current between I<sub>Zmin</sub> and I<sub>Zmax</sub> , a current limiting resistor is used in series with the Zener diode.</li><br>
+
+              <div class="pic mt-3  mb-3">
+                <figure>
+                   <img  src="theory_images/i-v_graph.png" width="50%" style="margin-left: 20%;">
+                </figure>              
+              </div>
+            </div>
+
+            <div class="space" id="application"><strong>Applications of Zener Diode</strong>
+              <p class="points">
+                The various applications of Zener diode are,<br>
+                <li>As a voltage regulating element in voltage regulators.</li><br>
+                <li>In various protection circuits.</li><br>
+                <li>In Zener limiters i.e. clipping circuits which are used to clip off the unwanted portion of the voltage waveform.</li>
+                
+              </p>
+            </div>
+
+
+
+
    </container>         
   
+   <div id="popup1" class="overlay">
+    <div class="popup2">
+      <a class="popup_close" href="Theory.html">&times;</a>
+      <div >
+        <!-- <a class="popup_gate2"></a> -->
+      </div>
+      <br>
+      <br>
+      <br>
+      <div>
+        <a class="popup_gate2" href="procedure.html">FORWARD CHARACTERISTICS</a>
+      </div>
+      <hr><br>
+      <div>
+        <a class="popup_gate2" href="procedure_rev.html">REVERSE CHARACTERISTICS</a>
+      </div>
+      <hr><br>
+     </div></div>
 
+     <div id="popup2" class="overlay">
+      <div class="popup2">
+        <a class="popup_close" href="Theory.html">&times;</a>
+        <div >
+          <!-- <a class="popup_gate2"></a> -->
+        </div>
+        <br>
+        <br>
+        <br>
+        <div>
+          <a class="popup_gate2" href="simulation.html">FORWARD CHARACTERISTICS</a>
+        </div>
+        <hr><br>
+        <div>
+          <a class="popup_gate2" href="simulation_rev.html">REVERSE CHARACTERISTICS</a>
+        </div>
+        <hr><br>
+       </div></div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
 </body>

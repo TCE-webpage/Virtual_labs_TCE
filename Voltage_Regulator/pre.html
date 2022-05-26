@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="main.css" type="text/css">
     <link rel="stylesheet" href="pre.css">
     <!-- <script src="pre.js"></script> -->
-    <title>MOSFET</title>
+    <title>VOLTAGE REGULATOR</title>
 </head>
 <body>
     <container class="mainBody">
@@ -41,7 +41,7 @@
         </nav>
       </container>
       <div class="BJT">
-       <h1>MOSFET</h1> 
+       <h1>VOLTAGE REGULATOR</h1> 
       </div>
       <container>
         <nav class="navbar navbar-expand-lg navbar-light d-none d-sm-none d-lg-block">
@@ -50,24 +50,8 @@
                 <a class="nav-link" aria-current="page" href="main.html">Aim</a>
                 <a class="nav-link" href="Theory.html">Theory</a>
                 <a class="nav-link mininavActive" href="pre.html">Prequiz</a>
-                <li class="dropdown ">
-                  <a class="nav-link dropdown-toggle " href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Procedure
-                  </a>
-                  <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="cursor:pointer;">
-                    <li><a class="dropdown-item" href="procedureip.html" style="text-decoration: none!important; border: none; margin-bottom:6px;">Drain Characteristics</a></li>
-                    <li><a class="dropdown-item" href="procedureop.html" style="text-decoration: none!important; border: none; margin-bottom:6px;">Transfer Characteristics</a></li>
-                  </ul>
-                  </li>
-                  <li class="dropdown">
-                  <a class="nav-link dropdown-toggle"  id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    simulation
-                  </a>
-                  <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="cursor:pointer;">
-                    <li><a class="dropdown-item" href="simulation2.html" style="text-decoration: none!important; border: none; margin-bottom:6px;">Drain Characteristics</a></li>
-                    <li><a class="dropdown-item" href="simulationop.html" style="text-decoration: none!important; border: none; margin-bottom:6px;">Transfer Characteristics</a></li>
-                  </ul>
-                  </li>
+                <a class="nav-link " href="procedure.html">Procedure</a>
+                <a class="nav-link " href="simulation.html">Simulation</a>
                 <a class="nav-link " href="outcome.html">Outcome</a>
                 <a class="nav-link " href="#">Feedback</a>
             </div>
@@ -80,8 +64,8 @@
             <li><a class="minactive" href="main.html"><span class="" title="Aim"><img src="images/target.png" alt=""></span></a></li>
             <li><a href="Theory.html"><span class="fas fa-book fa-2x " title="Theory" style="color: black;"></span></a></li>
             <li><a href="pre.html"><span class="fas fa-question-circle fa-2x" title="Prequiz" style="color: black;"></span></a></li>
-            <li><a class="popup_button" href="#popup1"><span class="" title="Procedure" ><img src="images/process.png" alt=""></span></a></li>
-            <li><a class="popup_button" href="#popup2"><span class="" title="Simulation"><img src="images/settings.png" alt=""></span></a></li>
+            <li><a href="procedure.html"><span class="" title="Procedure" ><img src="images/process.png" alt=""></span></a></li>
+            <li><a href="simulation.html"><span class="" title="Simulation"><img src="images/settings.png" alt=""></span></a></li>
             <li><a href="outcome.html"><span class="fas fa-clipboard-list fa-2x" title="Outcome" style="color: black;"></span></a></li>
             <li><a href="#about"><span class="fas fa-comments fa-2x" title="Feedback" style="color: black;"></span></a></li>
           <div>
@@ -116,207 +100,143 @@
 
             <h1>✌️</h1>
           </div>
-          <div id="popup1" class="overlay">
-          <div class="popup2">
-            <a class="popup_close" href="pre.html">&times;</a>
-            <div >
-              <!-- <a class="popup_gate2"></a> -->
-            </div>
-            <br>
-            <br>
-            <br>
-            <div>
-              <a class="popup_gate2" href="procedureip.html">INPUT CHARACTERISTICS</a>
-            </div>
-            <hr><br>
-            <div>
-              <a class="popup_gate2" href="procedureop.html">OUPUT CHARACTERISTICS</a>
-            </div>
-            <hr><br>
-           </div></div>
-      
-           <div id="popup2" class="overlay">
-            <div class="popup2">
-              <a class="popup_close" href="pre.html">&times;</a>
-              <div >
-                <!-- <a class="popup_gate2"></a> -->
-              </div>
-              <br>
-              <br>
-              <br>
-              <div>
-                <a class="popup_gate2" href="simulation2.html">INPUT CHARACTERISTICS</a>
-              </div>
-              <hr><br>
-              <div>
-                <a class="popup_gate2" href="simulationop.html">OUPUT CHARACTERISTICS</a>
-              </div>
-              <hr><br>
-             </div></div>
-
           <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
         <script>
             /* ====== Questions ====== */
 let questions = [
     {
-      question: 'The operation of a D-MOSFET is similar to that of a _______ when VGS is negative.',
-      options: [
-               "E-MOSFET","JFET","MESFET", "None of the above","D-MOSFET"
-              ],
-      answer: 1
-    },
-    {
-      question: "When biased in the active region, E-MOSFET is equivalent to a _______",
-      options: [
-      "Voltage source",
-      "Variable Resistor",
-      "Amplifier",
-      "Current source",
-      "None of the above"
-      ],
-      answer: 3
-    },
-    {
-      question: 'Typical values of VGS(th) for small signal devices are from _____',
-      options: ["0.6 to 0.7 V",
-                "1V to 3V",
-                "100mV to 1V", 
-                "5V to 7V",
-                "10 V to 15 V"
-      ],
-      answer: 1
-    },
-    {
-      question: "With zero gate voltage, a JFET is ____, whereas an E-MOSFET is ____",
-      options: ["OFF, OFF",
-                "OFF, ON",
-                "ON, OFF",
-                "ON, ON",
+      question: "Voltage regulators keep a constant ________ output voltage when the input or load varies within limits.",
+      options: ["ac",
+                "dc",
+                "ripple",
+                "uneven",
                 "None of the above"
+        ],
+      answer: 0
+    },
+    {
+      question: "Calculate the voltage regulation of a power supply having VNL = 50 V and VFL = 48 V.",
+      options: [
+            "4.17%",
+            "5.2%",
+            "6.2%",
+            "7.1%",
+            "8.2%"
+        ],
+      answer: 0
+    },
+    {
+      question: "Switching regulator efficiencies can be greater than ________ percent.",
+      options: [
+        "60",
+        "80",
+        "90",
+        "70",
+        "50"
         ],
       answer: 2
     },
     {
-      question: 'The MOSFET is in the cut-off state,when the gate source voltage is',
-      options: ["less than gate to source voltage",
-                "greater than gate to source voltage",
-                "less than threshold voltage",
-                "greater than threshold voltage",
-                "None of the above"
-    ],
-    answer: 2
-    },
-    {
-      question: "What does MOSFET stands for",
-      options: ["Metal Oxide Semiconductor Field Effect Transistor",
-                "Modern Oxidized Silicon based Field Effect Transistor",
-                "Modern Oxidized Silicon based Force Effect Transistor",
-                "Metal Oxide silicon Field Equivalent Transistor",
-                "Metal Oxide Dilicon Filed effect Transistor"
-],
+      question: "If the value of full-load voltage is the same as the no-load voltage, the voltage regulation calculated is ________ %, which is the best expected.",
+      options: [
+        "0",
+        "1",
+        "99",
+        "100",
+        "50"
+        ],
       answer: 0
     },
     {
-      question: "THe Miller effect in the context of common emitter amplifier explains",
-      options: ["an increase in the low frequency cutoff frequency",
-      "an decrease in the low frequency cutoff frequency",
-      "an increase in the high frequency cutoff frequency",
-      "an decrease in the high frequency cutoff frequency",
-      "an increase in the low frequency  sampling frequency"
-],
-      answer: 3
-    },
-    {
-      question: "MOSFET can be used as a ",
-      options: ["Current controlled capacitor",
-      "Voltage controlled capacitor",
-      "Current controlled inductor",
-      "Voltage controlled inductor",
-      "Voltage controlled amplifier"
-],
+      question: "A switching regulator that is configured as a voltage-inverter produces what type of output?",
+      options: [
+         "an ac output with opposite phase to the input ac",
+        "a dc output that is the negative of the dc input voltage",
+        "an output that is a higher voltage than the input voltage",
+        "an ac output from a dc input voltage",
+        "an output that is a lower voltage than the input voltage"
+        ],
       answer: 1
     },
     {
-      question: "The effective channel length of a MOSFET in saturation decreases with increase in",
-      options: ["Gate voltage",
-      "Drain voltage",
-      "Source voltage",
-      "Body voltage",
-      "Outpu voltage"
-],
+      question: "The ________ regulator is less efficient than the ________ type, but offers inherent short-circuit protection.",
+      options: [
+        "series,shunt",
+        "shunt,series",
+        "step up,step down",
+        "step down,step up",
+        "None of the above"
+        ],
       answer: 1
     },
     {
-      question: "For an n – channel enhancement type MOSFET, if the source is connected at a higher potential than that of the bulk (i.e. VSB > 0), the threshold voltage VT of the MOSFET will",
-      options: ["Remain unchanged",
-      "Decrease",
-      "Change polarity",
-      "Increase",
-      "First increase then starts decreasing"
-],
-      answer: 3
-    },
-    {
-      question: "A MOS Capacitor made using p – type substrate is in accumulation mode. The dominant charge in the channel is due to the presence of",
-      options: ["Holes",
-      "Electrons",
-      "Positively charged ions",
-      "Negatively charged ions",
-      "Minority carriers"
-],
+      question: "In which of the following applications is a pulsating dc voltage suitable?",
+      options: [
+        "Battery charger",
+        "Radio",
+        "Stereo system",
+        "Computer",
+        "Mobile phone"
+        ],
       answer: 0
     },
     {
-      question: "At room temperature, a possible value for the mobility of electrons in the inversion layer of a silicon n – channel MOSFET is",
-      options: ["450 cm2 / V – s",
-      "1350 cm2 / V – s",
-      "1800 cm2 / V – s",
-      "2000 cm2 / V – s",
-      "3600 cm2 / V – s"
-],
+      question: "  A dc power supply has a no-load voltage of 30 volts, and a full load voltage of 25 volts at a full load current of 1 amp. Its output resistance and load regulation, respectively are",
+      options: [
+          "5 Ω and 20%",
+          "25 Ω and 20%",
+          "5 Ω and 16.7%",
+          "25 Ω and 16.7%",
+          "10 Ω and 20%"
+        ],
       answer: 1
     },
     {
-      question: "In a MOSFET operating in the saturation region, the channel length modulation effect causes",
-      options: ["An increase in the gate – source capacitance",
-      "A decrease in the transconductance",
-      "A decrease in the unity – gain cut – off frequency",
-      "A decrease in the output resistance",
-      "A increase in the output resistance"
-],
-      answer: 3
-    },
-    {
-      question: "If fixed positive charges are present in the gate oxide of an n – channel enhancement type MOSFET, it will lead to",
-      options: ["A decrease in the threshold voltage",
-      "Channel length modulation",
-      "An increase in substrate leakage current",
-      "An increase in accumulation capacitance",
-      "A increase in the threshold voltage"
-],
-      answer: 0
-    },
-    {
-      question: "In MOSFET fabrication, the channel length is defined during the process of",
-      options: ["Isolation oxide growth",
-      "Channel stop implantation",
-      "Poly – silicon gate patterning",
-      "Lithography step leading to the contact pads",
-      "Saturation"
-],
+      question: " ___________ are the type of linear voltage regulators",
+      options: [
+            "Series",
+            "Shunt",
+            "Both series and shunt",
+            "None of the above",
+            "step up and step down"
+        ],
       answer: 2
     },
     {
-      question: ". Which one of the following processes is preferred to from the gate dielectric (SiO2) of MOSFETs?",
-      options: ["Sputtering",
-      "Molecular beam epitaxy",
-      "Wet oxidation",
-      "Dry oxidation",
-      "Wet deoxidation"
-],
-      answer: 3
+      question: " is an example of fixed positive voltage regulator",
+      options: [
+            "IC7805",
+            "IC7905",
+            "IC7906",
+            "None of the above",
+            "IC7806"
+        ],
+      answer: 0
+    },
+    {
+      question: "___________ is an example for fixed negative voltage regulator",
+      options: [
+            "IC7805",
+            "IC7905",
+            "IC7906",
+            "None of the above",
+            "IC7806"
+        ],
+      answer: 1
+    },
+    {
+      question: "The maximum input voltage of the LM78MXX IC range is _________",
+      options: [
+            "35V",
+            "40V",
+            "45V",
+            "50V",
+            "50V"
+        ],
+      answer: 0
     }
+    
   ];
   /* ======== End ======== */
   
@@ -328,8 +248,8 @@ let questions = [
   const scorePct = document.querySelector(".scorePct");
   
   //initial data
-  const totalQuestion=16;
-  const displayCount=5;
+  const totalQuestion=12;
+  const displayCount=4;
   const randomUnique = (range, count) => {
     let nums = new Set();
     while (nums.size < count) {

@@ -50,8 +50,24 @@
                 <a class="nav-link" aria-current="page" href="main.html">Aim</a>
                 <a class="nav-link" href="Theory.html">Theory</a>
                 <a class="nav-link mininavActive" href="pre.html">Prequiz</a>
-                <a class="nav-link " href="procedure.html">Procedure</a>
-                <a class="nav-link " href="simulation.html">Simulation</a>
+                <li class="dropdown ">
+                  <a class="nav-link dropdown-toggle " href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Procedure
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="cursor:pointer;">
+                    <li><a class="dropdown-item" href="procedure.html" style="text-decoration: none!important; border: none; margin-bottom:6px;">Forward Characteristics</a></li>
+                    <li><a class="dropdown-item" href="procedure_rev.html" style="text-decoration: none!important; border: none; margin-bottom:6px;">Reverse Characteristics</a></li>
+                  </ul>
+                  </li>
+                  <li class="dropdown">
+                  <a class="nav-link dropdown-toggle"  id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    simulation
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="cursor:pointer;">
+                    <li><a class="dropdown-item" href="simulation.html" style="text-decoration: none!important; border: none; margin-bottom:6px;">Forward Characteristics</a></li>
+                    <li><a class="dropdown-item" href="simulation_rev.html" style="text-decoration: none!important; border: none; margin-bottom:6px;">Reverse Characteristics</a></li>
+                  </ul>
+                  </li>           
                 <a class="nav-link " href="outcome.html">Outcome</a>
                 <a class="nav-link " href="#">Feedback</a>
             </div>
@@ -61,11 +77,11 @@
       <container>
         <ul class="mini d-block d-sm-block d-md-block d-lg-none">
           <div class="center">
-            <li><a class="minactive" href="main.html"><span class="" title="Aim"><img src="images/target.png" alt=""></span></a></li>
+            <li><a href="main.html"><span class="" title="Aim"><img src="images/target.png" alt=""></span></a></li>
             <li><a href="Theory.html"><span class="fas fa-book fa-2x " title="Theory" style="color: black;"></span></a></li>
-            <li><a href="pre.html"><span class="fas fa-question-circle fa-2x" title="Prequiz" style="color: black;"></span></a></li>
-            <li><a href="procedure.html"><span class="" title="Procedure" ><img src="images/process.png" alt=""></span></a></li>
-            <li><a href="simulation.html"><span class="" title="Simulation"><img src="images/settings.png" alt=""></span></a></li>
+            <li><a class="minactive" href="pre.html"><span class="fas fa-question-circle fa-2x" title="Prequiz" style="color: black;"></span></a></li>
+            <li><a class="popup_button" href="#popup1"><span class="" title="Procedure" ><img src="images/process.png" alt=""></span></a></li>
+            <li><a class="popup_button" href="#popup2"><span class="" title="Simulation"><img src="images/settings.png" alt=""></span></a></li>
             <li><a href="outcome.html"><span class="fas fa-clipboard-list fa-2x" title="Outcome" style="color: black;"></span></a></li>
             <li><a href="#about"><span class="fas fa-comments fa-2x" title="Feedback" style="color: black;"></span></a></li>
           <div>
@@ -100,67 +116,210 @@
 
             <h1>✌️</h1>
           </div>
+          <div id="popup1" class="overlay">
+            <div class="popup2">
+              <a class="popup_close" href="pre.html">&times;</a>
+              <div >
+                <!-- <a class="popup_gate2"></a> -->
+              </div>
+              <br>
+              <br>
+              <br>
+              <div>
+                <a class="popup_gate2" href="procedure.html">FORWARD CHARACTERISTICS</a>
+              </div>
+              <hr><br>
+              <div>
+                <a class="popup_gate2" href="procedure_rev.html">REVERSE CHARACTERISTICS</a>
+              </div>
+              <hr><br>
+             </div></div>
+        
+             <div id="popup2" class="overlay">
+              <div class="popup2">
+                <a class="popup_close" href="pre.html">&times;</a>
+                <div >
+                  <!-- <a class="popup_gate2"></a> -->
+                </div>
+                <br>
+                <br>
+                <br>
+                <div>
+                  <a class="popup_gate2" href="simulation.html">FORWARD CHARACTERISTICS</a>
+                </div>
+                <hr><br>
+                <div>
+                  <a class="popup_gate2" href="simulation_rev.html">REVERSE CHARACTERISTICS</a>
+                </div>
+                <hr><br>
+               </div></div>
           <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
         <script>
             /* ====== Questions ====== */
 let questions = [
     {
-      question: 'The operation of a D-MOSFET is similar to that of a _______ when VGS is negative.',
+      question: "A zener diode works on the principle of ",
+      options: ["Tunneling of charge carriers across the junction",
+                "Thermionic emission",
+                "Diffusion of charge carriers across the junction",
+                "Hopping of charge carriers across the junction",
+                "None of the above"
+        ],
+      answer: 0
+    },
+    {
+      question: "A Zener diode, when used in voltage stabilization circuits, is biased in",
       options: [
-               "E-MOSFET","JFET","MESFET", "None of the above","D-MOSFET"
-              ],
+      "Reverse bias region below the breakdown voltage",
+      "Reverse breakdown region",
+      "Forward breakdown region",
+      "Forward bias constant current mode",
+      "Forward bias constant voltage mode"
+        ],
       answer: 1
     },
     {
-      question: "When biased in the active region, E-MOSFET is equivalent to a _______",
+      question: "Consider the following assertions S1 : For Zener effect to occur, a very abrupt junction is required S2 : For quantum tunneling to occur, a very narrow energy barrier is required . which of the following is correct ?",
       options: [
-      "Voltage source",
-      "Variable Resistor",
-      "Amplifier",
-      "Current source",
-      "None of the above"
-      ],
-      answer: 3
+      "Only S2 is true",
+      "S1 and S2 are both true but S2 is not a reason for S1",
+      "S1 and S2 are both true but S2 is  a reason for S1",
+      "Both S1 and S2 are false",
+      "Only S1 is true"
+        ],
+      answer: 0
     },
     {
-      question: 'Typical values of VGS(th) for small signal devices are from _____',
-      options: ["0.6 to 0.7 V",
-                "1V to 3V",
-                "100mV to 1V", 
-                "5V to 7V",
-                "None of the above"
-      ],
-      answer: 1
-    },
-    {
-      question: "With zero gate voltage, a JFET is ____, whereas an E-MOSFET is ____",
-      options: ["OFF, OFF",
-                "OFF, ON",
-                "ON, OFF",
-                "ON, ON",
-                "None of the above"
+      question: "Operation of the Zener diode depends on the heavy doping of its _____",
+      options: [
+      "P -junction only",
+      "N-junction only",
+      "P-N junction",
+      "None of the options",
+      "N-P-N junction"
         ],
       answer: 2
     },
     {
-      question: 'The MOSFET is in the cut-off state,when the gate source voltage is',
-      options: ["less than gate to source voltage",
-                "greater than gate to source voltage",
-                "less than threshold voltage",
-                "greater than threshold voltage",
-                "None of the above"
-    ],
-    answer: 2
+      question: "The Zener diode is named after which Physicist?",
+      options: [
+      "Michael thomson",
+      "George Zener",
+      "Nelson Zener",
+      "Tom Zener",
+      "Melvin Zener"
+        ],
+      answer: 4
     },
     {
-      question: "What does MOSFET stands for",
-      options: ["Metal Oxide Semiconductor Field Effect Transistor",
-                "Modern Oxidized Silicon based Field Effect Transistor",
-                "Modern Oxidized Silicon based Force Effect Transistor",
-                "Metal Oxide silicon Field Equivalent Transistor",
-                "Metal Oxide Dilicon Filed effect Transistor"
-],
+      question: "Zener breakdown effect takes place _____",
+      options: [
+      "Above 10V",
+      "Below 10V",
+      "Above 5.5V",
+      "Below 5.5V",
+      "Between 5.5V and 10V"
+        ],
+      answer: 3
+    },
+    {
+      question: "The opposition offered to the flow of electricity through the Zener diode in the operating region is known as _____",
+      options: [
+      "Zener breakdown",
+      "Zener Resistance",
+      "Zener Current",
+      "Zener Capacitance",
+      "Zener Voltage"
+        ],
+      answer: 1
+    },
+    {
+      question: "Fill in the blanks: Zener current is measured in _____",
+      options: [
+      "Watts",
+      "Luminous intensity",
+      "Ampere",
+      "Kelvin",
+      "Charge"
+        ],
+      answer: 2
+    },
+    {
+      question: "zener diode are also known as",
+      options: [
+      "Voltage regulator",
+      "Voltage rectifier",
+      "Forward bias diode",
+      "Breakdown diode",
+      "None of the above"
+        ],
+      answer: 3
+    },
+    {
+      question: "Which of the following is true about the resistance of a Zener diode?",
+      options: [
+      "It has an incremental resistance",
+      "It has dynamic resistance",
+      "The value of the resistance is the inverse of the slope of the i-v characteristics of the Zener diode",
+      "All of the mentioned",
+      "none of the above"
+        ],
+      answer: 3
+    },
+    {
+      question: "Which of the following can be used in series with a Zener diode so that combination has almost zero temperature coefficient?",
+      options: [
+      " Diode",
+      "Resistor",
+      "Transistor",
+      "MOSFET",
+      "Thyristor"
+        ],
+      answer: 0
+    },
+    {
+      question: "In Zener diode, for currents greater than the knee current, the v-i curve is almost",
+      options: [
+      "Almost a straight line parallel to y-axis",
+      "Almost a straight line parallel to x-axis",
+      "Equally inclined to both the axes with a positive slope",
+      "Equally inclined to both the axes with a negative slope",
+      "Almost a straight line perpendicular to x-axis"
+        ],
+      answer: 1
+    },
+    {
+      question: "When the reverse voltage across the Zener diode is increased _____________",
+      options: [
+      "The value of saturation current increases",
+      "No effect",
+      "The value of cut-off potential increases",
+      "The value of cut-off potential decreases",
+      "The value of saturation current decreases"
+        ],
+      answer: 2
+    },
+    {
+      question: "The depletion region of the Zener diode is ____________",
+      options: [
+      "Thick",
+      "Normal",
+      "Very Thin",
+      "Very thick",
+      "no depletion layer"
+        ],
+      answer: 2
+    },
+    {
+      question: "The Zener diodes have breakdown voltage range from",
+      options: [
+        "3 V to 200 V",
+        "3 mv to 200 mv",
+        "3 kv to 200kv",
+        "300 V to 500 V",
+        "1 V to 3 V"
+        ],
       answer: 0
     }
   ];
@@ -174,8 +333,8 @@ let questions = [
   const scorePct = document.querySelector(".scorePct");
   
   //initial data
-  const totalQuestion=6;
-  const displayCount=3;
+  const totalQuestion=15;
+  const displayCount=5;
   const randomUnique = (range, count) => {
     let nums = new Set();
     while (nums.size < count) {
@@ -201,7 +360,7 @@ console.log(random);
   });
   //Functions
   function showQuestion() {
-    if (currentQuestion<3) {
+    if (currentQuestion<displayCount) {
       let q = questions[random[currentQuestion]-1];
   
       let progress = Math.floor((currentQuestion / displayCount) * 100);

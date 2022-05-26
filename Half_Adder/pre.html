@@ -106,60 +106,120 @@
             /* ====== Questions ====== */
 let questions = [
     {
-      question: 'The operation of a D-MOSFET is similar to that of a _______ when VGS is negative.',
+      question: ' In parts of the processor, adders are used to calculate ',
       options: [
-               "E-MOSFET","JFET","MESFET", "None of the above","D-MOSFET"
+               "Addresses","Table indices","Increment and decrement operators", "None of the above","All of the Mentioned"
               ],
-      answer: 1
+      answer: 4
     },
     {
-      question: "When biased in the active region, E-MOSFET is equivalent to a _______",
+      question: "Total number of inputs in a half adder is ",
       options: [
-      "Voltage source",
-      "Variable Resistor",
-      "Amplifier",
-      "Current source",
-      "None of the above"
+      "2",
+      "3",
+      "4",
+      "1",
+      "5"
       ],
-      answer: 3
+      answer: 0
     },
     {
-      question: 'Typical values of VGS(th) for small signal devices are from _____',
-      options: ["0.6 to 0.7 V",
-                "1V to 3V",
-                "100mV to 1V", 
-                "5V to 7V",
-                "None of the above"
+      question: 'If A and B are the inputs of a half adder, the sum is given by ',
+      options: ["A AND B",
+                "A OR B",
+                "A XOR B", 
+                "A EX-NOR B",
+                "A NAND B"
       ],
-      answer: 1
+      answer: 2
     },
     {
-      question: "With zero gate voltage, a JFET is ____, whereas an E-MOSFET is ____",
-      options: ["OFF, OFF",
-                "OFF, ON",
-                "ON, OFF",
-                "ON, ON",
-                "None of the above"
+      question: "Half-adders have a major limitation in that they cannot",
+      options: ["Accept a carry bit from a present stage",
+                "Accept a carry bit from a next stage",
+                "Accept a carry bit from a previous stage",
+                "Accept a carry bit from the following stages",
+                "Accept a carry bit from the future stages"
         ],
       answer: 2
     },
     {
-      question: 'The MOSFET is in the cut-off state,when the gate source voltage is',
-      options: ["less than gate to source voltage",
-                "greater than gate to source voltage",
-                "less than threshold voltage",
-                "greater than threshold voltage",
-                "None of the above"
+      question: 'What is the difference between a full-adder and a half-adder',
+      options: ["Half-adder has a carry-in.",
+                "Full-adder has a carry-in",
+                "Half-adder does not have a carry-out",
+                "Full-adder does not have a carry-out",
+                "Full-adder has a carry-out"
     ],
-    answer: 2
+    answer: 1
     },
     {
-      question: "What does MOSFET stands for",
-      options: ["Metal Oxide Semiconductor Field Effect Transistor",
-                "Modern Oxidized Silicon based Field Effect Transistor",
-                "Modern Oxidized Silicon based Force Effect Transistor",
-                "Metal Oxide silicon Field Equivalent Transistor",
-                "Metal Oxide Dilicon Filed effect Transistor"
+      question: "The summing outputs of a half-adder are designated by which Greek symbol ?",
+      options: ["omega",
+                "theta",
+                "lambda",
+                "sigma",
+                "meu"
+],
+      answer: 3
+    },
+    {
+      question: "In half adder carry output is high if inputs are",
+      options: ["1 0",
+                "0 1",
+                "0 0",
+                "1 1",
+                "None of the above"
+],
+      answer: 3
+    },
+    {
+      question: "Half adder has a logic circuits that accept single bit inputs of",
+      options: ["one",
+                "two",
+                "three",
+                "four",
+                "five"
+],
+      answer: 1
+    },
+    {
+      question: "A half adder has",
+      options: ["two input one output",
+                "one input one output",
+                "three input three output",
+                "two input two output",
+                "three input two output"
+],
+      answer: 3
+    },
+    {
+      question: "Half adder is used to",
+      options: ["add two number",
+                "add three number",
+                "multiply two number",
+                "multiply three number",
+                "add four number"
+],
+      answer: 0
+    },
+    {
+      question: "Which arithmetic circuit adds two binary digits, giving a sum bit and carry bit ?",
+      options: ["half adder",
+                "full adder",
+                "full subractor",
+                "half subractor",
+                "demux"
+],
+      answer: 0
+    },
+    {
+      question: "If A and B are the inputs of a half adder, the carry is given by",
+      options: ["A AND B",
+                "A OR B",
+                "A XOR B", 
+                "A EX-NOR B",
+                "A NAND B"
 ],
       answer: 0
     }
@@ -174,8 +234,8 @@ let questions = [
   const scorePct = document.querySelector(".scorePct");
   
   //initial data
-  const totalQuestion=6;
-  const displayCount=3;
+  const totalQuestion=12;
+  const displayCount=4;
   const randomUnique = (range, count) => {
     let nums = new Set();
     while (nums.size < count) {

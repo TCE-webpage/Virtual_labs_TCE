@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://kit.fontawesome.com/9e3072cf14.js" crossorigin="anonymous"></script> 
+  <link rel="stylesheet" href="main.css" type="text/css">
+  <link rel="stylesheet" href="Theory.css" type="text/css">
+  <script src="main.js"></script>
+  <title>FULL ADDER</title>
+</head>
+<body>
+  <container class="mainBody">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-light" >
+      <div class="container-fluid navHead" id="headingNav">
+        <a class="navbar-brand tceHead fs-3"><img src="Thiagarajar_College_of_Engineering_logo.png" alt="" width="40" height="40" class="d-inline-block align-text-top">  
+            <span class="d-inline d-sm-none textCenter">TCE</span><span class="d-none d-sm-inline d-md-inline">THIAGARAJAR COLLEGE OF ENGINEERING</span></a>
+        <button class="navbar-toggler ml-auto custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto headNav" onmouseover="activeOff()" onmouseout="activeOn()">
+            <li class="nav-item ">
+              <a class="nav-link active"  aria-current="page" href="#"><i class="fa fa-home"></i> <span class="d-lg-none d-xl-inline" alt="Home">Home</span></a>
+            </li>
+            <li class="nav-item" >
+              <a class="nav-link" href="#"><i class="fa fa-phone"></i> <span class="d-lg-none d-xl-inline">Contact</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><i class="fa fa-user-circle-o"></i> <span class="d-lg-none d-xl-inline">About</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" tabindex="-1" aria-disabled="true"><span class="d-lg-none d-xl-inline">Login</span> <i class="fa fa-sign-in fa-lg"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </container>
+  <div class="adder">
+    <h1>FULL ADDER</h1> 
+   </div>
+  <container>
+    <nav class="navbar navbar-expand-lg navbar-light d-none d-sm-none d-lg-block">
+      <div class="container-fluid">
+          <div class="navbar-nav fs-3 mx-auto miniNav">
+            <a class="nav-link" aria-current="page" href="main.html">Aim</a>
+            <a class="nav-link mininavActive" href="Theory.html">Theory</a>
+            <a class="nav-link" href="pre.html">Prequiz</a>
+            <a class="nav-link" href="procedure.html">Procedure</a>
+            <a class="nav-link" href="simulation.html">Simulation</a>            
+            <a class="nav-link " href="outcome.html">Outcome</a>
+            <a class="nav-link " href="#">Feedback</a>
+        </div>
+      </div>
+    </nav>
+  </container>
+  <container>
+    <ul class="mini d-block d-sm-block d-md-block d-lg-none">
+      <div class="center">
+        <li><a href="main.html"><span class="" title="Aim"><img src="images/target.png" alt=""></span></a></li>
+        <li><a class="minactive" href="Theory.html"><span class="fas fa-book fa-2x " title="Theory" style="color: black;"></span></a></li>
+        <li><a href="pre.html"><span class="fas fa-question-circle fa-2x" title="Prequiz" style="color: black;"></span></a></li>
+        <li><a href="procedure.html"><span class="" title="Procedure" ><img src="images/process.png" alt=""></span></a></li>
+        <li><a href="simulation.html"><span class="" title="Simulation"><img src="images/settings.png" alt=""></span></a></li>
+        <li><a href="outcome.html"><span class="fas fa-clipboard-list fa-2x" title="Outcome" style="color: black;"></span></a></li>
+        <li><a href="#about"><span class="fas fa-comments fa-2x" title="Feedback" style="color: black;"></span></a></li>
+      <div>
+    </ul>
+  </container>
+  <container>
+    <div class="d-flex mt-5 m-3 p-2 theory">
+      <div class="theoryNav d-none d-md-block d-sm-none d-lg-block">
+        <ul class="nav flex-column">
+            <li class="nav-item"><a class="nav-link fs-6 fw-bold" href="#Adders">Adders</a></li>
+            <li class="nav-item"><a class="nav-link fs-6 fw-bold" href="#Types Of Adders">Types Of Adders</a></li>
+            <li class="nav-item"><a class="nav-link fs-6 fw-bold" href="#Full Adder">Full Adder</a></li>
+            <li class="nav-item"><a class="nav-link fs-6 fw-bold" href="#Definition">Definition</a></li>
+            <li class="nav-item"><a class="nav-link fs-6 fw-bold" href="#Full Adder Logic">Full Adder Logic</a></li>
+            <li class="nav-item"><a class="nav-link fs-6 fw-bold" href="#Truth Table">Truth Table</a></li>
+            <li class="nav-item"><a class="nav-link fs-6 fw-bold" href="#Full Adder Using NAND Gates">Full Adder Using NAND Gates</a></li>
+            <li class="nav-item"><a class="nav-link fs-6 fw-bold" href="#Full Adder Using NOR Gates">Full Adder using NOR Gates</a></li>
+            <li class="nav-item"><a class="nav-link fs-6 fw-bold" href="#Application Of Full Adder">Application Of Full Adder</a></li>
+        </ul>
+    </div>
+      </nav>
+        <div class="p-2 w-50 flex-grow-1 ms-3 content">
+          <div class="space"  id="Adders"><strong>Adders</strong>
+            <p class="points">
+             <li>Adders are important in computers and also in other types of digital systems in which
+              numerical data are processed.
+              </li><br>
+              <li>An adder is a device that will add together two bits and give the result as the output.</li><br>
+              <li>The bits being added together are called the "addends".</li><br>
+              <li>Adders can be constructed for most of the numerical representations like Binary Coded Decimal (BCD), Excess - 3, Gray code, Binary etc.</li><br>
+              <li>Binary addition is the most frequently performed task by most common adders.</li><br>
+            </p>
+          </div>
+          
+          <div class="space" id="Types Of Adders"><strong>Types Of Adders</strong>
+            <p class="points">
+              <li>Half-Adder</li><br>
+              <li>Full-Adder</li><br>
+            </p>
+          </div>
+          
+          <div class="space" id="Full Adder"><strong>Full Adder</strong>
+            <div class="space" id="Definition"><strong>Definition</strong>
+            <p class="points">
+              <li>The full-adder accepts two input bits and an input carry and generates a sum output and an output carry.</li><br>
+              <li>A full-adder has an input carry while the half-adder does not.</li><br>
+              <img src="theory_images/half_Adder_logic.jpg">
+            </p>
+          </div>
+
+          <div class="space" id="Full Adder Logic"><strong>Full Adder Logic</strong>
+            <p class="points">
+              <li>The full-adder must add the two input bits and the input carry.</li>
+              <li>Sum of the input bits A and B is the exclusive-OR of those two variables, A⨁B.</li>
+              <li>The input carry (Cin) to be added to the input bits, it must be exclusive-ORed with A⨁B , yielding the equation for the sum output of the full-adder.</li>
+              <p class="text-center"><b>∑  =  (A ⨁ B) ⨁ C<sub>in</sub></p></b><br>
+              <li>The first must generate the term A ⨁ B, and the second has as its inputs the output of the first XOR gate and the input carry, as illustrated in Figure (a)</li>
+              <img src="theory_images/logic diagram.jpg">
+              <li>The output carry is a 1 when both inputs to the first XOR gate are 1s or when both inputs to the second XOR gate are 1s.</li>
+              <li>The output carry of the full-adder is therefore produced by input A ANDed with input B and (A ⨁ B) ANDed with C<sub>in</sub>.</li>
+              <li>This function is implemented and combined with the sum logic to form a complete full-adder circuit.</li>
+              <p class="text-center"><b> C<sub>out</sub> = (A.B)  + (A ⨁ B) C<sub>in</sub> </b></p>
+              <li>The complete full-adder circuit is shown in the below diagram. </li>
+              <img src="theory_images/complete_full_adder.jpg">
+              <li>The combination of two half adders gives the full adder as shown in figure.</li>
+              <img src="theory_images/two_half_adder.jpg">
+            </p>
+          </div>
+          
+          <div class="space" id="Truth Table"><strong>Truth Table</strong>
+            <p class="points">
+              <div class="pic mt-3  mb-3">
+                <figure>
+                   <img  src="theory_images/truthtable.jpg">
+                </figure>
+              
+              </div>
+            </p>
+          </div>
+
+          <div class="space" id="Full Adder Using NAND Gates"><strong>Full Adder Using NAND Gates</strong>
+            <p class="points">
+              <li>The full adder can also be designed with the help of NAND gates.</li><br>
+              <li>NAND gate is considered as a universal gate.</li><br>
+              <li>A universal gate can be used for designing of any digital circuit.</li><br>
+              <li>The minimum number of NAND gates required to design full adder is 9.</li><br>
+              <img src="theory_images/using_nand.jpg">
+            </p>
+          </div>
+
+          <div class="space" id="Full Adder Using NOR Gates"><strong>Full Adder Using NOR Gates</strong>
+          <p class="points">
+            <li>The NOR gate is also a universal gate. </li><br>
+            <li>Thus, it can also be used for designing of any digital circuit.</li><br>
+            <li>The Full adder can be designed using 9 NOR gates. </li><br>
+            <li>This is the minimum number of NOR gates to design full adder.</li><br>
+            <img src="theory_images/using_nor.jpg">
+          </p>
+          </div>
+
+          <div class="space" id="Application Of Full Adder"><strong>Application Of Full Adder</strong>
+          <p class="points">
+            <li>A Full Adder's circuit can be used as a part of many other larger circuits like Ripple Carry Adder, which adds n-bits simultaneously.</li><br>
+            <li>The dedicated multiplication circuit uses Full Adder's circuit to perform Carryout Multiplication.</li><br>
+            <li>Full Adders are used in ALU- Arithmetic Logic Unit.</li>
+            </p>
+          </div>
+          
+         
+   </container>         
+  
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+</body>
+</html>

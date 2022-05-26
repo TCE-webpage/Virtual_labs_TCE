@@ -34,7 +34,7 @@
     color:thistle !important;
 }
 
-.Zener {
+.adder {
   margin: 0 auto;
   margin-top:-1%;
   max-width: 760px;
@@ -254,16 +254,16 @@ h1:after {
   cursor: pointer;
   
 }
-#popup1 table td{
+.popup table td{
 padding: 5%;
 }
-#popup1 a{
+.popup a{
 font-size: larger;
 color: black;
 font-family: sans-serif;
 font-weight:bolder;
 }
-#popup1 a:hover{
+.popup a:hover{
 font-size: larger;
 color: white;
 font-family: sans-serif;
@@ -277,7 +277,7 @@ background-color:rgb(38, 18, 4);
 text-decoration: none;
 border: rosybrown 2px solid;
 background-color:saddlebrown;
-border-radius: 5px;
+border-radius: 50%;
 padding: 3%;
 cursor: pointer;
 color: black;
@@ -299,8 +299,8 @@ padding: 20px;
 /* background:rgba(0, 0,0, 0.75) ; */
 background-color:rgb(2, 20, 36,0.9);
 border-radius: 5px;
-width: 70%;
-height: 50%;
+width: 60%;
+height: 60%;
 top:60px;
 position: relative;
 text-align-last: center;
@@ -330,7 +330,7 @@ transition: all 5s ease-in-out;
 /* Size of the block with respect to the screen size */
 @media screen and (min-width:850px) {
   .aimBlock,.proBlock,.outcomeBlock{
-      margin-left: 20% !important;
+      margin-left: 24% !important;
       margin-right: 20% !important;
   }
 

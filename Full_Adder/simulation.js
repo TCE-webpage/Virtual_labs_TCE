@@ -3,6 +3,7 @@
  var i=1;
  var A=false
  var B=false
+ var C=false;
  var Vcc=false
 
 //  function pin(){
@@ -43,30 +44,49 @@
  function table(){
   A=document.getElementById("toggle3").checked;
   B=document.getElementById("toggle3B").checked;
+  C=document.getElementById("toggle3C").checked;
   var inpADisablity=document.getElementById("toggle3");
   var inpBDisablity=document.getElementById("toggle3B");
+  var inpCDisablity=document.getElementById("toggle3C");
   var VccSwitch=document.getElementById("VccToggle");
   Vcc=document.getElementById("VccToggle").checked;
   if(Vcc){
     inpADisablity.disabled=false;
     inpBDisablity.disabled=false;
+    inpCDisablity.disabled=false;
 
     document.getElementById("instruct").innerHTML='<b>Toggle Input switches</b><br> Observe the working of half-adder and truth table for different input combinations'
-    if(A && B){           
-      document.getElementById("img").src="simulation_gif/AB_ON.PNG";               
+    if(A && B && C){           
+      // document.getElementById("img1").src="simulation_gif/And_A_B_On.gif";               
       // document.getElementById("light").src="simulation_gif/lighton.png";
       document.getElementById("instruct").innerHTML='<b>Toggle Input switches</b><br> Observe the working of half-adder and truth table for different input combinations'
     }
-    else if(A && !B){
-      document.getElementById("img").src="simulation_gif/A_ON.PNG"; 
+    else if(!A && !B && !C){
+      // document.getElementById("img1").src="simulation_gif/And_A_On_B_Off.gif"; 
       // document.getElementById("light").src="simulation_gif/lightoff.png";
     }
-    else if(!A && B){
-      document.getElementById("img").src="simulation_gif/B_ON.PNG"; 
+    else if(!A && !B && C){
+      // document.getElementById("img1").src="simulation_gif/And_A_Off_B_ON.gif"; 
       // document.getElementById("light").src="simulation_gif/lightoff.png";
     }
-    else{
-      document.getElementById("img").src="simulation_gif/AB_Off.PNG"; 
+    else if(!A && B && !C){
+      // document.getElementById("img1").src="simulation_gif/And_A_Off_B_ON.gif"; 
+      // document.getElementById("light").src="simulation_gif/lightoff.png";
+    }
+    else if(!A && B && C){
+      // document.getElementById("img1").src="simulation_gif/And_A_Off_B_ON.gif"; 
+      // document.getElementById("light").src="simulation_gif/lightoff.png";
+    }
+    else if(A && !B && !C){
+      // document.getElementById("img1").src="simulation_gif/And_A_Off_B_ON.gif"; 
+      // document.getElementById("light").src="simulation_gif/lightoff.png";
+    }
+    else if(A && !B && C){
+      // document.getElementById("img1").src="simulation_gif/And_A_Off_B_ON.gif"; 
+      // document.getElementById("light").src="simulation_gif/lightoff.png";
+    }
+    else if(A && B && !C){
+      // document.getElementById("img1").src="simulation_gif/And_A_Off_B_ON.gif"; 
       // document.getElementById("light").src="simulation_gif/lightoff.png";
     }
     tabled();
@@ -74,7 +94,6 @@
   else{
     document.getElementById("instruct").innerHTML=" Observe the Ic chip diagram of half adder and its switchboard on the left side and the half adder logic diagram on the right side and then.<br><b>Turn On VCC </b>"
     // document.getElementById("light").src="simulation_gif/lightoff.png";
-    document.getElementById("img").src="simulation_gif/half_adder.png"; 
     if(inpADisablity.checked){
       inpADisablity.click();
     }
@@ -87,8 +106,16 @@
     else{
       inpBDisablity.checked=false;
     }
+    if(inpCDisablity.checked){
+      inpCDisablity.click();
+    }
+    else{
+      inpCDisablity.checked=false;
+    }
     inpADisablity.disabled=true;
     inpBDisablity.disabled=true;
+    inpCDisablity.disabled=true;
+
     // document.getElementById("img1").src="simulation_gif/AndIntro.JPG";
 
     while(tabrowindex){
@@ -107,42 +134,77 @@
  var sno = ++tabrowindex;
  var inputA = 0;
  var inputB = 0;
+ var carryIn=0;
  var sum=0;
- var carry=0;
- if(A && B){
-   inputA=1;
-   inputB=1;
-   sum=0;
-   carry=1;
- }
- else if(A && !B){
-   inputA=1;
-   inputB=0;
-   sum=1;
-   carry=0;
- }
- else if(!A && B){
-  inputA=0;
-  inputB=1;
-  sum=1;
-  carry=0;
- }
- else{
-   inputA=0;
-   inputB=0;
-   sum=0;
-   carry=0;
- }
+ var carryOut=0;
+if(A && B && C){           
+    inputA=1
+    inputB=1
+    carryIn=1
+    carryOut=1
+    sum=1  
+}
+else if(!A && !B && !C){
+  inputA=0
+  inputB=0
+  carryIn=0
+  carryOut=0
+  sum=0
+}
+else if(!A && !B && C){
+  inputA=0
+  inputB=0
+  carryIn=1
+  carryOut=0
+  sum=1  
+}
+else if(!A && B && !C){
+  inputA=0
+  inputB=1
+  carryIn=0
+  carryOut=0
+  sum=1  
+}
+else if(!A && B && C){
+  inputA=0
+  inputB=1
+  carryIn=1
+  carryOut=1
+  sum=0
+}
+else if(A && !B && !C){
+  inputA=1
+  inputB=0
+  carryIn=0
+  carryOut=0
+  sum=1  
+}
+else if(A && !B && C){
+  inputA=1
+  inputB=0
+  carryIn=1
+  carryOut=1
+  sum=0
+}
+else if(A && B && !C){
+  inputA=1
+  inputB=1
+  carryIn=0
+  carryOut=1
+  sum=0
+}
  var table = document.getElementById("mytable");
  var row = table.insertRow(-1);
  var cell1 = row.insertCell(0);
  var cell2 = row.insertCell(1);
  var cell3 = row.insertCell(2);
  var cell4 = row.insertCell(3);
+ var cell5 = row.insertCell(4);
  cell1.innerHTML = inputA;
  cell2.innerHTML = inputB; 
- cell3.innerHTML = sum;
- cell4.innerHTML = carry;
+ cell3.innerHTML = carryIn;
+ cell4.innerHTML = carryOut;
+ cell5.innerHTML = sum;
 
  i+=1;    
 }
@@ -158,6 +220,8 @@ function deleted(){
 //input toggler switch
 var toggle3B = document.getElementById('toggle3B');
 toggle3B.addEventListener("click", () => document.body.classList.toggle('ON') , false);
+var toggle3C = document.getElementById('toggle3C');
+toggle3C.addEventListener("click", () => document.body.classList.toggle('On') , false);
 // if(typeof toggle3 !== null && toggle3 !== 'undefined' ) {
 //   toggle3=document.getElementById("toggle3").innerHTML;
 // }
@@ -171,7 +235,7 @@ function exportData(){
   var table = document.getElementById("mytable");
 
   /* Declaring array variable */
-  var rows =[["Input A","Input B","Sum","Carry"]];
+  var rows =[["Input A","Input B","CarryIN","CarryOut","Sum"]];
 
     //iterate through rows of table
   for(var i=1,row; row = table.rows[i];i++){
@@ -181,13 +245,15 @@ function exportData(){
       column2 = row.cells[1].innerText;
       column3 = row.cells[2].innerText;
       column4 = row.cells[3].innerText;
+      column5 = row.cells[4].innerText;
   /* add a new records in the array */
       rows.push(
           [
               column1,
               column2,
               column3,
-              column4
+              column4,
+              column5
           ]
       );
 
