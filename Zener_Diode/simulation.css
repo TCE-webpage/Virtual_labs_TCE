@@ -6,29 +6,16 @@ body{
 }
 .HoriSlider{
     position:absolute;
-    bottom:10%;
+    bottom:12%;
     left:38%;
-    /* display: none; */
+    display: none;
+    font-size: larger;
     
   font-weight: bolder;
 }
 #VZrange{
-  /* display: none; */
+  display: none;
 }
-input[type=range][orient=vertical]
-{
-     writing-mode: bt-lr;
-    -webkit-appearance: slider-vertical;
-    position: absolute;
-    width: 8%;
-    height: 17%;
-    padding: 0 5px;
-    left:33%;
-    bottom:11%;
-    background-color: brown;
-    /* display: none;   */
- }
- 
 
  .Gif{
    position:relative;
@@ -66,20 +53,20 @@ input[type=range][orient=vertical]
 }
 /* VCE BOX */
 
-/* .VCEBox{
+.VinBox{
     padding: 0.4em 1.3em;    
     border-radius: 0.2em;
-border:rgb(49, 49, 107) 2px solid;
+    border:rgb(49, 49, 107) 2px solid;
     color:#3f0d12 ;
     font-size:x-large;
     margin-left: 2%;
 }
-.VCE{
+.Vin{
     display:block;
     font: bold 1.7em "Fira Sans", serif;
     color:#3f0d12;
     margin-top: 10px;
-} */
+}
 
 .gaugerow1{
   position: relative;

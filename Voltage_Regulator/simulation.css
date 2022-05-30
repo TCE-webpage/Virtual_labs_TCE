@@ -34,7 +34,7 @@ input[type=range][orient=vertical]
    position:relative;
  }
 .simBlock{
-    background-color:#FCC0C0;
+    background-color:#CFE7D7;
     border-radius:15px;
     border: brown double;
     width: 95%;
@@ -42,7 +42,9 @@ input[type=range][orient=vertical]
 }
 .meterBox{
   /* background-color:#d38686; */
-  background-color:#fba9a9;
+  /* background-color:#bde1c9; */
+  background-color:#d1ffe0;
+
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   border-radius:0px 15px 15px 0px;
 }
@@ -60,7 +62,7 @@ input[type=range][orient=vertical]
 
 .leftImg{
     position: relative;
-    background-color: #FCC0C0;
+    background-color: #CFE7D7;
     border-radius: 15px;
     margin: 0;
 }

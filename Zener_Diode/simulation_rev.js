@@ -2,7 +2,10 @@
 
 var gauge2val;
 function updateGauge(id, min, max){
+  
+
     var vzconstval=document.getElementById("VZrange").value;
+    document.getElementById("Vinlabel").innerHTML=vzconstval;
     var newGaugeDisplayValue = document.getElementById("VZrange").value;
     if (newGaugeDisplayValue > 5.1)
     {
@@ -64,11 +67,7 @@ function displayfn1(){
     document.getElementById("SetVCE").innerHTML="P TYPE";
     document.getElementById("SetVCE").style.boxShadow=' ';
     document.getElementById("instruct").innerHTML="It is the center region. The majority carriers from the emitter region are injected into this region. This region is very thin and lightly doped.";
-   },620);  
-   setTimeout( function() {
-    document.getElementById("SetVCE").innerHTML="DIFFUSION";
-  document.getElementById("instruct").innerHTML="During diffusion process, Depletion region at emitter and collector junction penetrate less in heavily doped emitter and collector and extends more in the base region. As collector is slightly less doped than the emitter, the depletion layer width at the collector junction is more than the depletion layer width at the emitter junction.";
-   },2440); 
+   },820); 
   setTimeout( function() {
     document.getElementById("SetVCE").innerHTML="VARY V<sub>in</sub>";
     document.getElementById("SetVCE").disabled=false;
@@ -79,19 +78,12 @@ function displayfn1(){
 function displayfn2(){  
   document.getElementById("SetVCE").style.display="none";
   document.getElementById("VaryVBE").style.display="inline";          
-  document.getElementById("gaugeValue-demoGauge").style.display="none";
-  document.getElementById("VCErange").style.display="inline";
+  document.getElementById("VZrange").style.display="inline";
   document.getElementsByClassName("HoriSlider")[0].style.display="inline";
-  document.getElementsByClassName("VBEName")[0].innerHTML=" ";
 }
 function displayfn3(){
   document.getElementById("VaryVBE").style.display="none";
   document.getElementById("end").style.display="inline";
-  document.getElementById("VCErange").style.display="none";
-  document.getElementsByClassName("HoriSlider")[0].style.display="none";
-  document.getElementById("verti").style.display="inline";  
-  document.getElementsByClassName("VBEName")[0].innerHTML="VBE";
-  document.getElementById("gaugeValue-demoGauge").style.display="inline";
   document.getElementById("instruct").innerHTML="Vary VBE  using the slider given, add the corresponding Base current value to the Table.Once a set of readings are taken Set another VCE And repeat the same procedure"
 }
  // Table Creation Code JS
@@ -129,18 +121,14 @@ function deleted(){
  }
 }
 function displayfn4(){
-   document.getElementById("VaryVBE").style.display="inline";
-   document.getElementById("VCErange").style.display="inline";
-   document.getElementsByClassName("VBEName")[0].innerHTML="VBE";
-   document.getElementById("gaugeValue-demoGauge").style.display="inline";
-   document.getElementsByClassName("HoriSlider")[0].style.display="inline";
-   document.getElementById("gaugeValue-demoGauge").value=0;
-   document.getElementById("img").src="simulation_gif/pic2.png";
+  document.getElementById("VZrange").value = 0;
+   updateGauge('demoGauge', 0, 10);
+   document.getElementById("img").src="simulation_gif/intro_zener.png";
    while(tabrowindex){
    document.getElementById("mytable").deleteRow(-1);
    tabrowindex--;
    }
-   document.getElementById("tbvce1").innerHTML = " ";       
+  //  document.getElementById("tbvce1").innerHTML = " ";       
     xArray=[0];
     yArray=[0];
     i=1; 
@@ -160,7 +148,7 @@ function displayfn4(){
    };
 
     // Display using Plotly
-      // Plotly.newPlot("myPlot", data, layout);
+      Plotly.newPlot("myPlot", data, layout);
  }
 function plotgraph(){
 // Define Data
