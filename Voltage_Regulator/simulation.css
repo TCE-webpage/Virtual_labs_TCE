@@ -4,14 +4,14 @@ html{
 body{
   overflow-x: hidden;
 }
-.HoriSlider{
+/* .HoriSlider{
     position:absolute;
     bottom:10%;
     left:38%;
     /* display: none; */
     
-  font-weight: bolder;
-}
+  /* font-weight: bolder;
+} */ */
 #VZrange{
   /* display: none; */
 }
@@ -23,12 +23,18 @@ input[type=range][orient=vertical]
     width: 8%;
     height: 17%;
     padding: 0 5px;
-    left:33%;
-    bottom:11%;
+    left:6%;
+    top:40%;
     background-color: brown;
     /* display: none;   */
  }
- 
+ .VBEName{
+  position: absolute;
+  left:9%;
+  top:56%;
+  font-weight: bolder;
+  font-size: larger;
+}
 
  .Gif{
    position:relative;
@@ -43,8 +49,7 @@ input[type=range][orient=vertical]
 .meterBox{
   /* background-color:#d38686; */
   /* background-color:#bde1c9; */
-  background-color:#d1ffe0;
-
+    background-color:rgb(186, 210, 194);
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   border-radius:0px 15px 15px 0px;
 }
@@ -68,20 +73,20 @@ input[type=range][orient=vertical]
 }
 /* VCE BOX */
 
-/* .VCEBox{
-    padding: 0.4em 1.3em;    
-    border-radius: 0.2em;
-border:rgb(49, 49, 107) 2px solid;
-    color:#3f0d12 ;
-    font-size:x-large;
-    margin-left: 2%;
+.VinBox{
+  padding: 0.4em 1.3em;    
+  border-radius: 0.2em;
+  border:rgb(49, 49, 107) 2px solid;
+  color:#3f0d12 ;
+  font-size:x-large;
+  margin-left: 2%;
 }
-.VCE{
-    display:block;
-    font: bold 1.7em "Fira Sans", serif;
-    color:#3f0d12;
-    margin-top: 10px;
-} */
+.Vin{
+  display:block;
+  font: bold 1.7em "Fira Sans", serif;
+  color:#3f0d12;
+  margin-top: 10px;
+}
 
 .gaugerow1{
   position: relative;
