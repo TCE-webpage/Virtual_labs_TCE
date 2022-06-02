@@ -41,15 +41,15 @@ function updateGauge(id, min, max){
   }
   else if(vzconstval==5.1)
   {
-    document.getElementById("img").src="simulation_gif/At_0.7.gif";
+    document.getElementById("img").src="simulation_gif/medium_Rb.gif";
   }
   else if(vzconstval>5.1 && vzconstval<=7.5 )
   {
-    document.getElementById("img").src="simulation_gif/medium.gif";
+    document.getElementById("img").src="simulation_gif/medium_Rb.gif";
   }
   else if(vzconstval>7.5 && vzconstval<=10 )
   {
-    document.getElementById("img").src="simulation_gif/fast.gif";
+    document.getElementById("img").src="simulation_gif/fast_Rb.gif";
   }
 }
 
@@ -62,7 +62,7 @@ function displayfn(){
 function displayfn1(){
   document.getElementById("FormNPN").style.display="none";  
   document.getElementById("instruct").innerHTML="Emitter is the region to the left end which supply free charge carriers i.e electrons. It is a heavily doped region."    
-  document.getElementById("img").src="simulation_gif/Intro.gif";
+  document.getElementById("img").src="simulation_gif/intro_Zener_Rb.gif";
   setTimeout( function() {
     document.getElementById("SetVCE").innerHTML="P TYPE";
     document.getElementById("SetVCE").style.boxShadow=' ';
@@ -123,7 +123,7 @@ function deleted(){
 function displayfn4(){
   document.getElementById("VZrange").value = 0;
    updateGauge('demoGauge', 0, 10);
-   document.getElementById("img").src="simulation_gif/intro_zener.png";
+   document.getElementById("img").src="simulation_gif/intro_Rb.png";
    while(tabrowindex){
    document.getElementById("mytable").deleteRow(-1);
    tabrowindex--;
@@ -167,6 +167,53 @@ title: "Reverse Characteristics - VZ Vs IZ"
 
 // Display using Plotly
 Plotly.newPlot("myPlot", data, layout);
+}
+function exportData(){
+  /* Get the HTML data using Element by Id */
+  var table = document.getElementById("mytable");
+
+  /* Declaring array variable */
+  var rows =[["S.no","Zener Voltage","Zener Current"]];
+
+    //iterate through rows of table
+  for(var i=1,row; row = table.rows[i];i++){
+      //rows would be accessed using the "row" variable assigned in the for loop
+      //Get each cell value/column from the row
+      column1 = row.cells[0].innerText;
+      column2 = row.cells[1].innerText;
+      column3 = row.cells[2].innerText;
+  /* add a new records in the array */
+      rows.push(
+          [
+              column1,
+              column2,
+              column3
+          ]
+      );
+
+      }
+      csvContent = "data:text/csv;charset=utf-8,";
+       /* add the column delimiter as comma(,) and each row splitted by new line character (\n) */
+      rows.forEach(function(rowArray){
+          row = rowArray.join(",");
+          csvContent += row + "\r\n";
+      });
+
+      /* create a hidden <a> DOM node and set its download attribute */
+      var encodedUri = encodeURI(csvContent);
+      var link = document.createElement("a");
+      link.setAttribute("href", encodedUri);
+      link.setAttribute("download", "Zener-Forward Characteristics.csv");
+      document.body.appendChild(link);
+       /* download the data file named "Stock_Price_Report.csv" */
+      link.click();
+}
+
+function info(){
+  document.getElementById("info").style.display="block";
+}
+function info_close(){
+  document.getElementById('info').style.display="none";
 }
 
 

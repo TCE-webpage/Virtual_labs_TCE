@@ -1,5 +1,4 @@
 // Formula 
-
 var gauge2val;
 function updateGauge(id, min, max){
     const newGaugeDisplayValue = document.getElementById("VZrange").value;
@@ -53,23 +52,30 @@ function updateGauge(id, min, max){
 function displayfn(){
   document.getElementById("start").style.display="none";  
   document.getElementById("FormNPN").style.display="inline";
-  document.getElementById("instruct").innerHTML="Click Form NPN";
+  document.getElementById("instruct").innerHTML="Click Form PN Junction";
 }
 function displayfn1(){
   document.getElementById("FormNPN").style.display="none";  
-  document.getElementById("instruct").innerHTML="Emitter is the region to the left end which supply free charge carriers i.e electrons. It is a heavily doped region."    
+  document.getElementById("instruct").innerHTML="N substrate is a layer of heavily doped electrons with holes as the minority carriers"    
   document.getElementById("img").src="simulation_gif/Intro.gif";
   setTimeout( function() {
-    document.getElementById("SetVCE").innerHTML="P TYPE";
+    document.getElementById("SetVCE").innerHTML="P Substrate";
     document.getElementById("SetVCE").style.boxShadow=' ';
-    document.getElementById("instruct").innerHTML="It is the center region. The majority carriers from the emitter region are injected into this region. This region is very thin and lightly doped.";
-   },820); 
+    document.getElementById("instruct").innerHTML="It is a layer of heavily doped holes with electrons as minority carriers";
+   },7000); 
   setTimeout( function() {
-    document.getElementById("SetVCE").innerHTML="VARY V<sub>in</sub>";
+    document.getElementById("SetVCE").innerHTML="Diffusion";
     document.getElementById("SetVCE").disabled=false;
-  document.getElementById("instruct").innerHTML="Set VCE as a constant by varying the slider. Once it's set. Click vary VBE";
-},3600);           
-  document.getElementById("SetVCE").style.display="inline";       
+  document.getElementById("instruct").innerHTML="During diffusion process, penetration of charge carriers from one region to another region takes place results in the formation of depletion layer. Because of heavily doped N and P regions, width of the depletion layer is very small.<br> Click Varry V<sub>in</sub>";
+},14000);  
+setTimeout( function() {
+  document.getElementById("SetVCE").innerHTML="Varry V<sub>in</sub>";
+  document.getElementById("SetVCE").disabled=false;
+  document.getElementById("instruct").innerHTML="Varry V<sub>in</sub> using the slider. Add corresponding Zener voltage and Zener current to the table and Plot graph.";
+  document.getElementById("VZrange").style.display="inline";
+  document.getElementsByClassName("HoriSlider")[0].style.display="inline";
+},30000);           
+document.getElementById("SetVCE").style.display="inline";   
 }
 function displayfn2(){  
   document.getElementById("SetVCE").style.display="none";
@@ -77,11 +83,11 @@ function displayfn2(){
   document.getElementById("VZrange").style.display="inline";
   document.getElementsByClassName("HoriSlider")[0].style.display="inline";
 }
-function displayfn3(){
-  document.getElementById("VaryVBE").style.display="none";
-  document.getElementById("end").style.display="inline";
-  document.getElementById("instruct").innerHTML="Vary VBE  using the slider given, add the corresponding Base current value to the Table.Once a set of readings are taken Set another VCE And repeat the same procedure"
-}
+// function displayfn3(){
+//   document.getElementById("VaryVBE").style.display="none";
+//   document.getElementById("end").style.display="inline";
+//   document.getElementById("instruct").innerHTML="Vary VBE  using the slider given, add the corresponding Base current value to the Table.Once a set of readings are taken Set another VCE And repeat the same procedure"
+// }
  // Table Creation Code JS
  var tabrowindex = 0;
  var xArray=[0];
@@ -160,6 +166,54 @@ title: "Reverse Characteristics - VZ Vs IZ"
 
 // Display using Plotly
 Plotly.newPlot("myPlot", data, layout);
+}
+
+function exportData(){
+  /* Get the HTML data using Element by Id */
+  var table = document.getElementById("mytable");
+
+  /* Declaring array variable */
+  var rows =[["S.no","Zener Voltage","Zener Current"]];
+
+    //iterate through rows of table
+  for(var i=1,row; row = table.rows[i];i++){
+      //rows would be accessed using the "row" variable assigned in the for loop
+      //Get each cell value/column from the row
+      column1 = row.cells[0].innerText;
+      column2 = row.cells[1].innerText;
+      column3 = row.cells[2].innerText;
+  /* add a new records in the array */
+      rows.push(
+          [
+              column1,
+              column2,
+              column3
+          ]
+      );
+
+      }
+      csvContent = "data:text/csv;charset=utf-8,";
+       /* add the column delimiter as comma(,) and each row splitted by new line character (\n) */
+      rows.forEach(function(rowArray){
+          row = rowArray.join(",");
+          csvContent += row + "\r\n";
+      });
+
+      /* create a hidden <a> DOM node and set its download attribute */
+      var encodedUri = encodeURI(csvContent);
+      var link = document.createElement("a");
+      link.setAttribute("href", encodedUri);
+      link.setAttribute("download", "Zener-Reverse Characteristics.csv");
+      document.body.appendChild(link);
+       /* download the data file named "Stock_Price_Report.csv" */
+      link.click();
+}
+
+function info(){
+  document.getElementById("info").style.display="block";
+}
+function info_close(){
+  document.getElementById('info').style.display="none";
 }
 
 
