@@ -66,14 +66,12 @@ function displayfn1(){
   setTimeout( function() {
     document.getElementById("SetVCE").innerHTML="Diffusion";
     document.getElementById("SetVCE").disabled=false;
-  document.getElementById("instruct").innerHTML="During diffusion process, penetration of charge carriers from one region to another region takes place results in the formation of depletion layer. Because of heavily doped N and P regions, width of the depletion layer is very small.<br> Click Varry V<sub>in</sub>";
+  document.getElementById("instruct").innerHTML="During diffusion process, penetration of charge carriers from one region to another region takes place results in the formation of depletion layer. Because of heavily doped N and P regions, width of the depletion layer is very small.<br> Click Vary V<sub>in</sub>";
 },14000);  
 setTimeout( function() {
-  document.getElementById("SetVCE").innerHTML="Varry V<sub>in</sub>";
+  document.getElementById("SetVCE").innerHTML="Vary V<sub>in</sub>";
   document.getElementById("SetVCE").disabled=false;
-  document.getElementById("instruct").innerHTML="Varry V<sub>in</sub> using the slider. Add corresponding Zener voltage and Zener current to the table and Plot graph.";
-  document.getElementById("VZrange").style.display="inline";
-  document.getElementsByClassName("HoriSlider")[0].style.display="inline";
+  document.getElementById("instruct").innerHTML="Vary V<sub>in</sub> using the slider. Add corresponding Zener voltage and Zener current to the table and Plot graph.";
 },30000);           
 document.getElementById("SetVCE").style.display="inline";   
 }
