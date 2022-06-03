@@ -16,7 +16,8 @@ function updateGauge(id, min, max){
     gauge2val=newGaugeDisplayValue;
     vzconstval = 0;
     document.getElementById("Label").innerHTML= 0;
-    document.getElementById("Label1").innerHTML=newGaugeDisplayValue;
+    var x= newGaugeDisplayValue-(0.3*newGaugeDisplayValue);
+    document.getElementById("Label1").innerHTML=x.toFixed(2);
     }
     else{
       gauge2val=5.1;
@@ -70,7 +71,11 @@ function displayfn3(){
 
  var sno = ++tabrowindex;
  var vz = newGaugeDisplayValue;
- var iz = gauge2val;
+ if (vz<5.1){
+  var vo = newGaugeDisplayValue-(0.3*newGaugeDisplayValue);
+  var iz = vo.toFixed(2);
+ }
+ else{ var iz = gauge2val;}
  var table = document.getElementById("mytable");
  var row = table.insertRow(-1);
  var cell1 = row.insertCell(0);
@@ -113,7 +118,7 @@ function displayfn4(){
     // Define Layout
     var layout = {
     xaxis: {range: [0, 15], title: "Input Voltage (V)"},
-    yaxis: {range: [0, 15], title: "Output Voltage (V)"},  
+    yaxis: {range: [0, 10], title: "Output Voltage (V)"},  
     title: "Reverse Characteristics - Vin Vs Vout"
    };
 
@@ -131,7 +136,7 @@ function plotgraph(){
 // Define Layout
 var layout = {
 xaxis: {range: [0, 15], title: "Input Voltage (V)"},
-yaxis: {range: [0,15], title: "Output Voltage (V)"},  
+yaxis: {range: [0,10], title: "Output Voltage (V)"},  
 title: "Reverse Characteristics - Vin Vs Vout"
 };
 
