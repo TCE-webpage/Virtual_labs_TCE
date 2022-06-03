@@ -57,36 +57,36 @@
 
     document.getElementById("instruct").innerHTML='<b>Toggle Input switches</b><br> Observe the working of half-adder and truth table for different input combinations'
     if(A && B && C){           
-      // document.getElementById("img1").src="simulation_gif/And_A_B_On.gif";               
+      document.getElementById("img").src="simulation_gif/ABCON.png";               
       // document.getElementById("light").src="simulation_gif/lighton.png";
       document.getElementById("instruct").innerHTML='<b>Toggle Input switches</b><br> Observe the working of half-adder and truth table for different input combinations'
     }
     else if(!A && !B && !C){
-      // document.getElementById("img1").src="simulation_gif/And_A_On_B_Off.gif"; 
+      document.getElementById("img").src="simulation_gif/ABCOff.png"; 
       // document.getElementById("light").src="simulation_gif/lightoff.png";
     }
     else if(!A && !B && C){
-      // document.getElementById("img1").src="simulation_gif/And_A_Off_B_ON.gif"; 
+      document.getElementById("img").src="simulation_gif/C_ON.png"; 
       // document.getElementById("light").src="simulation_gif/lightoff.png";
     }
     else if(!A && B && !C){
-      // document.getElementById("img1").src="simulation_gif/And_A_Off_B_ON.gif"; 
+      document.getElementById("img").src="simulation_gif/BON.png"; 
       // document.getElementById("light").src="simulation_gif/lightoff.png";
     }
     else if(!A && B && C){
-      // document.getElementById("img1").src="simulation_gif/And_A_Off_B_ON.gif"; 
+      document.getElementById("img").src="simulation_gif/BCON.png"; 
       // document.getElementById("light").src="simulation_gif/lightoff.png";
     }
     else if(A && !B && !C){
-      // document.getElementById("img1").src="simulation_gif/And_A_Off_B_ON.gif"; 
+      document.getElementById("img").src="simulation_gif/AON.png"; 
       // document.getElementById("light").src="simulation_gif/lightoff.png";
     }
     else if(A && !B && C){
-      // document.getElementById("img1").src="simulation_gif/And_A_Off_B_ON.gif"; 
+      document.getElementById("img").src="simulation_gif/ACON.png"; 
       // document.getElementById("light").src="simulation_gif/lightoff.png";
     }
     else if(A && B && !C){
-      // document.getElementById("img1").src="simulation_gif/And_A_Off_B_ON.gif"; 
+      document.getElementById("img").src="simulation_gif/ABON.png"; 
       // document.getElementById("light").src="simulation_gif/lightoff.png";
     }
     tabled();
