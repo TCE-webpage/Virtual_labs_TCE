@@ -123,7 +123,7 @@ body{
  }
 .simBlock{
 		/* background:linear-gradient(hsl(0,0%,60%) 12.5%,hsla(0,0%,60%,0) 13% 87%,hsl(0,0%,60%) 87.5%); */
-  background-color:#96dddb;
+  background-color:#C7D5ED;
     
     border-radius:15px;
     border:rgb(56, 10, 56) solid 3px;
@@ -132,7 +132,7 @@ body{
 }
 .meterBox{
   /* background-color:#6dd8af; */
-  background-color:#96dddb;
+  background-color:#8db2f3;
   /* background:linear-gradient(white,#b7f5f5,#96dddb,#C7D5ED); */
 
 
@@ -146,7 +146,7 @@ body{
 }
 .leftImg{
     position: relative;
-    background-color: #b4e7e5;
+    background-color:#C7D5ED;
     border-radius: 15px;
     margin: 0;
 }
