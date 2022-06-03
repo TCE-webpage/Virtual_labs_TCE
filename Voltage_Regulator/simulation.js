@@ -1,91 +1,63 @@
 // Formula 
 
 var gauge2val;
+var vzconstval;
+var newGaugeDisplayValue;
 function updateGauge(id, min, max){
-    const newGaugeDisplayValue = document.getElementById("VZrange").value;
+    newGaugeDisplayValue = document.getElementById("VZrange").value;
     const newGaugeValue =Math.floor(((newGaugeDisplayValue - min) / (max - min)) * 100);
-    const vzconstval=document.getElementById("VZrange").value;
     document.getElementById(id).style.setProperty('--gauge-value', newGaugeValue);
-    document.getElementById("Label").innerHTML=newGaugeDisplayValue;
-//Formula for IZ
+    document.getElementById("demoGauge1").style.setProperty('--gauge-value', newGaugeValue);
+    document.getElementById("Vinlabel").innerHTML=newGaugeDisplayValue;
+
+
+    if( newGaugeDisplayValue<5.1)
+    {
+    gauge2val=newGaugeDisplayValue;
+    vzconstval = 0;
+    document.getElementById("Label").innerHTML= 0;
+    document.getElementById("Label1").innerHTML=newGaugeDisplayValue;
+    }
+    else{
+      gauge2val=5.1;
+      vzconstval=5.1;
+    document.getElementById("Label").innerHTML= 5.1;
+    document.getElementById("Label1").innerHTML= 5.1;  
+    }
     
-    gauge2val=2*vzconstval;
-    const newGauge2Value =Math.floor(gauge2val * 100);
-    document.getElementById("demoGauge1").style.setProperty('--gauge-value', newGauge2Value);
-    document.getElementById("Label1").innerHTML=gauge2val;
+    
+    
 
   // GIF For VBE from 0.6 to 0.7
 
-   if(newGaugeDisplayValue>=0 && newGaugeDisplayValue<0.6)
+   if(newGaugeDisplayValue>=0 && newGaugeDisplayValue<=1)
   {
-    document.getElementById("img").src="simulation_gif/Below_0.7.gif";
+    document.getElementById("img").src="simulation_gif/Intro_VR.gif";
   
   }
-  else if(newGaugeDisplayValue==0.7)
+  else if(newGaugeDisplayValue>1 && newGaugeDisplayValue<=5.1)
   {
-    document.getElementById("img").src="simulation_gif/At_0.7.gif";
+    document.getElementById("img").src="simulation_gif/Currentflow.gif";
   }
-  else if(newGaugeDisplayValue>0.7 && newGaugeDisplayValue<3)
+  else if(newGaugeDisplayValue>5.1 && newGaugeDisplayValue<15)
   {
-    document.getElementById("img").src="simulation_gif/slow.gif";
-  }
-  else if(newGaugeDisplayValue>=3.1 && newGaugeDisplayValue<7)
-  {
-    document.getElementById("img").src="simulation_gif/Medium.gif";
-  }
-  else if(newGaugeDisplayValue>=7.1 && newGaugeDisplayValue<10)
-  {
-    document.getElementById("img").src="simulation_gif/fast.gif";
+    document.getElementById("img").src="simulation_gif/ZenerCurrent.gif";
   }
 }
 
 // GIF for VCE when VBE=0
 function displayfn(){
   document.getElementById("start").style.display="none";  
-  document.getElementById("FormNPN").style.display="inline";
-  document.getElementById("instruct").innerHTML="Click Form NPN";
-}
-function displayfn1(){
-  document.getElementById("FormNPN").style.display="none";  
-  document.getElementById("instruct").innerHTML="Emitter is the region to the left end which supply free charge carriers i.e electrons. It is a heavily doped region."    
-  document.getElementById("img").src="simulation_gif/Intro.gif";
-  setTimeout( function() {
-    document.getElementById("SetVCE").innerHTML="BASE";
-    document.getElementById("SetVCE").style.boxShadow=' ';
-    document.getElementById("instruct").innerHTML="It is the center region. The majority carriers from the emitter region are injected into this region. This region is very thin and lightly doped.";
-   },6200);   
-  setTimeout( function() {
-    document.getElementById("SetVCE").innerHTML="COLLECTOR";
-  document.getElementById("instruct").innerHTML="It is the region to right end where charge carriers are collected. It is also heavily doped but slightly lesser than that of the emitter. The region-area of the collector is slightly more than that of the emitter.";
-   },13400); 
-   setTimeout( function() {
-    document.getElementById("SetVCE").innerHTML="DIFFUSION";
-  document.getElementById("instruct").innerHTML="During diffusion process, Depletion region at emitter and collector junction penetrate less in heavily doped emitter and collector and extends more in the base region. As collector is slightly less doped than the emitter, the depletion layer width at the collector junction is more than the depletion layer width at the emitter junction.";
-   },24400); 
-  setTimeout( function() {
-    document.getElementById("SetVCE").innerHTML="SET VCE";
-    document.getElementById("SetVCE").disabled=false;
-  document.getElementById("instruct").innerHTML="Set VCE as a constant by varying the slider. Once it's set. Click vary VBE";
-},36000);           
-  document.getElementById("SetVCE").style.display="inline";       
-}
-function displayfn2(){  
-  document.getElementById("SetVCE").style.display="none";
-  document.getElementById("VaryVBE").style.display="inline";          
-  document.getElementById("gaugeValue-demoGauge").style.display="none";
-  document.getElementById("VCErange").style.display="inline";
-  document.getElementsByClassName("HoriSlider")[0].style.display="inline";
-  document.getElementsByClassName("VBEName")[0].innerHTML=" ";
+  document.getElementById("VaryVin").style.display="inline";
+  document.getElementById("instruct").innerHTML="Vary Vin ";
 }
 function displayfn3(){
-  document.getElementById("VaryVBE").style.display="none";
+  document.getElementById("VaryVin").style.display="none";
   document.getElementById("end").style.display="inline";
-  document.getElementById("VCErange").style.display="none";
-  document.getElementsByClassName("HoriSlider")[0].style.display="none";
-  document.getElementById("verti").style.display="inline";  
-  document.getElementsByClassName("VBEName")[0].innerHTML="VBE";
-  document.getElementById("gaugeValue-demoGauge").style.display="inline";
-  document.getElementById("instruct").innerHTML="Vary VBE  using the slider given, add the corresponding Base current value to the Table.Once a set of readings are taken Set another VCE And repeat the same procedure"
+  document.getElementById("VZrange").style.display="inline";
+  document.getElementById("verti").style.display="inline"; 
+  document.getElementById("VinName").style.display="inline"; 
+  document.getElementById("instruct").innerHTML="repeat "
 }
  // Table Creation Code JS
  var tabrowindex = 0;
@@ -97,7 +69,7 @@ function displayfn3(){
 //  document.getElementById("tbvce1").innerHTML = vce+" V";
 
  var sno = ++tabrowindex;
- var vz = document.getElementById("VZrange").value;
+ var vz = newGaugeDisplayValue;
  var iz = gauge2val;
  var table = document.getElementById("mytable");
  var row = table.insertRow(-1);
@@ -120,17 +92,13 @@ function deleted(){
 }
 function displayfn4(){
    document.getElementById("end").style.display="inline";
-   document.getElementById("VCErange").style.display="inline";
-   document.getElementsByClassName("VBEName")[0].innerHTML="VBE";
-   document.getElementById("gaugeValue-demoGauge").style.display="inline";
-   document.getElementsByClassName("HoriSlider")[0].style.display="inline";
-   document.getElementById("gaugeValue-demoGauge").value=0;
-   document.getElementById("img").src="simulation_gif/pic2.png";
+   document.getElementById("VZrange").value = 0;
+   updateGauge('demoGauge', 0, 10);
+   document.getElementById("img").src="simulation_gif/intro.png";
    while(tabrowindex){
    document.getElementById("mytable").deleteRow(-1);
    tabrowindex--;
-   }
-   document.getElementById("tbvce1").innerHTML = " ";       
+   }     
     xArray=[0];
     yArray=[0];
     i=1; 
@@ -144,13 +112,13 @@ function displayfn4(){
 
     // Define Layout
     var layout = {
-    xaxis: {range: [0, 0.9], title: "Zener Voltage (V)"},
-    yaxis: {range: [0, 150], title: "Zener Current (&#956;A)"},  
-    title: "Reverse Characteristics - VZ Vs IZ"
+    xaxis: {range: [0, 15], title: "Input Voltage (V)"},
+    yaxis: {range: [0, 15], title: "Output Voltage (V)"},  
+    title: "Reverse Characteristics - Vin Vs Vout"
    };
 
     // Display using Plotly
-      // Plotly.newPlot("myPlot", data, layout);
+      Plotly.newPlot("myPlot", data, layout);
  }
 function plotgraph(){
 // Define Data
@@ -162,13 +130,54 @@ function plotgraph(){
 
 // Define Layout
 var layout = {
-xaxis: {range: [0, 40], title: "Zener Voltage (V)"},
-yaxis: {range: [0,80], title: "Zener Current (&#956;A)"},  
-title: "Reverse Characteristics - VZ Vs IZ"
+xaxis: {range: [0, 15], title: "Input Voltage (V)"},
+yaxis: {range: [0,15], title: "Output Voltage (V)"},  
+title: "Reverse Characteristics - Vin Vs Vout"
 };
 
 // Display using Plotly
 Plotly.newPlot("myPlot", data, layout);
 }
 
+//csv download
+function exportData(){
+  /* Get the HTML data using Element by Id */
+  var table = document.getElementById("mytable");
+
+  /* Declaring array variable */
+  var rows =[["S.no","Input Voltage","Output Voltage"]];
+
+    //iterate through rows of table
+  for(var i=1,row; row = table.rows[i];i++){
+      //rows would be accessed using the "row" variable assigned in the for loop
+      //Get each cell value/column from the row
+      column1 = row.cells[0].innerText;
+      column2 = row.cells[1].innerText;
+      column3 = row.cells[2].innerText;
+  /* add a new records in the array */
+      rows.push(
+          [
+              column1,
+              column2,
+              column3
+          ]
+      );
+
+      }
+      csvContent = "data:text/csv;charset=utf-8,";
+       /* add the column delimiter as comma(,) and each row splitted by new line character (\n) */
+      rows.forEach(function(rowArray){
+          row = rowArray.join(",");
+          csvContent += row + "\r\n";
+      });
+
+      /* create a hidden <a> DOM node and set its download attribute */
+      var encodedUri = encodeURI(csvContent);
+      var link = document.createElement("a");
+      link.setAttribute("href", encodedUri);
+      link.setAttribute("download", "voltage_regulator.csv");
+      document.body.appendChild(link);
+       /* download the data file named "Stock_Price_Report.csv" */
+      link.click();
+}
 

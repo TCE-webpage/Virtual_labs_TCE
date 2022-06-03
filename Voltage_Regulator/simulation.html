@@ -79,7 +79,7 @@
       <div class="Gif">
       <img  id="img" src="simulation_gif/intro.png" width="101%" >
       <div id="verti">          
-        <input type="range" orient="vertical" value="0" id="VZrange" min="0" max="10" step="0.1" onInput="updateGauge('demoGauge', 0, 40)";><p class="VBEName">V<sub>in</sub></p>
+        <input type="range" orient="vertical" value="0" id="VZrange" min="0" max="15" step="0.1" onInput="updateGauge('demoGauge', 0, 15)";><p class="VinName" id="VinName">V<sub>in</sub></p>
       </div>
       </div>
       <div>      
@@ -123,7 +123,7 @@
                     </div>
                 </div>
                 </div>
-                <p class="VZ">VZ(V)</p>
+                <p class="VZ">V<sub>Z</sub>(V)</p>
             </div>
         <div class="col p-3 addToTable" style="border-right: hidden; border-left: hidden;">
           <div class="" style="text-align: center;margin-top:5%">
@@ -168,22 +168,20 @@
             </div>
             </div>
             
-            <p class="IZ">IZ(&#956;A)</p>
+            <p class="IZ">V<sub>out</sub>(V)</p>
           </div>
           </div>
         <div class="row p-3">
                 <div class="button-effect">    
                     <a class="effect effect-2" id="start"  onclick="displayfn()">START</a><div>
-                    <button class="button12" id="FormNPN" onclick='displayfn1()'>Form NPN</button>
-                    <button class="button12" id="SetVCE" onclick="displayfn2()" disabled="true" >EMITTER</button>
-                    <button class="button12" id="VaryVBE" onclick="displayfn3()">Vary VBE</button>
-                    <button class="button12" id="end" onclick="displayfn4() ; updateGauge('demoGauge', 0.600, 0.750);">Set Another VCE</button>                    
+                    <button class="button12" id="VaryVin" onclick="displayfn3()">Vary V<sub>in</sub></button>
+                    <button class="button12" id="end" onclick="displayfn4() ; updateGauge('demoGauge', 0, 0);">END</button>                    
         </div>
         </div>
         </div>
         <div class="instruction p-2 mb-3 text-center">
           <p id="instruct">
-            Click on start to proceed with the experiment
+            Observe the circuit diagram of Voltage regulator and click START.
           </p>
           
         </div>
@@ -200,12 +198,15 @@
     <thead>
       <tr class="table-dark">
         <th>S.No</th>
-        <th>Zener Voltage <br>VZ (V)</th>
-        <th>Zener Current <br>IZ (&#956;A)</th>
+        <th>Input Voltage <br>V<sub>in</sub>(V)</th>
+        <th>Output Voltage <br>V<sub>out</sub>(V)</th>
       </tr>
     </thead>
      <tbody></tbody>      
   </table>  
+  <button onclick="exportData()" class="btn btn-success">
+    <i class="fas fa-download"></i> 
+    Download</button>
 </div>
 
 <!-- GRAPH -->

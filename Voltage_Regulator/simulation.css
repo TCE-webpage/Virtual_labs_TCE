@@ -4,16 +4,8 @@ html{
 body{
   overflow-x: hidden;
 }
-/* .HoriSlider{
-    position:absolute;
-    bottom:10%;
-    left:38%;
-    /* display: none; */
-    
-  /* font-weight: bolder;
-} */ */
 #VZrange{
-  /* display: none; */
+  display: none;
 }
 input[type=range][orient=vertical]
 {
@@ -26,14 +18,15 @@ input[type=range][orient=vertical]
     left:6%;
     top:40%;
     background-color: brown;
-    /* display: none;   */
+    display: none;  
  }
- .VBEName{
+ .VinName{
   position: absolute;
   left:9%;
   top:56%;
   font-weight: bolder;
   font-size: larger;
+  display: none;
 }
 
  .Gif{
@@ -267,7 +260,7 @@ color:#3f0d12;
 #SetVCE{
   display: none;
 }
-#VaryVBE{
+#VaryVin{
   display: none;
 }
 #end{
