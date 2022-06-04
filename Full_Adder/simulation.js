@@ -55,11 +55,11 @@
     inpBDisablity.disabled=false;
     inpCDisablity.disabled=false;
 
-    document.getElementById("instruct").innerHTML='<b>Toggle Input switches</b><br> Observe the working of half-adder and truth table for different input combinations'
+    document.getElementById("instruct").innerHTML='<b>Toggle Input switches</b><br> Observe the working of full-adder and truth table for different input combinations'
     if(A && B && C){           
       document.getElementById("img").src="simulation_gif/ABCON.png";               
       // document.getElementById("light").src="simulation_gif/lighton.png";
-      document.getElementById("instruct").innerHTML='<b>Toggle Input switches</b><br> Observe the working of half-adder and truth table for different input combinations'
+      document.getElementById("instruct").innerHTML='<b>Toggle Input switches</b><br> Observe the working of full-adder and truth table for different input combinations'
     }
     else if(!A && !B && !C){
       document.getElementById("img").src="simulation_gif/ABCOff.png"; 
@@ -93,7 +93,7 @@
   }
   else{
     document.getElementById("instruct").innerHTML=" Observe the Ic chip diagram of half adder and its switchboard on the left side and the half adder logic diagram on the right side and then.<br><b>Turn On VCC </b>"
-    // document.getElementById("light").src="simulation_gif/lightoff.png";
+    document.getElementById("light").src="simulation_gif/Full_Adder.png";
     if(inpADisablity.checked){
       inpADisablity.click();
     }
