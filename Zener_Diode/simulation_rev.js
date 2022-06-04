@@ -61,19 +61,24 @@ function displayfn(){
 }
 function displayfn1(){
   document.getElementById("FormNPN").style.display="none";  
-  document.getElementById("instruct").innerHTML="Emitter is the region to the left end which supply free charge carriers i.e electrons. It is a heavily doped region."    
-  document.getElementById("img").src="simulation_gif/intro_Zener_Rb.gif";
+  document.getElementById("instruct").innerHTML="N substrate is a layer of heavily doped electrons with holes as the minority carriers"    
+  document.getElementById("img").src="simulation_gif/Intro.gif";
   setTimeout( function() {
-    document.getElementById("SetVCE").innerHTML="P TYPE";
+    document.getElementById("SetVCE").innerHTML="P Substrate";
     document.getElementById("SetVCE").style.boxShadow=' ';
-    document.getElementById("instruct").innerHTML="It is the center region. The majority carriers from the emitter region are injected into this region. This region is very thin and lightly doped.";
-   },820); 
+    document.getElementById("instruct").innerHTML="It is a layer of heavily doped holes with electrons as minority carriers";
+   },7000); 
   setTimeout( function() {
-    document.getElementById("SetVCE").innerHTML="VARY V<sub>in</sub>";
+    document.getElementById("SetVCE").innerHTML="Diffusion";
     document.getElementById("SetVCE").disabled=false;
-  document.getElementById("instruct").innerHTML="Set VCE as a constant by varying the slider. Once it's set. Click vary VBE";
-},3600);           
-  document.getElementById("SetVCE").style.display="inline";       
+  document.getElementById("instruct").innerHTML="During diffusion process, penetration of charge carriers from one region to another region takes place results in the formation of depletion layer. Because of heavily doped N and P regions, width of the depletion layer is very small.<br> Click Vary V<sub>in</sub>";
+},14000);  
+setTimeout( function() {
+  document.getElementById("SetVCE").innerHTML="Vary V<sub>in</sub>";
+  document.getElementById("SetVCE").disabled=false;
+  document.getElementById("instruct").innerHTML="Vary V<sub>in</sub> using the slider. Add corresponding Zener voltage and Zener current to the table and Plot graph.";
+},30000);           
+document.getElementById("SetVCE").style.display="inline";   
 }
 function displayfn2(){  
   document.getElementById("SetVCE").style.display="none";
@@ -81,11 +86,11 @@ function displayfn2(){
   document.getElementById("VZrange").style.display="inline";
   document.getElementsByClassName("HoriSlider")[0].style.display="inline";
 }
-function displayfn3(){
-  document.getElementById("VaryVBE").style.display="none";
-  document.getElementById("end").style.display="inline";
-  document.getElementById("instruct").innerHTML="Vary VBE  using the slider given, add the corresponding Base current value to the Table.Once a set of readings are taken Set another VCE And repeat the same procedure"
-}
+// function displayfn3(){
+//   document.getElementById("VaryVBE").style.display="none";
+//   document.getElementById("end").style.display="inline";
+//   document.getElementById("instruct").innerHTML="Vary VBE  using the slider given, add the corresponding Base current value to the Table.Once a set of readings are taken Set another VCE And repeat the same procedure"
+// }
  // Table Creation Code JS
  var tabrowindex = 0;
  var xArray=[0];
