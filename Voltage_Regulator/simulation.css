@@ -35,7 +35,7 @@ input[type=range][orient=vertical]
 .simBlock{
     background-color:#CFE7D7;
     border-radius:15px;
-    border: brown double;
+    border: black double;
     width: 95%;
     margin-top:2%;
 }
@@ -55,7 +55,7 @@ input[type=range][orient=vertical]
     border: solid black 2px;
 } */
 .col{
-    border: brown solid 3px;
+    border: rgb(85, 84, 84) solid 3px;
 }
 
 .leftImg{
@@ -107,10 +107,12 @@ color:#3f0d12;
 }
 
 .instruction{
-  border-radius: 11px 11px 0px 0px;
+  border-radius: 11px 11px 11px 11px;
   min-height:12% !important;
-  background-color: rgb(252, 227, 190);
-  border-top:solid brown 5px; 
+  background-color:seashell;
+  width: 90%;
+  margin-left: 5%;
+  border-top:solid rgb(85, 84, 84) 5px; 
   /* border-top:solid rgb(247, 167, 49) 5px; */
 }
 .resetbtn {
