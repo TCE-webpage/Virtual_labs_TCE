@@ -118,9 +118,11 @@ function deleted(){
  }
 }
 function displayfn4(){
-   document.getElementById("VZrange").value = 0;
-   updateGauge('demoGauge', 0, 10);
-   document.getElementById("img").src="simulation_gif/intro_zener.png";
+   
+  // document.getElementById("VZrange").value = 0;
+  // updateGauge('demoGauge', 0, 10);
+  document.getElementById("img").src="simulation_gif/intro_zener.png";
+  console.log(A)
    while(tabrowindex){
    document.getElementById("mytable").deleteRow(-1);
    tabrowindex--;

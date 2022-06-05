@@ -57,7 +57,7 @@ function updateGauge(id, min, max){
 function displayfn(){
   document.getElementById("start").style.display="none";  
   document.getElementById("FormNPN").style.display="inline";
-  document.getElementById("instruct").innerHTML="Click Form NPN";
+  document.getElementById("instruct").innerHTML="Click Form PN Junction";
 }
 function displayfn1(){
   document.getElementById("FormNPN").style.display="none";  
@@ -126,6 +126,7 @@ function deleted(){
  }
 }
 function displayfn4(){
+  
   document.getElementById("VZrange").value = 0;
    updateGauge('demoGauge', 0, 10);
    document.getElementById("img").src="simulation_gif/intro_Rb.png";
