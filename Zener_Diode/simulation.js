@@ -162,7 +162,7 @@ function plotgraph(){
 var layout = {
 xaxis: {range: [0,20], title: "Zener Voltage (V)"},
 yaxis: {range: [0,90], title: "Zener Current (&#956;A)"},  
-title: "Reverse Characteristics - VZ Vs IZ"
+title: "Forward Characteristics - VZ Vs IZ"
 };
 
 // Display using Plotly
