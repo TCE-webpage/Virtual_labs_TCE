@@ -31,7 +31,7 @@ function updateGauge(id, min, max){
 
   // GIF For VBE from 0.6 to 0.7
 
-   if(newGaugeDisplayValue>=0 && newGaugeDisplayValue<=1)
+   if(newGaugeDisplayValue>0 && newGaugeDisplayValue<=1)
   {
     document.getElementById("img").src="simulation_gif/Intro_VR.gif";
   
@@ -50,15 +50,15 @@ function updateGauge(id, min, max){
 function displayfn(){
   document.getElementById("start").style.display="none";  
   document.getElementById("VaryVin").style.display="inline";
-  document.getElementById("instruct").innerHTML="Vary Vin ";
-}
-function displayfn3(){
-  document.getElementById("VaryVin").style.display="none";
-  document.getElementById("end").style.display="inline";
   document.getElementById("VZrange").style.display="inline";
   document.getElementById("verti").style.display="inline"; 
   document.getElementById("VinName").style.display="inline"; 
-  document.getElementById("instruct").innerHTML="repeat "
+  document.getElementById("instruct").innerHTML="Vary V<sub>in</sub> using the slider given and observe the corresponding Zener voltage and output voltage in the respective voltmeters and add the same to table and plot the graph.";
+}
+function displayfn3(){
+  document.getElementById("VaryVin").style.display="none";
+  document.getElementById("end").style.display="inline"; 
+  document.getElementById("instruct").innerHTML="Repeat the experiment for 'n' number of times to get better understanding"
 }
  // Table Creation Code JS
  var tabrowindex = 0;
@@ -96,10 +96,10 @@ function deleted(){
  }
 }
 function displayfn4(){
-   document.getElementById("end").style.display="inline";
+  document.getElementById("img").src="simulation_gif/intro.png";
+  document.getElementById("end").style.display="inline";
    document.getElementById("VZrange").value = 0;
    updateGauge('demoGauge', 0, 10);
-   document.getElementById("img").src="simulation_gif/intro.png";
    while(tabrowindex){
    document.getElementById("mytable").deleteRow(-1);
    tabrowindex--;
@@ -119,7 +119,7 @@ function displayfn4(){
     var layout = {
     xaxis: {range: [0, 15], title: "Input Voltage (V)"},
     yaxis: {range: [0, 10], title: "Output Voltage (V)"},  
-    title: "Reverse Characteristics - Vin Vs Vout"
+    title: "Line Regulation - Vin Vs Vout"
    };
 
     // Display using Plotly
