@@ -203,8 +203,8 @@ else if(A && B && !C){
  cell1.innerHTML = inputA;
  cell2.innerHTML = inputB; 
  cell3.innerHTML = carryIn;
- cell4.innerHTML = carryOut;
- cell5.innerHTML = sum;
+ cell4.innerHTML = sum;
+ cell5.innerHTML = carryOut;
 
  i+=1;    
 }
@@ -235,7 +235,7 @@ function exportData(){
   var table = document.getElementById("mytable");
 
   /* Declaring array variable */
-  var rows =[["Input A","Input B","CarryIN","CarryOut","Sum"]];
+  var rows =[["Input A","Input B","CarryIN","Sum","CarryOut"]];
 
     //iterate through rows of table
   for(var i=1,row; row = table.rows[i];i++){
