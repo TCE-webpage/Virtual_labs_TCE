@@ -235,7 +235,7 @@ function exportData(){
   var table = document.getElementById("mytable");
 
   /* Declaring array variable */
-  var rows =[["Input A","Input B","CarryIN","Sum","CarryOut"]];
+  var rows =[[]];
 
     //iterate through rows of table
   for(var i=1,row; row = table.rows[i];i++){
