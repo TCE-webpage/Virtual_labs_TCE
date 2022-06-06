@@ -171,7 +171,7 @@ function exportData(){
   var table = document.getElementById("mytable");
 
   /* Declaring array variable */
-  var rows =[["Input A","Input B","Sum","Carry"]];
+  var rows =[["Half adder"]];
 
     //iterate through rows of table
   for(var i=1,row; row = table.rows[i];i++){

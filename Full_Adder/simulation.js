@@ -235,7 +235,7 @@ function exportData(){
   var table = document.getElementById("mytable");
 
   /* Declaring array variable */
-  var rows =[[]];
+  var rows =[["Full adder"]];
 
     //iterate through rows of table
   for(var i=1,row; row = table.rows[i];i++){
