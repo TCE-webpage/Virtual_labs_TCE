@@ -93,7 +93,7 @@
   }
   else{
     document.getElementById("instruct").innerHTML=" Observe the Ic chip diagram of half adder and its switchboard on the left side and the half adder logic diagram on the right side and then.<br><b>Turn On VCC </b>"
-    document.getElementById("light").src="simulation_gif/Full_Adder.png";
+    document.getElementById("img").src="simulation_gif/Full_Adder.png";
     if(inpADisablity.checked){
       inpADisablity.click();
     }
@@ -269,7 +269,7 @@ function exportData(){
       var encodedUri = encodeURI(csvContent);
       var link = document.createElement("a");
       link.setAttribute("href", encodedUri);
-      link.setAttribute("download", "HalfAdder.csv");
+      link.setAttribute("download", "FullAdder.csv");
       document.body.appendChild(link);
        /* download the data file named "Stock_Price_Report.csv" */
       link.click();
