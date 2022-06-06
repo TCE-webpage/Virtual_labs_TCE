@@ -149,8 +149,8 @@ function displayfn4(){
     // Define Layout
     var layout = {
     xaxis: {range: [0, -10], title: "Zener Voltage (V)"},
-    yaxis: {range: [0, -30], title: "Zener Current (&#956;A)"},  
-    title: "Reverse Characteristics - VZ Vs IZ"
+    yaxis: {range: [0, -30], title: "Zener Current (mA)"},  
+    title: "Reverse Characteristics - V<sub>Z</sub> Vs I<sub>Z</sub>"
    };
 
     // Display using Plotly
@@ -167,8 +167,8 @@ function plotgraph(){
 // Define Layout
 var layout = {
 xaxis: {range: [0,-10], title: "Zener Voltage (V)"},
-yaxis: {range: [0,-30], title: "Zener Current (&#956;A)"},  
-title: "Reverse Characteristics - VZ Vs IZ"
+yaxis: {range: [0,-30], title: "Zener Current (mA)"},  
+title: "Reverse Characteristics - V<sub>Z</sub> Vs I<sub>Z</sub>"
 };
 
 // Display using Plotly
@@ -209,7 +209,7 @@ function exportData(){
       var encodedUri = encodeURI(csvContent);
       var link = document.createElement("a");
       link.setAttribute("href", encodedUri);
-      link.setAttribute("download", "Zener-Forward Characteristics.csv");
+      link.setAttribute("download", "Zener-Reverse Characteristics.csv");
       document.body.appendChild(link);
        /* download the data file named "Stock_Price_Report.csv" */
       link.click();
