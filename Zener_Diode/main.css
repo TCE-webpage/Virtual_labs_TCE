@@ -142,7 +142,7 @@ h1:after {
 /* Aimblock exterior design  */
 .aimBlock{
   margin-top: 5%;
-  margin-left: 5%;
+  margin-left: 15%;
   margin-right: 5%;
   background-color:rgb(255,230,220);
   padding: 2%;
@@ -330,7 +330,7 @@ transition: all 5s ease-in-out;
 /* Size of the block with respect to the screen size */
 @media screen and (min-width:850px) {
   .aimBlock,.proBlock,.outcomeBlock{
-      margin-left: 20% !important;
+      margin-left: 27% !important;
       margin-right: 20% !important;
   }
 
