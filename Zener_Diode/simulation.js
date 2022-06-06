@@ -25,7 +25,7 @@ function updateGauge(id, min, max){
 
   // GIF For VBE from 0.6 to 0.7
 
-   if(newGaugeDisplayValue>=0 && newGaugeDisplayValue<0.6)
+   if(newGaugeDisplayValue>0 && newGaugeDisplayValue<0.7)
   {
     document.getElementById("img").src="simulation_gif/Below_0.7.gif";
   
@@ -118,9 +118,12 @@ function deleted(){
  }
 }
 function displayfn4(){
-   document.getElementById("VZrange").value = 0;
-   updateGauge('demoGauge', 0, 10);
-   document.getElementById("img").src="simulation_gif/intro_zener.png";
+   
+  
+  document.getElementById("img").src="simulation_gif/intro_zener.png";
+  document.getElementById("VZrange").value = 0;
+  updateGauge('demoGauge', 0, 10);
+  console.log(A)
    while(tabrowindex){
    document.getElementById("mytable").deleteRow(-1);
    tabrowindex--;
@@ -159,7 +162,7 @@ function plotgraph(){
 var layout = {
 xaxis: {range: [0,20], title: "Zener Voltage (V)"},
 yaxis: {range: [0,90], title: "Zener Current (&#956;A)"},  
-title: "Reverse Characteristics - VZ Vs IZ"
+title: "Forward Characteristics - VZ Vs IZ"
 };
 
 // Display using Plotly
