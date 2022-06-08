@@ -137,7 +137,7 @@ function plotgraph(){
 var layout = {
 xaxis: {range: [0, 15], title: "Input Voltage (V)"},
 yaxis: {range: [0,10], title: "Output Voltage (V)"},  
-title: "Reverse Characteristics - Vin Vs Vout"
+title: "Voltage Regulation - Vin Vs Vout"
 };
 
 // Display using Plotly
