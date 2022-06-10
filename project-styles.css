@@ -5,7 +5,7 @@ body {background: #f6f8fa;font-family: Helvetica, Arial, sans-serif;font-size: 1
 .myc ul li {display: inline;padding-right: 10px;font-weight: bold;font-size: 30px;}
 .myc ul a {color: white;font-weight: normal;}
 
-.team {background: linear-gradient(45deg,#000428,#004e92);}
+.team {background:#000428;}
 
 main {margin: 50px;}
 

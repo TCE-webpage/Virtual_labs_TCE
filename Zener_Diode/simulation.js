@@ -174,7 +174,7 @@ function exportData(){
   var table = document.getElementById("mytable");
 
   /* Declaring array variable */
-  var rows =[["S.no","Zener Voltage","Zener Current"]];
+  var rows =[["S.no","Zener Voltage (V)","Zener Current (mA)"]];
 
     //iterate through rows of table
   for(var i=1,row; row = table.rows[i];i++){
