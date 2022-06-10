@@ -329,7 +329,7 @@ function exportData(){
   var table = document.getElementById("mytable");
 
   /* Declaring array variable */
-  var rows =[["S.no","DrainSource Voltage","Drain Current"]];
+  var rows =[["S.no","DrainSource Voltage (V)","Drain Current (A)"]];
 
     //iterate through rows of table
   for(var i=1,row; row = table.rows[i];i++){

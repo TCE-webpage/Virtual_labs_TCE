@@ -150,7 +150,7 @@ function exportData(){
   var table = document.getElementById("mytable");
 
   /* Declaring array variable */
-  var rows =[["S.no","Input Voltage","Output Voltage"]];
+  var rows =[["S.no","Input Voltage (V)","Output Voltage (V)"]];
 
     //iterate through rows of table
   for(var i=1,row; row = table.rows[i];i++){
